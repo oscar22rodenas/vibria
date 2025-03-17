@@ -1,7 +1,8 @@
 ---
+import { getPageInfo } from "../lib/wp"
+
 // Realiza la solicitud a la API de WordPress en el lado del servidor
-const response = await fetch('http://127.0.0.1:8000/wp-json/wp/v2/posts');
-const posts = await response.json();
+const {title, content} = await getPageInfo("pagina-de-inicio")
 ---
 
 <html>
@@ -9,15 +10,7 @@ const posts = await response.json();
     <title>Blog</title>
   </head>
   <body>
-    <h1>Mis Publicaciones de Blog</h1>
-    <ul>
-      {posts.map((post) => (
-        <li key={post.id}>
-          <h2>{@post.title.rendered}</h2>
-          <p>{@post.excerpt.rendered}</p>
-          <a href={post.link}>Leer más</a>
-        </li>
-      ))}
-    </ul>
+    <h1>{title}</h1>
+    <div set:html={content}> />
   </body>
 </html>
