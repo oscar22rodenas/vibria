@@ -1,1 +1,9 @@
-@import "tailwindcss";
+/* src/styles/global.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Agregar clases personalizadas si es necesario */
+.prose {
+  @apply text-gray-800 leading-relaxed;
+}
