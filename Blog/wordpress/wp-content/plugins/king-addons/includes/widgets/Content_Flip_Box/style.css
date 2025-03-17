@@ -1,0 +1,253 @@
+.king-addons-content-flip-box {
+    position: relative;
+    transition: all 500ms ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.king-addons-content-flip-box-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-content-flip-box-front {
+    z-index: 5;
+}
+
+.king-addons-content-flip-box[data-trigger="box"] {
+    cursor: pointer;
+}
+
+.elementor-widget-king-addons-content-flip-box .king-addons-content-flip-box-front .king-addons-content-flip-box-content .king-addons-content-flip-box-title,
+.elementor-widget-king-addons-content-flip-box .king-addons-content-flip-box-back .king-addons-content-flip-box-content .king-addons-content-flip-box-title {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.elementor-widget-king-addons-content-flip-box .king-addons-content-flip-box-front .king-addons-content-flip-box-content .king-addons-content-flip-box-description,
+.elementor-widget-king-addons-content-flip-box .king-addons-content-flip-box-back .king-addons-content-flip-box-content .king-addons-content-flip-box-description {
+    font-size: 16px;
+}
+
+.king-addons-content-flip-box-item {
+    transition-property: all;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.king-addons-content-flip-box-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-content-flip-box-overlay {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-content-flip-box-link {
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-content-flip-box-button,
+.king-addons-content-flip-box-button-backside {
+    display: inline-table;
+    cursor: pointer;
+}
+
+.king-addons-content-flip-box-button-icon {
+    margin-left: 5px;
+}
+
+/* Important is necessary */
+.king-addons-content-flip-box-button span,
+.king-addons-content-flip-box-button-backside span {
+    position: relative;
+    z-index: 2;
+    opacity: 1 !important;
+}
+
+/* Important is necessary */
+.king-addons-content-flip-box-button:before,
+.king-addons-content-flip-box-button-backside:before,
+.king-addons-content-flip-box-button:after,
+.king-addons-content-flip-box-button-backside:after {
+    z-index: 1 !important;
+}
+
+.king-addons-content-flip-box-image img {
+    display: block;
+    width: 100%;
+}
+
+.king-addons-content-flip-box-title a, .king-addons-content-flip-box-title a:hover {
+    color: inherit;
+}
+
+.king-addons-content-flip-box-front-align-left .king-addons-content-flip-box-front .king-addons-content-flip-box-image img,
+.king-addons-content-flip-box-back-align-left .king-addons-content-flip-box-back .king-addons-content-flip-box-image img {
+    float: left;
+}
+
+.king-addons-content-flip-box-front-align-center .king-addons-content-flip-box-front .king-addons-content-flip-box-image img,
+.king-addons-content-flip-box-back-align-center .king-addons-content-flip-box-back .king-addons-content-flip-box-image img {
+    margin: 0 auto;
+}
+
+.king-addons-content-flip-box-front-align-right .king-addons-content-flip-box-front .king-addons-content-flip-box-image img,
+.king-addons-content-flip-box-back-align-right .king-addons-content-flip-box-back .king-addons-content-flip-box-image img {
+    float: right;
+}
+
+.king-addons-content-flip-box-animation-flip.king-addons-content-flip-box-anim-direction-right .king-addons-content-flip-box-back,
+.king-addons-content-flip-box-animation-flip.king-addons-content-flip-box-anim-direction-left .king-addons-content-flip-box-active .king-addons-content-flip-box-front {
+    transform: rotateX(0) rotateY(-180deg);
+}
+
+.king-addons-content-flip-box-animation-flip.king-addons-content-flip-box-anim-direction-left .king-addons-content-flip-box-back,
+.king-addons-content-flip-box-animation-flip.king-addons-content-flip-box-anim-direction-right .king-addons-content-flip-box-active .king-addons-content-flip-box-front {
+    transform: rotateX(0) rotateY(180deg);
+}
+
+.king-addons-content-flip-box-animation-flip.king-addons-content-flip-box-anim-direction-up .king-addons-content-flip-box-back,
+.king-addons-content-flip-box-animation-flip.king-addons-content-flip-box-anim-direction-down .king-addons-content-flip-box-active .king-addons-content-flip-box-front {
+    transform: rotateX(-180deg) rotateY(0);
+}
+
+.king-addons-content-flip-box-animation-flip.king-addons-content-flip-box-anim-direction-down .king-addons-content-flip-box-back,
+.king-addons-content-flip-box-animation-flip.king-addons-content-flip-box-anim-direction-up .king-addons-content-flip-box-active .king-addons-content-flip-box-front {
+    transform: rotateX(180deg) rotateY(0);
+}
+
+.king-addons-content-flip-box-animation-flip .king-addons-content-flip-box-active .king-addons-content-flip-box-back {
+    transform: none;
+}
+
+.king-addons-content-flip-box-animation-3d-yes .king-addons-content-flip-box-content {
+    transform: translateZ(70px) scale(.93);
+    transform-style: preserve-3d;
+}
+
+.king-addons-content-flip-box-animation-push .king-addons-content-flip-box,
+.king-addons-content-flip-box-animation-slide .king-addons-content-flip-box {
+    overflow: hidden;
+}
+
+.king-addons-content-flip-box-animation-push .king-addons-content-flip-box-back, .king-addons-content-flip-box-animation-slide .king-addons-content-flip-box-back {
+    z-index: 10;
+}
+
+.king-addons-content-flip-box-animation-push.king-addons-content-flip-box-anim-direction-up .king-addons-content-flip-box-back,
+.king-addons-content-flip-box-animation-slide.king-addons-content-flip-box-anim-direction-up .king-addons-content-flip-box-back {
+    top: 100%;
+}
+
+.king-addons-content-flip-box-animation-push.king-addons-content-flip-box-anim-direction-up .king-addons-content-flip-box-active .king-addons-content-flip-box-back,
+.king-addons-content-flip-box-animation-slide.king-addons-content-flip-box-anim-direction-up .king-addons-content-flip-box-active .king-addons-content-flip-box-back {
+    top: 0;
+}
+
+.king-addons-content-flip-box-animation-push.king-addons-content-flip-box-anim-direction-down .king-addons-content-flip-box-back,
+.king-addons-content-flip-box-animation-slide.king-addons-content-flip-box-anim-direction-down .king-addons-content-flip-box-back {
+    top: auto;
+    bottom: 100%;
+}
+
+.king-addons-content-flip-box-animation-push.king-addons-content-flip-box-anim-direction-down .king-addons-content-flip-box-active .king-addons-content-flip-box-back,
+.king-addons-content-flip-box-animation-slide.king-addons-content-flip-box-anim-direction-down .king-addons-content-flip-box-active .king-addons-content-flip-box-back {
+    top: auto;
+    bottom: 0;
+}
+
+.king-addons-content-flip-box-animation-push.king-addons-content-flip-box-anim-direction-left .king-addons-content-flip-box-back,
+.king-addons-content-flip-box-animation-slide.king-addons-content-flip-box-anim-direction-left .king-addons-content-flip-box-back {
+    left: 100%;
+}
+
+.king-addons-content-flip-box-animation-push.king-addons-content-flip-box-anim-direction-left .king-addons-content-flip-box-active .king-addons-content-flip-box-back,
+.king-addons-content-flip-box-animation-slide.king-addons-content-flip-box-anim-direction-left .king-addons-content-flip-box-active .king-addons-content-flip-box-back {
+    left: 0;
+}
+
+.king-addons-content-flip-box-animation-push.king-addons-content-flip-box-anim-direction-right .king-addons-content-flip-box-back,
+.king-addons-content-flip-box-animation-slide.king-addons-content-flip-box-anim-direction-right .king-addons-content-flip-box-back {
+    right: 100%;
+    left: auto;
+}
+
+.king-addons-content-flip-box-animation-push.king-addons-content-flip-box-anim-direction-right .king-addons-content-flip-box-active .king-addons-content-flip-box-back,
+.king-addons-content-flip-box-animation-slide.king-addons-content-flip-box-anim-direction-right .king-addons-content-flip-box-active .king-addons-content-flip-box-back {
+    right: 0;
+    left: auto;
+}
+
+.king-addons-content-flip-box-animation-push.king-addons-content-flip-box-anim-direction-up .king-addons-content-flip-box-active .king-addons-content-flip-box-front {
+    top: -100%;
+}
+
+.king-addons-content-flip-box-animation-push.king-addons-content-flip-box-anim-direction-down .king-addons-content-flip-box-active .king-addons-content-flip-box-front {
+    top: 100%;
+}
+
+.king-addons-content-flip-box-animation-push.king-addons-content-flip-box-anim-direction-left .king-addons-content-flip-box-active .king-addons-content-flip-box-front {
+    left: -100%;
+}
+
+.king-addons-content-flip-box-animation-push.king-addons-content-flip-box-anim-direction-right .king-addons-content-flip-box-active .king-addons-content-flip-box-front {
+    left: 100%;
+}
+
+.king-addons-content-flip-box-animation-fade .king-addons-content-flip-box-active .king-addons-content-flip-box-front {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.king-addons-content-flip-box-animation-zoom-in .king-addons-content-flip-box-back {
+    z-index: 10;
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+.king-addons-content-flip-box-animation-zoom-in .king-addons-content-flip-box-active .king-addons-content-flip-box-back {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.king-addons-content-flip-box-animation-zoom-out .king-addons-content-flip-box-active .king-addons-content-flip-box-front {
+    visibility: hidden;
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+.king-addons-content-flip-animation-timing-linear {
+    transition-timing-function: cubic-bezier(0.250, 0.250, 0.750, 0.750);
+}
+
+.king-addons-content-flip-animation-timing-ease {
+    transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+}
+
+.king-addons-content-flip-animation-timing-ease-in {
+    transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000);
+}
+
+.king-addons-content-flip-animation-timing-ease-out {
+    transition-timing-function: cubic-bezier(0.000, 0.000, 0.580, 1.000);
+}

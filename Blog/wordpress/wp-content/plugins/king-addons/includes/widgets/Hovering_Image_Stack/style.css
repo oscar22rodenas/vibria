@@ -1,0 +1,263 @@
+@keyframes king-addons-hovering-image-stack-rotating {
+    0% {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes king-addons-hovering-image-stack-rotating-inverse {
+    0% {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(-360deg)
+    }
+}
+
+@keyframes king-addons-hovering-image-stack-bounce-sm {
+    0%, to {
+        transform: translateY(0)
+    }
+    50% {
+        transform: translateY(10%)
+    }
+}
+
+@keyframes king-addons-hovering-image-stack-bounce-md {
+    0%, to {
+        transform: translateY(0)
+    }
+    50% {
+        transform: translateY(20%)
+    }
+}
+
+@keyframes king-addons-hovering-image-stack-bounce-lg {
+    0%, to {
+        transform: translateY(0)
+    }
+    50% {
+        transform: translateY(40%)
+    }
+}
+
+@keyframes king-addons-hovering-image-stack-fade {
+    0%, to {
+        opacity: 1
+    }
+    50% {
+        opacity: .6
+    }
+}
+
+@keyframes king-addons-hovering-image-stack-scale-sm {
+    0%, to {
+        transform: scale(1)
+    }
+    50% {
+        transform: scale(1.1)
+    }
+}
+
+@keyframes king-addons-hovering-image-stack-scale-md {
+    0%, to {
+        transform: scale(1)
+    }
+    50% {
+        transform: scale(1.4)
+    }
+}
+
+@keyframes king-addons-hovering-image-stack-scale-lg {
+    0%, to {
+        transform: scale(1)
+    }
+    50% {
+        transform: scale(1.8)
+    }
+}
+
+.king-addons-hovering-image-stack-img,
+.king-addons-hovering-image-stack-item {
+    will-change: auto;
+}
+
+.king-addons-hovering-image-stack-wrapper {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box
+}
+
+.king-addons-hovering-image-stack-wrapper .king-addons-hovering-image-stack-item {
+    position: absolute
+}
+
+.king-addons-hovering-image-stack-wrapper {
+    --king-addons-hovering-image-animation-speed: 6000ms;
+    --king-addons-hovering-image-hover-animation-speed: 300ms;
+}
+
+.king-addons-hovering-image-stack-rotating,
+.king-addons-hovering-image-stack-rotating-inverse {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+.king-addons-hovering-image-stack-rotating {
+    animation-name: king-addons-hovering-image-stack-rotating
+}
+
+.king-addons-hovering-image-stack-rotating-inverse {
+    animation-name: king-addons-hovering-image-stack-rotating-inverse
+}
+
+.king-addons-hovering-image-stack-rotating,
+.king-addons-hovering-image-stack-rotating-inverse {
+    animation-duration: var(--king-addons-hovering-image-animation-speed, 5s)
+}
+
+.king-addons-hovering-image-stack-bounce-lg,
+.king-addons-hovering-image-stack-bounce-md,
+.king-addons-hovering-image-stack-bounce-sm,
+.king-addons-hovering-image-stack-fade,
+.king-addons-hovering-image-stack-scale-lg,
+.king-addons-hovering-image-stack-scale-md,
+.king-addons-hovering-image-stack-scale-sm {
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-duration: var(--king-addons-hovering-image-animation-speed, 5s);
+}
+
+.king-addons-hovering-image-stack-bounce-sm {
+    animation-name: king-addons-hovering-image-stack-bounce-sm;
+}
+
+.king-addons-hovering-image-stack-bounce-md {
+    animation-name: king-addons-hovering-image-stack-bounce-md
+}
+
+.king-addons-hovering-image-stack-bounce-lg {
+    animation-name: king-addons-hovering-image-stack-bounce-lg
+}
+
+.king-addons-hovering-image-stack-scale-sm {
+    animation-name: king-addons-hovering-image-stack-scale-sm
+}
+
+.king-addons-hovering-image-stack-scale-md {
+    animation-name: king-addons-hovering-image-stack-scale-md
+}
+
+.king-addons-hovering-image-stack-scale-lg {
+    animation-name: king-addons-hovering-image-stack-scale-lg
+}
+
+.king-addons-hovering-image-stack-fade {
+    animation-name: king-addons-hovering-image-stack-fade
+}
+
+.king-addons-hovering-image-stack-bounce-lg,
+.king-addons-hovering-image-stack-bounce-md,
+.king-addons-hovering-image-stack-bounce-sm,
+.king-addons-hovering-image-stack-fade,
+.king-addons-hovering-image-stack-scale-lg,
+.king-addons-hovering-image-stack-scale-md,
+.king-addons-hovering-image-stack-scale-sm {
+    animation-duration: var(--king-addons-hovering-image-animation-speed, 5s)
+}
+
+.king-addons-hovering-image-stack-scale,
+.king-addons-hovering-image-stack-scale-inverse,
+.king-addons-hovering-image-stack-scale-inverse-lg,
+.king-addons-hovering-image-stack-scale-inverse-sm,
+.king-addons-hovering-image-stack-scale-lg,
+.king-addons-hovering-image-stack-scale-sm {
+    transition: all .4s cubic-bezier(.165, .84, .44, 1);
+    backface-visibility: hidden
+}
+
+.king-addons-hovering-image-stack-scale *,
+.king-addons-hovering-image-stack-scale-inverse *,
+.king-addons-hovering-image-stack-scale-inverse-lg *,
+.king-addons-hovering-image-stack-scale-inverse-sm *,
+.king-addons-hovering-image-stack-scale-lg *,
+.king-addons-hovering-image-stack-scale-sm * {
+    backface-visibility: hidden
+}
+
+.king-addons-hovering-image-img-stack-scale-sm:hover,
+.king-addons-hovering-image-img-stack-scaled-sm {
+    z-index: 999999;
+    transform: scale(1.05) !important
+}
+
+.king-addons-hovering-image-img-stack-scale:hover,
+.king-addons-hovering-image-img-stack-scaled {
+    z-index: 999999;
+    transform: scale(1.1) !important
+}
+
+.king-addons-hovering-image-img-stack-scale-lg:hover,
+.king-addons-hovering-image-img-stack-scaled-lg {
+    z-index: 999999;
+    transform: scale(1.15) !important
+}
+
+.king-addons-hovering-image-img-stack-scale-inverse-sm:hover {
+    transform: scale(.95) !important
+}
+
+.king-addons-hovering-image-img-stack-scale-inverse:hover {
+    transform: scale(.925) !important
+}
+
+.king-addons-hovering-image-img-stack-scale-inverse-lg:hover {
+    transform: scale(.9) !important
+}
+
+.king-addons-hovering-image-img-stack-fly-sm {
+    transition: all .4s cubic-bezier(.165, .84, .44, 1)
+}
+
+.king-addons-hovering-image-img-stack-fly-sm:hover {
+    transform: translate(0, -3px) !important
+}
+
+.king-addons-hovering-image-img-stack-fly-sm,
+.king-addons-hovering-image-img-stack-fly-sm * {
+    backface-visibility: hidden
+}
+
+.king-addons-hovering-image-img-stack-fly {
+    transition: all .4s cubic-bezier(.165, .84, .44, 1)
+}
+
+.king-addons-hovering-image-img-stack-fly:hover {
+    transform: translate(0, -6px) !important
+}
+
+.king-addons-hovering-image-img-stack-fly,
+.king-addons-hovering-image-img-stack-fly * {
+    backface-visibility: hidden
+}
+
+.king-addons-hovering-image-img-stack-fly-lg {
+    transition: all .4s cubic-bezier(.165, .84, .44, 1)
+}
+
+.king-addons-hovering-image-img-stack-fly-lg:hover {
+    transform: translate(0, -9px) !important
+}
+
+.king-addons-hovering-image-img-stack-fly-lg,
+.king-addons-hovering-image-img-stack-fly-lg * {
+    backface-visibility: hidden
+}
+
+.king-addons-hovering-image-stack-img {
+    transition-duration: var(--king-addons-hovering-image-hover-animation-speed, 5s)
+}

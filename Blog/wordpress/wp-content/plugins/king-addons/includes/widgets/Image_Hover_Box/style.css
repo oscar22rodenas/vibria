@@ -1,0 +1,1152 @@
+.elementor-widget-king-addons-image-hover-box {
+    overflow: hidden;
+}
+
+.king-addons-image-hover-box {
+    position: relative;
+    z-index: 1;
+    display: block;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    text-align: center;
+}
+
+.king-addons-image-hover-box img {
+    position: relative;
+    display: block;
+}
+
+.king-addons-image-hover-box-img-wrap {
+    display: flex;
+    height: 100%;
+}
+
+.king-addons-image-hover-box-img-wrap .king-addons-image-hover-box-img {
+    flex-shrink: 0;
+}
+
+.elementor-widget-king-addons-image-hover-box .king-addons-image-hover-box-text-title {
+    background: transparent;
+}
+
+.king-addons-image-hover-box *,
+.king-addons-image-hover-box .king-addons-image-hover-box-text {
+    box-sizing: border-box;
+}
+
+.king-addons-image-hover-box img {
+    min-width: 100%;
+    max-width: 100%;
+    transition: opacity 0.35s;
+}
+
+.king-addons-image-hover-box .king-addons-image-hover-box-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    backface-visibility: hidden;
+}
+
+.king-addons-image-hover-box .king-addons-image-hover-box-link {
+    font-size: 0;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    text-indent: 200%;
+    opacity: 0;
+}
+
+.king-addons-image-hover-box a.king-addons-image-hover-box-link {
+    display: block;
+    background: 0 0;
+}
+
+.king-addons-image-hover-box-layout-1 img {
+    width: calc(100% + 50px) !important;
+    max-width: calc(100% + 50px) !important;
+    transition: opacity 0.35s, filter 0.35s, transform 0.35s;
+    transform: translate3d(-40px, 0, 0);
+}
+
+.king-addons-image-hover-box-layout-2 .king-addons-image-hover-box-text-title {
+    padding: 15px;
+}
+
+.king-addons-image-hover-box-layout-1 .king-addons-image-hover-box-text {
+    top: auto;
+    bottom: 0;
+    height: auto;
+    min-height: 25%;
+    max-height: 100%;
+    text-align: left;
+}
+
+.king-addons-image-hover-box-layout-1 .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-1 .king-addons-image-hover-box-text-title {
+    transition-delay: 0.05s;
+    transition-duration: 0.35s;
+    transform: translate3d(0, 40px, 0);
+}
+
+.king-addons-image-hover-box-layout-1 .king-addons-image-hover-box-text-title {
+    transition: transform 0.35s;
+}
+
+.king-addons-image-hover-box-layout-1 .king-addons-image-hover-box-text-description {
+    margin-top: 10px;
+    transition: opacity 0.2s, transform 0.35s;
+    opacity: 0;
+}
+
+.king-addons-image-hover-box-layout-1:hover .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-1.king-addons-image-hover-box-active .king-addons-image-hover-box-text-description {
+    transition-delay: 0.05s;
+    transition-duration: 0.35s;
+    opacity: 1;
+}
+
+.king-addons-image-hover-box-layout-1:hover .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-1.king-addons-image-hover-box-active .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-1:hover .king-addons-image-hover-box-text-title,
+.king-addons-image-hover-box-layout-1.king-addons-image-hover-box-active .king-addons-image-hover-box-text-title,
+.king-addons-image-hover-box-layout-1:hover img,
+.king-addons-image-hover-box-layout-1.king-addons-image-hover-box-active img {
+    transition-delay: 0.05s;
+    transition-duration: 0.35s;
+    transform: translate3d(0, 0, 0);
+}
+
+.king-addons-image-hover-box-layout-1.king-addons-image-hover-box-zoom-out img,
+.king-addons-image-hover-box-layout-1.king-addons-image-hover-box-scale img {
+    transform: translate3d(-40px, 0, 0) scale(1.1);
+}
+
+.king-addons-image-hover-box.king-addons-image-hover-box-sepia img {
+    filter: sepia(30%);
+}
+
+.king-addons-image-hover-box.king-addons-image-hover-box-bright img {
+    filter: brightness(1);
+}
+
+.king-addons-image-hover-box.king-addons-image-hover-box-sepia:hover img {
+    filter: sepia(0%);
+}
+
+.king-addons-image-hover-box.king-addons-image-hover-box-bright:hover img {
+    filter: brightness(1.2);
+}
+
+.king-addons-image-hover-box-layout-1.king-addons-image-hover-box-min-height img,
+.king-addons-image-hover-box-layout-2.king-addons-image-hover-box-min-height img,
+.king-addons-image-hover-box-layout-3.king-addons-image-hover-box-min-height img,
+.king-addons-image-hover-box-layout-4.king-addons-image-hover-box-min-height img,
+.king-addons-image-hover-box-layout-5.king-addons-image-hover-box-min-height img,
+.king-addons-image-hover-box-layout-6.king-addons-image-hover-box-min-height img {
+    height: auto;
+}
+
+.king-addons-image-hover-box-layout-2 img {
+    width: 100%;
+}
+
+.king-addons-image-hover-box-layout-2 .king-addons-image-hover-box-text::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    transform: translate3d(0, 50%, 0);
+    opacity: 0;
+}
+
+.king-addons-image-hover-box-layout-2 .king-addons-image-hover-box-text-title {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transition: transform 0.35s,
+    color 0.35s;
+    transform: translate3d(0, -50%, 0);
+}
+
+.king-addons-image-hover-box-layout-2 .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-2 .king-addons-image-hover-box-text::before {
+    transition: opacity 0.35s, transform 0.35s;
+}
+
+.king-addons-image-hover-box-layout-2 .king-addons-image-hover-box-text-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-height: 50%;
+    padding: 15px;
+    transform: translate3d(0, 10px, 0);
+    opacity: 0;
+}
+
+.king-addons-image-hover-box-layout-2:hover .king-addons-image-hover-box-text-title,
+.king-addons-image-hover-box-layout-2.king-addons-image-hover-box-active .king-addons-image-hover-box-text-title {
+    transform: translate3d(0, -40px, 0);
+}
+
+.king-addons-image-hover-box-layout-2:hover .king-addons-image-hover-box-text::before,
+.king-addons-image-hover-box-layout-2.king-addons-image-hover-box-active .king-addons-image-hover-box-text::before {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+.king-addons-image-hover-box-layout-2:hover .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-2.king-addons-image-hover-box-active .king-addons-image-hover-box-text-description {
+    transform: translate3d(0, -30px, 0);
+    opacity: 1;
+}
+
+.king-addons-image-hover-box-layout-3 .king-addons-image-hover-box-text-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    transform: translate3d(0, -30px, 0);
+    text-align: left;
+}
+
+.king-addons-image-hover-box-layout-3 .king-addons-image-hover-box-text::before,
+.king-addons-image-hover-box-layout-3 .king-addons-image-hover-box-text-title {
+    transition: transform 0.35s;
+}
+
+.king-addons-image-hover-box-layout-3:hover .king-addons-image-hover-box-text::before,
+.king-addons-image-hover-box-layout-3.king-addons-image-hover-box-active .king-addons-image-hover-box-text::before,
+.king-addons-image-hover-box-layout-3:hover .king-addons-image-hover-box-text-title,
+.king-addons-image-hover-box-layout-3.king-addons-image-hover-box-active .king-addons-image-hover-box-text-title {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+.king-addons-image-hover-box-layout-3 .king-addons-image-hover-box-text-description {
+    overflow: hidden;
+    max-height: calc(100% - 60px - 1.5em);
+}
+
+.king-addons-image-hover-box-layout-4 img {
+    width: calc(100% + 40px) !important;
+    max-width: calc(100% + 40px) !important;
+}
+
+.king-addons-image-hover-box-layout-4 .king-addons-image-hover-box-text {
+    padding: 30px;
+}
+
+.king-addons-image-hover-box-layout-4 .king-addons-image-hover-box-text::after {
+    position: absolute;
+    content: '';
+    opacity: 0;
+}
+
+.king-addons-image-hover-box-layout-4 .king-addons-image-hover-box-text::before {
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    bottom: 50px;
+    left: 30px;
+    content: '';
+    transform: scale(0, 1);
+    transform-origin: 0 0;
+    opacity: 0;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.king-addons-image-hover-box-layout-4 .king-addons-image-hover-box-text::after {
+    top: 30px;
+    right: 50px;
+    bottom: 30px;
+    left: 50px;
+    transform: scale(1, 0);
+    transform-origin: 100% 0;
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+}
+
+.king-addons-image-hover-box-layout-4 .king-addons-image-hover-box-text-title {
+    padding: 50px 30px 0 30px;
+    transition: transform 0.35s;
+}
+
+.king-addons-image-hover-box-layout-4 .king-addons-image-hover-box-text-description {
+    overflow: hidden;
+    padding: 10px 30px;
+    transform: translate3d(0, -10px, 0);
+    opacity: 0;
+}
+
+.king-addons-image-hover-box-layout-4 .king-addons-image-hover-box-text-title,
+.king-addons-image-hover-box-layout-4 img {
+    transform: translate3d(-30px, 0, 0);
+}
+
+.king-addons-image-hover-box-layout-4.king-addons-image-hover-box-zoom-out img,
+.king-addons-image-hover-box-layout-4.king-addons-image-hover-box-scale img {
+    transform: translate3d(-30px, 0, 0) scale(1.1);
+}
+
+.king-addons-image-hover-box-layout-4 .king-addons-image-hover-box-text-description {
+    transition: opacity 0.35s, transform 0.35s;
+}
+
+.king-addons-image-hover-box-layout-4 .king-addons-image-hover-box-text::after,
+.king-addons-image-hover-box-layout-4 .king-addons-image-hover-box-text::before {
+    transition: opacity 0.35s, transform 0.35s;
+}
+
+.king-addons-image-hover-box-layout-4 img {
+    transition: opacity 0.35s, transform 0.35s;
+}
+
+.king-addons-image-hover-box-layout-4:hover .king-addons-image-hover-box-text::after,
+.king-addons-image-hover-box-layout-4.king-addons-image-hover-box-active .king-addons-image-hover-box-text::after,
+.king-addons-image-hover-box-layout-4:hover .king-addons-image-hover-box-text::before,
+.king-addons-image-hover-box-layout-4.king-addons-image-hover-box-active .king-addons-image-hover-box-text::before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.king-addons-image-hover-box-layout-4:hover .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-4.king-addons-image-hover-box-active .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-4:hover .king-addons-image-hover-box-text-title,
+.king-addons-image-hover-box-layout-4.king-addons-image-hover-box-active .king-addons-image-hover-box-text-title {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+.king-addons-image-hover-box-layout-4:hover .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-4:hover .king-addons-image-hover-box-text::after,
+.king-addons-image-hover-box-layout-4:hover .king-addons-image-hover-box-text-title,
+.king-addons-image-hover-box-layout-4:hover img {
+    transition-delay: 0.15s;
+}
+
+.king-addons-image-hover-box-layout-5 .king-addons-image-hover-box-text {
+    top: auto;
+    bottom: 0;
+    height: auto;
+    padding: 15px;
+    transition: transform 0.35s;
+    transform: translate3d(0, 100%, 0);
+    color: #3c4a50;
+    background: #f2f2f2;
+}
+
+.king-addons-image-hover-box-layout-5 .king-addons-image-hover-box-text-description {
+    position: absolute;
+    top: auto;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    transition: opacity 0.35s;
+    opacity: 0;
+}
+
+.king-addons-image-hover-box-layout-5 .king-addons-image-hover-box-text-title {
+    transition: transform 0.35s;
+    transform: translate3d(0, 200%, 0);
+    text-align: center;
+}
+
+.king-addons-image-hover-box-layout-5 .king-addons-image-hover-box-text-title {
+    margin: 10px 0;
+}
+
+.king-addons-image-hover-box-layout-5:hover .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-5.king-addons-image-hover-box-active .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-5:hover .king-addons-image-hover-box-text-description *,
+.king-addons-image-hover-box-layout-5.king-addons-image-hover-box-active .king-addons-image-hover-box-text-description * {
+    z-index: 99 !important;
+    opacity: 1 !important;
+    backface-visibility: hidden !important;
+}
+
+.king-addons-image-hover-box-layout-5:hover .king-addons-image-hover-box-text,
+.king-addons-image-hover-box-layout-5.king-addons-image-hover-box-active .king-addons-image-hover-box-text,
+.king-addons-image-hover-box-layout-5:hover .king-addons-image-hover-box-text-title,
+.king-addons-image-hover-box-layout-5.king-addons-image-hover-box-active .king-addons-image-hover-box-text-title {
+    transform: translateY(0);
+}
+
+.king-addons-image-hover-box-layout-5:hover .king-addons-image-hover-box-text-title {
+    transition-delay: 0.05s;
+}
+
+.king-addons-image-hover-box-layout-5 img {
+    transition: opacity 0.35s, filter 0.35s, transform 0.35s;
+}
+
+.king-addons-image-hover-box-layout-2 img,
+.king-addons-image-hover-box-layout-4 img,
+.king-addons-image-hover-box-layout-6 img {
+    transition: opacity 0.35s, filter 0.35s, transform 0.35s;
+}
+
+.king-addons-image-hover-box-layout-5.king-addons-image-hover-box-zoom-out img,
+.king-addons-image-hover-box-layout-5.king-addons-image-hover-box-scale img {
+    transform: scale(1.1);
+}
+
+.king-addons-image-hover-box-layout-2.king-addons-image-hover-box-zoom-out img,
+.king-addons-image-hover-box-layout-2.king-addons-image-hover-box-scale img {
+    transform: scale(1.1);
+}
+
+.king-addons-image-hover-box-layout-6.king-addons-image-hover-box-zoom-out img,
+.king-addons-image-hover-box-layout-6.king-addons-image-hover-box-scale img {
+    transform: scale(1.1);
+}
+
+.king-addons-image-hover-box-layout-5.king-addons-image-hover-box-zoom-in:hover img,
+.king-addons-image-hover-box-layout-2.king-addons-image-hover-box-zoom-in:hover img,
+.king-addons-image-hover-box-layout-6.king-addons-image-hover-box-zoom-in:hover img {
+    transform: scale(1.1);
+}
+
+.king-addons-image-hover-box-layout-5.king-addons-image-hover-box-zoom-out:hover img,
+.king-addons-image-hover-box-layout-2.king-addons-image-hover-box-zoom-out:hover img,
+.king-addons-image-hover-box-layout-6.king-addons-image-hover-box-zoom-out:hover img {
+    transform: scale(1);
+}
+
+.king-addons-image-hover-box-layout-5.king-addons-image-hover-box-scale:hover img,
+.king-addons-image-hover-box-layout-2.king-addons-image-hover-box-scale:hover img,
+.king-addons-image-hover-box-layout-6.king-addons-image-hover-box-scale:hover img {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.king-addons-image-hover-box-layout-5.king-addons-image-hover-box-grayscale:hover img,
+.king-addons-image-hover-box-layout-2.king-addons-image-hover-box-grayscale:hover img,
+.king-addons-image-hover-box-layout-6.king-addons-image-hover-box-grayscale:hover img {
+    filter: grayscale(100%);
+}
+
+.king-addons-image-hover-box-layout-5.king-addons-image-hover-box-blur:hover img,
+.king-addons-image-hover-box-layout-2.king-addons-image-hover-box-blur:hover img {
+    filter: blur(3px);
+}
+
+.king-addons-image-hover-box-layout-6.king-addons-image-hover-box-blur:hover img {
+    filter: blur(3px);
+}
+
+.king-addons-image-hover-box-layout-6 .king-addons-image-hover-box-text {
+    padding: 45px;
+}
+
+.king-addons-image-hover-box-layout-6 .king-addons-image-hover-box-text::before {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+    left: 30px;
+    content: '';
+    border: 1px solid #fff;
+}
+
+.king-addons-image-hover-box-layout-6 .king-addons-image-hover-box-text-title {
+    margin: 20px 0 10px;
+    transition: transform 0.35s;
+    transform: translate3d(0, 100%, 0);
+}
+
+.king-addons-image-hover-box-layout-6 .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-6 .king-addons-image-hover-box-text::before {
+    transition: opacity 0.35s, transform 0.35s;
+    transform: scale(0);
+    opacity: 0;
+}
+
+.king-addons-image-hover-box-layout-6:hover .king-addons-image-hover-box-text-title,
+.king-addons-image-hover-box-layout-6.king-addons-image-hover-box-active .king-addons-image-hover-box-text-title {
+    transform: translate3d(0, 0, 0);
+}
+
+.king-addons-image-hover-box-layout-6:hover .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-6.king-addons-image-hover-box-active .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-6:hover .king-addons-image-hover-box-text::before,
+.king-addons-image-hover-box-layout-6.king-addons-image-hover-box-active .king-addons-image-hover-box-text::before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.king-addons-image-hover-box-layout-12 .king-addons-image-hover-box-text::after {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    left: 30px;
+    height: calc(50% - 30px);
+    content: '';
+    transition: transform 0.35s;
+    transform: translate3d(0, -100%, 0);
+    border: 7px solid #fff;
+}
+
+.king-addons-image-hover-box-layout-12:hover .king-addons-image-hover-box-text::after,
+.king-addons-image-hover-box-layout-12.king-addons-image-hover-box-active .king-addons-image-hover-box-text::after {
+    transform: translate3d(0, 0, 0);
+}
+
+.king-addons-image-hover-box-layout-12 .king-addons-image-hover-box-text {
+    padding: 45px;
+    text-align: left;
+}
+
+.king-addons-image-hover-box-layout-12 .king-addons-image-hover-box-text-description {
+    position: absolute;
+    right: 60px;
+    bottom: 60px;
+    left: 60px;
+    transition: opacity 0.35s, transform 0.35s;
+    transform: translate3d(0, -100px, 0);
+    opacity: 0;
+}
+
+.king-addons-image-hover-box-layout-12:hover .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-12.king-addons-image-hover-box-active .king-addons-image-hover-box-text-description {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+.king-addons-image-hover-box-layout-3 img {
+    width: calc(100% + 20px) !important;
+    max-width: calc(100% + 20px) !important;
+    transition: opacity 0.35s, filter 0.35s, transform 0.35s;
+    transform: translate3d(-10px, 0, 0);
+    backface-visibility: hidden;
+}
+
+.king-addons-image-hover-box-layout-3.king-addons-image-hover-box-zoom-out img,
+.king-addons-image-hover-box-layout-3.king-addons-image-hover-box-scale img {
+    transform: translate3d(-10px, 0, 0) scale(1.1);
+}
+
+.king-addons-image-hover-box-layout-3.king-addons-image-hover-box-none:hover img {
+    transform: translate3d(0, 0, 0);
+}
+
+.king-addons-image-hover-box-layout-1.king-addons-image-hover-box-none:hover img,
+.king-addons-image-hover-box-layout-4.king-addons-image-hover-box-none:hover img {
+    transform: translate3d(0, 0, 0);
+}
+
+.king-addons-image-hover-box-layout-1.king-addons-image-hover-box-zoom-in:hover img,
+.king-addons-image-hover-box-layout-3.king-addons-image-hover-box-zoom-in:hover img,
+.king-addons-image-hover-box-layout-4.king-addons-image-hover-box-zoom-in:hover img,
+.king-addons-image-hover-box-layout-8.king-addons-image-hover-box-zoom-in:hover img,
+.king-addons-image-hover-box-layout-7.king-addons-image-hover-box-zoom-in:hover img,
+.king-addons-image-hover-box-layout-9.king-addons-image-hover-box-zoom-in:hover img,
+.king-addons-image-hover-box-layout-10.king-addons-image-hover-box-zoom-in:hover img,
+.king-addons-image-hover-box-layout-11.king-addons-image-hover-box-zoom-in:hover img {
+    transform: translate3d(0, 0, 0) scale(1.1);
+}
+
+.king-addons-image-hover-box-layout-1.king-addons-image-hover-box-zoom-out:hover img,
+.king-addons-image-hover-box-layout-3.king-addons-image-hover-box-zoom-out:hover img,
+.king-addons-image-hover-box-layout-4.king-addons-image-hover-box-zoom-out:hover img,
+.king-addons-image-hover-box-layout-8.king-addons-image-hover-box-zoom-out:hover img,
+.king-addons-image-hover-box-layout-7.king-addons-image-hover-box-zoom-out:hover img,
+.king-addons-image-hover-box-layout-9.king-addons-image-hover-box-zoom-out:hover img,
+.king-addons-image-hover-box-layout-10.king-addons-image-hover-box-zoom-out:hover img,
+.king-addons-image-hover-box-layout-11.king-addons-image-hover-box-zoom-out:hover img {
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+.king-addons-image-hover-box-layout-1.king-addons-image-hover-box-scale:hover img,
+.king-addons-image-hover-box-layout-3.king-addons-image-hover-box-scale:hover img,
+.king-addons-image-hover-box-layout-4.king-addons-image-hover-box-scale:hover img,
+.king-addons-image-hover-box-layout-8.king-addons-image-hover-box-scale:hover img,
+.king-addons-image-hover-box-layout-7.king-addons-image-hover-box-scale:hover img,
+.king-addons-image-hover-box-layout-9.king-addons-image-hover-box-scale:hover img,
+.king-addons-image-hover-box-layout-10.king-addons-image-hover-box-scale:hover img,
+.king-addons-image-hover-box-layout-11.king-addons-image-hover-box-scale:hover img {
+    transform: translate3d(0, 0, 0) scale(1.2) rotate(5deg);
+}
+
+.king-addons-image-hover-box-layout-1.king-addons-image-hover-box-grayscale:hover img,
+.king-addons-image-hover-box-layout-3.king-addons-image-hover-box-grayscale:hover img,
+.king-addons-image-hover-box-layout-4.king-addons-image-hover-box-grayscale:hover img,
+.king-addons-image-hover-box-layout-8.king-addons-image-hover-box-grayscale:hover img,
+.king-addons-image-hover-box-layout-7.king-addons-image-hover-box-grayscale:hover img,
+.king-addons-image-hover-box-layout-9.king-addons-image-hover-box-grayscale:hover img,
+.king-addons-image-hover-box-layout-10.king-addons-image-hover-box-grayscale:hover img,
+.king-addons-image-hover-box-layout-11.king-addons-image-hover-box-grayscale:hover img {
+    transform: translate3d(0, 0, 0);
+    filter: grayscale(100%);
+}
+
+.king-addons-image-hover-box-layout-1.king-addons-image-hover-box-blur:hover img,
+.king-addons-image-hover-box-layout-3.king-addons-image-hover-box-blur:hover img,
+.king-addons-image-hover-box-layout-4.king-addons-image-hover-box-blur:hover,
+.king-addons-image-hover-box-layout-8.king-addons-image-hover-box-blur:hover img,
+.king-addons-image-hover-box-layout-7.king-addons-image-hover-box-blur:hover img,
+.king-addons-image-hover-box-layout-9.king-addons-image-hover-box-blur:hover img,
+.king-addons-image-hover-box-layout-10.king-addons-image-hover-box-blur:hover img,
+.king-addons-image-hover-box-layout-11.king-addons-image-hover-box-blur:hover img {
+    transform: translate3d(0, 0, 0);
+    filter: blur(3px);
+}
+
+.king-addons-image-hover-box-layout-3 .king-addons-image-hover-box-text {
+    text-align: left;
+}
+
+.king-addons-image-hover-box-layout-3 .king-addons-image-hover-box-text-title {
+    position: relative;
+    overflow: hidden;
+    padding: 5px 0 10px;
+}
+
+.king-addons-image-hover-box-layout-3 .king-addons-image-hover-box-text-title::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    content: '';
+    transition: transform 0.35s;
+    transform: translate3d(-101%, 0, 0);
+    background: #ffffff;
+}
+
+.king-addons-image-hover-box-layout-3:hover .king-addons-image-hover-box-text-title::after,
+.king-addons-image-hover-box-layout-3.king-addons-image-hover-box-active .king-addons-image-hover-box-text-title::after {
+    transform: translate3d(0, 0, 0);
+}
+
+.king-addons-image-hover-box-layout-3 .king-addons-image-hover-box-text-description {
+    padding: 15px 0;
+    transition: opacity 0.35s, transform 0.35s;
+    transform: translate3d(100%, 0, 0);
+    opacity: 0;
+}
+
+.king-addons-image-hover-box-layout-3:hover .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-3.king-addons-image-hover-box-active .king-addons-image-hover-box-text-description {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+.king-addons-image-hover-box.king-addons-image-hover-box-layout-5 .king-addons-image-hover-box-toggle-size {
+    left: 50%;
+    width: auto !important;
+    max-width: none;
+    height: 100%;
+    transform: translateX(-50%);
+}
+
+.king-addons-image-hover-box img {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.king-addons-image-hover-box-layout-7 img {
+    width: calc(100% + 40px) !important;
+    max-width: calc(100% + 40px) !important;
+    transition: opacity 0.35s, filter 0.35s, transform 0.35s;
+}
+
+/*noinspection SpellCheckingInspection*/
+.king-addons-image-hover-box-layout-7 .king-addons-image-hover-box-border-lr {
+    width: 7px;
+}
+
+/*noinspection SpellCheckingInspection*/
+.king-addons-image-hover-box-layout-7 .king-addons-image-hover-box-border-tb {
+    height: 7px;
+}
+
+.king-addons-image-hover-box-layout-7 .king-addons-image-hover-box-br {
+    position: absolute;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.2s;
+    background-color: white;
+}
+
+/*noinspection SpellCheckingInspection*/
+.king-addons-image-hover-box-layout-7 .king-addons-image-hover-box-bleft {
+    top: calc(100% - 150px);
+    left: 30px;
+    height: 0;
+}
+
+.king-addons-image-hover-box-layout-7 .king-addons-image-hover-box-bright {
+    right: 30px;
+    bottom: calc(100% - 150px);
+    height: 0;
+}
+
+.king-addons-image-hover-box-layout-7 .king-addons-image-hover-box-bottom {
+    right: calc(100% - 150px);
+    bottom: 30px;
+    width: 0;
+}
+
+/*noinspection SpellCheckingInspection*/
+.king-addons-image-hover-box-layout-7 .king-addons-image-hover-box-btop {
+    top: 30px;
+    left: calc(100% - 150px);
+    width: 0;
+}
+
+.king-addons-image-hover-box-layout-7 .king-addons-image-hover-box-text {
+    display: table;
+    padding: 70px;
+}
+
+.king-addons-image-hover-box-layout-7 .king-addons-image-hover-box-text .king-addons-image-hover-box-text-centered {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.king-addons-image-hover-box-layout-7 .king-addons-image-hover-box-text-title {
+    margin-top: 0;
+}
+
+.king-addons-image-hover-box-layout-7 .king-addons-image-hover-box-text-title,
+.king-addons-image-hover-box-layout-7 img {
+    transform: translate3d(-30px, 0, 0);
+}
+
+.king-addons-image-hover-box-layout-7.king-addons-image-hover-box-zoom-out img,
+.king-addons-image-hover-box-layout-7.king-addons-image-hover-box-scale img {
+    transform: translate3d(-30px, 0, 0) scale(1.1);
+}
+
+.king-addons-image-hover-box-layout-7 .king-addons-image-hover-box-text-description {
+    margin-top: 10px;
+}
+
+.king-addons-image-hover-box-layout-7 .king-addons-image-hover-box-text::after,
+.king-addons-image-hover-box-layout-7 .king-addons-image-hover-box-text::before {
+    transition: opacity 0.35s, transform 0.35s;
+}
+
+.king-addons-image-hover-box-layout-7 .king-addons-image-hover-box-text-title,
+.king-addons-image-hover-box-layout-7 .king-addons-image-hover-box-text-description {
+    transition: opacity 0.35s, transform 0.35s;
+    opacity: 0;
+}
+
+.king-addons-image-hover-box-layout-7:hover .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-7.king-addons-image-hover-box-active .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-7:hover .king-addons-image-hover-box-text-title,
+.king-addons-image-hover-box-layout-7.king-addons-image-hover-box-active .king-addons-image-hover-box-text-title {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+/*noinspection SpellCheckingInspection*/
+.king-addons-image-hover-box-layout-7:hover .king-addons-image-hover-box-bleft,
+.king-addons-image-hover-box-layout-7.king-addons-image-hover-box-active .king-addons-image-hover-box-bleft {
+    top: 30px;
+    height: 70px;
+}
+
+.king-addons-image-hover-box-layout-7:hover .king-addons-image-hover-box-bright,
+.king-addons-image-hover-box-layout-7.king-addons-image-hover-box-active .king-addons-image-hover-box-bright {
+    bottom: 30px;
+    height: 70px;
+}
+
+.king-addons-image-hover-box-layout-7:hover .king-addons-image-hover-box-bottom,
+.king-addons-image-hover-box-layout-7.king-addons-image-hover-box-active .king-addons-image-hover-box-bottom {
+    right: 30px;
+    width: 70px;
+}
+
+/*noinspection SpellCheckingInspection*/
+.king-addons-image-hover-box-layout-7:hover .king-addons-image-hover-box-btop,
+.king-addons-image-hover-box-layout-7.king-addons-image-hover-box-active .king-addons-image-hover-box-btop {
+    left: 30px;
+    width: 70px;
+}
+
+.king-addons-image-hover-box-layout-7:hover .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-7:hover .king-addons-image-hover-box-text-title,
+.king-addons-image-hover-box-layout-7:hover img {
+    transition-delay: 0.15s;
+}
+
+.king-addons-image-hover-box-layout-8 img {
+    width: calc(100% + 40px) !important;
+    max-width: calc(100% + 40px) !important;
+    transition: opacity 0.35s, filter 0.35s, transform 0.35s;
+}
+
+/*noinspection SpellCheckingInspection*/
+.king-addons-image-hover-box-layout-8 .king-addons-image-hover-box-border-lr {
+    width: 7px;
+}
+
+/*noinspection SpellCheckingInspection*/
+.king-addons-image-hover-box-layout-8 .king-addons-image-hover-box-border-tb {
+    height: 7px;
+}
+
+.king-addons-image-hover-box-layout-8 .king-addons-image-hover-box-br {
+    position: absolute;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.2s;
+    background-color: white;
+}
+
+/*noinspection SpellCheckingInspection*/
+.king-addons-image-hover-box-layout-8 .king-addons-image-hover-box-bleft {
+    top: 50%;
+    left: 30px;
+    height: 0;
+    transform: translateY(-50%);
+}
+
+.king-addons-image-hover-box-layout-8 .king-addons-image-hover-box-bright {
+    top: 50%;
+    right: 30px;
+    height: 0;
+    transform: translateY(-50%);
+}
+
+.king-addons-image-hover-box-layout-8 .king-addons-image-hover-box-bottom {
+    bottom: 30px;
+    left: 50%;
+    width: 0;
+    transform: translateX(-50%);
+}
+
+/*noinspection SpellCheckingInspection*/
+.king-addons-image-hover-box-layout-8 .king-addons-image-hover-box-btop {
+    top: 30px;
+    left: 50%;
+    width: 0;
+    transform: translateX(-50%);
+}
+
+.king-addons-image-hover-box-layout-8 .king-addons-image-hover-box-text {
+    display: table;
+    padding: 70px;
+}
+
+.king-addons-image-hover-box-layout-8 .king-addons-image-hover-box-text .king-addons-image-hover-box-text-centered {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.king-addons-image-hover-box-layout-8 .king-addons-image-hover-box-text-title {
+    margin-top: 0;
+}
+
+.king-addons-image-hover-box-layout-8 .king-addons-image-hover-box-text-title,
+.king-addons-image-hover-box-layout-8 img {
+    transform: translate3d(-30px, 0, 0);
+}
+
+.king-addons-image-hover-box-layout-8.king-addons-image-hover-box-zoom-out img,
+.king-addons-image-hover-box-layout-8.king-addons-image-hover-box-scale img {
+    transform: translate3d(-30px, 0, 0) scale(1.1);
+}
+
+.king-addons-image-hover-box-layout-8 .king-addons-image-hover-box-text-description {
+    margin-top: 10px;
+}
+
+.king-addons-image-hover-box-layout-8 .king-addons-image-hover-box-text::after,
+.king-addons-image-hover-box-layout-8 .king-addons-image-hover-box-text::before {
+    transition: opacity 0.35s, transform 0.35s;
+}
+
+.king-addons-image-hover-box-layout-8 .king-addons-image-hover-box-text-title,
+.king-addons-image-hover-box-layout-8 .king-addons-image-hover-box-text-description {
+    transition: opacity 0.35s, transform 0.35s;
+    opacity: 0;
+}
+
+.king-addons-image-hover-box-layout-8:hover .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-8.king-addons-image-hover-box-active .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-8:hover .king-addons-image-hover-box-text-title,
+.king-addons-image-hover-box-layout-8.king-addons-image-hover-box-active .king-addons-image-hover-box-text-title {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+/*noinspection SpellCheckingInspection*/
+.king-addons-image-hover-box-layout-8:hover .king-addons-image-hover-box-bleft,
+.king-addons-image-hover-box-layout-8.king-addons-image-hover-box-active .king-addons-image-hover-box-bleft {
+    height: calc(100% - 61px);
+}
+
+.king-addons-image-hover-box-layout-8:hover .king-addons-image-hover-box-bright,
+.king-addons-image-hover-box-layout-8.king-addons-image-hover-box-active .king-addons-image-hover-box-bright {
+    height: calc(100% - 61px);
+}
+
+.king-addons-image-hover-box-layout-8:hover .king-addons-image-hover-box-bottom,
+.king-addons-image-hover-box-layout-8.king-addons-image-hover-box-active .king-addons-image-hover-box-bottom {
+    width: calc(100% - 61px);
+}
+
+/*noinspection SpellCheckingInspection*/
+.king-addons-image-hover-box-layout-8:hover .king-addons-image-hover-box-btop,
+.king-addons-image-hover-box-layout-8.king-addons-image-hover-box-active .king-addons-image-hover-box-btop {
+    width: calc(100% - 61px);
+}
+
+.king-addons-image-hover-box-layout-8:hover .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-8:hover .king-addons-image-hover-box-text-title,
+.king-addons-image-hover-box-layout-8:hover img {
+    transition-delay: 0.15s;
+}
+
+.king-addons-image-hover-box-layout-9 img {
+    width: calc(100% + 20px) !important;
+    max-width: calc(100% + 20px) !important;
+    transition: opacity 0.35s, filter 0.35s, transform 0.35s;
+    transform: scale(1.2);
+}
+
+.king-addons-image-hover-box-layout-9 .king-addons-image-hover-box-text {
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-image-hover-box-layout-9 .king-addons-image-hover-box-text::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 1px;
+    content: '';
+    transition: opacity 0.35s, transform 0.35s;
+    transform: translate3d(-50%, -50%, 0);
+    background: #ffffff;
+}
+
+.king-addons-image-hover-box-layout-9 .king-addons-image-hover-box-text::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 1px;
+    content: '';
+    transition: opacity 0.35s, transform 0.35s;
+    transform: translate3d(-50%, -50%, 0);
+    background: #ffffff;
+}
+
+.king-addons-image-hover-box-layout-9 .king-addons-image-hover-box-text-title {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    margin-top: 0;
+    padding: 0 10%;
+    transition: transform 0.35s;
+    transform: translate3d(0, -70px, 0);
+}
+
+.king-addons-image-hover-box-layout-9:hover .king-addons-image-hover-box-text-title,
+.king-addons-image-hover-box-layout-9.king-addons-image-hover-box-active .king-addons-image-hover-box-text-title {
+    transform: translate3d(0, -80px, 0);
+}
+
+.king-addons-image-hover-box-layout-9 .king-addons-image-hover-box-text-description {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    padding: 0 10%;
+    transition: transform 0.35s;
+    transform: translate3d(0, 35px, 0);
+}
+
+.king-addons-image-hover-box-layout-9:hover .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-9.king-addons-image-hover-box-active .king-addons-image-hover-box-text-description {
+    transform: translate3d(0, 45px, 0);
+}
+
+.king-addons-image-hover-box-layout-9:hover .king-addons-image-hover-box-text::before,
+.king-addons-image-hover-box-layout-9.king-addons-image-hover-box-active .king-addons-image-hover-box-text::before {
+    transform: translate3d(-50%, -50%, 0) rotate(45deg);
+    opacity: 0.5;
+}
+
+.king-addons-image-hover-box-layout-9:hover .king-addons-image-hover-box-text::after,
+.king-addons-image-hover-box-layout-9.king-addons-image-hover-box-active .king-addons-image-hover-box-text::after {
+    transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+    opacity: 0.5;
+}
+
+.king-addons-image-hover-box-layout-9:hover img {
+    transform: scale(1);
+}
+
+.king-addons-image-hover-box-layout-10 img {
+    width: calc(100% + 20px) !important;
+    max-width: calc(100% + 20px) !important;
+    transition: opacity 0.35s, filter 0.35s, transform 0.35s;
+}
+
+.king-addons-image-hover-box-layout-10 .king-addons-image-hover-box-text-title {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+    padding: 5px 0 15px;
+    transition: transform 0.35s;
+    transform: translate3d(0, 20px, 0);
+}
+
+.king-addons-image-hover-box-layout-10 .king-addons-image-hover-box-text-title::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    content: '';
+    transition: opacity 0.35s, transform 0.35s;
+    transform: translate3d(0, 100%, 0);
+    opacity: 0;
+    background: #ffffff;
+}
+
+.king-addons-image-hover-box-layout-10:hover .king-addons-image-hover-box-text-title,
+.king-addons-image-hover-box-layout-10.king-addons-image-hover-box-active .king-addons-image-hover-box-text-title {
+    transform: translate3d(0, 0, 0);
+}
+
+.king-addons-image-hover-box-layout-10:hover .king-addons-image-hover-box-text-title::after,
+.king-addons-image-hover-box-layout-10.king-addons-image-hover-box-active .king-addons-image-hover-box-text-title::after {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+.king-addons-image-hover-box-layout-10.king-addons-image-hover-box-zoom-out img,
+.king-addons-image-hover-box-layout-10.king-addons-image-hover-box-scale img {
+    transform: translate3d(-10px, 0, 0) scale(1.1);
+}
+
+.king-addons-image-hover-box-layout-10 .king-addons-image-hover-box-text-description {
+    padding-top: 15px;
+    transition: opacity 0.35s, transform 0.35s;
+    transform: translate3d(0, 100%, 0);
+    opacity: 0;
+}
+
+.king-addons-image-hover-box-layout-10:hover .king-addons-image-hover-box-text-description,
+.king-addons-image-hover-box-layout-10.king-addons-image-hover-box-active .king-addons-image-hover-box-text-description {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+.king-addons-image-hover-box-layout-11 {
+    transition: transform 1s ease-out;
+    transition-delay: 0.125s;
+}
+
+.king-addons-image-hover-box-layout-11 .king-addons-image-hover-box-text {
+    position: absolute;
+    z-index: 5;
+    top: auto;
+    bottom: 0;
+    height: auto;
+    min-height: 25%;
+    max-height: 100%;
+    padding: 30px;
+    transition: all 0.6s ease-out;
+    transform: translate3d(-30px, 0, 0);
+    text-align: left;
+    opacity: 0;
+}
+
+.king-addons-image-hover-box-layout-11 img {
+    width: 100%;
+    transition: opacity 0.35s, filter 0.35s, transform 0.35s;
+}
+
+.king-addons-image-hover-box-layout-11 .king-addons-image-hover-box-text-title {
+    margin-bottom: 10px;
+}
+
+.king-addons-image-hover-box-layout-11 .king-addons-image-hover-box-gradient {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.king-addons-image-hover-box-layout-11 .king-addons-image-hover-box-gradient:after,
+.king-addons-image-hover-box-layout-11 .king-addons-image-hover-box-gradient:before {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    transform: translate3d(-100%, 0, 0);
+    background-image: linear-gradient(50deg, rgba(84, 89, 95, 0.5) 27.89%, #6ec1e4 72.11%);
+}
+
+.king-addons-image-hover-box-layout-11 .king-addons-image-hover-box-gradient:before {
+    mix-blend-mode: color;
+}
+
+.king-addons-image-hover-box-layout-11 .king-addons-image-hover-box-gradient:after {
+    mix-blend-mode: multiply;
+}
+
+.king-addons-image-hover-box-layout-11:hover .king-addons-image-hover-box-text,
+.king-addons-image-hover-box-layout-11.king-addons-image-hover-box-active .king-addons-image-hover-box-text {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+.king-addons-image-hover-box-layout-11:hover .king-addons-image-hover-box-gradient:after,
+.king-addons-image-hover-box-layout-11:hover .king-addons-image-hover-box-gradient:before,
+.king-addons-image-hover-box-layout-11.king-addons-image-hover-box-active .king-addons-image-hover-box-gradient:after,
+.king-addons-image-hover-box-layout-11.king-addons-image-hover-box-active .king-addons-image-hover-box-gradient:before {
+    transform: translate3d(0, 0, 0);
+}
+
+.king-addons-image-hover-box-layout-11.king-addons-image-hover-box-zoom-out img,
+.king-addons-image-hover-box-layout-11.king-addons-image-hover-box-scale img {
+    transform: translate3d(-10px, 0, 0) scale(1.1);
+}
+
+.king-addons-image-hover-box-text-description p img {
+    display: inline;
+    width: auto !important;
+    min-width: unset !important;
+    max-width: none !important;
+    transform: none !important;
+}
+
+.king-addons-image-hover-box-link {
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+.king-addons-image-hover-box-gradient {
+    overflow: hidden;
+}

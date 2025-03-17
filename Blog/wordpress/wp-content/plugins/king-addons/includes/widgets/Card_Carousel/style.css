@@ -1,0 +1,114 @@
+.king-addons-card-carousel-items {
+    position: relative;
+    overflow: hidden;
+}
+
+.king-addons-card-carousel-items-wrap {
+    position: relative;
+}
+
+.king-addons-card-carousel-btn {
+    display: block;
+    width: auto;
+    transition: all 215ms;
+}
+
+.king-addons-card-carousel-button {
+    display: flex;
+    flex-flow: column;
+}
+
+.king-addons-card-carousel-card,
+.king-addons-card-carousel-image {
+    overflow: hidden;
+}
+
+.king-addons-card-carousel-image img {
+    width: auto;
+    height: auto;
+}
+
+.king-addons-card-carousel-card-inner,
+.king-addons-card-carousel-card {
+    display: flex;
+    width: 100%;
+}
+
+.king-addons-card-carousel-card-container-1,
+.king-addons-card-carousel-card-container-2 {
+    display: flex;
+    flex-flow: column;
+    overflow: hidden;
+    height: auto;
+    width: auto;
+}
+
+/* !important is necessary */
+.king-addons-card-carousel-autoplay-like-ticker,
+.king-addons-card-carousel-autoplay-like-ticker-pag.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    transition-timing-function: linear !important;
+}
+
+.king-addons-card-carousel-cursor-pointer {
+    cursor: pointer;
+}
+
+/*noinspection DuplicatedCode*/
+.king-addons-card-carousel-nav {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+}
+
+.king-addons-card-carousel-nav-inner {
+    display: flex;
+}
+
+.king-addons-card-carousel-nav.swiper-button-disabled .king-addons-card-carousel-nav-inner {
+    opacity: 0.4;
+}
+
+.king-addons-card-carousel-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+/*noinspection SpellCheckingInspection*/
+.king-addons-card-carousel-imagedescription {
+    width: 100%;
+}
+
+.king-addons-card-carousel-card a.king-addons-card-carousel-card-link {
+    display: block;
+    background: 0 0;
+}
+
+/*noinspection DuplicatedCode*/
+.king-addons-card-carousel-card .king-addons-card-carousel-card-link {
+    font-size: 0;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    text-indent: 200%;
+    opacity: 0;
+}
+
+.swiper-container:not(.swiper-container-initialized) > .swiper-wrapper,
+.swiper:not(.swiper-initialized) > .swiper-wrapper {
+    overflow: visible !important;
+}

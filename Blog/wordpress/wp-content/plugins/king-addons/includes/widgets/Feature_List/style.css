@@ -1,0 +1,87 @@
+.king-addons-feature-list-center .king-addons-feature-list-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.king-addons-feature-list-center .king-addons-feature-list-content-wrap {
+    text-align: center;
+}
+
+.king-addons-feature-list-right .king-addons-feature-list-item {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.king-addons-feature-list-right .king-addons-feature-list-content-wrap {
+    text-align: right;
+}
+
+.king-addons-feature-list-align-flex-start .king-addons-feature-list-title,
+.king-addons-feature-list-align-flex-start .king-addons-feature-list-description {
+    text-align: left;
+}
+
+.king-addons-feature-list-align-flex-end .king-addons-feature-list-title,
+.king-addons-feature-list-align-flex-end .king-addons-feature-list-description {
+    text-align: right;
+}
+
+.king-addons-feature-list-rhombus .king-addons-feature-list-icon-inner-wrap {
+    transform: rotate(45deg);
+}
+
+.king-addons-feature-list-rhombus .king-addons-feature-list-icon-wrap i,
+.king-addons-feature-list-rhombus .king-addons-feature-list-icon-wrap img {
+    transform: rotate(-45deg);
+}
+
+.king-addons-feature-list-wrap .king-addons-feature-list-icon-inner-wrap {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.king-addons-feature-list {
+    padding: 0;
+}
+
+.king-addons-feature-list-line-yes .king-addons-feature-list-icon-wrap {
+    position: relative;
+}
+
+.king-addons-feature-list-icon-wrap img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.king-addons-feature-list-center .king-addons-feature-list-line {
+    display: none;
+}
+
+.king-addons-feature-list-item:not(:last-of-type) .king-addons-feature-list-line {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform: translateX(-50%);
+}
+
+.king-addons-feature-list .king-addons-feature-list-item:last-child .king-addons-feature-list-line,
+.king-addons-feature-list-item:last-of-type .king-addons-feature-list-line {
+    display: none;
+}
+
+.king-addons-feature-list-title,
+.king-addons-feature-list-description {
+    margin: 0;
+}
+
+.king-addons-feature-list-left .king-addons-feature-list-item {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}

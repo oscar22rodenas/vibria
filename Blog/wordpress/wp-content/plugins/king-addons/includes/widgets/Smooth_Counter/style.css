@@ -1,0 +1,24 @@
+.king-addons-smooth-counter {
+    font-size: 54px;
+    font-weight: 400;
+    line-height: 1;
+    width: fit-content;
+    max-width: fit-content;
+}
+
+.king-addons-smooth-counter-title {
+    font-size: 28px;
+    line-height: 1.5;
+}
+
+.king-addons-smooth-counter.odometer.odometer-theme-minimal,
+.king-addons-smooth-counter.odometer.odometer-theme-minimal .odometer-digit .odometer-digit-spacer,
+.king-addons-smooth-counter.odometer.odometer-theme-minimal .odometer-digit .odometer-digit-inner,
+.king-addons-smooth-counter.odometer.odometer-theme-minimal .odometer-digit {
+    vertical-align: baseline;
+}
+
+.king-addons-smooth-counter-inner {
+    display: flex;
+    place-items: end;
+}
