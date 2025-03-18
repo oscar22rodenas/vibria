@@ -1,0 +1,33 @@
+---
+// src/pages/[lang]/index.astro
+import Layout from '../../layouts/Layout.astro';
+import { getPageInfo } from '../../lib/wp.js';
+import LanguageSwitcher from '../../components/LanguageSwitcher.astro';
+
+// Obtén el parámetro 'lang' de la URL
+const { lang } = Astro.params;
+
+
+// Mapeo de slugs a los idiomas disponibles
+const slugMap = {
+  es: 'vibria-es',
+  ca: 'vibria-ca',
+  en: 'vibria-en',
+};
+
+// Verifica si el idioma es válido
+if (!slugMap[lang]) {
+  throw new Error(`Idioma ${lang} no soportado`);
+}
+
+// Realiza la solicitud a la API de WordPress usando el slug correspondiente
+const { title, content } = await getPageInfo(slugMap[lang]);
+
+export const prerender = false;
+---
+
+<Layout>
+  <LanguageSwitcher currentLang={lang} />
+  <h1>{title}</h1>
+  <div set:html={content}></div>
+</Layout>
