@@ -10,9 +10,9 @@ const { lang } = Astro.params;
 
 // Mapeo de slugs a los idiomas disponibles
 const slugMap = {
-  es: 'vibria-es',
-  ca: 'vibria-ca',
-  en: 'vibria-en',
+  es: 'home-es',
+  ca: 'home-ca',
+  en: 'home-en',
 };
 
 // Verifica si el idioma es válido
@@ -21,13 +21,15 @@ if (!slugMap[lang]) {
 }
 
 // Realiza la solicitud a la API de WordPress usando el slug correspondiente
-const { title, content } = await getPageInfo(slugMap[lang]);
+const afc = await getPageInfo(slugMap[lang]);
 
 export const prerender = false;
 ---
 
 <Layout>
   <LanguageSwitcher currentLang={lang} />
-  <h1>{title}</h1>
-  <div set:html={content}></div>
+  <div class="flex flex-col items-center justify-center bg-green-100 p-4">
+    <h2 class="text-xl text-white border-white">{afc.difusion_descripcion}</h2>
+    <p>{afc.difusion_link}</p>
+  </div>
 </Layout>

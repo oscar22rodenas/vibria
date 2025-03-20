@@ -7,7 +7,7 @@ export const getPageInfo = async (slug) => {
     throw new Error("Failed to fetch page info");
   }
   const [data] = await response.json();
+  console.log([data]);
 
-  const { title: { rendered: title }, content: { rendered: content} } = data;
-  return { title, content };
+  return data.acf;
 };
