@@ -33,21 +33,25 @@ services:
   wordpress:
     depends_on:
       - db
-    image: wordpress:latest
+    build:
+      context: ..  # Usa el Dockerfile personalizado
+      dockerfile: server/Dockerfile
     ports:
       - '8000:80'
     restart: always
     volumes:
-      - ../Blog/wordpress:/var/www/html  # Asegúrate de que el path es correcto, ../Blog apunta al directorio Blog
+      - ../Blog/wordpress:/var/www/html
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
     networks:
-      - wpsite
+      - wpsite  # Solo referencia la red aquí
 
+# Definición correcta de la red
 networks:
   wpsite:
+    driver: bridge  # Aquí es donde debe ir el driver
 
 volumes:
   db_data:
