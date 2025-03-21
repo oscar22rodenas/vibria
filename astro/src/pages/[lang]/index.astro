@@ -1,8 +1,7 @@
 ---
 // src/pages/[lang]/index.astro
 import Layout from '../../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import { getPageInfo, getImageUrl } from '../../lib/wp.js';
+import { getPageInfo, getImageInfo } from '../../lib/wp/index.js';
 import LanguageSwitcher from '../../components/LanguageSwitcher.astro';
 
 // Obtén el parámetro 'lang' de la URL
@@ -25,7 +24,7 @@ if (!slugMap[lang]) {
 const acf = await getPageInfo(slugMap[lang]);
 
 // Obtiene la imagen de difusión y su URL
-const imageData = acf.difusion_imagen ? await getImageUrl(acf.difusion_imagen) : null;
+const imageData = acf.difusion_imagen ? await getImageInfo(acf.difusion_imagen) : null;
 const ImageUrl = imageData?.source_url || "";
 const ImageAlt = imageData?.alt_text || "Imagen de canal de difusión";
 
