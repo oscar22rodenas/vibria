@@ -1,7 +1,8 @@
 ---
 // src/pages/[lang]/index.astro
 import Layout from '../../layouts/Layout.astro';
-import { getPageInfo } from '../../lib/wp.js';
+import { Image } from 'astro:assets';
+import { getPageInfo, getImageUrl } from '../../lib/wp.js';
 import LanguageSwitcher from '../../components/LanguageSwitcher.astro';
 
 // Obtén el parámetro 'lang' de la URL
@@ -21,15 +22,34 @@ if (!slugMap[lang]) {
 }
 
 // Realiza la solicitud a la API de WordPress usando el slug correspondiente
-const afc = await getPageInfo(slugMap[lang]);
+const acf = await getPageInfo(slugMap[lang]);
+
+// Obtiene la imagen de difusión y su URL
+const imageData = acf.difusion_imagen ? await getImageUrl(acf.difusion_imagen) : null;
+const ImageUrl = imageData?.source_url || "";
+const ImageAlt = imageData?.alt_text || "Imagen de canal de difusión";
 
 export const prerender = false;
 ---
 
 <Layout>
   <LanguageSwitcher currentLang={lang} />
-  <div class="flex flex-col items-center justify-center bg-green-100 p-4">
-    <h2 class="text-xl text-white border-white">{afc.difusion_descripcion}</h2>
-    <p>{afc.difusion_link}</p>
+
+  <div class="flex flex-col items-center justify-center bg-secondary px-20 py-8 rounded-lg shadow-lg text-center">
+    <div class="border border-white p-1">
+      <p class="font-700 p">{acf.difusion_descripcion}</p>
+    </div>
+
+    {ImageUrl && (
+      <a href={acf.difusion_link} class="mt-4">
+        <img 
+          src={ImageUrl} 
+          alt={ImageAlt} 
+          width="60" 
+          height="60" 
+          class="rounded-lg transition-transform transform hover:scale-105"
+        />
+      </a>
+    )}
   </div>
 </Layout>

@@ -1,9 +1,41 @@
-/* src/styles/global.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Agregar clases personalizadas si es necesario */
-.prose {
-  @apply text-gray-800 leading-relaxed;
+/* Estilos de títulos y textos */
+.h1 {
+  @apply font-poppins text-h1 font-800 text-white;
 }
+
+.h2 {
+  @apply font-poppins text-h2 leading-[18px] text-white;
+}
+
+.h2.double-line {
+  @apply leading-[30px] text-white; /* Si ocupa dos líneas */
+}
+
+.h3 {
+  @apply font-poppins text-h3 leading-[18px] text-white;
+}
+
+.h3.double-line {
+  @apply leading-[24px] text-white; /* Si ocupa dos líneas */
+}
+
+.h4 {
+  @apply font-poppins text-h4 leading-[30px] text-white;
+}
+
+.h4.small-line {
+  @apply leading-[18px] text-white; /* Algunos tienen 18px */
+}
+
+.p {
+  @apply font-poppins text-p text-white;
+}
+
+.btn {
+    @apply bg-secondary text-white font-bold text-[20px] uppercase text-center 
+           rounded-full shadow-[0px_4px_0px_0px_#FFC721] py-0.5 px-5 text-white;
+  }
