@@ -1,0 +1,66 @@
+.king-addons-mailchimp-fields {
+    display: flex;
+}
+
+.king-addons-mailchimp-email label,
+.king-addons-mailchimp-email input,
+.king-addons-mailchimp-first-name label,
+.king-addons-mailchimp-first-name input,
+.king-addons-mailchimp-last-name label,
+.king-addons-mailchimp-last-name input,
+.king-addons-mailchimp-phone-number label,
+.king-addons-mailchimp-phone-number input {
+    display: block;
+    width: 100%;
+}
+
+.king-addons-mailchimp-layout-hr .king-addons-mailchimp-fields {
+    align-items: flex-end;
+    flex-direction: row;
+}
+
+.king-addons-mailchimp-layout-vr .king-addons-mailchimp-fields {
+    flex-direction: column;
+}
+
+.king-addons-mailchimp-layout-hr .king-addons-mailchimp-email,
+.king-addons-mailchimp-layout-hr .king-addons-mailchimp-first-name,
+.king-addons-mailchimp-layout-hr .king-addons-mailchimp-last-name,
+.king-addons-mailchimp-layout-hr .king-addons-mailchimp-phone-number {
+    flex-grow: 1;
+}
+
+.king-addons-mailchimp-subscribe-btn {
+    width: 100%;
+    padding: 0 !important;
+    cursor: pointer;
+    outline: none !important;
+}
+
+.king-addons-mailchimp-message,
+.king-addons-mailchimp-success-message,
+.king-addons-mailchimp-error-message {
+    display: none;
+}
+
+.elementor-widget-king-addons-mailchimp .king-addons-mailchimp-header h3 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-top: 0;
+}
+
+.elementor-widget-king-addons-mailchimp .king-addons-mailchimp-header p {
+    font-size: 14px;
+}
+
+.elementor-widget-king-addons-mailchimp .king-addons-mailchimp-fields label {
+    font-size: 13px;
+}
+
+.elementor-widget-king-addons-mailchimp .king-addons-mailchimp-subscribe-btn {
+    background-color: #5B03FF;
+}
+
+.elementor-widget-king-addons-mailchimp .king-addons-mailchimp-subscribe-btn:hover {
+    background-color: #4D02D8;
+}

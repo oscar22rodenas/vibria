@@ -1,0 +1,57 @@
+---
+// src/pages/[lang]/index.astro
+import Layout from '../../layouts/Layout.astro';
+import { getPageInfo, getImageInfo } from '../../lib/wp/index.js';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+// Obtén el parámetro 'lang' de la URL
+const { lang } = Astro.params;
+
+
+// Mapeo de slugs a los idiomas disponibles
+const slugMap = {
+  es: 'home-es',
+  ca: 'home-ca',
+  en: 'home-en',
+};
+
+// Verifica si el idioma es válido
+if (!slugMap[lang]) {
+  throw new Error(`Idioma ${lang} no soportado`);
+}
+
+// Realiza la solicitud a la API de WordPress usando el slug correspondiente
+const acf = await getPageInfo(slugMap[lang]);
+
+// Obtiene la imagen de difusión y su URL
+const imageData = acf.difusion_imagen ? await getImageInfo(acf.difusion_imagen) : null;
+const ImageUrl = imageData?.source_url || "";
+const ImageAlt = imageData?.alt_text || "Imagen de canal de difusión";
+
+export const prerender = false;
+---
+
+<Layout>
+  <Header />
+
+  <div class="flex flex-col items-center justify-center bg-secondary px-20 py-8 text-center">
+    <div class="border border-white p-1">
+      <p class="font-700 p">{acf.difusion_descripcion}</p>
+    </div>
+
+    {ImageUrl && (
+      <a href={acf.difusion_link} class="mt-4">
+        <img 
+          src={ImageUrl} 
+          alt={ImageAlt} 
+          width="60" 
+          height="60" 
+          class="rounded-lg transition-transform transform hover:scale-105"
+        />
+      </a>
+    )}
+  </div>
+
+  <Footer />
+</Layout>

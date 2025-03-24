@@ -1,0 +1,297 @@
+.king-addons-image-accordion * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.king-addons-img-accordion-wrapper-link-yes {
+    cursor: pointer;
+}
+
+.king-addons-image-accordion-wrap {
+    overflow: hidden;
+    opacity: 0;
+}
+
+.king-addons-skew-acc-images-yes .king-addons-image-accordion-wrap {
+    overflow: visible;
+}
+
+.king-addons-image-accordion-wrap h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 44px;
+    position: relative;
+    margin-bottom: 45px;
+    text-transform: uppercase;
+    color: #424242;
+}
+
+.king-addons-image-accordion-wrap .king-addons-image-accordion {
+    display: flex;
+    width: 100%;
+}
+
+.king-addons-image-accordion-wrap .king-addons-image-accordion-item {
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+}
+
+.king-addons-image-accordion-wrap .king-addons-image-accordion-item .king-addons-accordion-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.king-addons-img-accordion-item-description .inner-block {
+    display: inline-block;
+}
+
+.king-addons-image-accordion-wrap .king-addons-img-accordion-media-hover,
+.king-addons-image-accordion-wrap .king-addons-img-accordion-hover-bg {
+    position: absolute;
+}
+
+.king-addons-image-accordion-item {
+    text-align: center;
+}
+
+.king-addons-image-accordion-item-inner {
+    position: relative;
+    text-align: center;
+}
+
+.king-addons-img-accordion-item-display-custom.king-addons-img-accordion-item-align-center {
+    display: inline-block;
+    float: none;
+    vertical-align: middle;
+}
+
+.king-addons-img-accordion-media-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-img-accordion-media-hover-top {
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.king-addons-img-accordion-media-hover-bottom {
+    position: absolute;
+    z-index: 99;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.king-addons-img-accordion-media-hover-middle {
+    position: relative;
+    z-index: 2;
+}
+
+.king-addons-img-accordion-sep-style-1 .inner-block > span,
+.king-addons-img-accordion-sep-style-2 .inner-block > span {
+    display: inline-block;
+}
+
+.king-addons-img-accordion-item-display-custom.king-addons-img-accordion-sep-style-2 .inner-block > span,
+.king-addons-img-accordion-item-display-custom.king-addons-img-accordion-sep-style-1 .inner-block > span {
+    width: 100%;
+}
+
+.king-addons-img-accordion-item-display-block {
+    clear: both;
+}
+
+.king-addons-img-accordion-item-separator.king-addons-img-accordion-item-display-inline span {
+    width: 100% !important;
+}
+
+.king-addons-img-accordion-item-display-inline.king-addons-img-accordion-item-align-left,
+.king-addons-img-accordion-item-display-custom.king-addons-img-accordion-item-align-left {
+    float: left;
+}
+
+.king-addons-img-accordion-item-display-inline.king-addons-img-accordion-item-align-right,
+.king-addons-img-accordion-item-display-custom.king-addons-img-accordion-item-align-right {
+    float: right;
+}
+
+.king-addons-img-accordion-item-display-inline.king-addons-img-accordion-item-align-center,
+.king-addons-img-accordion-item-display-custom.king-addons-img-accordion-item-align-center {
+    display: inline-block;
+    float: none;
+    vertical-align: middle;
+}
+
+.king-addons-accordion-image-wrap {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    background-position: center center;
+    background-size: cover;
+}
+
+.king-addons-accordion-image-wrap img {
+    display: inline;
+    max-height: 100%;
+}
+
+.king-addons-img-accordion-item-lightbox .inner-block > span,
+.king-addons-img-accordion-lightbox-overlay {
+    cursor: pointer;
+}
+
+.king-addons-img-accordion-item-lightbox {
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.king-addons-animation-wrap-active .king-addons-img-accordion-item-lightbox {
+    pointer-events: auto;
+}
+
+.king-addons-img-accordion-item-lightbox .inner-block {
+    position: relative;
+}
+
+.king-addons-img-accordion-lightbox-overlay {
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-image-accordion-item .inner-block a {
+    position: relative;
+    display: inline-block;
+}
+
+.king-addons-image-accordion .king-addons-template-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    height: 100%;
+}
+
+.king-addons-slide.king-addons-effect-dir-top:hover .king-addons-accordion-background {
+    transform: translateY(-100%);
+}
+
+.king-addons-slide.king-addons-effect-dir-bottom:hover .king-addons-accordion-background {
+    transform: translateY(100%);
+}
+
+.king-addons-slide.king-addons-effect-dir-right:hover .king-addons-accordion-background {
+    transform: translateX(100%);
+}
+
+.king-addons-slide.king-addons-effect-dir-left:hover .king-addons-accordion-background {
+    transform: translateX(-100%);
+}
+
+.king-addons-zoom-in.king-addons-effect-size-small:hover .king-addons-accordion-background {
+    transform: scale(1.1);
+}
+
+.king-addons-zoom-in.king-addons-effect-size-medium:hover .king-addons-accordion-background {
+    transform: scale(1.3);
+}
+
+.king-addons-zoom-in.king-addons-effect-size-large:hover .king-addons-accordion-background {
+    transform: scale(1.5);
+}
+
+.king-addons-zoom-out.king-addons-effect-size-small .king-addons-accordion-background {
+    transform: scale(1.1);
+}
+
+.king-addons-zoom-out.king-addons-effect-size-medium .king-addons-accordion-background {
+    transform: scale(1.3);
+}
+
+.king-addons-zoom-out.king-addons-effect-size-large .king-addons-accordion-background {
+    transform: scale(1.5);
+}
+
+.king-addons-zoom-out.king-addons-effect-size-small:hover .king-addons-accordion-background,
+.king-addons-zoom-out.king-addons-effect-size-medium:hover .king-addons-accordion-background,
+.king-addons-zoom-out.king-addons-effect-size-large:hover .king-addons-accordion-background {
+    transform: scale(1);
+}
+
+.king-addons-grayscale-in.king-addons-effect-size-small:hover .king-addons-accordion-background {
+    filter: grayscale(0.3);
+}
+
+.king-addons-grayscale-in.king-addons-effect-size-medium:hover .king-addons-accordion-background {
+    filter: grayscale(0.6);
+}
+
+.king-addons-grayscale-in.king-addons-effect-size-large:hover .king-addons-accordion-background {
+    filter: grayscale(1);
+}
+
+.king-addons-grayscale-out.king-addons-effect-size-small .king-addons-accordion-background {
+    filter: grayscale(0.3);
+}
+
+.king-addons-grayscale-out.king-addons-effect-size-medium .king-addons-accordion-background {
+    filter: grayscale(0.6);
+}
+
+.king-addons-grayscale-out.king-addons-effect-size-large .king-addons-accordion-background {
+    filter: grayscale(1);
+}
+
+.king-addons-grayscale-out.king-addons-effect-size-small:hover .king-addons-accordion-background,
+.king-addons-grayscale-out.king-addons-effect-size-medium:hover .king-addons-accordion-background,
+.king-addons-grayscale-out.king-addons-effect-size-large:hover .king-addons-accordion-background {
+    filter: grayscale(0);
+}
+
+.king-addons-blur-in.king-addons-effect-size-small:hover .king-addons-accordion-background {
+    filter: blur(1px);
+}
+
+.king-addons-blur-in.king-addons-effect-size-medium:hover .king-addons-accordion-background {
+    filter: blur(3px);
+}
+
+.king-addons-blur-in.king-addons-effect-size-large:hover .king-addons-accordion-background {
+    filter: blur(5px);
+}
+
+.king-addons-blur-out.king-addons-effect-size-small .king-addons-accordion-background {
+    filter: blur(1px);
+}
+
+.king-addons-blur-out.king-addons-effect-size-medium .king-addons-accordion-background {
+    filter: blur(3px);
+}
+
+.king-addons-blur-out.king-addons-effect-size-large .king-addons-accordion-background {
+    filter: blur(5px);
+}
+
+.king-addons-blur-out.king-addons-effect-size-small:hover .king-addons-accordion-background,
+.king-addons-blur-out.king-addons-effect-size-medium:hover .king-addons-accordion-background,
+.king-addons-blur-out.king-addons-effect-size-large:hover .king-addons-accordion-background {
+    filter: blur(0px);
+}

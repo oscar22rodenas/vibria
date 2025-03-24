@@ -1,0 +1,756 @@
+.king-addons-timeline-outer-container {
+    position: relative;
+    opacity: 0;
+}
+
+.king-addons-vertical {
+    overflow: hidden;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.king-addons-vertical .king-addons-timeline-centered .king-addons-data-wrap {
+    display: flow-root;
+}
+
+.king-addons-timeline-centered {
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-list-style-none ul {
+    list-style-type: none;
+}
+
+.king-addons-list-style-disc ul {
+    list-style-type: disc;
+}
+
+.king-addons-list-style-decimal ul {
+    list-style-type: decimal;
+}
+
+.king-addons-timeline-centered .king-addons-timeline-entry:last-of-type {
+    margin-bottom: 0 !important;
+}
+
+.king-addons-timeline-centered.king-addons-both-sided-timeline .king-addons-timeline-entry {
+    position: relative;
+    float: right;
+    clear: both;
+    width: 50%;
+    margin-bottom: 70px;
+}
+
+.king-addons-timeline-centered.king-addons-both-sided-timeline .king-addons-timeline-entry.king-addons-left-aligned,
+.king-addons-timeline-centered.king-addons-one-sided-timeline-left .king-addons-timeline-entry.king-addons-left-aligned {
+    float: left;
+}
+
+.king-addons-timeline-centered.king-addons-one-sided-timeline-left .king-addons-timeline-entry.king-addons-left-aligned {
+    width: 100%;
+}
+
+.king-addons-timeline-centered.king-addons-both-sided-timeline .king-addons-timeline-entry.king-addons-left-aligned .king-addons-timeline-entry-inner,
+.king-addons-timeline-centered.king-addons-one-sided-timeline-left .king-addons-timeline-entry.king-addons-left-aligned .king-addons-timeline-entry-inner {
+    margin-left: 0;
+}
+
+.king-addons-wrapper .king-addons-year-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.king-addons-one-sided-timeline-left .king-addons-middle-line,
+.king-addons-one-sided-timeline-left .king-addons-timeline-fill,
+.king-addons-one-sided-timeline-left .king-addons-year-label,
+.king-addons-one-sided-timeline-left .king-addons-icon {
+    left: auto;
+}
+
+.king-addons-timeline-centered .king-addons-timeline-entry .king-addons-timeline-entry-inner {
+    position: relative;
+}
+
+.king-addons-timeline-centered.king-addons-one-sided-timeline .king-addons-timeline-entry {
+    float: left;
+    width: 100%;
+}
+
+.king-addons-timeline-centered.king-addons-one-sided-timeline .king-addons-timeline-entry .king-addons-timeline-entry-inner {
+    margin-left: 0;
+}
+
+.king-addons-both-sided-timeline .king-addons-middle-line {
+    left: 50%;
+}
+
+.king-addons-middle-line {
+    position: absolute;
+    top: 20px;
+    display: block;
+    width: 4px;
+    height: 100%;
+    background-color: rgb(61, 42, 61);
+}
+
+.king-addons-one-sided-timeline-left .king-addons-icon {
+    right: 0.3%;
+}
+
+.king-addons-timeline-fill {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    display: block;
+    width: 4px;
+    height: 0;
+    background-color: rgb(61, 42, 61);
+}
+
+.king-addons-read-more-button {
+    font-size: 14px;
+    display: inline-block;
+}
+
+.king-addons-timeline-centered.king-addons-both-sided-timeline .king-addons-timeline-entry.king-addons-left-aligned .king-addons-extra-label {
+    left: 108%;
+}
+
+.king-addons-horizontal .king-addons-extra-label .king-addons-label,
+.king-addons-horizontal .king-addons-extra-label .king-addons-sub-label {
+    line-height: 1;
+    text-align: center;
+}
+
+.king-addons-left-aligned .king-addons-extra-label .king-addons-label,
+.king-addons-left-aligned .king-addons-extra-label .king-addons-sub-label {
+    text-align: right;
+}
+
+.king-addons-right-aligned .king-addons-extra-label .king-addons-label,
+.king-addons-right-aligned .king-addons-extra-label .king-addons-sub-label {
+    text-align: left;
+}
+
+.king-addons-both-sided-timeline .king-addons-right-aligned .king-addons-extra-label .king-addons-label,
+.king-addons-both-sided-timeline .king-addons-right-aligned .king-addons-extra-label .king-addons-sub-label {
+    text-align: right !important;
+}
+
+.king-addons-both-sided-timeline .king-addons-left-aligned .king-addons-extra-label .king-addons-label,
+.king-addons-both-sided-timeline .king-addons-left-aligned .king-addons-extra-label .king-addons-sub-label {
+    text-align: left !important;
+}
+
+.king-addons-horizontal-bottom .king-addons-extra-label {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: table;
+    overflow: hidden;
+    width: 100%;
+    height: 80px;
+    transform: translateX(-50%);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.king-addons-extra-label .king-addons-label,
+.king-addons-extra-label .king-addons-sub-label {
+    display: block;
+    width: 100%;
+}
+
+.king-addons-extra-label .king-addons-label {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.king-addons-extra-label .king-addons-sub-label {
+    font-size: 12px;
+}
+
+.king-addons-timeline-centered.king-addons-both-sided-timeline .king-addons-timeline-entry.king-addons-left-aligned .king-addons-timeline-entry-inner .king-addons-icon {
+    position: absolute;
+    left: calc(100%);
+    transform: translate(-50%);
+}
+
+.king-addons-both-sided-timeline .king-addons-right-aligned .king-addons-icon {
+    position: absolute;
+    right: calc(100%);
+    transform: translate(50%);
+}
+
+.king-addons-timeline-centered .king-addons-timeline-entry.king-addons-left-aligned .king-addons-timeline-entry-inner .king-addons-data-wrap:after {
+    right: 0;
+    margin-right: -9px;
+    margin-left: 0;
+    transform: rotate(180deg);
+}
+
+.king-addons-right-aligned .king-addons-story-info-vertical.king-addons-data-wrap:after {
+    right: 100%;
+}
+
+.king-addons-timeline-centered .king-addons-timeline-entry .king-addons-extra-label {
+    position: absolute;
+    right: 108%;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+.king-addons-timeline-centered.king-addons-one-sided-timeline .king-addons-timeline-entry .king-addons-extra-label,
+.king-addons-timeline-centered.king-addons-one-sided-timeline-left .king-addons-timeline-entry .king-addons-extra-label {
+    position: static !important;
+    display: block;
+    margin-bottom: 10px;
+    transform: none !important;
+}
+
+.king-addons-timeline-centered.king-addons-one-sided-timeline-left .king-addons-timeline-entry .king-addons-extra-label {
+    margin-left: auto;
+    text-align: right;
+}
+
+.king-addons-timeline-centered .king-addons-timeline-entry .king-addons-extra-label > span {
+    display: block;
+}
+
+.king-addons-timeline-centered .king-addons-timeline-entry .king-addons-timeline-entry-inner .king-addons-icon {
+    font-size: 0;
+    display: block;
+    float: left;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    background-clip: padding-box;
+}
+
+.king-addons-timeline-centered .king-addons-timeline-entry .king-addons-timeline-entry-inner .king-addons-icon i {
+    font-size: 22px;
+}
+
+.king-addons-timeline-centered .king-addons-timeline-entry .king-addons-timeline-entry-inner .king-addons-data-wrap {
+    position: relative;
+    background-clip: padding-box;
+}
+
+.king-addons-timeline-centered .king-addons-timeline-entry .king-addons-timeline-entry-inner .king-addons-data-wrap:after {
+    position: absolute;
+    top: 14px;
+    display: block;
+    width: 0;
+    height: 0;
+    margin-left: -9px;
+    content: '';
+    border-width: 9px 9px 9px 0;
+    border-style: solid;
+    border-color: transparent;
+}
+
+.king-addons-title-wrap {
+    overflow: hidden;
+    flex-shrink: 0;
+    width: 100% !important;
+}
+
+.king-addons-timeline-centered .king-addons-timeline-entry .king-addons-timeline-entry-inner .king-addons-data-wrap .king-addons-title {
+    display: inline-block;
+}
+
+.king-addons-timeline-centered .king-addons-timeline-entry .king-addons-timeline-entry-inner .king-addons-data-wrap .king-addons-title span {
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+}
+
+.king-addons-timeline-centered .king-addons-year-wrap .king-addons-year-label {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.king-addons-timeline-centered .king-addons-year-wrap {
+    position: relative;
+    display: block;
+    float: left;
+    clear: left;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+    text-align: center;
+}
+
+.king-addons-timeline-centered.king-addons-one-sided-timeline .king-addons-year-wrap .king-addons-year-label {
+    position: absolute;
+    transform: translate(-50%, 0);
+}
+
+.king-addons-timeline-centered.king-addons-one-sided-timeline-left .king-addons-year-wrap .king-addons-year-label {
+    position: absolute;
+    transform: translate(50%, 0);
+}
+
+.king-addons-both-sided-timeline .king-addons-left-aligned .king-addons-data-wrap:after,
+.king-addons-one-sided-timeline-left .king-addons-left-aligned .king-addons-data-wrap:after {
+    left: 100%;
+}
+
+.king-addons-one-sided-timeline .king-addons-timeline-entry .king-addons-timeline-entry-inner .king-addons-icon {
+    transform: translate(-50%, -50%) !important;
+}
+
+.king-addons-wrapper .king-addons-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.timeline-background-image {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100% !important;
+    height: 100%;
+    max-height: 100% !important;
+    opacity: 0.7;
+}
+
+.timeline-background-image img {
+    width: 100%;
+    max-width: 100% !important;
+    height: 100%;
+    max-height: 100% !important;
+}
+
+.king-addons-horizontal-timeline .swiper-slide-line-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.king-addons-horizontal-timeline .king-addons-story-info {
+    width: 98%;
+}
+
+.story-with-background {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.king-addons-timeline-story-overlay {
+    line-height: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+.king-addons-story-info {
+    line-height: 1;
+}
+
+.king-addons-horizontal-bottom.swiper {
+    position: unset;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.king-addons-horizontal.swiper {
+    position: unset;
+    z-index: 11;
+    overflow: hidden;
+    margin: 0 32px;
+}
+
+.king-addons-horizontal {
+    padding-top: 10px;
+}
+
+.king-addons-horizontal-bottom {
+    padding-bottom: 10px;
+}
+
+.king-addons-horizontal-bottom .king-addons-year-wrap {
+    position: absolute;
+    z-index: 1;
+    top: 96px;
+    left: 10px;
+    display: table;
+    overflow: hidden;
+    width: 72px;
+    height: 36px;
+    table-layout: fixed;
+    text-align: center;
+    vertical-align: middle;
+    word-break: break-word;
+    border-radius: 6px;
+}
+
+.king-addons-horizontal-bottom .king-addons-year-label {
+    display: table-cell;
+    padding: 2px;
+    vertical-align: middle;
+}
+
+.king-addons-horizontal-bottom .king-addons-icon {
+    z-index: 100;
+    display: block;
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%);
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+}
+
+.king-addons-horizontal-bottom .king-addons-icon i {
+    font-size: 26px;
+    line-height: 40px;
+}
+
+.king-addons-horizontal-bottom .king-addons-icon:empty {
+    top: 102px;
+    left: calc(50% - 12px);
+    width: 24px;
+    height: 24px;
+}
+
+.king-addons-horizontal-bottom .king-addons-story-info:before {
+    position: absolute;
+    display: block;
+    content: "";
+}
+
+.king-addons-horizontal-bottom .king-addons-story-info {
+    position: relative;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0;
+    transition: all 200ms ease-in;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.king-addons-story-info,
+.king-addons-story-info-vertical {
+    font-size: 0;
+}
+
+.king-addons-timeline-media {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.king-addons-timeline-iframe-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+.king-addons-timeline-media iframe,
+.king-addons-timeline-iframe-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-horizontal-bottom .king-addons-title {
+    font-size: 20px;
+    line-height: 1.2em;
+    display: inline-block;
+    margin: 0;
+    padding: 8px 8px 0;
+}
+
+.king-addons-horizontal-bottom .king-addons-description {
+    font-size: inherit;
+    line-height: 1.2em;
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 8px;
+}
+
+.king-addons-horizontal .king-addons-description {
+    font-size: inherit;
+    line-height: 1.2em;
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 8px;
+}
+
+.king-addons-wrapper .king-addons-description {
+    font-size: 15px;
+    background-color: transparent !important;
+}
+
+.king-addons-horizontal-bottom .king-addons-swiper-pagination.swiper-pagination-progressbar {
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+}
+
+.king-addons-horizontal-bottom .king-addons-swiper-pagination.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.king-addons-horizontal-bottom .king-addons-button-prev,
+.king-addons-horizontal-bottom .king-addons-button-next {
+    font-size: 40px;
+    line-height: 0;
+    position: absolute;
+    top: 113px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.king-addons-horizontal-bottom .king-addons-button-prev {
+    margin-left: -10px;
+}
+
+.king-addons-horizontal-bottom .king-addons-button-next {
+    margin-right: -10px;
+}
+
+.king-addons-button-prev.swiper-button-disabled,
+.king-addons-button-next.swiper-button-disabled {
+    cursor: auto;
+    pointer-events: none;
+    opacity: 0.35;
+}
+
+.swiper-slide.auto-height {
+    height: auto;
+}
+
+.king-addons-horizontal-timeline .swiper-slide {
+    height: auto;
+}
+
+.king-addons-horizontal-bottom {
+    height: auto;
+}
+
+.king-addons-horizontal .king-addons-year-wrap {
+    position: absolute;
+    z-index: 1;
+    bottom: 61px;
+    left: 12px;
+    display: table;
+    overflow: hidden;
+    width: 72px;
+    height: 36px;
+    table-layout: fixed;
+    text-align: center;
+    vertical-align: middle;
+    word-break: break-word;
+    border-radius: 6px;
+    background: rgb(255, 0, 179);
+}
+
+.king-addons-horizontal .king-addons-year-label {
+    display: table-cell;
+    padding: 2px;
+    vertical-align: middle;
+    background: rgb(255, 0, 179);
+}
+
+.king-addons-timeline-centered .king-addons-extra-label {
+    transform: translateY(-50%) !important;
+}
+
+.king-addons-horizontal .king-addons-extra-label {
+    position: absolute;
+    left: 50%;
+    display: table;
+    overflow: hidden;
+    width: 100%;
+    height: 80px;
+    transform: translateX(-50%);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.king-addons-horizontal .king-addons-extra-label .king-addons-label,
+.king-addons-horizontal .king-addons-extra-label .king-addons-sub-label {
+    display: inline-block;
+    width: 100%;
+}
+
+.king-addons-horizontal .king-addons-icon {
+    position: absolute;
+    z-index: 100;
+    left: 50%;
+    display: block;
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, 50%);
+    text-align: center;
+}
+
+.king-addons-horizontal .king-addons-icon i {
+    font-size: 26px;
+    line-height: 40px;
+}
+
+.king-addons-horizontal .king-addons-icon:empty {
+    bottom: 48px;
+    left: calc(50% - 12px);
+    width: 24px;
+    height: 24px;
+}
+
+.king-addons-horizontal .king-addons-story-info:before {
+    position: absolute;
+    bottom: -28px;
+    display: block;
+    content: "";
+    border-bottom-color: transparent !important;
+}
+
+.king-addons-horizontal .king-addons-story-info {
+    position: relative;
+    justify-content: center;
+    box-sizing: border-box;
+    transition: all 200ms ease-in;
+    text-align: center;
+}
+
+.king-addons-horizontal .king-addons-title {
+    font-size: 20px;
+    padding: 8px 8px 0;
+}
+
+.king-addons-horizontal .king-addons-swiper-pagination.swiper-pagination-progressbar {
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    height: 2px;
+}
+
+.king-addons-horizontal .king-addons-button-prev,
+.king-addons-horizontal .king-addons-button-next {
+    font-size: 40px;
+    line-height: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.king-addons-horizontal .king-addons-button-prev {
+    margin-left: -6px;
+}
+
+.king-addons-horizontal .king-addons-button-next {
+    margin-right: -6px;
+}
+
+.king-addons-button-prev.swiper-button-disabled,
+.king-addons-button-next.swiper-button-disabled {
+    cursor: auto;
+    pointer-events: none;
+    opacity: 0.55;
+}
+
+.king-addons-wrapper .king-addons-year {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 2.1em;
+}
+
+.king-addons-wrapper span.king-addons-extra-label {
+    font-size: 15px;
+    font-weight: normal;
+    color: #7A7A7A;
+}
+
+.king-addons-wrapper .king-addons-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.king-addons-horizontal-bottom .king-addons-story-info {
+    border-bottom: 4px solid #23A455;
+}
+
+.king-addons-horizontal-bottom .king-addons-story-info:before {
+    border: 13px solid transparent;
+}
+
+.king-addons-left-aligned .king-addons-data-wrap:after {
+    border-right-color: transparent !important;
+}
+
+.king-addons-horizontal .king-addons-story-info {
+    border-bottom: 4px solid #23A455;
+}
+
+.king-addons-horizontal .king-addons-story-info:before {
+    border: 13px solid transparent;
+}
+
+.king-addons-horizontal .king-addons-timeline-prev-arrow {
+    left: 1%;
+    transform: translateY(50%);
+}
+
+.king-addons-horizontal .king-addons-timeline-next-arrow {
+    right: 1%;
+    transform: translateY(50%) rotate(180deg);
+}
+
+.king-addons-horizontal-bottom .king-addons-timeline-prev-arrow {
+    left: 1%;
+    transform: translateY(-50%);
+}
+
+.king-addons-horizontal-bottom .king-addons-timeline-next-arrow {
+    right: 1%;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+@media screen and (max-width: 767px) {
+    .king-addons-timeline-centered.king-addons-both-sided-timeline .king-addons-timeline-entry {
+        float: none;
+        width: 100%;
+    }
+
+    .king-addons-timeline-centered .king-addons-right-aligned .king-addons-icon {
+        transform: translate(-50%, -50%) !important;
+    }
+
+    .king-addons-one-sided-timeline .king-addons-extra-label {
+        position: static !important;
+        display: block;
+        margin-bottom: 10px;
+        transform: none !important;
+    }
+
+    .king-addons-right-aligned .king-addons-extra-label .king-addons-label {
+        text-align: left !important;
+    }
+}

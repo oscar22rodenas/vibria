@@ -1,0 +1,199 @@
+.king-addons-tabs {
+    display: flex;
+}
+
+.king-addons-tabs-position-above > .elementor-widget-container > .king-addons-tabs {
+    flex-direction: column;
+}
+
+.king-addons-tabs-position-left > .elementor-widget-container > .king-addons-tabs {
+    flex-direction: row;
+}
+
+.king-addons-tabs-position-right > .elementor-widget-container > .king-addons-tabs {
+    flex-direction: row-reverse;
+}
+
+.king-addons-tabs-wrap {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.king-addons-tabs-position-left > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap,
+.king-addons-tabs-position-right > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap {
+    flex-direction: column;
+}
+
+@media screen and (max-width: 767px) {
+    .king-addons-tabs-responsive-yes.king-addons-tabs-position-left > .elementor-widget-container > .king-addons-tabs,
+    .king-addons-tabs-responsive-yes.king-addons-tabs-position-right > .elementor-widget-container > .king-addons-tabs {
+        flex-direction: column;
+    }
+
+    .king-addons-tabs-responsive-yes.king-addons-tabs-position-left > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap,
+    .king-addons-tabs-responsive-yes.king-addons-tabs-position-right > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap {
+        width: 100%;
+    }
+}
+
+.king-addons-tabs-hr-position-center > .elementor-widget-container > .king-addons-tabs {
+    align-items: center;
+}
+
+.king-addons-tabs-hr-position-left > .elementor-widget-container > .king-addons-tabs {
+    align-items: flex-start;
+}
+
+.king-addons-tabs-hr-position-right > .elementor-widget-container > .king-addons-tabs {
+    align-items: flex-end;
+}
+
+.king-addons-tabs-hr-position-justify > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab,
+.elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.king-addons-tab {
+    position: relative;
+    z-index: 25;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.king-addons-tab,
+.king-addons-tab-icon,
+.king-addons-tab-image,
+.king-addons-tab-title {
+    transition-property: all;
+}
+
+.king-addons-tab-icon,
+.king-addons-tab-icon i,
+.king-addons-tab-image,
+.king-addons-tab-title {
+    transition-duration: inherit;
+}
+
+.elementor-element.elementor-widget-king-addons-tabs > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab.king-addons-tab-active .king-addons-tab-title,
+.elementor-element.elementor-widget-king-addons-tabs > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab:hover .king-addons-tab-title,
+.elementor-element.elementor-widget-king-addons-tabs > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab .king-addons-tab-title {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.king-addons-tabs-content-wrap {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    width: 100%;
+    transition-timing-function: cubic-bezier(0.5, 0.9, 0.6, 0.95);
+    transition-duration: 0.5s;
+    transition-property: height;
+}
+
+.king-addons-tab-content {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.elementor-element.elementor-widget-king-addons-tabs > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-content-wrap > .king-addons-tab-content {
+    font-size: 14px;
+}
+
+.king-addons-tab-content-active {
+    position: relative;
+    z-index: 100;
+}
+
+.king-addons-tab-content-inner {
+    opacity: 0;
+}
+
+.king-addons-tab-content-active .king-addons-tab-content-inner.king-addons-overlay-none {
+    opacity: 1;
+}
+
+.king-addons-tabs-icon-position-left > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab .king-addons-tab-image,
+.king-addons-tabs-icon-position-left > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab .king-addons-tab-icon {
+    order: 1;
+}
+
+.king-addons-tabs-icon-position-left > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab .king-addons-tab-title {
+    order: 2;
+}
+
+.king-addons-tabs-icon-position-center > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab {
+    flex-direction: column-reverse;
+}
+
+.king-addons-tabs-triangle-yes > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab:before {
+    position: absolute;
+    z-index: 110;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    content: "";
+    transition-timing-function: ease-in;
+    transition-property: border-color;
+    opacity: 0;
+}
+
+.king-addons-tabs-triangle-yes > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab-active.king-addons-tab:before {
+    visibility: visible;
+    opacity: 1;
+}
+
+.king-addons-tabs-position-above > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab:before {
+    border-top-style: solid;
+    border-top-color: white;
+    border-right-style: solid;
+    border-right-color: transparent;
+    border-left-style: solid;
+    border-left-color: transparent;
+}
+
+.king-addons-tabs-position-left > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab:before,
+.king-addons-tabs-position-right > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab:before {
+    border-top-style: solid;
+    border-top-color: transparent;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+}
+
+.king-addons-tabs-position-above.king-addons-tabs-triangle-type-outer.king-addons-tabs-position-above > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab:before {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.king-addons-tabs-position-above.king-addons-tabs-triangle-type-inner.king-addons-tabs-position-above > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab:before {
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%) rotate(180deg);
+}
+
+.king-addons-tabs-position-left.king-addons-tabs-triangle-type-outer > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab:before,
+.king-addons-tabs-position-right.king-addons-tabs-triangle-type-inner > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab:before {
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.king-addons-tabs-position-right.king-addons-tabs-triangle-type-outer > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab:before,
+.king-addons-tabs-position-left.king-addons-tabs-triangle-type-inner > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab:before {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.king-addons-tabs-position-left.king-addons-tabs-triangle-type-inner > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab:before {
+    right: 0;
+}
+
+.king-addons-tabs-position-right.king-addons-tabs-triangle-type-inner > .elementor-widget-container > .king-addons-tabs > .king-addons-tabs-wrap > .king-addons-tab:before {
+    left: 0;
+}

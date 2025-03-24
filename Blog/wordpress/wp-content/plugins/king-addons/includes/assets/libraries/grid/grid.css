@@ -1,0 +1,1739 @@
+.king-addons-grid-loader-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-grid-loader {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+
+.king-addons-grid-loader div {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    animation: king-addons-king-addons-grid-loader 1.2s linear infinite;
+    border-radius: 50%;
+    background: #222020;
+}
+
+.king-addons-grid-loader div:nth-child(1) {
+    top: 8px;
+    left: 8px;
+    animation-delay: 0s;
+}
+
+.king-addons-grid-loader div:nth-child(2) {
+    top: 8px;
+    left: 32px;
+    animation-delay: -0.4s;
+}
+
+.king-addons-grid-loader div:nth-child(3) {
+    top: 8px;
+    left: 56px;
+    animation-delay: -0.8s;
+}
+
+.king-addons-grid-loader div:nth-child(4) {
+    top: 32px;
+    left: 8px;
+    animation-delay: -0.4s;
+}
+
+.king-addons-grid-loader div:nth-child(5) {
+    top: 32px;
+    left: 32px;
+    animation-delay: -0.8s;
+}
+
+.king-addons-grid-loader div:nth-child(6) {
+    top: 32px;
+    left: 56px;
+    animation-delay: -1.2s;
+}
+
+.king-addons-grid-loader div:nth-child(7) {
+    top: 56px;
+    left: 8px;
+    animation-delay: -0.8s;
+}
+
+.king-addons-grid-loader div:nth-child(8) {
+    top: 56px;
+    left: 32px;
+    animation-delay: -1.2s;
+}
+
+.king-addons-grid-loader div:nth-child(9) {
+    top: 56px;
+    left: 56px;
+    animation-delay: -1.6s;
+}
+
+@keyframes king-addons-king-addons-grid-loader {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.king-addons-grid-image-wrap img.king-addons-hidden-image {
+    /*visibility: hidden;*/
+    /*opacity: 0;*/
+}
+
+.king-addons-hide-items-before-append {
+    opacity: 0;
+}
+
+.king-addons-grid {
+    opacity: 0;
+}
+
+.king-addons-grid-item {
+    position: relative;
+    float: left;
+    text-align: center;
+}
+
+.king-addons-grid-item.post {
+    margin: 0;
+}
+
+.elementor-widget-king-addons-grid:not(.king-addons-item-styles-wrapper) .king-addons-grid-item {
+    padding: 0 !important;
+}
+
+.king-addons-grid-item,
+.king-addons-grid-item * {
+    outline: none !important;
+}
+
+.king-addons-grid-last-row {
+    margin-bottom: 0 !important;
+}
+
+.king-addons-grid-item-above-content {
+    border-bottom: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+.king-addons-grid:not([data-settings*="list"]) .king-addons-grid-media-wrap + .king-addons-grid-item-below-content {
+    border-top: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+.king-addons-grid-item-inner,
+.king-addons-grid-media-wrap {
+    position: relative;
+}
+
+.king-addons-grid-image-wrap {
+    overflow: hidden;
+}
+
+.king-addons-grid-image-wrap img {
+    display: block;
+    width: 100%;
+    border-radius: inherit;
+}
+
+.king-addons-grid-media-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-grid-media-hover-top {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.king-addons-grid-media-hover-bottom {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.king-addons-grid-media-hover-middle {
+    position: relative;
+    z-index: 2;
+}
+
+.king-addons-magazine-grid-wrap {
+    opacity: 0;
+}
+
+.king-addons-grid .king-addons-cv-container,
+.king-addons-magazine-grid .king-addons-cv-container {
+    z-index: 1;
+}
+
+.king-addons-magazine-grid:before,
+.king-addons-magazine-grid:after {
+    content: none;
+}
+
+.king-addons-grid-item-display-block {
+    clear: both;
+}
+
+.king-addons-grid-item-display-inline.king-addons-grid-item-align-left,
+.king-addons-grid-item-display-custom.king-addons-grid-item-align-left {
+    float: left;
+}
+
+.king-addons-grid-item-display-inline.king-addons-grid-item-align-right,
+.king-addons-grid-item-display-custom.king-addons-grid-item-align-right {
+    float: right;
+}
+
+.king-addons-grid-item-display-inline.king-addons-grid-item-align-center,
+.king-addons-grid-item-display-custom.king-addons-grid-item-align-center {
+    display: inline-block;
+    float: none;
+    vertical-align: middle;
+}
+
+.king-addons-grid-item-title .inner-block a,
+.king-addons-grid-item-date .inner-block > span,
+.king-addons-grid-item-time .inner-block > span,
+.king-addons-grid-item-author .inner-block a,
+.king-addons-grid-item-comments .inner-block a,
+.king-addons-grid-item-read-more .inner-block a,
+.king-addons-grid-item-likes .inner-block a,
+.king-addons-grid-item-sharing .inner-block > span,
+.king-addons-grid-item-lightbox .inner-block > span,
+.king-addons-grid-product-categories .inner-block a,
+.king-addons-grid-product-tags .inner-block a,
+.king-addons-grid-tax-style-1 .inner-block a,
+.king-addons-grid-tax-style-2 .inner-block a,
+.king-addons-grid-cf-style-1 .inner-block > a,
+.king-addons-grid-cf-style-1 .inner-block > span,
+.king-addons-grid-cf-style-2 .inner-block > a,
+.king-addons-grid-cf-style-2 .inner-block > span,
+.king-addons-grid-sep-style-1 .inner-block > span,
+.king-addons-grid-sep-style-2 .inner-block > span,
+.king-addons-grid-item-status .inner-block > span,
+.king-addons-grid-item-price .inner-block > span,
+.king-addons-grid-item-add-to-cart .inner-block > a,
+.king-addons-grid-item-read-more .inner-block a {
+    display: inline-block;
+}
+
+.king-addons-grid-item-display-custom.king-addons-grid-item-title .inner-block a,
+.king-addons-grid-item-display-custom.king-addons-grid-item-date .inner-block > span,
+.king-addons-grid-item-display-custom.king-addons-grid-item-time .inner-block > span,
+.king-addons-grid-item-display-custom.king-addons-grid-item-comments .inner-block a,
+.king-addons-grid-item-display-custom.king-addons-grid-item-read-more .inner-block a,
+.king-addons-grid-item-display-custom.king-addons-grid-item-likes .inner-block a,
+.king-addons-grid-item-display-custom.king-addons-grid-item-sharing .inner-block > span,
+.king-addons-grid-item-display-custom.king-addons-grid-item-lightbox .inner-block > span,
+.king-addons-grid-item-display-custom.king-addons-grid-cf-style-1 .inner-block > a,
+.king-addons-grid-item-display-custom.king-addons-grid-cf-style-1 .inner-block > span,
+.king-addons-grid-item-display-custom.king-addons-grid-cf-style-2 .inner-block > a,
+.king-addons-grid-item-display-custom.king-addons-grid-cf-style-2 .inner-block > span,
+.king-addons-grid-item-display-custom.king-addons-grid-sep-style-1 .inner-block > span,
+.king-addons-grid-item-display-custom.king-addons-grid-sep-style-2 .inner-block > span,
+.king-addons-grid-item-display-custom.king-addons-grid-item-product-status .inner-block > span,
+.king-addons-grid-item-display-custom.king-addons-grid-item-product-price .inner-block > span,
+.king-addons-grid-item-display-custom.king-addons-grid-item-add-to-cart .inner-block > a,
+.king-addons-grid-item-display-custom.king-addons-grid-item-read-more .inner-block a {
+    width: 100%;
+}
+
+.king-addons-grid-item-content .inner-block,
+.king-addons-grid-item-excerpt .inner-block {
+    display: inline-block;
+}
+
+.king-addons-grid-item-excerpt .inner-block p {
+    margin: 0 !important;
+}
+
+.king-addons-grid-media-hover-bg {
+    position: absolute;
+}
+
+.king-addons-grid-media-hover-bg img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1) !important;
+    filter: blur(0px) !important;
+}
+
+.king-addons-grid-media-hover-bg img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1) !important;
+    filter: grayscale(0) blur(0px) !important;
+}
+
+.king-addons-grid-item-author img,
+.king-addons-grid-item-author span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.king-addons-grid-item-author img {
+    transform: none !important;
+    filter: none !important;
+}
+
+.king-addons-grid-item-likes .inner-block a {
+    text-align: center;
+}
+
+.king-addons-likes-no-default.king-addons-likes-zero i {
+    padding: 0 !important;
+}
+
+.king-addons-grid-item-sharing .inner-block a {
+    text-align: center;
+}
+
+.king-addons-grid-item-sharing .king-addons-post-sharing {
+    position: relative;
+}
+
+.king-addons-grid-item-sharing .king-addons-sharing-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.king-addons-grid-item-sharing .king-addons-sharing-icon .king-addons-tooltip {
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+
+.king-addons-grid-item-sharing .king-addons-sharing-icon:hover .king-addons-tooltip {
+    visibility: visible;
+    transform: translate(-50%, -120%);
+    opacity: 1;
+}
+
+.king-addons-grid-item-sharing .king-addons-tooltip:before {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.king-addons-grid-item-sharing .king-addons-sharing-trigger {
+    cursor: pointer;
+}
+
+.king-addons-grid-item-sharing .king-addons-tooltip {
+    display: block;
+    padding: 10px;
+}
+
+.king-addons-grid-item-sharing .king-addons-sharing-hidden {
+    position: absolute;
+    z-index: 3;
+    visibility: hidden;
+    text-align: center;
+}
+
+.king-addons-grid-item-sharing .king-addons-sharing-hidden a {
+    opacity: 0;
+}
+
+.king-addons-sharing-hidden a {
+    position: relative;
+    top: -5px;
+    transition-delay: 0s;
+    transition-timing-function: cubic-bezier(.445, .050, .55, .95);
+    transition-duration: 0.3s !important;
+}
+
+.king-addons-sharing-hidden a + a {
+    transition-delay: 0.1s;
+}
+
+.king-addons-sharing-hidden a + a + a {
+    transition-delay: 0.2s;
+}
+
+.king-addons-sharing-hidden a + a + a + a {
+    transition-delay: 0.3s;
+}
+
+.king-addons-sharing-hidden a + a + a + a + a {
+    transition-delay: 0.4s;
+}
+
+.king-addons-grid-item-sharing a:last-of-type {
+    margin-right: 0 !important;
+}
+
+.king-addons-grid-item-sharing .inner-block a {
+    transition-timing-function: linear;
+    transition-property: color, background-color, border;
+}
+
+.king-addons-grid-item-read-more .inner-block > a,
+.king-addons-grid-item-add-to-cart .inner-block > a {
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.king-addons-grid-item-read-more .inner-block > a i,
+.king-addons-grid-item-read-more .inner-block > a span,
+.king-addons-grid-item-add-to-cart .inner-block > a i,
+.king-addons-grid-item-add-to-cart .inner-block > a span {
+    position: relative;
+    z-index: 2;
+    opacity: 1;
+}
+
+.king-addons-grid-item-read-more .inner-block > a:before,
+.king-addons-grid-item-read-more .inner-block > a:after,
+.king-addons-grid-item-add-to-cart .inner-block > a:before,
+.king-addons-grid-item-add-to-cart .inner-block > a:after {
+    z-index: 1;
+}
+
+.king-addons-grid-item-lightbox .inner-block > span,
+.king-addons-grid-lightbox-overlay {
+    cursor: pointer;
+}
+
+.king-addons-grid-lightbox-overlay {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.admin-bar .lg-toolbar {
+    top: 32px;
+}
+
+.king-addons-grid-item-separator .inner-block {
+    font-size: 0;
+    line-height: 0;
+}
+
+.king-addons-grid-item-separator.king-addons-grid-item-display-inline span {
+    width: 100% !important;
+}
+
+.king-addons-grid-extra-icon-left,
+.king-addons-grid-extra-icon-right {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.king-addons-grid-extra-icon-left svg,
+.king-addons-grid-extra-icon-right svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+}
+
+.king-addons-woocommerce-rating i {
+    font-family: "eicons", serif;
+    font-style: normal;
+    line-height: 1;
+    position: relative;
+    display: inline;
+    overflow: hidden;
+}
+
+.king-addons-woocommerce-rating i:before {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 900;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    overflow: hidden;
+    content: '\e934';
+}
+
+.king-addons-woocommerce-rating-style-2 .king-addons-woocommerce-rating i:before {
+    content: '\002605';
+}
+
+.king-addons-woocommerce-rating .king-addons-rating-marked,
+.king-addons-woocommerce-rating .king-addons-rating-unmarked {
+    display: inline-flex;
+}
+
+.king-addons-woocommerce-rating i:last-of-type {
+    margin-right: 0 !important;
+}
+
+.king-addons-rating-icon-empty:before {
+    display: none !important;
+}
+
+.king-addons-rating-icon-5 .king-addons-rating-marked svg {
+    mask: linear-gradient(to right, black 50%, transparent 50%);
+}
+
+.king-addons-rating-icon-0:before,
+.king-addons-rating-icon-0 .king-addons-rating-marked {
+    width: 0;
+}
+
+.king-addons-rating-icon-1:before,
+.king-addons-rating-icon-1 .king-addons-rating-marked {
+    width: 20%;
+}
+
+.king-addons-rating-icon-2:before,
+.king-addons-rating-icon-2 .king-addons-rating-marked {
+    width: 30%;
+}
+
+.king-addons-rating-icon-3:before,
+.king-addons-rating-icon-3 .king-addons-rating-marked {
+    width: 35%;
+}
+
+.king-addons-rating-icon-4:before,
+.king-addons-rating-icon-4 .king-addons-rating-marked {
+    width: 40%;
+}
+
+.king-addons-rating-icon-5:before,
+.king-addons-rating-icon-5 .king-addons-rating-marked:not(:has(svg)) {
+    width: 50%;
+}
+
+.king-addons-rating-icon-6:before,
+.king-addons-rating-icon-6 .king-addons-rating-marked {
+    width: 60%;
+}
+
+.king-addons-rating-icon-7:before,
+.king-addons-rating-icon-7 .king-addons-rating-marked {
+    width: 65%;
+}
+
+.king-addons-rating-icon-8:before,
+.king-addons-rating-icon-8 .king-addons-rating-marked {
+    width: 70%;
+}
+
+.king-addons-rating-icon-9:before,
+.king-addons-rating-icon-9 .king-addons-rating-marked {
+    width: 80%;
+}
+
+.king-addons-rating-icon-full:before {
+    width: 100%;
+}
+
+.king-addons-rating-icon {
+    position: relative;
+    overflow: hidden;
+}
+
+.king-addons-rating-icon .king-addons-rating-marked {
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+}
+
+.king-addons-woocommerce-rating .king-addons-rating-icon,
+i[class*="king-addons-rating-icon-"] {
+    display: inline-flex !important;
+    align-items: center;
+}
+
+.king-addons-grid-filters li {
+    display: inline-block;
+}
+
+.king-addons-grid-filters li:last-of-type {
+    margin-right: 0 !important;
+}
+
+.king-addons-grid-filters li span {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: inherit;
+}
+
+.king-addons-grid-filters li a {
+    display: inline-block;
+}
+
+.king-addons-grid-filters li sup {
+    line-height: 1;
+    position: relative;
+    padding-left: 5px;
+}
+
+.king-addons-grid-filters li sup[data-brackets="yes"]:before {
+    content: '\0028';
+}
+
+.king-addons-grid-filters li sup[data-brackets="yes"]:after {
+    content: '\0029';
+}
+
+.king-addons-grid-filters .king-addons-active-filter.king-addons-pointer-item:before,
+.king-addons-grid-filters .king-addons-active-filter.king-addons-pointer-item:after {
+    width: 100% !important;
+    opacity: 1 !important;
+}
+
+.king-addons-grid-filters-sep {
+    font-style: normal;
+}
+
+.king-addons-grid-filters-sep-right li:last-of-type .king-addons-grid-filters-sep,
+.king-addons-grid-filters-sep-left li:first-child .king-addons-grid-filters-sep {
+    display: none;
+}
+
+.king-addons-sub-filters {
+    display: none;
+    padding: 0;
+}
+
+.king-addons-grid-sorting {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.king-addons-grid-sorting > div,
+.king-addons-grid-sorting .woocommerce-ordering {
+    flex-grow: 1;
+}
+
+.king-addons-grid-sorting .woocommerce-ordering {
+    text-align: right;
+}
+
+.king-addons-grid-sorting .woocommerce-ordering select {
+    width: auto;
+    outline: none !important;
+}
+
+.king-addons-grid-sorting .king-addons-shop-page-title,
+.king-addons-grid-sorting .woocommerce-result-count,
+.king-addons-grid-sorting .woocommerce-ordering {
+    margin: 0 !important;
+}
+
+.king-addons-atc-not-clickable {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+
+@keyframes king-addons-added-tc-popup-animation {
+    from {
+        opacity: 0;
+        transform: translateY(-50%)
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes king-addons-added-tc-popup-animation-hide {
+    from {
+        opacity: 1;
+        transform: translateY(0)
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-50%)
+    }
+}
+
+@keyframes king-addons-added-tc-popup-animation-bottom {
+    from {
+        opacity: 0;
+        transform: translateY(50%)
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes king-addons-added-tc-popup-animation-hide-bottom {
+    from {
+        opacity: 1;
+        transform: translateY(0)
+    }
+    to {
+        opacity: 0;
+        transform: translateY(50%)
+    }
+}
+
+@keyframes king-addons-added-tc-popup-animation-slide-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(100%)
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+@keyframes king-addons-added-tc-popup-animation-slide-out-left {
+    from {
+        opacity: 1;
+        transform: translateX(0)
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%)
+    }
+}
+
+@keyframes king-addons-added-tc-popup-animation-scale-up {
+    from {
+        opacity: 0;
+        transform: scale(0)
+    }
+    to {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+@keyframes king-addons-added-tc-popup-animation-scale-down {
+    from {
+        opacity: 1;
+        transform: scale(1)
+    }
+    to {
+        opacity: 0;
+        transform: scale(0)
+    }
+}
+
+@keyframes king-addons-added-tc-popup-animation-fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes king-addons-added-tc-popup-animation-fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes king-addons-added-tc-popup-animation-skew {
+    from {
+        opacity: 0;
+        transform: perspective(600px) rotateX(-90deg);
+    }
+    to {
+        opacity: 1;
+        transform: perspective(600px) rotateX(0deg);
+    }
+}
+
+@keyframes king-addons-added-tc-popup-animation-skew-off {
+    from {
+        opacity: 1;
+        transform: perspective(600px) rotateX(0deg);
+    }
+    to {
+        opacity: 0;
+        transform: perspective(600px) rotateX(-90deg);
+    }
+}
+
+@keyframes king-addons-added-tc-popup-animation-skew-bottom {
+    from {
+        opacity: 0;
+        transform: perspective(600px) rotateX(90deg);
+    }
+    to {
+        opacity: 1;
+        transform: perspective(600px) rotateX(0deg);
+    }
+}
+
+@keyframes king-addons-added-tc-popup-animation-skew-off-bottom {
+    from {
+        opacity: 1;
+        transform: perspective(600px) rotateX(0deg);
+    }
+    to {
+        opacity: 0;
+        transform: perspective(600px) rotateX(90deg);
+    }
+}
+
+.king-addons-fade-to {
+    opacity: 0.6;
+}
+
+.king-addons-added-to-compare-popup,
+.king-addons-added-to-wishlist-popup,
+.king-addons-added-to-cart-popup {
+    position: fixed;
+    z-index: 99999;
+    display: flex;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.king-addons-added-to-compare-popup.king-addons-added-to-compare-slide-in-left,
+.king-addons-added-to-wishlist-popup.king-addons-added-to-wishlist-slide-in-left,
+.king-addons-added-to-cart-popup.king-addons-added-to-cart-slide-in-left {
+    animation-name: king-addons-added-tc-popup-animation-slide-in-left !important;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.king-addons-added-to-compare-popup.king-addons-added-to-compare-slide-out-left,
+.king-addons-added-to-wishlist-popup.king-addons-added-to-wishlist-slide-out-left,
+.king-addons-added-to-cart-popup.king-addons-added-to-cart-slide-out-left {
+    animation-name: king-addons-added-tc-popup-animation-slide-out-left !important;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.king-addons-added-to-compare-popup.king-addons-added-to-compare-scale-up,
+.king-addons-added-to-wishlist-popup.king-addons-added-to-wishlist-scale-up,
+.king-addons-added-to-cart-popup.king-addons-added-to-cart-scale-up {
+    animation-name: king-addons-added-tc-popup-animation-scale-up !important;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.king-addons-added-to-compare-popup.king-addons-added-to-compare-scale-down,
+.king-addons-added-to-wishlist-popup.king-addons-added-to-wishlist-scale-down,
+.king-addons-added-to-cart-popup.king-addons-added-to-cart-scale-down {
+    animation-name: king-addons-added-tc-popup-animation-scale-down !important;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.king-addons-added-to-compare-popup.king-addons-added-to-compare-fade,
+.king-addons-added-to-wishlist-popup.king-addons-added-to-wishlist-fade,
+.king-addons-added-to-cart-popup.king-addons-added-to-cart-fade {
+    animation-name: king-addons-added-tc-popup-animation-fade !important;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.king-addons-added-to-compare-popup.king-addons-added-to-compare-fade-out,
+.king-addons-added-to-wishlist-popup.king-addons-added-to-wishlist-fade-out,
+.king-addons-added-to-cart-popup.king-addons-added-to-cart-fade-out {
+    animation-name: king-addons-added-tc-popup-animation-fade-out !important;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.king-addons-atc-popup-top .king-addons-added-to-compare-popup.king-addons-added-to-wishlist-skew,
+.king-addons-atc-popup-top .king-addons-added-to-wishlist-popup.king-addons-added-to-wishlist-skew,
+.king-addons-atc-popup-top .king-addons-added-to-cart-popup.king-addons-added-to-cart-skew {
+    transform-origin: center top 0;
+    animation-name: king-addons-added-tc-popup-animation-skew !important;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.king-addons-atc-popup-top .king-addons-added-to-compare-popup.king-addons-added-to-compare-skew-off,
+.king-addons-atc-popup-top .king-addons-added-to-wishlist-popup.king-addons-added-to-wishlist-skew-off,
+.king-addons-atc-popup-top .king-addons-added-to-cart-popup.king-addons-added-to-cart-skew-off {
+    transform-origin: center top 0;
+    animation-name: king-addons-added-tc-popup-animation-skew-off !important;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.king-addons-atc-popup-bottom .king-addons-added-to-compare-popup.king-addons-added-to-compare-skew,
+.king-addons-atc-popup-bottom .king-addons-added-to-wishlist-popup.king-addons-added-to-wishlist-skew,
+.king-addons-atc-popup-bottom .king-addons-added-to-cart-popup.king-addons-added-to-cart-skew {
+    transform-origin: center bottom 0;
+    animation-name: king-addons-added-tc-popup-animation-skew-bottom !important;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.king-addons-atc-popup-bottom .king-addons-added-to-compare-popup.king-addons-added-to-compare-skew-off,
+.king-addons-atc-popup-bottom .king-addons-added-to-wishlist-popup.king-addons-added-to-wishlist-skew-off,
+.king-addons-atc-popup-bottom .king-addons-added-to-cart-popup.king-addons-added-to-cart-skew-off {
+    transform-origin: center bottom 0;
+    animation-name: king-addons-added-tc-popup-animation-skew-off-bottom !important;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.king-addons-atc-popup-top .king-addons-added-to-compare-popup,
+.king-addons-atc-popup-top .king-addons-added-to-wishlist-popup,
+.king-addons-atc-popup-top .king-addons-added-to-cart-popup {
+    top: 0;
+    right: 0;
+    animation-name: king-addons-added-tc-popup-animation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.king-addons-atc-popup-top .king-addons-added-to-compare-popup-hide,
+.king-addons-atc-popup-top .king-addons-added-to-wishlist-popup-hide,
+.king-addons-atc-popup-top .king-addons-added-to-cart-popup-hide {
+    animation-name: king-addons-added-tc-popup-animation-hide;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.king-addons-atc-popup-bottom .king-addons-added-to-compare-popup,
+.king-addons-atc-popup-bottom .king-addons-added-to-wishlist-popup,
+.king-addons-atc-popup-bottom .king-addons-added-to-cart-popup {
+    right: 0;
+    bottom: 0;
+    animation-name: king-addons-added-tc-popup-animation-bottom;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.king-addons-atc-popup-bottom .king-addons-added-to-compare-popup-hide,
+.king-addons-atc-popup-bottom .king-addons-added-to-wishlist-popup-hide,
+.king-addons-atc-popup-bottom .king-addons-added-to-cart-popup-hide {
+    animation-name: king-addons-added-tc-popup-animation-hide-bottom;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.king-addons-added-tcompare-title,
+.king-addons-added-tw-title,
+.king-addons-added-tc-title {
+    flex: 1;
+}
+
+.king-addons-added-tcompare-title a,
+.king-addons-added-tw-title a,
+.king-addons-added-tc-title a {
+    display: inline;
+}
+
+.king-addons-added-tcompare-title p,
+.king-addons-added-tw-title p,
+.king-addons-added-tc-title p {
+    margin: 0;
+}
+
+.king-addons-added-tcomp-popup-img img,
+.king-addons-added-tw-popup-img img,
+.king-addons-added-tc-popup-img img {
+    width: 100%;
+    height: auto;
+}
+
+.king-addons-grid .added_to_wishlist,
+.king-addons-grid .added_to_cart {
+    opacity: 0;
+}
+
+.king-addons-grid-pagination {
+    margin-top: 30px;
+}
+
+.king-addons-grid-pagination > a,
+.king-addons-grid-pagination > span {
+    display: inline-block;
+}
+
+.king-addons-grid-pagination i,
+.king-addons-grid-pagination svg {
+    vertical-align: middle;
+}
+
+.king-addons-grid-pagination .king-addons-disabled-arrow {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
+.king-addons-pagination-loading,
+.king-addons-pagination-finish {
+    display: none;
+}
+
+.king-addons-grid-pagination-center .king-addons-grid-pagination,
+.king-addons-grid-pagination-justify .king-addons-grid-pagination {
+    text-align: center;
+}
+
+.king-addons-grid-pagination-center .king-addons-grid-pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.king-addons-grid-pagination-left .king-addons-grid-pagination {
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.king-addons-grid-pagination-right .king-addons-grid-pagination {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.king-addons-grid-pagination-infinite-scroll {
+    text-align: center;
+}
+
+.king-addons-grid-pagination-justify .king-addons-grid-pagination-left-arrows,
+.king-addons-grid-pagination-justify .king-addons-grid-pagination-default .king-addons-prev-post-link {
+    float: left;
+}
+
+.king-addons-grid-pagination-justify .king-addons-grid-pagination-right-arrows,
+.king-addons-grid-pagination-justify .king-addons-grid-pagination-default .king-addons-next-post-link {
+    float: right;
+}
+
+.king-addons-grid-pagination-left-arrows,
+.king-addons-grid-pagination-right-arrows,
+.king-addons-grid-pagination .king-addons-load-more-btn {
+    display: inline-block;
+}
+
+.king-addons-load-more-btn,
+.king-addons-grid-pagination-right-arrows a:last-child,
+.king-addons-grid-pagination-right-arrows span:last-child {
+    margin-right: 0 !important;
+}
+
+.king-addons-grid-pagination .king-addons-first-page,
+.king-addons-grid-pagination .king-addons-last-page,
+.king-addons-grid-pagination .king-addons-prev-page,
+.king-addons-grid-pagination .king-addons-prev-post-link,
+.king-addons-grid-pagination .king-addons-next-page,
+.king-addons-grid-pagination .king-addons-next-post-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .king-addons-grid-pagination span > span,
+    .king-addons-grid-pagination a > span {
+        display: none;
+    }
+
+    .king-addons-grid-pagination.king-addons-grid-pagination-numbered span i,
+    .king-addons-grid-pagination.king-addons-grid-pagination-numbered a i {
+        padding: 0 !important;
+    }
+}
+
+.elementor-editor-active .king-addons-grid-pagination-infinite-scroll {
+    display: none;
+}
+
+.king-addons-grid-slider-nav-position-default .king-addons-grid-slider-arrow-container {
+    position: absolute;
+    display: flex;
+}
+
+.king-addons-grid-slider-nav-position-default .king-addons-grid-slider-arrow {
+    position: static;
+}
+
+.king-addons-grid-slider-nav-position-default .king-addons-grid-slider-prev-arrow {
+    transform: none;
+}
+
+.king-addons-grid-slider-nav-position-default .king-addons-grid-slider-next-arrow {
+    transform: translateY(0) rotate(180deg);
+}
+
+.king-addons-grid-slider-nav-align-top-center .king-addons-grid-slider-arrow-container,
+.king-addons-grid-slider-nav-align-bottom-center .king-addons-grid-slider-arrow-container {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.king-addons-grid-slider-arrow {
+    position: absolute;
+    z-index: 120;
+    top: 50%;
+    box-sizing: content-box;
+    cursor: pointer;
+    transition: all .5s;
+    text-align: center;
+}
+
+.king-addons-grid-slider-arrow i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-adjust-slider-prev-arrow {
+    left: 1% !important;
+}
+
+.king-addons-adjust-slider-next-arrow {
+    right: 1% !important;
+}
+
+.king-addons-grid-slider-prev-arrow {
+    left: 1%;
+    transform: translateY(-50%);
+}
+
+.king-addons-grid-slider-next-arrow {
+    right: 1%;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.king-addons-grid-slider-nav-fade .king-addons-grid-slider-arrow-container {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.king-addons-grid-slider-nav-fade:hover .king-addons-grid-slider-arrow-container {
+    visibility: visible;
+    opacity: 1;
+}
+
+.king-addons-grid-slider-dots {
+    position: absolute;
+    z-index: 110;
+    left: 50%;
+    display: inline-table;
+    transform: translate(-50%, -50%);
+}
+
+.king-addons-grid-slider-dots ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.king-addons-grid-slider-dots-horizontal .king-addons-grid-slider-dots li,
+.king-addons-grid-slider-dots-pro-vr .slick-dots li {
+    float: left;
+}
+
+.king-addons-grid.slick-dotted.slick-slider {
+    margin-bottom: 0 !important;
+}
+
+.king-addons-grid-slider-dots-vertical .slick-dots li {
+    display: block;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+}
+
+.king-addons-grid-slider-dots-horizontal .slick-dots li,
+.king-addons-grid-slider-dots-pro-vr .slick-dots li {
+    width: auto !important;
+    margin: 0 !important;
+    padding-top: 10px;
+}
+
+.king-addons-grid-slider-dots-horizontal .slick-dots li:last-child span {
+    margin-right: 0 !important;
+}
+
+.king-addons-grid-slider-dot {
+    display: block;
+    cursor: pointer;
+}
+
+.king-addons-grid-slider-dots li:last-child .king-addons-grid-slider-dot {
+    margin: 0 !important;
+}
+
+.king-addons-grid-item-protected {
+    position: absolute;
+    z-index: 11 !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-grid-item-protected i {
+    font-size: 22px;
+}
+
+.king-addons-grid-item-protected input {
+    font-size: 13px;
+    width: 50%;
+    margin-top: 10px;
+    padding: 7px 13px;
+    border: none;
+}
+
+.king-addons-grid-sorting-inner-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.king-addons-products-result-count .woocommerce-result-count {
+    margin: 0;
+}
+
+.king-addons-sort-select-position-above .king-addons-grid-sort-heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.king-addons-grid-sort-heading {
+    width: 100%;
+}
+
+.king-addons-grid-sort-heading * {
+    margin: 0;
+}
+
+.king-addons-grid-orderby span {
+    position: relative;
+    display: block;
+}
+
+.king-addons-grid-sorting-wrap form .orderby {
+    appearance: none;
+}
+
+.king-addons-grid-sorting-wrap .king-addons-orderby-icon {
+    font-family: "Font Awesome 5 Free", serif;
+    font-weight: 600 !important;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.king-addons-sale-dates {
+    display: inline-block;
+}
+
+.elementor-widget-king-addons-grid .king-addons-grid-media-hover-bg,
+.elementor-widget-king-addons-media-grid .king-addons-grid-media-hover-bg,
+.elementor-widget-king-addons-woocommerce-grid .king-addons-grid-media-hover-bg {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.elementor-widget-king-addons-magazine-grid .king-addons-grid-media-hover-bg {
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 45%, rgba(0, 0, 0, 1) 100%);
+}
+
+.elementor-widget-king-addons-grid .king-addons-grid-item-title,
+.elementor-widget-king-addons-woocommerce-grid .king-addons-grid-item-title,
+.elementor-widget-king-addons-woocommerce-category-grid-pro .king-addons-grid-item-title,
+.elementor-widget-king-addons-category-grid-pro .king-addons-grid-item-title {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 23px;
+    margin: 0;
+}
+
+.elementor-widget-king-addons-magazine-grid .king-addons-grid-item-title {
+    font-size: 22px;
+    margin: 0;
+}
+
+.elementor-widget-king-addons-media-grid .king-addons-grid-item-title {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.elementor-widget-king-addons-grid .king-addons-grid-item-content,
+.elementor-widget-king-addons-grid .king-addons-grid-item-excerpt,
+.elementor-widget-king-addons-grid .king-addons-grid-item-author,
+.elementor-widget-king-addons-grid .king-addons-grid-item-time,
+.elementor-widget-king-addons-grid .king-addons-grid-item-read-more a,
+.elementor-widget-king-addons-grid .king-addons-grid-item-likes,
+.elementor-widget-king-addons-grid .king-addons-grid-item-sharing,
+.elementor-widget-king-addons-grid .king-addons-grid-tax-style-1,
+.elementor-widget-king-addons-grid .king-addons-grid-cf-style-1,
+.elementor-widget-king-addons-grid .king-addons-grid-filters li,
+.elementor-widget-king-addons-grid .king-addons-grid-pagination,
+.elementor-widget-king-addons-grid .king-addons-grid-item-protected p,
+.elementor-widget-king-addons-media-grid .king-addons-grid-item-sharing,
+.elementor-widget-king-addons-media-grid .king-addons-grid-filters li,
+.elementor-widget-king-addons-woocommerce-grid .king-addons-grid-item-content,
+.elementor-widget-king-addons-woocommerce-grid .king-addons-grid-product-categories,
+.elementor-widget-king-addons-woocommerce-grid .king-addons-grid-product-tags,
+.elementor-widget-king-addons-woocommerce-grid .king-addons-woocommerce-rating span,
+.elementor-widget-king-addons-woocommerce-grid .king-addons-grid-item-status .inner-block > span,
+.elementor-widget-king-addons-woocommerce-grid .king-addons-grid-item-add-to-cart a,
+.elementor-widget-king-addons-woocommerce-grid .king-addons-grid-item-likes,
+.elementor-widget-king-addons-woocommerce-grid .king-addons-grid-item-sharing,
+.elementor-widget-king-addons-woocommerce-grid .king-addons-grid-item-lightbox,
+.elementor-widget-king-addons-woocommerce-grid .king-addons-grid-pagination,
+.elementor-widget-king-addons-woocommerce-grid .king-addons-grid-item-price .inner-block > span,
+.elementor-widget-king-addons-magazine-grid .king-addons-grid-item-content,
+.elementor-widget-king-addons-magazine-grid .king-addons-grid-item-excerpt {
+    font-size: 14px;
+}
+
+.elementor-widget-king-addons-magazine-grid .king-addons-grid-tax-style-1 {
+    font-size: 12px;
+    list-style-position: inherit;
+}
+
+.elementor-widget-king-addons-magazine-grid .king-addons-grid-item-date,
+.elementor-widget-king-addons-magazine-grid .king-addons-grid-item-time,
+.elementor-widget-king-addons-magazine-grid .king-addons-grid-item-author {
+    font-size: 12px;
+    list-style-position: inherit;
+}
+
+.elementor-widget-king-addons-grid .king-addons-grid-item-date,
+.elementor-widget-king-addons-grid .king-addons-grid-item-comments,
+.elementor-widget-king-addons-grid .king-addons-grid-tax-style-2,
+.elementor-widget-king-addons-media-grid .king-addons-grid-item-caption,
+.elementor-widget-king-addons-media-grid .king-addons-grid-item-date,
+.elementor-widget-king-addons-media-grid .king-addons-grid-item-time,
+.elementor-widget-king-addons-media-grid .king-addons-grid-item-author,
+.elementor-widget-king-addons-media-grid .king-addons-grid-item-likes,
+.elementor-widget-king-addons-media-grid .king-addons-grid-tax-style-1,
+.elementor-widget-king-addons-media-grid .king-addons-grid-tax-style-2,
+.elementor-widget-king-addons-media-magazine-grid .king-addons-grid-tax-style-2 {
+    font-size: 14px;
+}
+
+.elementor-widget-king-addons-grid .king-addons-grid-item-lightbox,
+.elementor-widget-king-addons-media-grid .king-addons-grid-item-lightbox {
+    font-size: 18px;
+}
+
+.elementor-widget-king-addons-grid .king-addons-grid-cf-style-2,
+.elementor-widget-king-addons-media-grid .king-addons-grid-pagination {
+    font-size: 15px;
+}
+
+.elementor-widget-king-addons-grid .king-addons-grid-tax-style-2 .inner-block a {
+    background-color: #5B03FF;
+}
+
+.elementor-widget-king-addons-grid .king-addons-grid-tax-style-2 .inner-block a:hover {
+    background-color: #4D02D8;
+}
+
+@media screen and (max-width: 580px) {
+    .king-addons-grid-sorting-inner-wrap {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .king-addons-products-result-count {
+        margin-bottom: 5px;
+    }
+
+    .king-addons-grid-orderby,
+    .king-addons-grid-orderby select.orderby,
+    .king-addons-products-result-count {
+        width: 100% !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .king-addons-grid-last-element-yes .king-addons-grid-item-inner {
+        height: 100% !important;
+    }
+
+    .king-addons-grid-last-element-yes .king-addons-grid-item-below-content > div:last-child {
+        position: absolute !important;
+        bottom: 0;
+        left: 0;
+    }
+
+    .king-addons-grid-last-element-yes .king-addons-grid-item-below-content > div:last-child span {
+        white-space: nowrap;
+    }
+}
+
+.king-addons-magazine-grid {
+    display: grid;
+    justify-content: stretch;
+    grid-template-rows: 1fr 1fr;
+}
+
+.king-addons-magazine-grid-item {
+    padding: 0 !important;
+    text-align: center;
+}
+
+.king-addons-magazine-grid-add-1vh-3h {
+    grid-template-rows: auto;
+}
+
+.king-addons-magazine-grid-add-1-1-1 {
+    grid-template-rows: 1fr;
+}
+
+.king-addons-magazine-grid-add-2-3,
+.king-addons-magazine-grid-add-1-1-3 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.king-addons-magazine-grid-add-2-h {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.king-addons-magazine-grid-add-3-h {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.king-addons-magazine-grid-add-4-h {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.king-addons-magazine-grid-add-1vh-3h .king-addons-magazine-grid-item:nth-child(1) {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.king-addons-magazine-grid-add-1vh-3h .king-addons-magazine-grid-item:nth-child(2) {
+    grid-column-start: 2;
+}
+
+.king-addons-magazine-grid-add-1vh-3h .king-addons-magazine-grid-item:nth-child(3) {
+    grid-column-start: 2;
+}
+
+.king-addons-magazine-grid-add-1vh-3h .king-addons-magazine-grid-item:nth-child(4) {
+    grid-column-start: 2;
+}
+
+.king-addons-magazine-grid-add-1-2 .king-addons-magazine-grid-item:nth-child(1),
+.king-addons-magazine-grid-add-1-3 .king-addons-magazine-grid-item:nth-child(1),
+.king-addons-magazine-grid-add-1-4 .king-addons-magazine-grid-item:nth-child(1),
+.king-addons-magazine-grid-add-1-1-2 .king-addons-magazine-grid-item:nth-child(1) {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.king-addons-magazine-grid-add-1-1-2 .king-addons-magazine-grid-item:nth-child(2) {
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.king-addons-magazine-grid-add-2-1-2 .king-addons-magazine-grid-item:nth-child(2) {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.king-addons-magazine-grid-add-1-3 .king-addons-magazine-grid-item:nth-child(2) {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.king-addons-magazine-grid-add-2-3 .king-addons-magazine-grid-item:nth-child(1),
+.king-addons-magazine-grid-add-2-3 .king-addons-magazine-grid-item:nth-child(2),
+.king-addons-magazine-grid-add-1-1-3 .king-addons-magazine-grid-item:nth-child(1),
+.king-addons-magazine-grid-add-1-1-3 .king-addons-magazine-grid-item:nth-child(2) {
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.king-addons-magazine-grid-add-2-3 .king-addons-magazine-grid-item:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.king-addons-magazine-grid-add-2-3 .king-addons-magazine-grid-item:nth-child(2) {
+    grid-column-start: 4;
+    grid-column-end: 7;
+}
+
+.king-addons-magazine-grid-add-1-1-3 .king-addons-magazine-grid-item:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+.king-addons-magazine-grid-add-1-1-3 .king-addons-magazine-grid-item:nth-child(2) {
+    grid-column-start: 5;
+    grid-column-end: 7;
+}
+
+.king-addons-magazine-grid-add-2-3 .king-addons-magazine-grid-item:nth-child(3),
+.king-addons-magazine-grid-add-2-3 .king-addons-magazine-grid-item:nth-child(4),
+.king-addons-magazine-grid-add-2-3 .king-addons-magazine-grid-item:nth-child(5),
+.king-addons-magazine-grid-add-1-1-3 .king-addons-magazine-grid-item:nth-child(3),
+.king-addons-magazine-grid-add-1-1-3 .king-addons-magazine-grid-item:nth-child(4),
+.king-addons-magazine-grid-add-1-1-3 .king-addons-magazine-grid-item:nth-child(5) {
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.king-addons-magazine-grid-add-2-3 .king-addons-magazine-grid-item:nth-child(3),
+.king-addons-magazine-grid-add-1-1-3 .king-addons-magazine-grid-item:nth-child(3) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.king-addons-magazine-grid-add-2-3 .king-addons-magazine-grid-item:nth-child(4),
+.king-addons-magazine-grid-add-1-1-3 .king-addons-magazine-grid-item:nth-child(4) {
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+.king-addons-magazine-grid-add-2-3 .king-addons-magazine-grid-item:nth-child(5),
+.king-addons-magazine-grid-add-1-1-3 .king-addons-magazine-grid-item:nth-child(5) {
+    grid-column-start: 5;
+    grid-column-end: 7;
+}
+
+.king-addons-magazine-grid .king-addons-grid-item-inner,
+.king-addons-magazine-grid .king-addons-grid-media-wrap,
+.king-addons-magazine-grid .king-addons-grid-image-wrap {
+    height: 100%;
+}
+
+.king-addons-magazine-grid .king-addons-grid-image-wrap {
+    background-position: center center;
+    background-size: cover;
+}
+
+.king-addons-magazine-grid .king-addons-grid-media-hover {
+    z-index: 1;
+}
+
+@media screen and (max-width: 1024px) {
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-1-2 {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-1-2 article:nth-child(1) {
+        grid-column-end: 3 !important;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-1-3 {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: 1fr 1fr 1fr !important;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-1-3 article:nth-child(1) {
+        grid-column-end: 3 !important;
+        grid-row-end: 2 !important;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-1-3 article:nth-child(2) {
+        grid-column-start: 1 !important;
+        grid-column-end: 3 !important;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-1-4 {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-1-4 article:nth-child(1) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-end: 1 !important;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-1-1-2 {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: 1fr 1fr 1fr !important;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-1-1-2 article:nth-child(1) {
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-1-1-2 article:nth-child(2) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-2-1-2 {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: 1fr 1fr 1fr !important;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-2-1-2 article:nth-child(2) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-1vh-3h {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-1-1-1 {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: 1fr 1fr !important;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-1-1-1 article:nth-child(2) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-1-1-3 {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-1-1-3 article:nth-child(1) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-end: 2;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-1-1-3 article:nth-child(2) {
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-1-1-3 article:nth-child(3) {
+        grid-row-start: 2;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-1-1-3 article:nth-child(4) {
+        grid-row-start: 3;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-1-1-3 article:nth-child(5) {
+        grid-row-start: 3;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-2-3 {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: repeat(6, 1fr) !important;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-2-3 article:nth-child(1) {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-2-3 article:nth-child(2) {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 4;
+        grid-row-end: 7;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-2-3 article:nth-child(3) {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-2-3 article:nth-child(4) {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 5;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-2-3 article:nth-child(5) {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 5;
+        grid-row-end: 7;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-4-h.king-addons-magazine-grid-add-rows-1 {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: repeat(2, 1fr) !important;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-4-h.king-addons-magazine-grid-add-rows-2 {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: repeat(4, 1fr) !important;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-4-h.king-addons-magazine-grid-add-rows-3 {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: repeat(6, 1fr) !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-3-h.king-addons-magazine-grid-add-rows-1 {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: repeat(3, 1fr) !important;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-3-h.king-addons-magazine-grid-add-rows-2 {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: repeat(6, 1fr) !important;
+    }
+
+    .king-addons-magazine-grid.king-addons-magazine-grid-add-3-h.king-addons-magazine-grid-add-rows-3 {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: repeat(9, 1fr) !important;
+    }
+
+    .king-addons-magazine-grid-one-column-yes .king-addons-magazine-grid {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto !important;
+    }
+
+    .king-addons-magazine-grid-one-column-yes .king-addons-magazine-grid article.king-addons-magazine-grid-item {
+        grid-column-start: auto !important;
+        grid-column-end: auto !important;
+        grid-row-start: auto !important;
+        grid-row-end: auto !important;
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "config": {
+      "allow-plugins": {
+        "composer/installers": true
+      }
+    },
+    "name": "vibria/wordpress",
+    "type": "project",
+    "require": {
+      "wpackagist-plugin/polylang": "*",
+      "wpackagist-plugin/advanced-custom-fields": "*",
+      "wpackagist-plugin/custom-post-order-category": "*",
+      "wpackagist-plugin/custom-post-type-ui": "*"
+    },
+    "repositories": [
+      {
+        "type": "composer",
+        "url": "https://wpackagist.org"
+      }
+    ]
+  }
+  

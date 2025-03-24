@@ -1,0 +1,54 @@
+.king-addons-auto-scrolling-text {
+    word-wrap: normal;
+    word-break: break-word;
+    white-space: nowrap;
+}
+
+.king-addons-auto-scrolling-text .king-addons-auto-scrolling-text-inner * {
+    margin: 0;
+    padding: 0;
+    word-wrap: normal;
+    word-break: keep-all;
+}
+
+.king-addons-auto-scrolling-text-gradient .king-addons-auto-scrolling-text-inner {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.king-addons-auto-scrolling-text img {
+    display: inline-block;
+}
+
+.king-addons-auto-scrolling-text-underline-gradient .king-addons-auto-scrolling-text-inner {
+    position: relative;
+    transition: all 0.25s ease-in;
+}
+
+.king-addons-auto-scrolling-text {
+    width: auto;
+    display: inline-block;
+}
+
+.king-addons-auto-scrolling-text-items {
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.king-addons-auto-scrolling-text-wrapper {
+    display: inline-block;
+    white-space: nowrap;
+    animation: king-addons-auto-scrolling-animation 20s linear infinite;
+}
+
+@keyframes king-addons-auto-scrolling-animation {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.swiper-container:not(.swiper-container-initialized) > .swiper-wrapper,
+.swiper:not(.swiper-initialized) > .swiper-wrapper {
+    overflow: visible !important;
+}

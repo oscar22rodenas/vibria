@@ -1,0 +1,304 @@
+.king-addons-share-buttons .king-addons-share-icon {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    color: #ffffff !important;
+}
+
+.king-addons-share-buttons .king-addons-share-icon i {
+    /*font-family: "Font Awesome 5 Free", serif;*/
+    display: block;
+    text-align: center;
+}
+
+/*.king-addons-share-buttons .king-addons-share-icon i:before {*/
+/*    font-family: "Font Awesome 5 Free", serif;*/
+/*}*/
+
+.king-addons-share-label {
+    flex-grow: 1;
+}
+
+.elementor-widget-king-addons-share-buttons.elementor-grid-0 .king-addons-share-buttons,
+.elementor-widget-king-addons-share-buttons[class*="elementor-grid-pro-"] .king-addons-share-buttons {
+    display: flex;
+}
+
+.elementor-widget-king-addons-share-buttons:not(.elementor-grid-0):not(.elementor-grid-pro-3):not(.elementor-grid-pro-4):not(.elementor-grid-pro-5):not(.elementor-grid-pro-6) .king-addons-share-label-off .king-addons-share-icon i {
+    width: 100% !important;
+}
+
+.king-addons-share-buttons.king-addons-share-col-1 .king-addons-share-icon {
+    width: 100%;
+    margin-right: 0 !important;
+}
+
+.king-addons-share-buttons .king-addons-share-icon:last-child,
+.king-addons-share-col-1 .king-addons-share-buttons .king-addons-share-icon,
+.king-addons-share-col-2 .king-addons-share-buttons .king-addons-share-icon:nth-child(2n),
+.king-addons-share-col-3 .king-addons-share-buttons .king-addons-share-icon:nth-child(3n),
+.king-addons-share-col-4 .king-addons-share-buttons .king-addons-share-icon:nth-child(4n),
+.king-addons-share-col-5 .king-addons-share-buttons .king-addons-share-icon:nth-child(5n),
+.king-addons-share-col-6 .king-addons-share-buttons .king-addons-share-icon:nth-child(6n) {
+    margin-right: 0 !important;
+}
+
+.king-addons-share-buttons .king-addons-share-icon {
+    transition-timing-function: linear;
+    transition-property: opacity, border-color;
+}
+
+.king-addons-share-buttons .king-addons-share-icon i,
+.king-addons-share-buttons .king-addons-share-icon span {
+    transition-timing-function: linear;
+    transition-property: color, background-color;
+}
+
+.king-addons-share-official .king-addons-share-icon:hover {
+    opacity: 0.85;
+}
+
+.king-addons-share-official .king-addons-share-facebook-f i,
+.king-addons-share-official .king-addons-share-facebook-f span {
+    background-color: #3b5998;
+}
+
+.king-addons-share-official .king-addons-share-x-twitter i,
+.king-addons-share-official .king-addons-share-x-twitter span {
+    background-color: #000000;
+}
+
+.king-addons-share-official .king-addons-share-linkedin-in i,
+.king-addons-share-official .king-addons-share-linkedin-in span {
+    background-color: #0077b5;
+}
+
+.king-addons-share-official .king-addons-share-pinterest-p i,
+.king-addons-share-official .king-addons-share-pinterest-p span {
+    background-color: #bd081c;
+}
+
+.king-addons-share-official .king-addons-share-reddit i,
+.king-addons-share-official .king-addons-share-reddit span {
+    background-color: #ff4500;
+}
+
+.king-addons-share-official .king-addons-share-tumblr i,
+.king-addons-share-official .king-addons-share-tumblr span {
+    background-color: #35465c;
+}
+
+.king-addons-share-official .king-addons-share-digg i,
+.king-addons-share-official .king-addons-share-digg span {
+    background-color: #005be2;
+}
+
+.king-addons-share-official .king-addons-share-xing i,
+.king-addons-share-official .king-addons-share-xing span {
+    background-color: #026466;
+}
+
+.king-addons-share-official .king-addons-share-vk i,
+.king-addons-share-official .king-addons-share-vk span {
+    background-color: #45668e;
+}
+
+.king-addons-share-official .king-addons-share-odnoklassniki i,
+.king-addons-share-official .king-addons-share-odnoklassniki span {
+    background-color: #f4731c;
+}
+
+.king-addons-share-official .king-addons-share-get-pocket i,
+.king-addons-share-official .king-addons-share-get-pocket span {
+    background-color: #ef3f56;
+}
+
+.king-addons-share-official .king-addons-share-skype i,
+.king-addons-share-official .king-addons-share-skype span {
+    background-color: #00aff0;
+}
+
+.king-addons-share-official .king-addons-share-whatsapp i,
+.king-addons-share-official .king-addons-share-whatsapp span {
+    background-color: #25d366;
+}
+
+.king-addons-share-official .king-addons-share-telegram i,
+.king-addons-share-official .king-addons-share-telegram span {
+    background-color: #2ca5e0;
+}
+
+.king-addons-share-official .king-addons-share-envelope i,
+.king-addons-share-official .king-addons-share-envelope span {
+    background-color: #c13B2c;
+}
+
+.king-addons-share-official .king-addons-share-print i,
+.king-addons-share-official .king-addons-share-print span {
+    background-color: #96c859;
+}
+
+.king-addons-share-official .king-addons-share-facebook-f {
+    border-color: #3b5998;
+}
+
+.king-addons-share-official .king-addons-share-x-twitter {
+    border-color: #000000;
+}
+
+.king-addons-share-official .king-addons-share-linkedin-in {
+    border-color: #0077b5;
+}
+
+.king-addons-share-official .king-addons-share-pinterest-p {
+    border-color: #bd081c;
+}
+
+.king-addons-share-official .king-addons-share-reddit {
+    border-color: #ff4500;
+}
+
+.king-addons-share-official .king-addons-share-tumblr {
+    border-color: #35465c;
+}
+
+.king-addons-share-official .king-addons-share-digg {
+    border-color: #005be2;
+}
+
+.king-addons-share-official .king-addons-share-xing {
+    border-color: #026466;
+}
+
+.king-addons-share-official .king-addons-share-vk {
+    border-color: #45668e;
+}
+
+.king-addons-share-official .king-addons-share-odnoklassniki {
+    border-color: #f4731c;
+}
+
+.king-addons-share-official .king-addons-share-get-pocket {
+    border-color: #ef3f56;
+}
+
+.king-addons-share-official .king-addons-share-skype {
+    border-color: #00aff0;
+}
+
+.king-addons-share-official .king-addons-share-whatsapp {
+    border-color: #25d366;
+}
+
+.king-addons-share-official .king-addons-share-telegram {
+    border-color: #2ca5e0;
+}
+
+.king-addons-share-official .king-addons-share-envelope {
+    border-color: #c13B2c;
+}
+
+.king-addons-share-official .king-addons-share-print {
+    border-color: #96c859;
+}
+
+.king-addons-share-official.king-addons-share-icon-tr .king-addons-share-facebook-f i,
+.king-addons-share-official.king-addons-share-label-tr .king-addons-share-facebook-f span {
+    color: #3b5998;
+    background-color: transparent;
+}
+
+.king-addons-share-official.king-addons-share-icon-tr .king-addons-share-x-twitter i,
+.king-addons-share-official.king-addons-share-label-tr .king-addons-share-x-twitter span {
+    color: #000000;
+    background-color: transparent;
+}
+
+.king-addons-share-official.king-addons-share-icon-tr .king-addons-share-linkedin-in i,
+.king-addons-share-official.king-addons-share-label-tr .king-addons-share-linkedin-in span {
+    color: #0077b5;
+    background-color: transparent;
+}
+
+.king-addons-share-official.king-addons-share-icon-tr .king-addons-share-pinterest-p i,
+.king-addons-share-official.king-addons-share-label-tr .king-addons-share-pinterest-p span {
+    color: #bd081c;
+    background-color: transparent;
+}
+
+.king-addons-share-official.king-addons-share-icon-tr .king-addons-share-reddit i,
+.king-addons-share-official.king-addons-share-label-tr .king-addons-share-reddit span {
+    color: #ff4500;
+    background-color: transparent;
+}
+
+.king-addons-share-official.king-addons-share-icon-tr .king-addons-share-tumblr i,
+.king-addons-share-official.king-addons-share-label-tr .king-addons-share-tumblr span {
+    color: #35465c;
+    background-color: transparent;
+}
+
+.king-addons-share-official.king-addons-share-icon-tr .king-addons-share-digg i,
+.king-addons-share-official.king-addons-share-label-tr .king-addons-share-digg span {
+    color: #005be2;
+    background-color: transparent;
+}
+
+.king-addons-share-official.king-addons-share-icon-tr .king-addons-share-xing i,
+.king-addons-share-official.king-addons-share-label-tr .king-addons-share-xing span {
+    color: #026466;
+    background-color: transparent;
+}
+
+.king-addons-share-official.king-addons-share-icon-tr .king-addons-share-vk i,
+.king-addons-share-official.king-addons-share-label-tr .king-addons-share-vk span {
+    color: #45668e;
+    background-color: transparent;
+}
+
+.king-addons-share-official.king-addons-share-icon-tr .king-addons-share-odnoklassniki i,
+.king-addons-share-official.king-addons-share-label-tr .king-addons-share-odnoklassniki span {
+    color: #f4731c;
+    background-color: transparent;
+}
+
+.king-addons-share-official.king-addons-share-icon-tr .king-addons-share-get-pocket i,
+.king-addons-share-official.king-addons-share-label-tr .king-addons-share-get-pocket span {
+    color: #ef3f56;
+    background-color: transparent;
+}
+
+.king-addons-share-official.king-addons-share-icon-tr .king-addons-share-skype i,
+.king-addons-share-official.king-addons-share-label-tr .king-addons-share-skype span {
+    color: #00aff0;
+    background-color: transparent;
+}
+
+.king-addons-share-official.king-addons-share-icon-tr .king-addons-share-whatsapp i,
+.king-addons-share-official.king-addons-share-label-tr .king-addons-share-whatsapp span {
+    color: #25d366;
+    background-color: transparent;
+}
+
+.king-addons-share-official.king-addons-share-icon-tr .king-addons-share-telegram i,
+.king-addons-share-official.king-addons-share-label-tr .king-addons-share-telegram span {
+    color: #2ca5e0;
+    background-color: transparent;
+}
+
+.king-addons-share-official.king-addons-share-icon-tr .king-addons-share-envelope i,
+.king-addons-share-official.king-addons-share-label-tr .king-addons-share-envelope span {
+    color: #c13B2c;
+    background-color: transparent;
+}
+
+.king-addons-share-official.king-addons-share-icon-tr .king-addons-share-print i,
+.king-addons-share-official.king-addons-share-label-tr .king-addons-share-print span {
+    color: #96c859;
+    background-color: transparent;
+}
+
+/* Temporary fix for Font Awesome < 6 version, because Elementor has only 5 version at this time */
+.fa-x-twitter:before {
+    content: "X"
+}

@@ -1,0 +1,1189 @@
+/*
+ * Created from Hover.css https://github.com/IanLunn/Hover
+ */
+
+.elementor-animation-forward {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.elementor-animation-forward:hover,
+.elementor-animation-forward:focus,
+.elementor-animation-forward:active {
+    transform: translateX(8px);
+}
+
+.elementor-animation-backward {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.elementor-animation-backward:hover,
+.elementor-animation-backward:focus,
+.elementor-animation-backward:active {
+    transform: translateX(-8px);
+}
+
+@keyframes king-addons-button-back-pulse {
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.king-addons-button-back-pulse:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+}
+
+.king-addons-button-back-pulse:hover:before {
+    opacity: 1;
+    animation-name: king-addons-button-back-pulse;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.king-addons-button-sweep-to-right {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+
+/*noinspection DuplicatedCode*/
+.king-addons-button-sweep-to-right:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-sweep-to-right:hover:before,
+.king-addons-button-sweep-to-right:focus:before,
+.king-addons-button-sweep-to-right:active:before {
+    transform: scaleX(1);
+}
+
+.king-addons-button-sweep-to-left {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+
+/*noinspection DuplicatedCode*/
+.king-addons-button-sweep-to-left:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: 100% 50%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-sweep-to-left:hover:before,
+.king-addons-button-sweep-to-left:focus:before,
+.king-addons-button-sweep-to-left:active:before {
+    transform: scaleX(1);
+}
+
+.king-addons-button-sweep-to-bottom {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+
+/*noinspection DuplicatedCode*/
+.king-addons-button-sweep-to-bottom:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleY(0);
+    transform-origin: 50% 0;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-sweep-to-bottom:hover:before,
+.king-addons-button-sweep-to-bottom:focus:before,
+.king-addons-button-sweep-to-bottom:active:before {
+    transform: scaleY(1);
+}
+
+.king-addons-button-sweep-to-top {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+
+/*noinspection DuplicatedCode*/
+.king-addons-button-sweep-to-top:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleY(0);
+    transform-origin: 50% 100%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-sweep-to-top:hover:before,
+.king-addons-button-sweep-to-top:focus:before,
+.king-addons-button-sweep-to-top:active:before {
+    transform: scaleY(1);
+}
+
+.king-addons-button-bounce-to-right {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.5s;
+}
+
+/*noinspection DuplicatedCode*/
+.king-addons-button-bounce-to-right:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-bounce-to-right:hover:before,
+.king-addons-button-bounce-to-right:focus:before,
+.king-addons-button-bounce-to-right:active:before {
+    transform: scaleX(1);
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+.king-addons-button-bounce-to-left {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.5s;
+}
+
+/*noinspection DuplicatedCode*/
+.king-addons-button-bounce-to-left:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: 100% 50%;
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-bounce-to-left:hover:before,
+.king-addons-button-bounce-to-left:focus:before,
+.king-addons-button-bounce-to-left:active:before {
+    transform: scaleX(1);
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+.king-addons-button-bounce-to-bottom {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.5s;
+}
+
+/*noinspection DuplicatedCode*/
+.king-addons-button-bounce-to-bottom:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleY(0);
+    transform-origin: 50% 0;
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-bounce-to-bottom:hover:before,
+.king-addons-button-bounce-to-bottom:focus:before,
+.king-addons-button-bounce-to-bottom:active:before {
+    transform: scaleY(1);
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+.king-addons-button-bounce-to-top {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.5s;
+}
+
+/*noinspection DuplicatedCode*/
+.king-addons-button-bounce-to-top:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleY(0);
+    transform-origin: 50% 100%;
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-bounce-to-top:hover,
+.king-addons-button-bounce-to-top:focus,
+.king-addons-button-bounce-to-top:active {
+    color: white;
+}
+
+.king-addons-button-bounce-to-top:hover:before,
+.king-addons-button-bounce-to-top:focus:before,
+.king-addons-button-bounce-to-top:active:before {
+    transform: scaleY(1);
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+.king-addons-button-radial-out {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    overflow: hidden;
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+
+.king-addons-button-radial-out:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 100%;
+    transform: scale(0);
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-radial-out:hover,
+.king-addons-button-radial-out:focus,
+.king-addons-button-radial-out:active {
+    color: white;
+}
+
+.king-addons-button-radial-out:hover:before,
+.king-addons-button-radial-out:focus:before,
+.king-addons-button-radial-out:active:before {
+    transform: scale(2);
+}
+
+.king-addons-button-radial-in {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    overflow: hidden;
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+
+.king-addons-button-radial-in:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 100%;
+    transform: scale(2);
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-radial-in:hover,
+.king-addons-button-radial-in:focus,
+.king-addons-button-radial-in:active {
+    color: white;
+}
+
+.king-addons-button-radial-in:hover:before,
+.king-addons-button-radial-in:focus:before,
+.king-addons-button-radial-in:active:before {
+    transform: scale(0);
+}
+
+.king-addons-button-rectangle-in {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+
+.king-addons-button-rectangle-in:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scale(1);
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-rectangle-in:hover:before,
+.king-addons-button-rectangle-in:focus:before,
+.king-addons-button-rectangle-in:active:before {
+    transform: scale(0);
+}
+
+.king-addons-button-rectangle-out {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+
+.king-addons-button-rectangle-out:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scale(0);
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-rectangle-out:hover:before,
+.king-addons-button-rectangle-out:focus:before,
+.king-addons-button-rectangle-out:active:before {
+    transform: scale(1);
+}
+
+.king-addons-button-shutter-in-horizontal {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+
+/*noinspection DuplicatedCode*/
+.king-addons-button-shutter-in-horizontal:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scaleX(1);
+    transform-origin: 50%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-shutter-in-horizontal:hover:before,
+.king-addons-button-shutter-in-horizontal:focus:before,
+.king-addons-button-shutter-in-horizontal:active:before {
+    transform: scaleX(0);
+}
+
+.king-addons-button-shutter-out-horizontal {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+
+/*noinspection DuplicatedCode*/
+.king-addons-button-shutter-out-horizontal:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scaleX(0);
+    transform-origin: 50%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-shutter-out-horizontal:hover:before,
+.king-addons-button-shutter-out-horizontal:focus:before,
+.king-addons-button-shutter-out-horizontal:active:before {
+    transform: scaleX(1);
+}
+
+.king-addons-button-shutter-in-vertical {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+
+/*noinspection DuplicatedCode*/
+.king-addons-button-shutter-in-vertical:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scaleY(1);
+    transform-origin: 50%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-shutter-in-vertical:hover:before,
+.king-addons-button-shutter-in-vertical:focus:before,
+.king-addons-button-shutter-in-vertical:active:before {
+    transform: scaleY(0);
+}
+
+.king-addons-button-shutter-out-vertical {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+
+/*noinspection DuplicatedCode*/
+.king-addons-button-shutter-out-vertical:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scaleY(0);
+    transform-origin: 50%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-shutter-out-vertical:hover:before,
+.king-addons-button-shutter-out-vertical:focus:before,
+.king-addons-button-shutter-out-vertical:active:before {
+    transform: scaleY(1);
+}
+
+.king-addons-button-underline-from-left {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    border: none !important;
+    overflow: hidden;
+}
+
+.king-addons-button-underline-from-left:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    height: 4px;
+    transition-property: right;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-underline-from-left:hover:before,
+.king-addons-button-underline-from-left:focus:before,
+.king-addons-button-underline-from-left:active:before {
+    right: 0;
+}
+
+.king-addons-button-underline-from-center {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    border: none !important;
+    overflow: hidden;
+}
+
+.king-addons-button-underline-from-center:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    bottom: 0;
+    transition-property: left, right;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-underline-from-center:hover:before,
+.king-addons-button-underline-from-center:focus:before,
+.king-addons-button-underline-from-center:active:before {
+    left: 0;
+    right: 0;
+}
+
+.king-addons-button-underline-from-right {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    border: none !important;
+    overflow: hidden;
+}
+
+.king-addons-button-underline-from-right:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 100%;
+    right: 0;
+    bottom: 0;
+    transition-property: left;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-underline-from-right:hover:before,
+.king-addons-button-underline-from-right:focus:before,
+.king-addons-button-underline-from-right:active:before {
+    left: 0;
+}
+
+.king-addons-button-overline-from-left {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    border: none !important;
+    overflow: hidden;
+}
+
+.king-addons-button-overline-from-left:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 100%;
+    top: 0;
+    transition-property: right;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-overline-from-left:hover:before,
+.king-addons-button-overline-from-left:focus:before,
+.king-addons-button-overline-from-left:active:before {
+    right: 0;
+}
+
+.king-addons-button-overline-from-center {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    border: none !important;
+    overflow: hidden;
+}
+
+.king-addons-button-overline-from-center:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    top: 0;
+    transition-property: left, right;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-overline-from-center:hover:before,
+.king-addons-button-overline-from-center:focus:before,
+.king-addons-button-overline-from-center:active:before {
+    left: 0;
+    right: 0;
+}
+
+.king-addons-button-overline-from-right {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    border: none !important;
+    overflow: hidden;
+}
+
+.king-addons-button-overline-from-right:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 100%;
+    right: 0;
+    top: 0;
+    transition-property: left;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-overline-from-right:hover:before,
+.king-addons-button-overline-from-right:focus:before,
+.king-addons-button-overline-from-right:active:before {
+    left: 0;
+}
+
+.king-addons-button-underline-reveal {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    border: none !important;
+    overflow: hidden;
+}
+
+.king-addons-button-underline-reveal:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(100%);
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-underline-reveal:hover:before,
+.king-addons-button-underline-reveal:focus:before,
+.king-addons-button-underline-reveal:active:before {
+    transform: translateY(0);
+}
+
+.king-addons-button-overline-reveal {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    border: none !important;
+    overflow: hidden;
+}
+
+.king-addons-button-overline-reveal:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    top: 0;
+    transform: translateY(-100%);
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.king-addons-button-overline-reveal:hover:before,
+.king-addons-button-overline-reveal:focus:before,
+.king-addons-button-overline-reveal:active:before {
+    transform: translateY(0);
+}
+
+.king-addons-button-berlin {
+    overflow: hidden;
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.king-addons-button-berlin::after {
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translate3d(0, 25%, 0);
+}
+
+.king-addons-button-berlin::after,
+.king-addons-button-berlin > span {
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.king-addons-button-berlin:hover::after {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.king-addons-button-berlin:hover > span {
+    opacity: 0;
+    transform: translate3d(0, -25%, 0);
+}
+
+.king-addons-button-london-left {
+    overflow: hidden;
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.king-addons-button-london-left::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 100%;
+    z-index: -1;
+    transform: rotate3d(0, 0, 1, -90deg) translate3d(0, -3em, 0);
+    transform-origin: 0 100%;
+    transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+}
+
+.king-addons-button-london-left:hover::after {
+    opacity: 1;
+    transform: rotate3d(0, 0, 1, 0deg);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.king-addons-button-london-right {
+    overflow: hidden;
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.king-addons-button-london-right::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150%;
+    height: 100%;
+    z-index: -1;
+    transform: rotate3d(0, 0, 1, 90deg) translate3d(0, -3em, 0);
+    transform-origin: 100% 100%;
+    transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+}
+
+.king-addons-button-london-right:hover::after {
+    opacity: 1;
+    transform: rotate3d(0, 0, 1, 0deg);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.king-addons-button-madrid-left {
+    overflow: hidden;
+}
+
+.king-addons-button-madrid-left::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate3d(-100%, 0, 0);
+    z-index: 10;
+}
+
+.king-addons-button-madrid-left::after,
+.king-addons-button-madrid-left > span {
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+
+.king-addons-button-madrid-left:hover::after {
+    transform: translate3d(0, 0, 0);
+}
+
+.king-addons-button-madrid-left:hover > span {
+    transform: translate3d(0, 100%, 0);
+}
+
+.king-addons-button-madrid-right {
+    overflow: hidden;
+}
+
+.king-addons-button-madrid-right::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate3d(100%, 0, 0);
+    z-index: 10;
+}
+
+.king-addons-button-madrid-right::after,
+.king-addons-button-madrid-right > span {
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+
+.king-addons-button-madrid-right:hover::after {
+    transform: translate3d(0, 0, 0);
+}
+
+.king-addons-button-madrid-right:hover > span {
+    transform: translate3d(0, 100%, 0);
+}
+
+.king-addons-button-rome-left {
+    overflow: hidden;
+}
+
+.king-addons-button-rome-left::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin: -15px 0 0 1px;
+    width: 15%;
+    height: 30px;
+    border-radius: 50%;
+    transform-origin: 0 50%;
+    transform: scale3d(1, 2, 1);
+    transition-timing-function: cubic-bezier(0.7, 0, 0.9, 1);
+}
+
+.king-addons-button-rome-left:hover::after {
+    transform: scale3d(9, 9, 1);
+}
+
+.king-addons-button-rome-right {
+    overflow: hidden;
+}
+
+.king-addons-button-rome-right::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin: -15px 0 0 1px;
+    width: 15%;
+    height: 30px;
+    border-radius: 50%;
+    transform-origin: 100% 50%;
+    transform: scale3d(1, 2, 1);
+    transition-timing-function: cubic-bezier(0.7, 0, 0.9, 1);
+}
+
+.king-addons-button-rome-right:hover::after {
+    transform: scale3d(9, 9, 1);
+}
+
+.king-addons-button-paris {
+    overflow: hidden;
+}
+
+.king-addons-button-paris::after,
+.king-addons-button-paris::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 100%;
+    left: 0;
+    z-index: -1;
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+
+.king-addons-button-paris::after {
+    opacity: 0.75;
+}
+
+.king-addons-button-paris:hover::after,
+.king-addons-button-paris:hover::before {
+    transform: translate3d(0, 100%, 0);
+}
+
+.king-addons-button-paris:hover::before {
+    transition-delay: 0.175s;
+}
+
+.king-addons-button-oslo {
+    overflow: visible !important;
+    border: none !important;
+}
+
+.king-addons-button-oslo::after {
+    content: '';
+    z-index: -1;
+    border-radius: inherit;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+    opacity: 0;
+    transform: scale3d(1.2, 1.2, 1);
+}
+
+.king-addons-button-oslo:hover::after {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+}
+
+.king-addons-button-naira {
+    overflow: hidden;
+}
+
+.king-addons-button-naira::after {
+    content: '';
+    position: absolute;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    z-index: -1;
+    transform: translate3d(0, -100%, 0) rotate3d(0, 0, 1, -10deg);
+}
+
+.king-addons-button-naira .king-addons-button-button-icon {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    margin: 0 !important;
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+}
+
+.king-addons-button-naira .king-addons-button-button-icon i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.king-addons-button-naira .king-addons-button-button-text {
+    display: block;
+}
+
+.king-addons-button-naira .king-addons-button-button-text,
+.king-addons-button-naira .king-addons-button-button-icon {
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+
+.king-addons-button-naira:hover .king-addons-button-button-icon {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+.king-addons-button-naira:hover .king-addons-button-button-text {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+}
+
+@keyframes anim-naira-1 {
+    50% {
+        transform: translate3d(0, -50%, 0) rotate3d(0, 0, 1, -10deg);
+        animation-timing-function: ease-out;
+    }
+    100% {
+        transform: translate3d(0, 0%, 0) rotate3d(0, 0, 1, 0deg);
+    }
+}
+
+.king-addons-button-naira:hover::after {
+    animation-name: anim-naira-1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+.king-addons-button-naira-up {
+    overflow: hidden;
+}
+
+.king-addons-button-naira-up::after {
+    content: '';
+    position: absolute;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    z-index: -1;
+    transform: translate3d(0, 100%, 0) rotate3d(0, 0, 1, 10deg);
+}
+
+.king-addons-button-naira-up .king-addons-button-button-icon {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    margin: 0 !important;
+    transform: translate3d(0, 100%, 0);
+    opacity: 0;
+}
+
+.king-addons-button-naira-up .king-addons-button-button-icon i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.king-addons-button-naira-up .king-addons-button-button-text {
+    display: block;
+}
+
+.king-addons-button-naira-up .king-addons-button-button-text,
+.king-addons-button-naira-up .king-addons-button-button-icon {
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+
+.king-addons-button-naira-up:hover .king-addons-button-button-icon {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+.king-addons-button-naira-up:hover .king-addons-button-button-text {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+}
+
+@keyframes anim-naira-2 {
+    50% {
+        transform: translate3d(0, 50%, 0) rotate3d(0, 0, 1, 10deg);
+        animation-timing-function: ease-out;
+    }
+    100% {
+        transform: translate3d(0, 0%, 0) rotate3d(0, 0, 1, 0deg);
+    }
+}
+
+.king-addons-button-naira-up:hover::after {
+    animation-name: anim-naira-2;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+.king-addons-button-none:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.king-addons-button-none:hover:before {
+    opacity: 1;
+}
+
+.king-addons-button-effect,
+.king-addons-button-effect::before,
+.king-addons-button-effect::after,
+.king-addons-button-effect span {
+    transition-property: all;
+}
+
+.king-addons-button-effect::after {
+    text-align: center;
+}

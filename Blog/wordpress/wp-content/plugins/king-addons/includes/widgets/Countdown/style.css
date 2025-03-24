@@ -1,0 +1,58 @@
+.king-addons-countdown-wrap {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.king-addons-countdown-item {
+    overflow: hidden;
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;
+    color: #fff;
+}
+
+.king-addons-countdown-item:first-child {
+    margin-left: 0 !important;
+}
+
+.king-addons-countdown-item:last-of-type {
+    margin-right: 0 !important;
+}
+
+.king-addons-countdown-number {
+    display: block;
+}
+
+.king-addons-countdown-separator {
+    align-self: center;
+}
+
+.king-addons-countdown-separator span {
+    display: block;
+}
+
+.king-addons-countdown-separator:last-of-type {
+    display: none !important;
+}
+
+.king-addons-countdown-wrap + div:not(.king-addons-countdown-message) {
+    display: none;
+}
+
+.king-addons-countdown-message + div {
+    display: none;
+}
+
+.elementor-widget-king-addons-countdown .king-addons-countdown-item {
+    background-color: #5B03FF;
+}
+
+.elementor-widget-king-addons-countdown .king-addons-countdown-number {
+    font-size: 70px;
+}
+
+.elementor-widget-king-addons-countdown .king-addons-countdown-label {
+    font-size: 19px;
+    line-height: 45px;
+}

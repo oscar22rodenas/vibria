@@ -1,0 +1,10 @@
+.king-addons-image-grid-item img {
+    height: 100%;
+    width: 100%;
+}
+
+.king-addons-image-grid-item-inner {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}

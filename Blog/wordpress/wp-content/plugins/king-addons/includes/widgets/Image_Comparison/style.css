@@ -1,0 +1,60 @@
+.king-addons-image-comparison {
+    display: grid;
+    place-content: center;
+    position: relative;
+    overflow: hidden;
+    width: fit-content;
+    --position: 50%;
+}
+
+.king-addons-image-comparison-container {
+    position: relative;
+}
+
+.king-addons-image-comparison-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: none;
+    object-position: left;
+}
+
+.king-addons-image-comparison-image-before {
+    position: absolute;
+    inset: 0;
+    width: var(--position);
+}
+
+.king-addons-image-comparison-slider {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-image-comparison-slider:focus-visible ~ .king-addons-image-comparison-slider-button {
+    outline: 5px solid black;
+    outline-offset: 3px;
+}
+
+.king-addons-image-comparison-slider-line {
+    position: absolute;
+    inset: 0;
+    width: .2rem;
+    height: 100%;
+    left: var(--position);
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.king-addons-image-comparison-slider-button {
+    position: absolute;
+    color: black;
+    display: grid;
+    place-items: center;
+    top: 50%;
+    left: var(--position);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
