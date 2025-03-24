@@ -7,4 +7,8 @@ export default defineConfig({
   output: 'server',
   adapter: node({mode: 'standalone'}),
   integrations: [tailwind()],
+  image: {
+    domains: ["localhost"], // Si usas un dominio real, cámbialo aquí
+    remotePatterns: [{ protocol: "http" }, { protocol: "https" }]
+  }
 });
