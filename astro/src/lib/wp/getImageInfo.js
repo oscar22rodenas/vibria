@@ -1,3 +1,5 @@
+import { apiURL } from "./config.js";
+
 export const getImageInfo = async (imageId) => {
     if (!imageId) return "";
   

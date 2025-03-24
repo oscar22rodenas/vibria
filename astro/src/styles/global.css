@@ -35,6 +35,10 @@
   @apply font-poppins text-p text-white;
 }
 
+.copyright {
+  @apply font-poppins text-copyright text-white;
+}
+
 .btn {
     @apply bg-secondary text-white font-bold text-[20px] uppercase text-center 
            rounded-full shadow-[0px_4px_0px_0px_#FFC721] py-0.5 px-5 text-white;
