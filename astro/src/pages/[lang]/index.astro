@@ -1,20 +1,18 @@
 ---
 // src/pages/[lang]/index.astro
-import Layout from '../../layouts/Layout.astro';
-import { getPageInfo, getImageInfo } from '../../lib/wp/index.js';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import Slide from '../../components/Slide.astro';
+import Layout from "../../layouts/Layout.astro";
+import { getPageInfo, getImageInfo } from "../../lib/wp/index.js";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
 
 // Obtén el parámetro 'lang' de la URL
 const { lang } = Astro.params;
 
-
 // Mapeo de slugs a los idiomas disponibles
 const slugMap = {
-  es: 'home-es',
-  ca: 'home-ca',
-  en: 'home-en',
+  es: "home-es",
+  ca: "home-ca",
+  en: "home-en",
 };
 
 // Verifica si el idioma es válido
@@ -26,7 +24,9 @@ if (!slugMap[lang]) {
 const acf = await getPageInfo(slugMap[lang]);
 
 // Obtiene la imagen de difusión y su URL
-const imageData = acf.difusion_imagen ? await getImageInfo(acf.difusion_imagen) : null;
+const imageData = acf.difusion_imagen
+  ? await getImageInfo(acf.difusion_imagen)
+  : null;
 const ImageUrl = imageData?.source_url || "";
 const ImageAlt = imageData?.alt_text || "Imagen de canal de difusión";
 
@@ -35,23 +35,70 @@ export const prerender = false;
 
 <Layout>
   <Header />
-  <Slide />
-  <div class="flex flex-col items-center justify-center bg-secondary px-20 py-8 text-center">
+
+  <div
+    class="flex flex-col items-center justify-center bg-secondary px-20 py-8 text-center"
+  >
     <div class="border border-white p-1">
       <p class="font-700 p">{acf.difusion_descripcion}</p>
     </div>
 
-    {ImageUrl && (
-      <a href={acf.difusion_link} class="mt-4">
-        <img 
-          src={ImageUrl} 
-          alt={ImageAlt} 
-          width="60" 
-          height="60" 
-          class="rounded-lg transition-transform transform hover:scale-105"
+    {
+      ImageUrl && (
+        <a href={acf.difusion_link} class="mt-4">
+          <img
+            src={ImageUrl}
+            alt={ImageAlt}
+            width="60"
+            height="60"
+            class="rounded-lg transition-transform transform hover:scale-105"
+          />
+        </a>
+      )
+    }
+  </div>
+
+  <div class="flex flex-col items-center gap-4 py-4 bg-gray-100">
+    <h3 class="text-h3 text-700 text-primary text-center font-700">
+      {acf.contacto_titulo}
+    </h3>
+  
+    <form class="flex flex-col items-center gap-4">
+      <div class="w-full flex justify-center">
+        <input
+          type="text"
+          id="nom"
+          placeholder={acf.contacto_campo_nombre}
+          class="w-[257px] h-[30px] rounded-[20px] border border-secondary px-[10px] py-[6px] bg-white focus:outline-none focus:ring-1 focus:ring-secondary placeholder-gray-400"
         />
-      </a>
-    )}
+      </div>
+  
+      <div class="w-full flex justify-center">
+        <input
+          type="email"
+          id="correu"
+          placeholder={acf.contacto_campo_correo}
+          class="w-[257px] h-[30px] rounded-[20px] border border-secondary px-[10px] py-[6px] bg-white focus:outline-none focus:ring-1 focus:ring-secondary placeholder-gray-400"
+        />
+      </div>
+  
+      <div class="w-full flex justify-center">
+        <textarea
+          id="missatge"
+          placeholder={acf.contacto_campo_mensaje}
+          class="w-[257px] h-[123px] rounded-[10px] border border-secondary px-[10px] pt-[9px] pb-[6px] bg-white focus:outline-none focus:ring-1 focus:ring-secondary resize-none placeholder-gray-400"
+        ></textarea>
+      </div>
+  
+      <div class="flex justify-start w-[257px]">
+        <button
+          type="submit"
+          class="btn bg-secondary h-[34px] w-[116px] px-[20px] py-[2px]"
+        >
+          {acf.contacto_boton_texto}
+        </button>
+      </div>
+    </form>
   </div>
 
   <Footer />
