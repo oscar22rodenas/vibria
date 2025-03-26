@@ -1,19 +1,28 @@
 ---
-import { Image } from 'astro:assets';
-import { getPageInfo, getImageInfo } from '../lib/wp/index.js';
+import { Picture } from 'astro:assets';
+import { getPageInfo, getImageInfo } from '../../lib/wp/index.js';
 
 
 const acf = await getPageInfo("footer");
 
-const imageDataUbi = acf.ubicacion_imagen ? await getImageInfo(acf.ubicacion_imagen) : null;
+const imageIds = [
+  acf.ubicacion_imagen,
+  acf.telefono_imagen,
+  acf.correo_imagen
+];
+
+// Hacer todas las llamadas de imágenes en paralelo
+const imagesData = await Promise.all(imageIds.map(id => getImageInfo(id)));
+
+// Asignar los datos obtenidos
+const [imageDataUbi, imageDataTel, imageDataMail] = imagesData;
+
 const ImageUrlUbi = imageDataUbi?.source_url || "";
 const ImageAltUbi = imageDataUbi?.alt_text || "Logo Vibria";
 
-const imageDataTel = acf.telefono_imagen ? await getImageInfo(acf.telefono_imagen) : null;
 const ImageUrlTel = imageDataTel?.source_url || "";
 const ImageAltTel = imageDataTel?.alt_text || "Logo Vibria";
 
-const imageDataMail = acf.correo_imagen ? await getImageInfo(acf.correo_imagen) : null;
 const ImageUrlMail = imageDataMail?.source_url || "";
 const ImageAltMail = imageDataMail?.alt_text || "Logo Vibria";
 ---
@@ -21,7 +30,7 @@ const ImageAltMail = imageDataMail?.alt_text || "Logo Vibria";
 <footer class="flex flex-col bg-primary px-12 pt-2 pb-1 gap-2">
     <div class="flex flex-col items-start justify-between text-center gap-2">
         <div class="flex flex-row items-center gap-4">
-            <Image src={ImageUrlUbi} alt={ImageAltUbi} width="20" height="20" />
+            <Picture formats={['webp', 'avif', 'jpeg']} src={ImageUrlUbi} alt={ImageAltUbi} width="20" height="20" />
             <ul class="list-none text-left">
                 <li class="p">{acf.ubicacion_texto}</li>
                 <li class="p">{acf.ubicacion_lugar_texto}</li>
@@ -30,11 +39,11 @@ const ImageAltMail = imageDataMail?.alt_text || "Logo Vibria";
         </div>
 
         <div class="flex flex-row items-center gap-4">
-            <Image src={ImageUrlTel} alt={ImageAltTel} width="20" height="20" />
+            <Picture formats={['webp', 'avif', 'jpeg']} src={ImageUrlTel} alt={ImageAltTel} width="20" height="20" />
             <p class="p">{acf.telefono_texto}</p>
         </div>
         <div class="flex flex-row items-center gap-4">
-            <Image src={ImageUrlMail} alt={ImageAltMail} width="20" height="20" />
+            <Picture formats={['webp', 'avif', 'jpeg']} src={ImageUrlMail} alt={ImageAltMail} width="20" height="20" />
             <p class="p">{acf.correo_texto}</p>
         </div>
     </div>

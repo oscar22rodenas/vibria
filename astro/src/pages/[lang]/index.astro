@@ -2,8 +2,9 @@
 // src/pages/[lang]/index.astro
 import Layout from "../../layouts/Layout.astro";
 import { getPageInfo, getImageInfo } from "../../lib/wp/index.js";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
+import Header from "../../components/[lang]/Header.astro";
+import Footer from "../../components/[lang]/Footer.astro";
+import Slide from "../../components/[lang]/Slide.astro";
 
 // Obtén el parámetro 'lang' de la URL
 const { lang } = Astro.params;
@@ -35,17 +36,15 @@ export const prerender = false;
 
 <Layout>
   <Header />
-
-  <div
-    class="flex flex-col items-center justify-center bg-secondary px-20 py-8 text-center"
-  >
+  <Slide />
+  <div class="flex flex-col items-center justify-center bg-secondary px-20 py-8 text-center gap-4">
     <div class="border border-white p-1">
       <p class="font-700 p">{acf.difusion_descripcion}</p>
     </div>
 
     {
       ImageUrl && (
-        <a href={acf.difusion_link} class="mt-4">
+        <a href={acf.difusion_link}>
           <img
             src={ImageUrl}
             alt={ImageAlt}
@@ -63,38 +62,35 @@ export const prerender = false;
       {acf.contacto_titulo}
     </h3>
   
-    <form class="flex flex-col items-center gap-4">
-      <div class="w-full flex justify-center">
+    <form class="flex flex-col items-start gap-4">
+      <div class="flex justify-center">
         <input
           type="text"
           id="nom"
           placeholder={acf.contacto_campo_nombre}
-          class="w-[257px] h-[30px] rounded-[20px] border border-secondary px-[10px] py-[6px] bg-white focus:outline-none focus:ring-1 focus:ring-secondary placeholder-gray-400"
+          class="rounded-[20px] border border-secondary pl-2 pr-8 py-1 bg-white focus:outline-none focus:ring-1 focus:ring-secondary placeholder-secondary"
         />
       </div>
   
-      <div class="w-full flex justify-center">
+      <div class="flex justify-center">
         <input
           type="email"
           id="correu"
           placeholder={acf.contacto_campo_correo}
-          class="w-[257px] h-[30px] rounded-[20px] border border-secondary px-[10px] py-[6px] bg-white focus:outline-none focus:ring-1 focus:ring-secondary placeholder-gray-400"
+          class="rounded-[20px] border border-secondary pl-2 pr-8 py-1 bg-white focus:outline-none focus:ring-1 focus:ring-secondary placeholder-secondary"
         />
       </div>
   
-      <div class="w-full flex justify-center">
+      <div class="flex justify-center">
         <textarea
           id="missatge"
           placeholder={acf.contacto_campo_mensaje}
-          class="w-[257px] h-[123px] rounded-[10px] border border-secondary px-[10px] pt-[9px] pb-[6px] bg-white focus:outline-none focus:ring-1 focus:ring-secondary resize-none placeholder-gray-400"
+          class="rounded-[10px] border border-secondary pl-2 pr-16 pt-1 pb-12 bg-white focus:outline-none focus:ring-1 focus:ring-secondary resize-none placeholder-secondary"
         ></textarea>
       </div>
   
-      <div class="flex justify-start w-[257px]">
-        <button
-          type="submit"
-          class="btn bg-secondary h-[34px] w-[116px] px-[20px] py-[2px]"
-        >
+      <div class="flex justify-start ">
+        <button type="submit" class="btn">
           {acf.contacto_boton_texto}
         </button>
       </div>
