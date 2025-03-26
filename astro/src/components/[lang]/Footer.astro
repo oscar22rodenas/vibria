@@ -17,20 +17,20 @@ const imagesData = await Promise.all(imageIds.map(id => getImageInfo(id)));
 // Asignar los datos obtenidos
 const [imageDataUbi, imageDataTel, imageDataMail] = imagesData;
 
-const ImageUrlUbi = imageDataUbi?.source_url || "";
-const ImageAltUbi = imageDataUbi?.alt_text || "Logo Vibria";
+const imageUrlUbi = imageDataUbi?.source_url || "";
+const imageAltUbi = imageDataUbi?.alt_text || "Logo Vibria";
 
-const ImageUrlTel = imageDataTel?.source_url || "";
-const ImageAltTel = imageDataTel?.alt_text || "Logo Vibria";
+const imageUrlTel = imageDataTel?.source_url || "";
+const imageAltTel = imageDataTel?.alt_text || "Logo Vibria";
 
-const ImageUrlMail = imageDataMail?.source_url || "";
-const ImageAltMail = imageDataMail?.alt_text || "Logo Vibria";
+const imageUrlMail = imageDataMail?.source_url || "";
+const imageAltMail = imageDataMail?.alt_text || "Logo Vibria";
 ---
 
 <footer class="flex flex-col bg-primary px-12 pt-2 pb-1 gap-2">
     <div class="flex flex-col items-start justify-between text-center gap-2">
         <div class="flex flex-row items-center gap-4">
-            <Picture formats={['webp', 'avif', 'jpeg']} src={ImageUrlUbi} alt={ImageAltUbi} width="20" height="20" />
+            <Picture formats={['webp', 'avif', 'jpeg']} src={imageUrlUbi} alt={imageAltUbi} width="20" height="20" />
             <ul class="list-none text-left">
                 <li class="p">{acf.ubicacion_texto}</li>
                 <li class="p">{acf.ubicacion_lugar_texto}</li>
@@ -39,11 +39,11 @@ const ImageAltMail = imageDataMail?.alt_text || "Logo Vibria";
         </div>
 
         <div class="flex flex-row items-center gap-4">
-            <Picture formats={['webp', 'avif', 'jpeg']} src={ImageUrlTel} alt={ImageAltTel} width="20" height="20" />
+            <Picture formats={['webp', 'avif', 'jpeg']} src={imageUrlTel} alt={imageAltTel} width="20" height="20" />
             <p class="p">{acf.telefono_texto}</p>
         </div>
         <div class="flex flex-row items-center gap-4">
-            <Picture formats={['webp', 'avif', 'jpeg']} src={ImageUrlMail} alt={ImageAltMail} width="20" height="20" />
+            <Picture formats={['webp', 'avif', 'jpeg']} src={imageUrlMail} alt={imageAltMail} width="20" height="20" />
             <p class="p">{acf.correo_texto}</p>
         </div>
     </div>

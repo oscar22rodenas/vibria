@@ -3,12 +3,14 @@
 import Layout from "../../layouts/Layout.astro";
 import { getPageInfo, getImageInfo } from "../../lib/wp/index.js";
 import Header from "../../components/[lang]/Header.astro";
-import Footer from "../../components/[lang]/Footer.astro";
 import Slide from "../../components/[lang]/Slide.astro";
+import RRSS from "../../components/[lang]/RRSS.astro";
+import Footer from "../../components/[lang]/Footer.astro";
+
 
 // Obtén el parámetro 'lang' de la URL
 const { lang } = Astro.params;
-
+console.log(lang);
 // Mapeo de slugs a los idiomas disponibles
 const slugMap = {
   es: "home-es",
@@ -28,8 +30,8 @@ const acf = await getPageInfo(slugMap[lang]);
 const imageData = acf.difusion_imagen
   ? await getImageInfo(acf.difusion_imagen)
   : null;
-const ImageUrl = imageData?.source_url || "";
-const ImageAlt = imageData?.alt_text || "Imagen de canal de difusión";
+const imageUrl = imageData?.source_url || "";
+const imageAlt = imageData?.alt_text || "Imagen de canal de difusión";
 
 export const prerender = false;
 ---
@@ -45,11 +47,11 @@ export const prerender = false;
     </div>
 
     {
-      ImageUrl && (
+      imageUrl && (
         <a href={acf.difusion_link}>
           <img
-            src={ImageUrl}
-            alt={ImageAlt}
+            src={imageUrl}
+            alt={imageAlt}
             width="60"
             height="60"
             class="rounded-lg transition-transform transform hover:scale-105"
@@ -97,5 +99,6 @@ export const prerender = false;
     </form>
   </div>
 
+  <RRSS />
   <Footer />
 </Layout>
