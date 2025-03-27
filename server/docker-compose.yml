@@ -1,0 +1,57 @@
+version: '3'
+
+services:
+  # Base de datos
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    networks:
+      - wpsite
+
+  # phpMyAdmin
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '8080:80'
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: password
+    networks:
+      - wpsite
+
+  # Wordpress
+  wordpress:
+    depends_on:
+      - db
+    build:
+      context: ..  # Usa el Dockerfile personalizado
+      dockerfile: server/Dockerfile
+    ports:
+      - '8000:80'
+    restart: always
+    volumes:
+      - ../Blog/wordpress:/var/www/html
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+    networks:
+      - wpsite  # Solo referencia la red aquí
+
+# Definición correcta de la red
+networks:
+  wpsite:
+    driver: bridge  # Aquí es donde debe ir el driver
+
+volumes:
+  db_data:

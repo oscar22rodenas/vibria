@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos de títulos y textos */
+.h1 {
+  @apply font-poppins text-h1 font-800 text-white;
+}
+
+.h2 {
+  @apply font-poppins text-h2 leading-[18px] text-white;
+}
+
+
+.h3 {
+  @apply font-poppins text-h3 leading-[18px] text-white;
+}
+
+
+.h4 {
+  @apply font-poppins text-h4 leading-[30px] text-white;
+}
+
+
+.p {
+  @apply font-poppins text-p text-white;
+}
+
+.copyright {
+  @apply font-poppins text-copyright text-white;
+}
+
+.btn {
+    @apply bg-secondary text-white font-bold text-[20px] uppercase text-center 
+           rounded-full shadow-[0px_4px_0px_0px_#FFC721] py-0.5 px-5 text-white;
+  }

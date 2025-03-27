@@ -1,0 +1,139 @@
+body,
+main {
+    overflow-x: hidden;
+}
+
+.king-addons-one-page-nav {
+    position: fixed;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.king-addons-one-page-nav-item {
+    position: relative;
+}
+
+.king-addons-one-page-nav-item:last-child {
+    margin-bottom: 0 !important;
+}
+
+.king-addons-one-page-nav-items-p-v-top .king-addons-one-page-nav {
+    top: 0;
+}
+
+.king-addons-one-page-nav-items-p-v-middle .king-addons-one-page-nav {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.king-addons-one-page-nav-items-p-v-bottom .king-addons-one-page-nav {
+    bottom: 0;
+}
+
+.king-addons-one-page-nav-items-p-h-left .king-addons-one-page-nav {
+    left: 0;
+}
+
+.king-addons-one-page-nav-items-p-h-right .king-addons-one-page-nav {
+    right: 0;
+}
+
+.king-addons-one-page-nav-tooltip {
+    font-size: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    padding: 6px 10px;
+    transition: all 230ms ease-in-out 0s;
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.king-addons-one-page-nav-tooltip:before {
+    position: absolute;
+    bottom: -5px;
+    left: 10px;
+    width: 0;
+    height: 0;
+    content: "";
+    border-top-width: 6px;
+    border-top-style: solid;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+}
+
+.king-addons-one-page-nav-item .king-addons-one-page-nav-tooltip {
+    text-align: center;
+}
+
+.king-addons-one-page-nav-item:hover .king-addons-one-page-nav-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.king-addons-one-page-nav-items-p-h-left .king-addons-one-page-nav-item:hover .king-addons-one-page-nav-tooltip {
+    transform: translate(10%, -50%);
+}
+
+.king-addons-one-page-nav-items-p-h-left .king-addons-one-page-nav-item .king-addons-one-page-nav-tooltip {
+    top: 50%;
+    left: 100%;
+    transform: translate(20%, -50%);
+}
+
+.king-addons-one-page-nav-items-p-h-left .king-addons-one-page-nav-item .king-addons-one-page-nav-tooltip:before {
+    top: 50%;
+    left: -8px;
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.king-addons-one-page-nav-items-p-h-right .king-addons-one-page-nav-item:hover .king-addons-one-page-nav-tooltip {
+    transform: translate(-110%, -50%);
+}
+
+.king-addons-one-page-nav-items-p-h-right .king-addons-one-page-nav-item .king-addons-one-page-nav-tooltip {
+    top: 50%;
+    left: 0;
+    transform: translate(-120%, -50%);
+}
+
+.king-addons-one-page-nav-items-p-h-right .king-addons-one-page-nav-item .king-addons-one-page-nav-tooltip:before {
+    top: 50%;
+    right: -8px;
+    left: auto;
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+.elementor-widget-king-addons-one-page-nav .king-addons-one-page-nav {
+    background-color: #574ff7;
+    box-shadow: 0 0 15px 0 #cccccc;
+}
+
+.elementor-widget-king-addons-one-page-nav .king-addons-one-page-nav-item .king-addons-one-page-nav-tooltip {
+    font-size: 14px;
+}
+
+.king-addons-one-page-nav-item svg {
+    box-sizing: content-box;
+}
+
+.king-addons-one-page-nav-v-stretch-yes.king-addons-one-page-nav-items-p-v-top .king-addons-one-page-nav,
+.king-addons-one-page-nav-v-stretch-yes.king-addons-one-page-nav-items-p-v-bottom .king-addons-one-page-nav,
+.king-addons-one-page-nav-v-stretch-yes .king-addons-one-page-nav {
+    top: 50%;
+    bottom: unset;
+    height: 100%;
+    transform: translateY(-50%);
+}
+
+.elementor-widget-empty-icon.king-addons-icon.king-addons-one-page-navigation {
+    background-image: url(../../admin/img/one-page-navigation.svg);
+    min-height: 70px;
+    background-size: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+}

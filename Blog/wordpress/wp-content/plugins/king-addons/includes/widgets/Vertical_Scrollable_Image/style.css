@@ -1,0 +1,21 @@
+.king-addons-vertical-scrollable-image {
+    line-height: 0;
+    position: relative;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+}
+
+.king-addons-vertical-scrollable-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    will-change: transform;
+}
+
+.king-addons-vertical-scrollable-image.king-addons-vertical-scrollable-image-hover {
+    overflow: hidden;
+    cursor: all-scroll;
+}

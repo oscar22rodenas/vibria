@@ -1,0 +1,624 @@
+.king-addons-icon {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-size: 32px;
+}
+
+#elementor-panel-elements .king-addons-icon {
+    margin-bottom: -8px;
+}
+
+.elementor-panel #elementor-panel-category-king-addons .king-addons-icon {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background-size: 48px;
+}
+
+#elementor-navigator .king-addons-icon {
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    background-size: 19px;
+}
+
+.elementor-panel #elementor-panel-category-king-addons .icon {
+    max-height: 60px;
+}
+
+/*noinspection CssNonIntegerLengthInPixels*/
+.elementor-panel #elementor-panel-category-king-addons .icon:after,
+#elementor-panel-elements .king-addons-icon:after {
+    font-family: Roboto, Arial, Helvetica, Verdana, sans-serif;
+    font-size: 9px;
+    font-weight: bold;
+    font-style: normal;
+    line-height: 19px;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    display: block;
+    width: 28px;
+    height: 19px;
+    content: 'FREE';
+    letter-spacing: 0.5px;
+    color: #574ff7;
+}
+
+.king-addons-repeater-list-img-icon {
+    max-height: 30px;
+    vertical-align: middle;
+}
+
+.king-addons-editor-preview-update {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.elementor-panel .elementor-element:hover:has(.king-addons-icon) .title,
+.elementor-panel #elementor-panel-category-king-addons .elementor-element:hover .title {
+    transition: all .3s;
+    color: rgb(87, 79, 247);
+}
+
+.elementor-panel .elementor-element:has(.king-addons-icon) {
+    border: 1px solid rgb(87 79 247 / 60%);
+}
+
+.elementor-panel #elementor-panel-category-king-addons .elementor-element {
+    border: 1px solid rgb(87 79 247 / 20%);
+}
+
+.elementor-panel .elementor-element:hover:has(.king-addons-icon),
+.elementor-panel #elementor-panel-category-king-addons .elementor-element:hover {
+    background-color: rgb(87 79 247 / 5%);
+}
+
+/* -------------- */
+/* Pro Features Disclaimer */
+
+.elementor-control.king-addons-pro-control label i {
+    font-size: 15px;
+    margin-left: 3px;
+    /*color: #772fff;*/
+    color: #5B03FF;
+}
+
+.elementor-control.king-addons-pro-control .elementor-control-content:before {
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: transparent;
+}
+
+/* Make .king-addons-pro-control position: relative
+   so the tooltip can be positioned absolutely inside it */
+.king-addons-pro-control {
+    position: relative;
+}
+
+/* The tooltip is hidden by default */
+.king-addons-pro-tooltip {
+    position: absolute;
+    top: 40px;
+
+    /* Styling */
+    padding: 15px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #93003c;
+    border: 1px solid #e6e9ec;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+
+    /* Initially hidden */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 999;
+}
+
+.king-addons-pro-tooltip a {
+    color: #5B03FF;
+    transition: none;
+}
+
+/* Show the tooltip on hover */
+.king-addons-pro-control:hover .king-addons-pro-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* END: Pro Features Disclaimer */
+/* -------------- */
+
+/* -------------- */
+/* NOTICES */
+
+.king-addons-pro-features-heading {
+    font-size: 15px;
+    color: #5B03FF;
+}
+
+.elementor-control[class*="pro_notice"] {
+    padding: 5px 0 15px 0 !important;
+}
+
+.king-addons-pro-notice {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    padding: 20px 20px;
+    text-align: center;
+    border-top: 1px solid rgb(87 79 247 / 35%);
+    border-bottom: 1px solid rgb(87 79 247 / 35%);
+    background-color: rgb(87 79 247 / 5%);
+}
+
+.king-addons-pro-notice a {
+    color: #5B03FF;
+}
+
+.king-addons-pro-features-list {
+    text-align: center;
+}
+
+.king-addons-pro-features-list ul {
+    text-align: left;
+}
+
+.king-addons-pro-features-list ul li::marker {
+    color: #772fff;
+}
+
+.king-addons-pro-features-list ul li {
+    font-size: 14px;
+    line-height: 1.1;
+    position: relative;
+    margin-top: 9px;
+    padding-bottom: 9px;
+    list-style: disc inside;
+    border-bottom: 1px solid #e6e8ea;
+}
+
+/*noinspection CssNonIntegerLengthInPixels*/
+.king-addons-pro-features-list ul + a.king-addons-pro-features-cta-btn {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 2;
+    display: inline-block;
+    margin: 20px 15px 10px auto;
+    padding: 10px 25px;
+    cursor: pointer;
+    transition: all 300ms ease;
+    letter-spacing: 0.5px;
+    /* text-transform: uppercase; */
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    /* background: linear-gradient(45deg, #5B03FF, #9B62FF); */
+    background-image: linear-gradient(120deg, #A20BD8 0%, #FF4040 100%);
+}
+
+.king-addons-pro-features-list ul + a.king-addons-pro-features-cta-btn:hover {
+    color: #ffffff;
+}
+
+#king-addons-editor-settings-notification {
+    position: fixed;
+    z-index: 9999;
+    bottom: 5px;
+    left: 40px;
+    padding: 13px 25px;
+    color: #222;
+    border-radius: 3px;
+    background: #2a2a2b;
+    -webkit-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+#king-addons-editor-settings-notification:before {
+    position: absolute;
+    bottom: 10px;
+    left: -6px;
+    width: 0;
+    height: 0;
+    content: '';
+    border-top: 6px solid transparent;
+    border-right-width: 6px;
+    border-right-style: solid;
+    border-right-color: #2a2a2b;
+    border-bottom: 6px solid transparent;
+}
+
+.MuiBox-root button[value="document-settings"] {
+    position: relative;
+}
+
+#king-addons-editor-settings-notification.king-addons-new-editor-bar {
+    position: absolute;
+    top: calc(100% + 13px);
+    bottom: auto;
+    left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 300px;
+}
+
+#king-addons-editor-settings-notification.king-addons-new-editor-bar:before {
+    position: absolute;
+    top: -12px;
+    left: 10px;
+    border-right: 6px solid transparent;
+    border-bottom-width: 6px;
+    border-bottom-style: solid;
+    border-bottom-color: #2a2a2b;
+    border-left: 6px solid transparent;
+}
+
+#king-addons-editor-settings-notification h4 {
+    margin-bottom: 10px;
+}
+
+#king-addons-editor-settings-notification h4 span {
+    font-size: 14px;
+    vertical-align: super;
+    color: #5f5f5f;
+}
+
+#king-addons-editor-settings-notification h4 i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #3db050;
+}
+
+#king-addons-editor-settings-notification p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #666;
+}
+
+#king-addons-editor-settings-notification > i {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    cursor: pointer;
+    color: #666666;
+}
+/* END: NOTICES */
+/* -------------- */
+
+/* GRID PREVIEW */
+.elementor-control-king_addons_grid_layout_select.elementor-control .elementor-control-field {
+    align-items: flex-start;
+    flex-direction: column !important;
+}
+
+.elementor-control-king_addons_grid_layout_select.elementor-control .elementor-control-input-wrapper {
+    display: flex;
+    width: 100% !important;
+    margin-top: 10px;
+}
+
+.elementor-control-king_addons_grid_layout_select.elementor-control  .elementor-choices {
+    align-items: stretch;
+    flex-wrap: wrap;
+    width: 100% !important;
+    height: auto;
+    border: 1px solid #dfd5d5;
+}
+
+.elementor-control-king_addons_grid_layout_select.elementor-control .elementor-choices label {
+    width: 33.3%;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 75%;
+}
+
+.elementor-control-king_addons_grid_layout_select input[type="radio"]:checked + label {
+    border: 2px solid #D30C5C;
+    border-radius: 0 !important;
+    background-color: #ffffff;
+}
+
+.elementor-control-king_addons_grid_layout_select label:nth-child(2) {
+    background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 50 32' style='enable-background:new 0 0 50 32;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0{fill:%23FFFFFF;} .st1{fill:%23C2C1C0;} %3C/style%3E%3Cg id='Background'%3E%3Crect class='st0' width='50' height='32'/%3E%3C/g%3E%3Cg id='Layer_1'%3E%3Crect x='2.2' y='4.9' class='st1' width='22.2' height='22.2'/%3E%3Crect x='25.6' y='15.2' class='st1' width='22.2' height='11.9'/%3E%3Crect x='25.6' y='4.9' class='st1' width='22.2' height='9.2'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.elementor-control-king_addons_grid_layout_select label:nth-child(4) {
+    background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 50 32' style='enable-background:new 0 0 50 32;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0{fill:%23FFFFFF;} .st1{fill:%23C2C1C0;} %3C/style%3E%3Cg id='Background'%3E%3Crect class='st0' width='50' height='32'/%3E%3C/g%3E%3Cg id='Layer_1'%3E%3Crect x='2.2' y='4.9' class='st1' width='22.2' height='22.2'/%3E%3Crect x='25.6' y='16.6' class='st1' width='10.5' height='10.5'/%3E%3Crect x='37.2' y='16.6' class='st1' width='10.5' height='10.5'/%3E%3Crect x='25.6' y='4.9' class='st1' width='22.2' height='10.5'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.elementor-control-king_addons_grid_layout_select label:nth-child(6) {
+    background: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 50 32' style='enable-background:new 0 0 50 32;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0{fill:%23FFFFFF;} .st1{fill:%23C2C1C0;} %3C/style%3E%3Cg id='Background'%3E%3Crect class='st0' width='50' height='32'/%3E%3C/g%3E%3Cg id='Layer_1'%3E%3Cg%3E%3Crect x='2.2' y='4.9' class='st1' width='22.2' height='22.2'/%3E%3Crect x='25.6' y='16.6' class='st1' width='10.5' height='10.5'/%3E%3Crect x='37.2' y='16.6' class='st1' width='10.5' height='10.5'/%3E%3Crect x='25.6' y='4.9' class='st1' width='10.5' height='10.5'/%3E%3Crect x='37.2' y='4.9' class='st1' width='10.5' height='10.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.elementor-control-king_addons_grid_layout_select label:nth-child(8) {
+    background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 50 32' style='enable-background:new 0 0 50 32;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0{fill:%23FFFFFF;} .st1{fill:%23C2C1C0;} %3C/style%3E%3Cg id='Background'%3E%3Crect class='st0' width='50' height='32'/%3E%3C/g%3E%3Cg id='Layer_1'%3E%3Crect x='2.2' y='4.9' class='st1' width='22.2' height='22.2'/%3E%3Crect x='25.6' y='4.9' class='st1' width='10.5' height='22.2'/%3E%3Crect x='37.2' y='16.6' class='st1' width='10.5' height='10.5'/%3E%3Crect x='37.2' y='4.9' class='st1' width='10.5' height='10.5'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.elementor-control-king_addons_grid_layout_select label:nth-child(10) {
+    background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 50 32' style='enable-background:new 0 0 50 32;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0{fill:%23FFFFFF;} .st1{fill:%23C2C1C0;} %3C/style%3E%3Cg id='Background'%3E%3Crect class='st0' width='50' height='32'/%3E%3C/g%3E%3Cg id='Layer_1'%3E%3Crect x='13.9' y='4.9' class='st1' width='22.2' height='22.2'/%3E%3Crect x='37.2' y='16.6' class='st1' width='10.5' height='10.5'/%3E%3Crect x='37.2' y='4.9' class='st1' width='10.5' height='10.5'/%3E%3Crect x='2.3' y='16.6' class='st1' width='10.5' height='10.5'/%3E%3Crect x='2.3' y='4.9' class='st1' width='10.5' height='10.5'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.elementor-control-king_addons_grid_layout_select label:nth-child(12) {
+    background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 50 32' style='enable-background:new 0 0 50 32;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0{fill:%23FFFFFF;} .st1{fill:%23C2C1C0;} %3C/style%3E%3Cg id='Background'%3E%3Crect class='st0' width='50' height='32'/%3E%3C/g%3E%3Cg id='Layer_1'%3E%3Crect x='2.2' y='4.9' class='st1' width='28.5' height='22.2'/%3E%3Crect x='31.8' y='12.9' class='st1' width='15.9' height='6.3'/%3E%3Crect x='31.8' y='4.9' class='st1' width='15.9' height='6.8'/%3E%3Crect x='31.8' y='20.3' class='st1' width='15.9' height='6.8'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.elementor-control-king_addons_grid_layout_select label:nth-child(14) {
+    background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 50 32' style='enable-background:new 0 0 50 32;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0{fill:%23FFFFFF;} .st1{fill:%23C2C1C0;} %3C/style%3E%3Cg id='Background'%3E%3Crect class='st0' width='50' height='32'/%3E%3C/g%3E%3Cg id='Layer_1'%3E%3Crect x='13.9' y='4.9' class='st1' width='22.2' height='22.2'/%3E%3Crect x='2.2' y='4.9' class='st1' width='10.5' height='22.2'/%3E%3Crect x='37.2' y='4.9' class='st1' width='10.5' height='22.2'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.elementor-control-king_addons_grid_layout_select label:nth-child(16) {
+    background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 50 32' style='enable-background:new 0 0 50 32;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0{fill:%23FFFFFF;} .st1{fill:%23C2C1C0;} %3C/style%3E%3Cg id='Background'%3E%3Crect class='st0' width='50' height='32'/%3E%3C/g%3E%3Cg id='Layer_1'%3E%3Crect x='2.2' y='4.9' class='st1' width='33.9' height='13.2'/%3E%3Crect x='2.2' y='19.3' class='st1' width='16.4' height='7.8'/%3E%3Crect x='19.7' y='19.3' class='st1' width='16.4' height='7.8'/%3E%3Crect x='37.2' y='4.9' class='st1' width='10.5' height='13.2'/%3E%3Crect x='37.2' y='19.3' class='st1' width='10.5' height='7.8'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.elementor-control-king_addons_grid_layout_select label:nth-child(18) {
+    background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 50 32' style='enable-background:new 0 0 50 32;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0{fill:%23FFFFFF;} .st1{fill:%23C2C1C0;} %3C/style%3E%3Cg id='Background'%3E%3Crect class='st0' width='50' height='32'/%3E%3C/g%3E%3Cg id='Layer_1'%3E%3Crect x='2.2' y='4.9' class='st1' width='22.2' height='12.1'/%3E%3Crect x='25.6' y='4.9' class='st1' width='22.2' height='12.1'/%3E%3Crect x='2.2' y='18.2' class='st1' width='14.4' height='8.9'/%3E%3Crect x='17.8' y='18.2' class='st1' width='14.4' height='8.9'/%3E%3Crect x='33.3' y='18.2' class='st1' width='14.4' height='8.9'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.elementor-control-king_addons_grid_layout_select label:nth-child(20) {
+    background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 50 32' style='enable-background:new 0 0 50 32;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0{fill:%23FFFFFF;} .st1{fill:%23C2C1C0;} %3C/style%3E%3Cg id='Background'%3E%3Crect class='st0' width='50' height='32'/%3E%3C/g%3E%3Cg id='Layer_1'%3E%3Crect x='2.2' y='4.9' class='st1' width='22.2' height='22.2'/%3E%3Crect x='25.6' y='4.9' class='st1' width='22.2' height='22.2'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.elementor-control-king_addons_grid_layout_select label:nth-child(22) {
+    background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 50 32' style='enable-background:new 0 0 50 32;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0{fill:%23FFFFFF;} .st1{fill:%23C2C1C0;} %3C/style%3E%3Cg id='Background'%3E%3Crect class='st0' width='50' height='32'/%3E%3C/g%3E%3Cg id='Layer_1'%3E%3Crect x='2.2' y='4.9' class='st1' width='14.5' height='22.2'/%3E%3Crect x='33.4' y='4.9' class='st1' width='14.4' height='22.2'/%3E%3Crect x='17.9' y='4.9' class='st1' width='14.4' height='22.2'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.elementor-control-king_addons_grid_layout_select label:nth-child(24) {
+    background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 50 32' style='enable-background:new 0 0 50 32;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0{fill:%23FFFFFF;} .st1{fill:%23C2C1C0;} %3C/style%3E%3Cg id='Background'%3E%3Crect class='st0' width='50' height='32'/%3E%3C/g%3E%3Cg id='Layer_1'%3E%3Crect x='2.2' y='4.9' class='st1' width='10.6' height='22.2'/%3E%3Crect x='37.2' y='4.9' class='st1' width='10.5' height='22.2'/%3E%3Crect x='25.6' y='4.9' class='st1' width='10.5' height='22.2'/%3E%3Crect x='14' y='4.9' class='st1' width='10.5' height='22.2'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* END: GRID PREVIEW */
+/* -------------- */
+
+/* FORM BUILDER */
+.king-addons-fb-step-editor-bg {
+    background: rgb(227 227 255) !important;
+    border-color: rgb(87 79 247 / 35%) !important;
+    color: #d6107c;
+}
+
+.king-addons-fb-step-editor-bg button {
+    border-color: rgb(87 79 247 / 35%) !important;
+}
+/* END: FORM BUILDER PREVIEW */
+/* -------------- */
+
+.king-addons-icon.king-addons-image-hotspots {
+    background-image: url(../img/image-hotspots.svg);
+}
+
+.king-addons-icon.king-addons-vertical-scrollable-image {
+    background-image: url(../img/vertical-scrollable-image.svg);
+}
+
+.king-addons-icon.king-addons-one-page-navigation {
+    background-image: url(../img/one-page-navigation.svg);
+}
+
+.king-addons-icon.king-addons-off-canvas-content {
+    background-image: url(../img/off-canvas-content.svg);
+}
+
+.king-addons-icon.king-addons-image-comparison {
+    background-image: url(../img/image-comparison.svg);
+}
+
+.king-addons-icon.king-addons-styled-text-builder {
+    background-image: url(../img/styled-text-builder.svg);
+}
+
+.king-addons-icon.king-addons-global-section-container {
+    background-image: url(../img/global-section-container.svg);
+}
+
+.king-addons-icon.king-addons-card-carousel {
+    background-image: url(../img/card-carousel.svg);
+}
+
+.king-addons-icon.king-addons-auto-scrolling-text {
+    background-image: url(../img/auto-scrolling-text.svg);
+}
+
+.king-addons-icon.king-addons-popup {
+    background-image: url(../img/popup.svg);
+}
+
+.king-addons-icon.king-addons-video-popup {
+    background-image: url(../img/video-popup.svg);
+}
+
+.king-addons-icon.king-addons-blog-posts {
+    background-image: url(../img/blog-posts.svg);
+}
+
+.king-addons-icon.king-addons-image-grid {
+    background-image: url(../img/image-grid.svg);
+}
+
+.king-addons-icon.king-addons-business-hours {
+    background-image: url(../img/business-hours.svg);
+}
+
+.king-addons-icon.king-addons-price-list {
+    background-image: url(../img/price-list.svg);
+}
+
+.king-addons-icon.king-addons-image-hover-box {
+    background-image: url(../img/image-hover-box.svg);
+}
+
+.king-addons-icon.king-addons-reading-progress-bar {
+    background-image: url(../img/reading-progress-bar.svg);
+}
+
+.king-addons-icon.king-addons-pulsing-button {
+    background-image: url(../img/pulsing-button.svg);
+}
+
+.king-addons-icon.king-addons-creative-button {
+    background-image: url(../img/creative-button.svg);
+}
+
+.king-addons-icon.king-addons-hovering-image-stack {
+    background-image: url(../img/hovering-image-stack.svg);
+}
+
+.king-addons-icon.king-addons-advanced-border-radius {
+    background-image: url(../img/advanced-border-radius.svg);
+}
+
+.king-addons-icon.king-addons-content-flip-box {
+    background-image: url(../img/content-flip-box.svg);
+}
+
+.king-addons-icon.king-addons-flip-countdown {
+    background-image: url(../img/flip-countdown.svg);
+}
+
+.king-addons-icon.king-addons-smooth-counter {
+    background-image: url(../img/smooth-counter.svg);
+}
+
+.king-addons-icon.king-addons-testimonial {
+    background-image: url(../img/testimonial.svg);
+}
+
+.king-addons-icon.king-addons-testimonial-carousel {
+    background-image: url(../img/testimonial-carousel.svg);
+}
+
+.king-addons-icon.king-addons-feature-list {
+    background-image: url(../img/feature-list.svg);
+}
+
+.king-addons-icon.king-addons-taxonomy-list {
+    background-image: url(../img/taxonomy-list.svg);
+}
+
+.king-addons-icon.king-addons-page-list {
+    background-image: url(../img/page-list.svg);
+}
+
+.king-addons-icon.king-addons-search {
+    background-image: url(../img/search.svg);
+}
+
+.king-addons-icon.king-addons-progress-bar {
+    background-image: url(../img/progress-bar.svg);
+}
+
+.king-addons-icon.king-addons-team-member {
+    background-image: url(../img/team-member.svg);
+}
+
+.king-addons-icon.king-addons-share-buttons {
+    background-image: url(../img/share-buttons.svg);
+}
+
+.king-addons-icon.king-addons-pricing-table {
+    background-image: url(../img/pricing-table.svg);
+}
+
+.king-addons-icon.king-addons-charts {
+    background-image: url(../img/charts.svg);
+}
+
+.king-addons-icon.king-addons-posts-grid {
+    background-image: url(../img/posts-grid.svg);
+}
+
+.king-addons-icon.king-addons-woocommerce-grid {
+    background-image: url(../img/woocommerce-grid.svg);
+}
+
+.king-addons-icon.king-addons-media-grid {
+    background-image: url(../img/media-grid.svg);
+}
+
+.king-addons-icon.king-addons-magazine-grid {
+    background-image: url(../img/magazine-grid.svg);
+}
+
+.king-addons-icon.king-addons-timeline {
+    background-image: url(../img/timeline.svg);
+}
+
+.king-addons-icon.king-addons-slider {
+    background-image: url(../img/slider.svg);
+}
+
+.king-addons-icon.king-addons-form-builder {
+    background-image: url(../img/form-builder.svg);
+}
+
+.king-addons-icon.king-addons-data-table {
+    background-image: url(../img/data-table.svg);
+}
+
+.king-addons-icon.king-addons-content-ticker {
+    background-image: url(../img/content-ticker.svg);
+}
+
+.king-addons-icon.king-addons-mailchimp {
+    background-image: url(../img/mailchimp.svg);
+}
+
+.king-addons-icon.king-addons-tabs {
+    background-image: url(../img/tabs.svg);
+}
+
+.king-addons-icon.king-addons-accordion {
+    background-image: url(../img/accordion.svg);
+}
+
+.king-addons-icon.king-addons-image-accordion {
+    background-image: url(../img/image-accordion.svg);
+}
+
+.king-addons-icon.king-addons-countdown {
+    background-image: url(../img/countdown.svg);
+}
+
+.king-addons-icon.king-addons-copy-paste {
+    background-image: url(../img/copy-paste.svg);
+}
+
+.king-addons-icon.king-addons-protected-content {
+    background-image: url(../img/protected-content.svg);
+}
+
+.king-addons-icon.king-addons-conditional-display {
+    background-image: url(../img/conditional-display.svg);
+}
+
+.king-addons-icon.king-addons-pricing-calculator {
+    background-image: url(../img/pricing-calculator.svg);
+}
+
+.king-addons-icon.king-addons-pricing-slider {
+    background-image: url(../img/pricing-slider.svg);
+}
+
+.king-addons-icon.king-addons-google-maps {
+    background-image: url(../img/google-maps.svg);
+}
+
+.king-addons-icon.king-addons-form-styler {
+    background-image: url(../img/form-styler.svg);
+}
+
+.king-addons-icon.king-addons-lottie-animations {
+    background-image: url(../img/lottie-animations.svg);
+}
+
+/* for elementor icons */

@@ -1,0 +1,252 @@
+.king-addons-table-inner-container {
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.king-addons-hide-table-before-arrange,
+.king-addons-hide-pagination-on-search {
+    opacity: 0;
+}
+
+.king-addons-table-td {
+    position: relative;
+}
+
+.king-addons-table-td-pag {
+    text-align: center;
+}
+
+.king-addons-data-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    margin-bottom: 0;
+}
+
+.king-addons-data-table tr:first-child th {
+    border-top: none !important;
+}
+
+.king-addons-data-table tr:last-child td {
+    border-bottom: none !important;
+}
+
+.king-addons-data-table tr th:first-child,
+.king-addons-data-table tr td:first-child {
+    border-left: none !important;
+}
+
+.king-addons-data-table tr th:last-child,
+.king-addons-data-table tr td:last-child {
+    border-right: none !important;
+}
+
+.king-addons-flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.king-addons-flex-column-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.king-addons-data-table th {
+    position: relative;
+}
+
+.king-addons-equal-column-width-yes .king-addons-data-table {
+    table-layout: fixed;
+}
+
+.king-addons-equal-column-width-yes .king-addons-data-table .king-addons-table-th-pag,
+.king-addons-equal-column-width-yes .king-addons-data-table .king-addons-table-td-pag {
+    width: 50px;
+}
+
+.king-addons-table-live-search-cont input {
+    min-width: 100%;
+}
+
+.king-addons-search-input-icon,
+.king-addons-sorting-icon {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+}
+
+.king-addons-table-custom-pagination {
+    list-style-type: none !important;
+    padding: 0;
+}
+
+.king-addons-table-custom-pagination-inner-cont {
+    display: flex;
+    align-items: center;
+}
+
+.king-addons-table-custom-pagination-list {
+    cursor: pointer;
+}
+
+.king-addons-table-export-button-cont {
+    display: flex;
+    justify-content: center;
+}
+
+.king-addons-table-export-button-cont button {
+    position: relative;
+    width: 100%;
+}
+
+.king-addons-export-search-inner-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.king-addons-data-table img {
+    display: inline-block;
+}
+
+.king-addons-table-td,
+.king-addons-table-th {
+    vertical-align: middle;
+}
+
+.king-addons-table-appended-tr {
+    width: 100%;
+}
+
+.king-addons-table-tr-before {
+    position: relative;
+}
+
+.king-addons-table-tr-before::before {
+    content: '+';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: green;
+    color: white;
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+    border-radius: 50%;
+}
+
+.king-addons-table-tr-before-remove::before {
+    content: '-';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: red;
+    color: white;
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+    border-radius: 50%;
+}
+
+.king-addons-table-text {
+    position: relative;
+}
+
+.king-addons-data-table-th-img,
+.king-addons-table-text {
+    vertical-align: middle;
+}
+
+.king-addons-xls,
+.king-addons-csv {
+    padding: inherit;
+}
+
+.king-addons-entry-info-yes .king-addons-table-pagination-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.king-addons-entry-info-yes .king-addons-table-custom-pagination {
+    justify-content: flex-end;
+}
+
+.king-addons-entry-info {
+    white-space: nowrap;
+    min-width: 50px;
+}
+
+.king-addons-table-text-nowrap-yes th,
+.king-addons-table-text-nowrap-yes td {
+    white-space: nowrap;
+}
+
+.king-addons-data-table .fa-question-circle {
+    font-weight: 400 !important;
+    font-family: "Font Awesome 5 Free", serif !important;
+}
+
+.king-addons-data-table-content-tooltip {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    border-radius: 4px;
+    padding: 6px 10px;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 15px;
+    transform: translate(-50%, -100%);
+    transition: all 230ms ease-in-out 0s;
+    text-align: center;
+}
+
+/*noinspection DuplicatedCode*/
+.king-addons-data-table-content-tooltip:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top-style: solid;
+    border-top-width: 6px;
+}
+
+.king-addons-table-td:hover .king-addons-data-table-content-tooltip {
+    visibility: visible;
+    opacity: 1;
+    top: -7px;
+    transform: translate(-50%, -100%);
+}
+
+@media screen and (max-width: 768px) {
+    .king-addons-export-search-inner-cont,
+    .king-addons-table-pagination-cont {
+        flex-direction: column;
+    }
+
+    .king-addons-equal-column-width-yes .king-addons-data-table {
+        table-layout: auto;
+    }
+
+    .king-addons-table-export-button-cont {
+        width: 100%;
+        justify-content: space-around;
+    }
+}

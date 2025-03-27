@@ -1,0 +1,54 @@
+.king-addons-price-list-item-heading {
+    display: flex;
+    align-items: baseline;
+}
+
+.king-addons-price-list-item-line {
+    flex-grow: 1;
+    margin: 0 8px;
+}
+
+.king-addons-price-list-item {
+    display: flex;
+    position: relative;
+}
+
+.king-addons-price-list-item-image {
+    flex-shrink: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.king-addons-price-list-item-image img{
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-price-list-item-holder {
+    flex: 1;
+}
+
+.king-addons-price-list-item-description {
+    margin-top: 4px;
+}
+
+.king-addons-price-list-item:first-child {
+    padding-top: 0 !important;
+}
+
+.king-addons-price-list-item:last-child {
+    padding-bottom: 0 !important;
+    border-bottom-style: none !important;
+}
+
+@media (max-width: 476px) {
+    .king-addons-price-list-mobile-collapse .king-addons-price-list-item {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .king-addons-price-list-mobile-collapse .king-addons-price-list-item-holder {
+        width: 100%;
+        padding-top: 20px;
+    }
+}

@@ -1,0 +1,138 @@
+.king-addons-team-member {
+    overflow: hidden;
+}
+
+.king-addons-member-content {
+    overflow: hidden;
+}
+
+.king-addons-member-name {
+    line-height: 1;
+    display: block;
+}
+
+.elementor .elementor-widget-king-addons-team-member .king-addons-member-name {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.king-addons-member-job {
+    font-size: 13px;
+}
+
+.king-addons-member-description {
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.king-addons-member-media {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.king-addons-member-image {
+    overflow: hidden;
+}
+
+.king-addons-member-overlay-content {
+    position: relative;
+}
+
+.king-addons-member-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.king-addons-member-social-media {
+    display: flex;
+    overflow: hidden;
+}
+
+.king-addons-member-social {
+    font-size: 45px;
+    line-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: content-box;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    transition: all .5s;
+    text-align: center;
+    outline: none !important;
+}
+
+.king-addons-member-social i {
+    line-height: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-member-social:last-child {
+    margin-right: 0 !important;
+}
+
+.king-addons-team-member-social-media-left .king-addons-member-social-media {
+    justify-content: flex-start;
+}
+
+.king-addons-team-member-social-media-right .king-addons-member-social-media {
+    justify-content: flex-end;
+}
+
+.king-addons-team-member-social-media-center .king-addons-member-social-media {
+    justify-content: center;
+}
+.king-addons-member-btn {
+    font-size: 14px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+    vertical-align: middle;
+    background-color: #222222;
+}
+
+.king-addons-member-btn span {
+    position: relative;
+    z-index: 2;
+    opacity: 1 !important;
+}
+
+.king-addons-member-btn:before,
+.king-addons-member-btn:after {
+    z-index: 1 !important;
+}
+
+.king-addons-member-divider {
+    overflow: hidden;
+}
+
+.king-addons-member-divider:after {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 0;
+    content: '';
+}
+
+.king-addons-team-member-divider-left .king-addons-member-divider:after {
+    float: left;
+}
+
+.king-addons-team-member-divider-right .king-addons-member-divider:after {
+    float: right;
+}
+
+.king-addons-team-member-divider-center .king-addons-member-divider:after {
+    margin-right: auto;
+    margin-left: auto;
+}

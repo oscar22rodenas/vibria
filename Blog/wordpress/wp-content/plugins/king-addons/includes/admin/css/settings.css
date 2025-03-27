@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('../fonts/Inter.woff2') format('woff2');
+}
+
+#wpwrap,
+#wpcontent,
+.king-addons-settings {
+    display: block !important;
+}
+
+.kng-btn-submit-wrap {
+    margin-top: 20px;
+    text-align: right;
+}
+
+/*noinspection DuplicatedCode*/
+.kng-btn-submit {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 2;
+    padding: 8px 24px;
+    cursor: pointer;
+    transition: all 300ms;
+    letter-spacing: 1px;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #E1CBFF, #9B62FF 50%, #5B03FF);
+}
+
+.kng-btn-submit:hover {
+    color: black;
+}
+
+hr.king-addons-settings-separator {
+    border: none;
+    border-top: 1px solid rgb(100 105 112 / 40%);
+}
+
+/*noinspection DuplicatedCode*/
+.notice {
+    display: flex;
+    align-items: center;
+    flex-flow: row;
+    justify-content: center;
+    margin: 20px 40px 0 20px;
+    padding: 20px !important;
+    border: 1px solid rgb(23 200 107 / 30%);
+    border-left-width: initial;
+    border-radius: 30px;
+    outline: none;
+    background: #1a1b1b;
+    box-shadow: none;
+}
+
+/*noinspection CssNonIntegerLengthInPixels*/
+.notice p {
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    margin: 0;
+    padding: 0 0 0 10px;
+    background: linear-gradient(107.65deg, #005DBB 17.53%, #17C969 94.64%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.notice-dismiss {
+    position: absolute;
+    top: unset;
+    right: 20px;
+    margin: 0;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    background: 0 0;
+}
+
+/*noinspection DuplicatedCode*/
+.notice-dismiss:before {
+    font: normal 20px / 20px dashicons;
+    display: block;
+    width: 20px;
+    height: 20px;
+    content: "\f153";
+    text-align: center;
+    color: rgb(23 200 107 / 30%);
+    background: 0 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.notice-dismiss:active:before, .notice-dismiss:focus:before, .notice-dismiss:hover:before {
+    color: rgb(214 54 56 / 50%);
+}

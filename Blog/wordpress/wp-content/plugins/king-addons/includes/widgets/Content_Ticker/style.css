@@ -1,0 +1,293 @@
+.king-addons-content-ticker {
+    display: flex;
+    overflow: hidden;
+}
+
+.king-addons-content-ticker-inner {
+    position: relative;
+    z-index: 20;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+.king-addons-ticker-arrow-position-left .king-addons-content-ticker-inner {
+    flex-direction: row-reverse;
+}
+
+.king-addons-ticker-gradient-type-both .king-addons-ticker-gradient:before,
+.king-addons-ticker-gradient-type-left .king-addons-ticker-gradient:before {
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    content: "";
+}
+
+.king-addons-ticker-gradient-type-both .king-addons-ticker-gradient:after,
+.king-addons-ticker-gradient-type-right .king-addons-ticker-gradient:after {
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 40px;
+    content: "";
+}
+
+.king-addons-ticker-arrow-position-left .king-addons-ticker-slider-controls {
+    margin-right: 20px;
+}
+
+.king-addons-ticker-arrow-position-right .king-addons-ticker-slider-controls {
+    margin-left: 20px;
+}
+
+.king-addons-ticker-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.king-addons-ticker-heading-position-right .king-addons-content-ticker {
+    flex-direction: row-reverse;
+}
+
+.king-addons-ticker-title {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    margin: 0;
+    transition-timing-function: ease-in-out;
+    transition-duration: 200ms;
+    transition-property: all;
+}
+
+.king-addons-ticker-title a,
+.king-addons-ticker-title:hover a {
+    color: inherit;
+}
+
+.elementor-widget-king-addons-content-ticker .king-addons-ticker-item .king-addons-ticker-title {
+    font-size: 14px;
+}
+
+.king-addons-ticker-title-inner {
+    display: inline;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.king-addons-ticker-heading {
+    position: relative;
+    z-index: 25;
+    display: flex;
+    align-items: center;
+    transition-timing-function: ease-in-out;
+    transition-property: all;
+}
+
+.king-addons-ticker-heading-icon-position-left .king-addons-ticker-heading {
+    flex-direction: row-reverse;
+}
+
+.elementor-widget-king-addons-content-ticker .king-addons-content-ticker .king-addons-ticker-heading {
+    font-size: 14px;
+}
+
+.king-addons-ticker-heading-triangle-middle .king-addons-ticker-heading:before {
+    position: absolute;
+    top: 50%;
+    width: 0;
+    height: 0;
+    content: "";
+    transition-timing-function: inherit;
+    transition-duration: inherit;
+    transition-property: inherit;
+    border-width: 10px;
+    border-top-style: solid;
+    border-top-color: transparent;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+    background: transparent !important;
+}
+
+.king-addons-ticker-heading-triangle-top .king-addons-ticker-heading:before,
+.king-addons-ticker-heading-triangle-bottom .king-addons-ticker-heading:before {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    content: "";
+    transition-timing-function: inherit;
+    transition-duration: inherit;
+    transition-property: inherit;
+}
+
+.king-addons-ticker-heading-text,
+.king-addons-ticker-heading-icon {
+    position: relative;
+    z-index: 20;
+    transition-timing-function: inherit;
+    transition-duration: inherit;
+    transition-property: inherit;
+}
+
+.king-addons-ticker-heading-triangle-top .king-addons-ticker-heading:before {
+    transform: skew(-20deg);
+}
+
+.king-addons-ticker-heading-triangle-bottom .king-addons-ticker-heading:before {
+    transform: skew(20deg);
+}
+
+.king-addons-ticker-heading-position-left.king-addons-ticker-heading-triangle-middle .king-addons-ticker-heading:before {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.king-addons-ticker-heading-position-right.king-addons-ticker-heading-triangle-middle .king-addons-ticker-heading:before {
+    transform: translateY(-50%);
+}
+
+.king-addons-ticker-slider-controls {
+    display: flex;
+}
+
+.king-addons-ticker-arrow-style-vertical .king-addons-ticker-slider-controls {
+    flex-direction: column;
+}
+
+.king-addons-ticker-arrow-style-horizontal .king-addons-ticker-slider-controls {
+    flex-direction: row;
+}
+
+.king-addons-ticker-arrow {
+    box-sizing: content-box;
+    cursor: pointer;
+    transition: all 0.5s;
+    text-align: center;
+}
+
+.king-addons-ticker-arrow i {
+    line-height: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-ticker-next-arrow {
+    transform: rotate(180deg);
+}
+
+.king-addons-content-ticker-inner .king-addons-ticker-item {
+    position: relative;
+    display: flex !important;
+    overflow: hidden;
+    align-items: center;
+}
+
+.king-addons-ticker-marquee {
+    overflow: hidden;
+}
+
+.king-addons-ticker-marquee .king-addons-ticker-item {
+    float: left;
+}
+
+.king-addons-ticker-marquee .js-marquee {
+    display: flex;
+}
+
+.king-addons-ticker-arrow-style-vertical .king-addons-ticker-slider .king-addons-ticker-item {
+    margin: 1px 0;
+}
+
+.king-addons-ticker-image {
+    margin-right: 10px;
+}
+
+.king-addons-ticker-link {
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-ticker-icon-circle {
+    z-index: 5;
+    display: block;
+    transition-timing-function: inherit;
+    transition-duration: inherit;
+    transition-property: inherit;
+    border-radius: 50%;
+}
+
+.king-addons-ticker-icon-circle:before,
+.king-addons-ticker-icon-circle:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: "";
+    transition-timing-function: inherit;
+    transition-duration: inherit;
+    transition-property: inherit;
+    animation-name: king-addons-ticker-icon-blink;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 50%;
+}
+
+.king-addons-ticker-icon-circle:after {
+    animation-delay: 1s;
+}
+
+@keyframes king-addons-ticker-icon-blink {
+    0% {
+        transform: scale(1, 1);
+    }
+    100% {
+        transform: scale(3, 3);
+        opacity: 0;
+    }
+}
+
+.king-addons-ticker-effect-typing .king-addons-ticker-title:after {
+    display: inline-block;
+    margin-left: 2px;
+    vertical-align: top;
+    opacity: 1;
+    color: inherit;
+}
+
+.king-addons-ticker-effect-typing .slick-current .king-addons-ticker-title:after {
+    animation-name: king-addons-cursor-blink;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+
+.king-addons-ticker-effect-typing .slick-current .king-addons-ticker-title-inner {
+    display: inline-flex;
+    overflow: hidden;
+    animation: king-addons-ticker-typing 1s steps(30, end);
+}
+
+@keyframes king-addons-ticker-typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}

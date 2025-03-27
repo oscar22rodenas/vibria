@@ -1,0 +1,104 @@
+---
+// src/pages/[lang]/index.astro
+import Layout from "../../layouts/Layout.astro";
+import { getPageInfo, getImageInfo } from "../../lib/wp/index.js";
+import Header from "../../components/[lang]/Header.astro";
+import Slide from "../../components/[lang]/Slide.astro";
+import RRSS from "../../components/[lang]/RRSS.astro";
+import Footer from "../../components/[lang]/Footer.astro";
+
+
+// Obtén el parámetro 'lang' de la URL
+const { lang } = Astro.params;
+console.log(lang);
+// Mapeo de slugs a los idiomas disponibles
+const slugMap = {
+  es: "home-es",
+  ca: "home-ca",
+  en: "home-en",
+};
+
+// Verifica si el idioma es válido
+if (!slugMap[lang]) {
+  throw new Error(`Idioma ${lang} no soportado`);
+}
+
+// Realiza la solicitud a la API de WordPress usando el slug correspondiente
+const acf = await getPageInfo(slugMap[lang]);
+
+// Obtiene la imagen de difusión y su URL
+const imageData = acf.difusion_imagen
+  ? await getImageInfo(acf.difusion_imagen)
+  : null;
+const imageUrl = imageData?.source_url || "";
+const imageAlt = imageData?.alt_text || "Imagen de canal de difusión";
+
+export const prerender = false;
+---
+
+<Layout>
+  <Header />
+  <Slide />
+  <div
+    class="flex flex-col items-center justify-center bg-secondary px-20 py-8 text-center gap-4"
+  >
+    <div class="border border-white p-1">
+      <p class="font-700 p">{acf.difusion_descripcion}</p>
+    </div>
+
+    {
+      imageUrl && (
+        <a href={acf.difusion_link}>
+          <img
+            src={imageUrl}
+            alt={imageAlt}
+            width="60"
+            height="60"
+            class="rounded-lg transition-transform transform hover:scale-105"
+          />
+        </a>
+      )
+    }
+  </div>
+
+  <div class="flex flex-col items-center gap-4 py-4 bg-gray-100">
+    <h3 class="text-h3 text-700 text-primary text-center font-700">
+      {acf.contacto_titulo}
+    </h3>
+
+    <form action={ acf.contacto_boton_link } class="flex flex-col items-start gap-3">
+      <input
+        type="text"
+        id="nom"
+        name="nom"
+        placeholder={acf.contacto_campo_nombre}
+        required
+        class="rounded-[20px] border border-secondary pl-2 pr-8 py-1 bg-white focus:outline-none focus:ring-1 focus:ring-secondary placeholder-secondary"
+      />
+
+      <input
+        type="email"
+        id="correu"
+        name="correu"
+        placeholder={acf.contacto_campo_correo}
+        required
+        class="rounded-[20px] border border-secondary pl-2 pr-8 py-1 bg-white focus:outline-none focus:ring-1 focus:ring-secondary placeholder-secondary"
+      />
+
+      <textarea
+        id="missatge"
+        name="missatge"
+        placeholder={acf.contacto_campo_mensaje}
+        required
+        class="rounded-[10px] border border-secondary pl-2 pr-16 pt-1 pb-12 bg-white focus:outline-none focus:ring-1 focus:ring-secondary resize-none placeholder-secondary"
+      ></textarea>
+
+      <button type="submit" class="btn">
+        {acf.contacto_boton_texto}
+      </button>
+    </form>
+  </div>
+
+  <RRSS />
+  <Footer />
+</Layout>

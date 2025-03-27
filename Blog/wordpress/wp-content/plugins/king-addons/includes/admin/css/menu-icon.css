@@ -1,0 +1,54 @@
+#toplevel_page_king-addons .wp-menu-image img,
+#toplevel_page_edit-post_type-king-addons-el-hf .wp-menu-image img,
+#toplevel_page_king-addons-templates .wp-menu-image img {
+    display: inline !important;
+    box-sizing: content-box !important;
+    width: 16px !important;
+    height: 16px !important;
+    padding: 9px 0 0 !important;
+}
+
+#toplevel_page_king-addons-templates .wp-menu-image img {
+    opacity: 0.9;
+}
+
+#toplevel_page_king-addons-popup-builder .wp-menu-image img {
+    display: inline !important;
+    box-sizing: content-box !important;
+    width: 20px !important;
+    height: 20px !important;
+    padding: 7px 0 0 !important;
+}
+
+#adminmenu #toplevel_page_king-addons.current div.wp-menu-name,
+#adminmenu #toplevel_page_king-addons-popup-builder.current div.wp-menu-name,
+#adminmenu #toplevel_page_edit-post_type-king-addons-el-hf.current div.wp-menu-name,
+#adminmenu #toplevel_page_king-addons-templates.current div.wp-menu-name,
+#adminmenu #toplevel_page_king-addons.wp-has-current-submenu a.wp-has-current-submenu,
+#adminmenu #toplevel_page_king-addons-popup-builder.wp-has-current-submenu a.wp-has-current-submenu,
+#adminmenu #toplevel_page_edit-post_type-king-addons-el-hf.wp-has-current-submenu a.wp-has-current-submenu,
+#adminmenu #toplevel_page_king-addons-templates.wp-has-current-submenu a.wp-has-current-submenu {
+    background: linear-gradient(269deg, #9389DE, #2C2270 94%);
+}
+
+ul#adminmenu > li#toplevel_page_king-addons.current > a.current:after,
+ul#adminmenu > li#toplevel_page_king-addons-popup-builder.current > a.current:after,
+ul#adminmenu > li#toplevel_page_edit-post_type-king-addons-el-hf.current > a.current:after,
+ul#adminmenu > li#toplevel_page_king-addons-templates.current > a.current:after,
+ul#adminmenu > #toplevel_page_king-addons > a.wp-has-current-submenu:after,
+ul#adminmenu > #toplevel_page_king-addons-popup-builder > a.wp-has-current-submenu:after,
+ul#adminmenu > #toplevel_page_edit-post_type-king-addons-el-hf > a.wp-has-current-submenu:after,
+ul#adminmenu > #toplevel_page_king-addons-templates > a.wp-has-current-submenu:after {
+    border-right-color: transparent;
+}
+
+#toplevel_page_king-addons,
+#toplevel_page_king-addons-popup-builder,
+#toplevel_page_edit-post_type-king-addons-el-hf,
+#toplevel_page_king-addons-templates {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.king-addons-upgrade-notice .notice-dismiss {
+    opacity: 0.4;
+}

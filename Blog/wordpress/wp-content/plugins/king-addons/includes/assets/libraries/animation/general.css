@@ -1,0 +1,560 @@
+.king-addons-anim-transparency {
+    opacity: 0;
+}
+
+.king-addons-element-fade-in,
+.king-addons-overlay-fade-in {
+    opacity: 0;
+}
+
+.king-addons-animation-wrap-active .king-addons-anim-size-small.king-addons-element-fade-in,
+.king-addons-animation-wrap-active .king-addons-anim-size-small.king-addons-overlay-fade-in,
+.king-addons-animation-wrap:hover .king-addons-anim-size-small.king-addons-element-fade-in,
+.king-addons-animation-wrap:hover .king-addons-anim-size-small.king-addons-overlay-fade-in,
+.king-addons-animation-enter > .king-addons-anim-size-small.king-addons-overlay-fade-in {
+    opacity: 0.4;
+}
+
+.king-addons-animation-wrap-active .king-addons-anim-size-medium.king-addons-element-fade-in,
+.king-addons-animation-wrap-active .king-addons-anim-size-medium.king-addons-overlay-fade-in,
+.king-addons-animation-wrap:hover .king-addons-anim-size-medium.king-addons-element-fade-in,
+.king-addons-animation-wrap:hover .king-addons-anim-size-medium.king-addons-overlay-fade-in,
+.king-addons-animation-enter > .king-addons-anim-size-medium.king-addons-overlay-fade-in {
+    opacity: 0.75;
+}
+
+.king-addons-animation-wrap-active .king-addons-anim-size-large.king-addons-element-fade-in,
+.king-addons-animation-wrap-active .king-addons-anim-size-large.king-addons-overlay-fade-in,
+.king-addons-animation-wrap:hover .king-addons-anim-size-large.king-addons-element-fade-in,
+.king-addons-animation-wrap:hover .king-addons-anim-size-large.king-addons-overlay-fade-in,
+.king-addons-animation-enter > .king-addons-anim-size-large.king-addons-overlay-fade-in {
+    opacity: 1;
+}
+
+.king-addons-element-fade-out,
+.king-addons-overlay-fade-out {
+    opacity: 1;
+}
+
+.king-addons-animation-wrap-active .king-addons-anim-size-small.king-addons-element-fade-out,
+.king-addons-animation-wrap-active .king-addons-anim-size-small.king-addons-overlay-fade-out,
+.king-addons-animation-wrap:hover .king-addons-anim-size-small.king-addons-element-fade-out,
+.king-addons-animation-wrap:hover .king-addons-anim-size-small.king-addons-overlay-fade-out,
+.king-addons-animation-enter > .king-addons-anim-size-small.king-addons-overlay-fade-out {
+    opacity: 0.75;
+}
+
+.king-addons-animation-wrap-active .king-addons-anim-size-medium.king-addons-element-fade-out,
+.king-addons-animation-wrap-active .king-addons-anim-size-medium.king-addons-overlay-fade-out,
+.king-addons-animation-wrap:hover .king-addons-anim-size-medium.king-addons-element-fade-out,
+.king-addons-animation-wrap:hover .king-addons-anim-size-medium.king-addons-overlay-fade-out,
+.king-addons-animation-enter > .king-addons-anim-size-medium.king-addons-overlay-fade-out {
+    opacity: 0.4;
+}
+
+.king-addons-animation-wrap-active .king-addons-anim-size-large.king-addons-element-fade-out,
+.king-addons-animation-wrap-active .king-addons-anim-size-large.king-addons-overlay-fade-out,
+.king-addons-animation-wrap-hover .king-addons-anim-size-large.king-addons-element-fade-out,
+.king-addons-animation-wrap-hover .king-addons-anim-size-large.king-addons-overlay-fade-out,
+.king-addons-animation-wrap:hover .king-addons-anim-size-large.king-addons-element-fade-out,
+.king-addons-animation-wrap:hover .king-addons-anim-size-large.king-addons-overlay-fade-out,
+.king-addons-animation-enter > .king-addons-anim-size-large.king-addons-overlay-fade-out {
+    opacity: 0;
+}
+
+.king-addons-anim-size-small.king-addons-element-slide-top {
+    transform: translateY(-30%);
+}
+
+.king-addons-anim-size-medium.king-addons-element-slide-top {
+    transform: translateY(-100%);
+}
+
+.king-addons-anim-size-large.king-addons-element-slide-top {
+    transform: translateY(-200%);
+}
+
+.king-addons-anim-size-small.king-addons-overlay-slide-top {
+    transform: translateY(-50%);
+}
+
+.king-addons-anim-size-medium.king-addons-overlay-slide-top {
+    transform: translateY(-70%);
+}
+
+.king-addons-anim-size-large.king-addons-overlay-slide-top {
+    transform: translateY(-100%);
+}
+
+.king-addons-anim-size-small.king-addons-element-slide-bottom {
+    transform: translateY(30%);
+}
+
+.king-addons-anim-size-medium.king-addons-element-slide-bottom {
+    transform: translateY(100%);
+}
+
+.king-addons-anim-size-large.king-addons-element-slide-bottom {
+    transform: translateY(200%);
+}
+
+.king-addons-anim-size-small.king-addons-overlay-slide-bottom {
+    transform: translateY(50%);
+}
+
+.king-addons-anim-size-medium.king-addons-overlay-slide-bottom {
+    transform: translateY(70%);
+}
+
+.king-addons-anim-size-large.king-addons-overlay-slide-bottom {
+    transform: translateY(100%);
+}
+
+.king-addons-animation-wrap-active .king-addons-element-slide-top,
+.king-addons-animation-wrap-active .king-addons-overlay-slide-top,
+.king-addons-animation-wrap:hover .king-addons-element-slide-top,
+.king-addons-animation-wrap:hover .king-addons-overlay-slide-top,
+.king-addons-animation-enter > .king-addons-overlay-slide-top,
+.king-addons-animation-wrap-active .king-addons-element-slide-bottom,
+.king-addons-animation-wrap-active .king-addons-overlay-slide-bottom,
+.king-addons-animation-wrap:hover .king-addons-element-slide-bottom,
+.king-addons-animation-wrap:hover .king-addons-overlay-slide-bottom,
+.king-addons-animation-enter > .king-addons-overlay-slide-bottom {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.king-addons-anim-size-small.king-addons-element-slide-right {
+    transform: translateX(30%);
+}
+
+.king-addons-anim-size-medium.king-addons-element-slide-right {
+    transform: translateX(150%);
+}
+
+.king-addons-anim-size-large.king-addons-element-slide-right {
+    transform: translateX(300%);
+}
+
+.king-addons-anim-size-small.king-addons-overlay-slide-right {
+    transform: translateX(50%);
+}
+
+.king-addons-anim-size-medium.king-addons-overlay-slide-right {
+    transform: translateX(70%);
+}
+
+.king-addons-anim-size-large.king-addons-overlay-slide-right {
+    transform: translateX(100%);
+}
+
+.king-addons-anim-size-small.king-addons-element-slide-left {
+    transform: translateX(-30%);
+}
+
+.king-addons-anim-size-medium.king-addons-element-slide-left {
+    transform: translateX(-150%);
+}
+
+.king-addons-anim-size-large.king-addons-element-slide-left {
+    transform: translateX(-300%);
+}
+
+.king-addons-anim-size-small.king-addons-overlay-slide-left {
+    transform: translateX(-50%);
+}
+
+.king-addons-anim-size-medium.king-addons-overlay-slide-left {
+    transform: translateX(-70%);
+}
+
+.king-addons-anim-size-large.king-addons-overlay-slide-left {
+    transform: translateX(-100%);
+}
+
+.king-addons-animation-wrap-active .king-addons-element-slide-right,
+.king-addons-animation-wrap-active .king-addons-overlay-slide-right,
+.king-addons-animation-wrap:hover .king-addons-element-slide-right,
+.king-addons-animation-wrap:hover .king-addons-overlay-slide-right,
+.king-addons-animation-enter > .king-addons-overlay-slide-right,
+.king-addons-animation-wrap-active .king-addons-element-slide-left,
+.king-addons-animation-wrap-active .king-addons-overlay-slide-left,
+.king-addons-animation-wrap-hover .king-addons-element-slide-left,
+.king-addons-animation-wrap-hover .king-addons-overlay-slide-left,
+.king-addons-animation-wrap:hover .king-addons-element-slide-left,
+.king-addons-animation-wrap:hover .king-addons-overlay-slide-left,
+.king-addons-animation-enter > .king-addons-overlay-slide-left {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.king-addons-element-slide-x-right,
+.king-addons-element-slide-x-left {
+    position: relative;
+    overflow: hidden;
+}
+
+.king-addons-element-slide-x-right .inner-block,
+.king-addons-element-slide-x-left .inner-block {
+    position: relative;
+    transition-duration: inherit;
+}
+
+.king-addons-element-slide-x-right .inner-block {
+    right: -100%;
+}
+
+.king-addons-animation-wrap-active .king-addons-element-slide-x-right .inner-block,
+.king-addons-animation-wrap:hover .king-addons-element-slide-x-right .inner-block {
+    right: 0;
+}
+
+.king-addons-element-slide-x-left .inner-block {
+    left: -100%;
+}
+
+.king-addons-animation-wrap-active .king-addons-element-slide-x-left .inner-block,
+.king-addons-animation-wrap:hover .king-addons-element-slide-x-left .inner-block {
+    left: 0;
+}
+
+.king-addons-element-skew-top,
+.king-addons-overlay-skew-top {
+    transform-origin: center top 0;
+}
+
+.king-addons-overlay-skew-top {
+    top: 0 !important;
+}
+
+.king-addons-anim-size-small.king-addons-element-skew-top,
+.king-addons-anim-size-small.king-addons-overlay-skew-top {
+    transform: perspective(600px) rotateX(-30deg);
+}
+
+.king-addons-anim-size-medium.king-addons-element-skew-top,
+.king-addons-anim-size-medium.king-addons-overlay-skew-top {
+    transform: perspective(600px) rotateX(-50deg);
+}
+
+.king-addons-anim-size-large.king-addons-element-skew-top,
+.king-addons-anim-size-large.king-addons-overlay-skew-top {
+    transform: perspective(600px) rotateX(-90deg);
+}
+
+.king-addons-element-skew-bottom,
+.king-addons-overlay-skew-bottom {
+    transform-origin: center bottom 0;
+}
+
+.king-addons-overlay-skew-bottom {
+    top: auto !important;
+    bottom: 0 !important;
+}
+
+.king-addons-anim-size-small.king-addons-element-skew-bottom,
+.king-addons-anim-size-small.king-addons-overlay-skew-bottom {
+    transform: perspective(600px) rotateX(30deg);
+}
+
+.king-addons-anim-size-medium.king-addons-element-skew-bottom,
+.king-addons-anim-size-medium.king-addons-overlay-skew-bottom {
+    transform: perspective(600px) rotateX(50deg);
+}
+
+.king-addons-anim-size-large.king-addons-element-skew-bottom,
+.king-addons-anim-size-large.king-addons-overlay-skew-bottom {
+    transform: perspective(600px) rotateX(90deg);
+}
+
+.king-addons-animation-wrap-active .king-addons-element-skew-top,
+.king-addons-animation-wrap-active .king-addons-overlay-skew-top,
+.king-addons-animation-wrap:hover .king-addons-element-skew-top,
+.king-addons-animation-wrap:hover .king-addons-overlay-skew-top,
+.king-addons-animation-enter > .king-addons-overlay-skew-top,
+.king-addons-animation-wrap-active .king-addons-element-skew-bottom,
+.king-addons-animation-wrap-active .king-addons-overlay-skew-bottom,
+.king-addons-animation-wrap:hover .king-addons-element-skew-bottom,
+.king-addons-animation-wrap:hover .king-addons-overlay-skew-bottom,
+.king-addons-animation-enter > .king-addons-overlay-skew-bottom {
+    transform: perspective(600px) rotateX(0deg);
+    opacity: 1;
+}
+
+.king-addons-element-skew-right,
+.king-addons-overlay-skew-right {
+    transform-origin: center right 0;
+}
+
+.king-addons-overlay-skew-right {
+    right: 0 !important;
+    left: auto !important;
+}
+
+.king-addons-anim-size-small.king-addons-element-skew-right,
+.king-addons-anim-size-small.king-addons-overlay-skew-right {
+    transform: perspective(600px) rotateY(-30deg);
+}
+
+.king-addons-anim-size-medium.king-addons-element-skew-right,
+.king-addons-anim-size-medium.king-addons-overlay-skew-right {
+    transform: perspective(600px) rotateY(-50deg);
+}
+
+.king-addons-anim-size-large.king-addons-element-skew-right,
+.king-addons-anim-size-large.king-addons-overlay-skew-right {
+    transform: perspective(600px) rotateY(-90deg);
+}
+
+.king-addons-element-skew-left,
+.king-addons-overlay-skew-left {
+    transform-origin: center left 0;
+}
+
+.king-addons-overlay-skew-left {
+    left: 0 !important;
+}
+
+.king-addons-anim-size-small.king-addons-element-skew-left,
+.king-addons-anim-size-small.king-addons-overlay-skew-left {
+    transform: perspective(600px) rotateY(30deg);
+}
+
+.king-addons-anim-size-medium.king-addons-element-skew-left,
+.king-addons-anim-size-medium.king-addons-overlay-skew-left {
+    transform: perspective(600px) rotateY(50deg);
+}
+
+.king-addons-anim-size-large.king-addons-element-skew-left,
+.king-addons-anim-size-large.king-addons-overlay-skew-left {
+    transform: perspective(600px) rotateY(90deg);
+}
+
+.king-addons-animation-wrap-active .king-addons-element-skew-right,
+.king-addons-animation-wrap-active .king-addons-overlay-skew-right,
+.king-addons-animation-wrap:hover .king-addons-element-skew-right,
+.king-addons-animation-wrap:hover .king-addons-overlay-skew-right,
+.king-addons-animation-enter > .king-addons-overlay-skew-right,
+.king-addons-animation-wrap-active .king-addons-element-skew-left,
+.king-addons-animation-wrap-active .king-addons-overlay-skew-left,
+.king-addons-animation-wrap:hover .king-addons-element-skew-left,
+.king-addons-animation-wrap:hover .king-addons-overlay-skew-left,
+.king-addons-animation-enter > .king-addons-overlay-skew-left {
+    transform: perspective(600px) rotateY(0deg);
+    opacity: 1;
+}
+
+.king-addons-anim-size-small.king-addons-element-scale-up,
+.king-addons-anim-size-small.king-addons-overlay-scale-up {
+    transform: scale(0.9);
+}
+
+.king-addons-anim-size-medium.king-addons-element-scale-up,
+.king-addons-anim-size-medium.king-addons-overlay-scale-up {
+    transform: scale(0.6);
+}
+
+.king-addons-anim-size-large.king-addons-element-scale-up,
+.king-addons-anim-size-large.king-addons-overlay-scale-up {
+    transform: scale(0.2);
+}
+
+.king-addons-anim-size-small.king-addons-element-scale-down,
+.king-addons-anim-size-small.king-addons-overlay-scale-down {
+    transform: scale(1.1);
+}
+
+.king-addons-anim-size-medium.king-addons-element-scale-down,
+.king-addons-anim-size-medium.king-addons-overlay-scale-down {
+    transform: scale(1.4);
+}
+
+.king-addons-anim-size-large.king-addons-element-scale-down,
+.king-addons-anim-size-large.king-addons-overlay-scale-down {
+    transform: scale(1.9);
+}
+
+.king-addons-animation-wrap-active .king-addons-element-scale-up,
+.king-addons-animation-wrap-active .king-addons-overlay-scale-up,
+.king-addons-animation-wrap:hover .king-addons-element-scale-up,
+.king-addons-animation-wrap:hover .king-addons-overlay-scale-up,
+.king-addons-animation-enter > .king-addons-overlay-scale-up,
+.king-addons-animation-wrap-active .king-addons-element-scale-down,
+.king-addons-animation-wrap-active .king-addons-overlay-scale-down,
+.king-addons-animation-wrap:hover .king-addons-element-scale-down,
+.king-addons-animation-wrap:hover .king-addons-overlay-scale-down,
+.king-addons-animation-enter > .king-addons-overlay-scale-down {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.king-addons-anim-size-small.king-addons-element-roll-right,
+.king-addons-anim-size-small.king-addons-overlay-roll-right {
+    transform: translateX(100%) rotate(90deg);
+}
+
+.king-addons-anim-size-medium.king-addons-element-roll-right,
+.king-addons-anim-size-medium.king-addons-overlay-roll-right {
+    transform: translateX(100%) rotate(240deg);
+}
+
+.king-addons-anim-size-large.king-addons-element-roll-right,
+.king-addons-anim-size-large.king-addons-overlay-roll-right {
+    transform: translateX(100%) rotate(360deg);
+}
+
+.king-addons-anim-size-small.king-addons-element-roll-left,
+.king-addons-anim-size-small.king-addons-overlay-roll-left {
+    transform: translateX(-100%) rotate(-90deg);
+}
+
+.king-addons-anim-size-medium.king-addons-element-roll-left,
+.king-addons-anim-size-medium.king-addons-overlay-roll-left {
+    transform: translateX(-100%) rotate(-240deg);
+}
+
+.king-addons-anim-size-large.king-addons-element-roll-left,
+.king-addons-anim-size-large.king-addons-overlay-roll-left {
+    transform: translateX(-100%) rotate(-360deg);
+}
+
+.king-addons-animation-wrap-active .king-addons-element-roll-right,
+.king-addons-animation-wrap-active .king-addons-overlay-roll-right,
+.king-addons-animation-wrap:hover .king-addons-element-roll-right,
+.king-addons-animation-wrap:hover .king-addons-overlay-roll-right,
+.king-addons-animation-enter > .king-addons-overlay-roll-right,
+.king-addons-animation-wrap-active .king-addons-element-roll-left,
+.king-addons-animation-wrap-active .king-addons-overlay-roll-left,
+.king-addons-animation-wrap:hover .king-addons-element-roll-left,
+.king-addons-animation-wrap:hover .king-addons-overlay-roll-left,
+.king-addons-animation-enter > .king-addons-overlay-roll-left {
+    transform: translateX(0) rotate(0);
+    opacity: 1;
+}
+
+.king-addons-slide.king-addons-effect-dir-top:hover img {
+    transform: translateY(-100%);
+}
+
+.king-addons-slide.king-addons-effect-dir-bottom:hover img {
+    transform: translateY(100%);
+}
+
+.king-addons-slide.king-addons-effect-dir-right:hover img {
+    transform: translateX(100%);
+}
+
+.king-addons-slide.king-addons-effect-dir-left:hover img {
+    transform: translateX(-100%);
+}
+
+.king-addons-zoom-in.king-addons-effect-size-small:hover img {
+    transform: scale(1.1);
+}
+
+.king-addons-zoom-in.king-addons-effect-size-medium:hover img {
+    transform: scale(1.3);
+}
+
+.king-addons-zoom-in.king-addons-effect-size-large:hover img {
+    transform: scale(1.5);
+}
+
+.king-addons-zoom-out.king-addons-effect-size-small img {
+    transform: scale(1.1);
+}
+
+.king-addons-zoom-out.king-addons-effect-size-medium img {
+    transform: scale(1.3);
+}
+
+.king-addons-zoom-out.king-addons-effect-size-large img {
+    transform: scale(1.5);
+}
+
+.king-addons-zoom-out.king-addons-effect-size-small:hover img,
+.king-addons-zoom-out.king-addons-effect-size-medium:hover img,
+.king-addons-zoom-out.king-addons-effect-size-large:hover img {
+    transform: scale(1);
+}
+
+.king-addons-grayscale-in.king-addons-effect-size-small:hover img {
+    filter: grayscale(0.3);
+}
+
+.king-addons-grayscale-in.king-addons-effect-size-medium:hover img {
+    filter: grayscale(0.6);
+}
+
+.king-addons-grayscale-in.king-addons-effect-size-large:hover img {
+    filter: grayscale(1);
+}
+
+.king-addons-grayscale-out.king-addons-effect-size-small img {
+    filter: grayscale(0.3);
+}
+
+.king-addons-grayscale-out.king-addons-effect-size-medium img {
+    filter: grayscale(0.6);
+}
+
+.king-addons-grayscale-out.king-addons-effect-size-large img {
+    filter: grayscale(1);
+}
+
+.king-addons-grayscale-out.king-addons-effect-size-small:hover img,
+.king-addons-grayscale-out.king-addons-effect-size-medium:hover img,
+.king-addons-grayscale-out.king-addons-effect-size-large:hover img {
+    filter: grayscale(0);
+}
+
+.king-addons-blur-in.king-addons-effect-size-small:hover img {
+    filter: blur(1px);
+}
+
+.king-addons-blur-in.king-addons-effect-size-medium:hover img {
+    filter: blur(3px);
+}
+
+.king-addons-blur-in.king-addons-effect-size-large:hover img {
+    filter: blur(5px);
+}
+
+.king-addons-blur-out.king-addons-effect-size-small img {
+    filter: blur(1px);
+}
+
+.king-addons-blur-out.king-addons-effect-size-medium img {
+    filter: blur(3px);
+}
+
+.king-addons-blur-out.king-addons-effect-size-large img {
+    filter: blur(5px);
+}
+
+.king-addons-blur-out.king-addons-effect-size-small:hover img,
+.king-addons-blur-out.king-addons-effect-size-medium:hover img,
+.king-addons-blur-out.king-addons-effect-size-large:hover img {
+    filter: blur(0px);
+}
+
+.king-addons-cv-container {
+    position: absolute;
+    z-index: 90;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-cv-outer {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-cv-inner {
+    display: table-cell;
+    vertical-align: middle;
+}

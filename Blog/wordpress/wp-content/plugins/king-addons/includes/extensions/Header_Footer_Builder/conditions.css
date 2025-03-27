@@ -1,0 +1,142 @@
+.post-type-king-addons-el-hf_adv_header span.select2.select2-container.select2-container--default,
+.post-type-king-addons-el-hf-advanced-hook span.select2.select2-container.select2-container--default {
+    margin-top: 0;
+}
+
+.post-type-king-addons-el-hf_adv_header li.select2-results__option.select2-results__message,
+.post-type-king-addons-el-hf-advanced-hook li.select2-results__option.select2-results__message {
+    background: #ecebeb;
+    margin-bottom: 0;
+}
+
+.king-addons-el-hf-target-rule-wrapper  .select2-container {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    width: 100% !important;
+}
+
+.king-addons-el-hf-target-rule-wrapper .select2-container--default.select2-container--focus .select2-selection--multiple,
+.king-addons-el-hf-target-rule-wrapper .select2-container--default .select2-selection--multiple {
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+.king-addons-el-hf-target-rule-wrapper .select2-container .select2-search--inline,
+.king-addons-el-hf-target-rule-wrapper .select2-container--default .select2-search--inline .select2-search__field {
+    width: 100% !important;
+}
+
+.king-addons-el-hf-target-rule-condition,
+.king-addons-el-hf-user-role-condition {
+    position: relative;
+    margin-top: 10px;
+}
+
+.target_rule-specific-page-wrap {
+    position: relative;
+    padding: 0 30px 0 0;
+}
+
+.user_role-add-rule-wrap,
+.target_rule-add-rule-wrap,
+.target_rule-add-exclusion-rule,
+.user_role-add-rule-wrap {
+    margin-top: 15px;
+}
+
+.king-addons-el-hf-target-rule-display-on,
+.king-addons-el-hf-target-rule-exclude-on {
+    margin-bottom: 10px;
+}
+
+.target_rule-condition-delete,
+.user_role-condition-delete {
+    position: absolute;
+    color: #999;
+    right: 0;
+    font-size: 18px;
+    line-height: 18px;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.target_rule-condition-delete:hover {
+    color: #d54e21;
+}
+
+.target_rule-add-rule-wrap {
+    display: inline-block;
+}
+
+.target_rule-add-exclusion-rule {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.configure-content [data-element="exclude_from"],
+.configure-content [data-element="exclusive_on"] {
+    padding-bottom: 0;
+}
+
+.configure-content .king-addons-el-hf-allow-specific-posts input,
+.configure-content .king-addons-el-hf-post-types {
+    margin-right: 3px;
+}
+
+.hide-on-devices input[type=checkbox] {
+    margin-right: 5px;
+}
+
+.search-panel.search-close-icon {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.king-addons-el-hf-hidden {
+    display: none !important;
+}
+
+.king-addons-el-hf-options-row-heading {
+    border-right: 1px solid #f0f0f0;
+    padding: 15px;
+    width: 45%;
+    vertical-align: middle;
+}
+
+.king-addons-el-hf-options-row td {
+    padding-left: 12px;
+    padding-right: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    zoom: 1;
+    vertical-align: middle;
+}
+
+.king-addons-el-hf-options-table .king-addons-el-hf-options-row-content {
+    padding: 15px 10px;
+    position: relative;
+    width: 55%;
+}
+
+.king-addons-el-hf-options-table.widefat {
+    border: 1px solid #f0f0f0;
+    border-bottom: none;
+}
+
+.king-addons-el-hf-options-row-heading label {
+    display: inline-block;
+    font-size: 13px;
+    line-height: 1.4em;
+    font-weight: bold;
+    padding: 0;
+    margin: 0 0 3px;
+    color: #333;
+}
+
+.king-addons-el-hf-options-row-content select {
+    width: 95%;
+}

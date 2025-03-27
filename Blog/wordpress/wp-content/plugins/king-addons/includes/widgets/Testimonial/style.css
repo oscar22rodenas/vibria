@@ -1,0 +1,143 @@
+.king-addons-testimonial-layout {
+    display: flex;
+}
+
+.king-addons-testimonial-image {
+    flex-shrink: 0;
+}
+
+.king-addons-testimonial-image img {
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.king-addons-testimonial-person-wrapper {
+    display: flex;
+    align-items: baseline;
+}
+
+/* LAYOUT - 1, 2, 3, 8 */
+.king-addons-testimonial-layout-1,
+.king-addons-testimonial-layout-2,
+.king-addons-testimonial-layout-3,
+.king-addons-testimonial-layout-8 {
+    flex-flow: column;
+}
+
+/* LAYOUT - 4 */
+.king-addons-testimonial-layout-4 {
+    justify-content: flex-start;
+}
+
+.king-addons-testimonial-layout-4 .king-addons-testimonial-content {
+    text-align: start;
+    display: flex;
+    flex-flow: column;
+    align-items: start;
+}
+
+.king-addons-testimonial-layout-4 .king-addons-testimonial-rating-general {
+    --king-addons-testimonial-rating-justify-content: flex-start;
+}
+
+/* LAYOUT - 5 */
+.king-addons-testimonial-layout-5 {
+    justify-content: flex-end;
+}
+
+.king-addons-testimonial-layout-5 .king-addons-testimonial-content {
+    text-align: end;
+    display: flex;
+    flex-flow: column;
+    align-items: end;
+}
+
+.king-addons-testimonial-layout-5 .king-addons-testimonial-rating-general {
+    --king-addons-testimonial-rating-justify-content: flex-end;
+}
+
+/* LAYOUT - 6,7 */
+.king-addons-testimonial-layout-6,
+.king-addons-testimonial-layout-7 {
+    flex-flow: column;
+}
+
+.king-addons-testimonial-layout-6 .king-addons-testimonial-content,
+.king-addons-testimonial-layout-7 .king-addons-testimonial-content {
+    display: flex;
+    flex-flow: row;
+}
+
+/* LAYOUT - 8 */
+.king-addons-testimonial-layout-8 {
+    align-items: center;
+}
+
+.king-addons-testimonial-layout-8 .king-addons-testimonial-description {
+    text-align: center;
+}
+
+.king-addons-testimonial-layout-8 .king-addons-testimonial-person-wrapper {
+    justify-content: center;
+}
+
+.king-addons-testimonial-layout-8 .king-addons-testimonial-rating-general .king-addons-testimonial-rating {
+    --king-addons-testimonial-rating-justify-content: center;
+}
+
+.king-addons-testimonial-rating-general {
+    --king-addons-testimonial-rating-gap: 0px;
+    --king-addons-testimonial-rating-icon-font-size: 16px;
+    --king-addons-testimonial-rating-icon-color: #ccd6df;
+    --king-addons-testimonial-rating-icon-marked-color: #f0ad4e;
+    --king-addons-testimonial-rating-icon-marked-width: 100%;
+    --king-addons-testimonial-rating-justify-content: flex-start
+}
+
+.king-addons-testimonial-rating-general .king-addons-testimonial-rating {
+    display: flex;
+    justify-content: var(--king-addons-testimonial-rating-justify-content)
+}
+
+.king-addons-testimonial-rating-general .king-addons-testimonial-rating-wrapper {
+    display: flex;
+    justify-content: inherit;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: fit-content;
+    margin-block-end: calc(0px - var(--king-addons-testimonial-rating-gap));
+    margin-inline-end: calc(0px - var(--king-addons-testimonial-rating-gap))
+}
+
+.king-addons-testimonial-rating-general .king-addons-testimonial-rating .king-addons-testimonial-icon {
+    position: relative;
+    margin-block-end: var(--king-addons-testimonial-rating-gap);
+    margin-inline-end: var(--king-addons-testimonial-rating-gap)
+}
+
+.king-addons-testimonial-rating-general .king-addons-testimonial-rating .king-addons-testimonial-icon-wrapper.king-addons-testimonial-icon-marked {
+    --king-addons-testimonial-rating-icon-color: var(--king-addons-testimonial-rating-icon-marked-color);
+    width: var(--king-addons-testimonial-rating-icon-marked-width);
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden
+}
+
+.king-addons-testimonial-rating-general .king-addons-testimonial-rating .king-addons-testimonial-icon-wrapper :is(i,svg) {
+    display: flex;
+    flex-shrink: 0
+}
+
+.king-addons-testimonial-rating-general .king-addons-testimonial-rating .king-addons-testimonial-icon-wrapper i {
+    font-size: var(--king-addons-testimonial-rating-icon-font-size);
+    color: var(--king-addons-testimonial-rating-icon-color)
+}
+
+.king-addons-testimonial-rating-general .king-addons-testimonial-rating .king-addons-testimonial-icon-wrapper svg {
+    width: auto;
+    height: var(--king-addons-testimonial-rating-icon-font-size);
+    fill: var(--king-addons-testimonial-rating-icon-color)
+}

@@ -1,0 +1,9 @@
+.king-addons-business-hours-item {
+    display: flex;
+    align-items: baseline;
+}
+
+.king-addons-business-hours-item-line {
+    flex-grow: 1;
+    margin: 0 8px;
+}

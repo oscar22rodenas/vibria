@@ -1,0 +1,101 @@
+.king-addons-blog-posts-items {
+    position: relative;
+    overflow: hidden;
+}
+
+.king-addons-blog-posts-items-wrap {
+    position: relative;
+}
+
+.king-addons-blog-posts-btn {
+    display: block;
+    width: auto;
+    transition: all 215ms;
+}
+
+.king-addons-blog-posts-button {
+    display: flex;
+    flex-flow: column;
+}
+
+.king-addons-blog-posts-card-inner,
+.king-addons-blog-posts-card,
+.king-addons-blog-posts-image {
+    overflow: hidden;
+}
+
+.king-addons-blog-posts-image img {
+    width: auto;
+    height: auto;
+}
+
+.king-addons-blog-posts-card-inner,
+.king-addons-blog-posts-card {
+    display: flex;
+}
+
+.king-addons-blog-posts-card-container-1,
+.king-addons-blog-posts-card-container-2 {
+    display: flex;
+    flex-flow: column;
+    overflow: hidden;
+    height: auto;
+    width: auto;
+}
+
+/* !important is necessary */
+.king-addons-blog-posts-autoplay-like-ticker,
+.king-addons-blog-posts-autoplay-like-ticker-pag.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    transition-timing-function: linear !important;
+}
+
+.king-addons-blog-posts-cursor-pointer {
+    cursor: pointer;
+}
+
+/*noinspection DuplicatedCode*/
+.king-addons-blog-posts-nav {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+}
+
+.king-addons-blog-posts-nav-inner {
+    display: flex;
+}
+
+.king-addons-blog-posts-nav.swiper-button-disabled .king-addons-blog-posts-nav-inner {
+    opacity: 0.4;
+}
+
+.king-addons-blog-posts-title {
+    font-size: 18px;
+    width: 100%;
+}
+
+.king-addons-blog-posts-card-inner a {
+    transition-duration: 0s;
+    display: flex;
+}
+
+.king-addons-blog-posts-card-container-1,
+.king-addons-blog-posts-image {
+    width: 100%;
+    height: auto;
+}
+
+.king-addons-blog-posts-image {
+    display: flex;
+}
+
+.swiper-container:not(.swiper-container-initialized) > .swiper-wrapper,
+.swiper:not(.swiper-initialized) > .swiper-wrapper {
+    overflow: visible !important;
+}

@@ -1,0 +1,219 @@
+.king-addons-image-hotspots-container {
+    position: relative;
+    width: fit-content;
+}
+
+.king-addons-image-hotspots-items {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-hotspot-item {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.king-addons-image-hotspots-image {
+    overflow: hidden;
+}
+
+.king-addons-hotspot-content {
+    display: flex;
+    justify-content: center;
+}
+
+.king-addons-hotspot-content i,
+.king-addons-hotspot-icon-text {
+    display: flex;
+    align-self: center;
+    flex-flow: column;
+}
+
+.king-addons-hotspot-content i {
+    text-align: center;
+}
+
+.king-addons-hotspot-icon-text-position-right .king-addons-has-hotspot-icon-text:not(.king-addons-has-hotspot-icon-reverse) {
+    flex-flow: row-reverse;
+}
+
+.king-addons-hotspot-icon-text-position-left .king-addons-has-hotspot-icon-text.king-addons-has-hotspot-icon-reverse {
+    flex-flow: row-reverse;
+}
+
+.king-addons-hotspot-tooltip-content:before {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    content: "";
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-top-style: solid;
+    border-top-color: #222222;
+    border-right-style: solid;
+    border-right-color: transparent;
+    border-left-style: solid;
+    border-left-color: transparent;
+}
+
+.king-addons-hotspot-tooltip-content {
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    margin-top: -5px;
+    transition: opacity 0.15s ease-in, top 0.15s ease-in, width 0.15s ease-in, min-width 0.15s ease-in;
+    opacity: 0;
+    background-color: transparent;
+}
+
+.king-addons-hotspot-item.king-addons-hotspot-tooltip-always-show .king-addons-hotspot-tooltip-content,
+.king-addons-hotspot-item:hover .king-addons-hotspot-tooltip-content {
+    top: -5px;
+    visibility: visible;
+    transform: translate(0%, -100%);
+    opacity: 1;
+    background-color: #222222;
+    z-index: 1;
+}
+
+.king-addons-hotspot-item.king-addons-hotspot-tooltip-always-show .king-addons-hotspot-tooltip-content {
+    animation: none;
+    transition: none;
+}
+
+.king-addons-hotspot-animation-simple .king-addons-hotspot-item.king-addons-hotspot-tooltip-always-show .king-addons-hotspot-tooltip-content,
+.king-addons-hotspot-animation-simple .king-addons-hotspot-item:hover .king-addons-hotspot-tooltip-content {
+    animation: king-addons-hotspot-animation-simple 300ms ease-out;
+}
+
+.king-addons-hotspot-animation-shake .king-addons-hotspot-item.king-addons-hotspot-tooltip-always-show .king-addons-hotspot-tooltip-content,
+.king-addons-hotspot-animation-shake .king-addons-hotspot-item:hover .king-addons-hotspot-tooltip-content {
+    animation: king-addons-hotspot-animation-shake 500ms ease-in-out forwards;
+}
+
+.king-addons-hotspot-animation-double-shake .king-addons-hotspot-item.king-addons-hotspot-tooltip-always-show .king-addons-hotspot-tooltip-content,
+.king-addons-hotspot-animation-double-shake .king-addons-hotspot-item:hover .king-addons-hotspot-tooltip-content {
+    animation: king-addons-hotspot-animation-double-shake cubic-bezier(0.36, 0.07, 0.19, 0.97) 1000ms forwards;
+}
+
+.king-addons-hotspot-animation-stretch .king-addons-hotspot-item.king-addons-hotspot-tooltip-always-show .king-addons-hotspot-tooltip-content,
+.king-addons-hotspot-animation-stretch .king-addons-hotspot-item:hover .king-addons-hotspot-tooltip-content {
+    animation: king-addons-hotspot-animation-stretch 1s ease-out;
+}
+
+.king-addons-hotspot-animation-floating .king-addons-hotspot-item.king-addons-hotspot-tooltip-always-show .king-addons-hotspot-tooltip-content,
+.king-addons-hotspot-animation-floating .king-addons-hotspot-item:hover .king-addons-hotspot-tooltip-content {
+    animation: king-addons-hotspot-animation-floating 1s ease-in-out infinite alternate;
+}
+
+@keyframes king-addons-hotspot-animation-simple {
+    0% {
+        transform: translate(0%, -80%);
+    }
+    50% {
+        transform: translate(0%, -100%);
+    }
+    100% {
+        transform: translate(0%, -100%);
+    }
+}
+
+@keyframes king-addons-hotspot-animation-shake {
+    0% {
+        transform: translate(0%, -80%) rotate(2deg);
+    }
+    50% {
+        transform: translate(0%, -100%) rotate(-3deg);
+    }
+    70% {
+        transform: translate(0%, -100%) rotate(3deg);
+    }
+    100% {
+        transform: translate(0%, -100%) rotate(0deg);
+    }
+}
+
+@keyframes king-addons-hotspot-animation-double-shake {
+    0% {
+        transform: translate(0%, -100%) rotate(0deg);
+    }
+    50% {
+        transform: translate(0%, -100%) rotate(5deg);
+    }
+    60% {
+        transform: translate(0%, -100%) rotate(-5deg);
+    }
+    70% {
+        transform: translate(0%, -100%) rotate(5deg);
+    }
+    80% {
+        transform: translate(0%, -100%) rotate(-5deg);
+    }
+    100% {
+        transform: translate(0%, -100%) rotate(0deg);
+    }
+}
+
+@keyframes king-addons-hotspot-animation-stretch {
+    0% {
+        transform: translate(0%, -0%) scale(1, 1)
+    }
+    10% {
+        transform: translate(0%, -50%) scale(1.1, .9)
+    }
+    30% {
+        transform: translate(0%, -100%) scale(.9, 1.1)
+    }
+    50% {
+        transform: translate(0%, -100%) scale(1.05, .95)
+    }
+    100% {
+        transform: translate(0%, -100%) scale(1, 1)
+    }
+}
+
+@keyframes king-addons-hotspot-animation-floating {
+    0% {
+        transform: translate(0%, -100%) translateY(5px);
+    }
+
+    100% {
+        transform: translate(0%, -100%) translateY(0px);
+    }
+}
+
+.king-addons-hotspot-item-animation-yes .king-addons-hotspot-item:before,
+.king-addons-hotspot-item-animation-yes .king-addons-hotspot-item:after {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    opacity: 0.6;
+}
+
+.king-addons-hotspot-item-animation-yes .king-addons-hotspot-item:before {
+    animation: king-addons-hotspot-item-animation 3s ease-out infinite;
+}
+
+.king-addons-hotspot-item-animation-yes .king-addons-hotspot-item:after {
+    animation: king-addons-hotspot-item-animation 3s 1.5s ease-out infinite;
+}
+
+@keyframes king-addons-hotspot-item-animation {
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}

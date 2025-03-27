@@ -1,0 +1,32 @@
+.king-addons-reading-progress-bar-container {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.king-addons-reading-progress-bar {
+    background: #574ff7;
+    width: 0;
+    transition: all 0s;
+}
+
+.king-addons-reading-progress-bar-container-position-top {
+    top: 0;
+}
+
+@media (min-width: 783px) {
+    .admin-bar .king-addons-reading-progress-bar-container-position-top {
+        top: 32px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 782px) {
+    .admin-bar .king-addons-reading-progress-bar-container-position-top {
+        top: 46px;
+    }
+}
+
+.king-addons-reading-progress-bar-container-position-bottom {
+    bottom: 0;
+}

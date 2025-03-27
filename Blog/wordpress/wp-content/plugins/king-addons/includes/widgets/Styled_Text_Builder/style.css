@@ -1,0 +1,25 @@
+.king-addons-styled-text {
+    word-wrap: normal;
+    word-break: break-word;
+}
+
+.king-addons-styled-text .king-addons-styled-text-inner * {
+    margin: 0;
+    padding: 0;
+    word-wrap: normal;
+    word-break: keep-all;
+}
+
+.king-addons-styled-text-gradient .king-addons-styled-text-inner {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.king-addons-styled-text img {
+    display: inline-block;
+}
+
+.king-addons-styled-text-underline-gradient .king-addons-styled-text-inner {
+    position: relative;
+    transition: all 0.25s ease-in;
+}

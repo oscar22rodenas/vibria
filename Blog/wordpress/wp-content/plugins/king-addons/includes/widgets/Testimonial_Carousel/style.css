@@ -1,0 +1,190 @@
+.king-addons-testimonial-carousel-layout {
+    display: flex;
+}
+
+.king-addons-testimonial-carousel-image {
+    flex-shrink: 0;
+}
+
+.king-addons-testimonial-carousel-image img {
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.king-addons-testimonial-carousel-person-wrapper {
+    display: flex;
+    align-items: baseline;
+}
+
+/* LAYOUT - 1, 2, 3, 8 */
+.king-addons-testimonial-carousel-layout-1,
+.king-addons-testimonial-carousel-layout-2,
+.king-addons-testimonial-carousel-layout-3,
+.king-addons-testimonial-carousel-layout-8 {
+    flex-flow: column;
+}
+
+/* LAYOUT - 4 */
+.king-addons-testimonial-carousel-layout-4 {
+    justify-content: flex-start;
+}
+
+.king-addons-testimonial-carousel-layout-4 .king-addons-testimonial-carousel-content {
+    text-align: start;
+    display: flex;
+    flex-flow: column;
+    align-items: start;
+}
+
+.king-addons-testimonial-carousel-layout-4 .king-addons-testimonial-carousel-rating-general {
+    --king-addons-testimonial-carousel-rating-justify-content: flex-start;
+}
+
+/* LAYOUT - 5 */
+.king-addons-testimonial-carousel-layout-5 {
+    justify-content: flex-end;
+}
+
+.king-addons-testimonial-carousel-layout-5 .king-addons-testimonial-carousel-content {
+    text-align: end;
+    display: flex;
+    flex-flow: column;
+    align-items: end;
+}
+
+.king-addons-testimonial-carousel-layout-5 .king-addons-testimonial-carousel-rating-general {
+    --king-addons-testimonial-carousel-rating-justify-content: flex-end;
+}
+
+/* LAYOUT - 6,7 */
+.king-addons-testimonial-carousel-layout-6,
+.king-addons-testimonial-carousel-layout-7 {
+    flex-flow: column;
+}
+
+.king-addons-testimonial-carousel-layout-6 .king-addons-testimonial-carousel-content,
+.king-addons-testimonial-carousel-layout-7 .king-addons-testimonial-carousel-content {
+    display: flex;
+    flex-flow: row;
+}
+
+/* LAYOUT - 8 */
+.king-addons-testimonial-carousel-layout-8 {
+    align-items: center;
+}
+
+.king-addons-testimonial-carousel-layout-8 .king-addons-testimonial-carousel-description {
+    text-align: center;
+}
+
+.king-addons-testimonial-carousel-layout-8 .king-addons-testimonial-carousel-person-wrapper {
+    justify-content: center;
+}
+
+.king-addons-testimonial-carousel-layout-8 .king-addons-testimonial-carousel-rating-general .king-addons-testimonial-carousel-rating {
+    --king-addons-testimonial-carousel-rating-justify-content: center;
+}
+
+.king-addons-testimonial-carousel-rating-general {
+    --king-addons-testimonial-carousel-rating-gap: 0px;
+    --king-addons-testimonial-carousel-rating-icon-font-size: 16px;
+    --king-addons-testimonial-carousel-rating-icon-color: #ccd6df;
+    --king-addons-testimonial-carousel-rating-icon-marked-color: #f0ad4e;
+    --king-addons-testimonial-carousel-rating-icon-marked-width: 100%;
+    --king-addons-testimonial-carousel-rating-justify-content: flex-start
+}
+
+.king-addons-testimonial-carousel-rating-general .king-addons-testimonial-carousel-rating {
+    display: flex;
+    justify-content: var(--king-addons-testimonial-carousel-rating-justify-content)
+}
+
+.king-addons-testimonial-carousel-rating-general .king-addons-testimonial-carousel-rating-wrapper {
+    display: flex;
+    justify-content: inherit;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: fit-content;
+    margin-block-end: calc(0px - var(--king-addons-testimonial-carousel-rating-gap));
+    margin-inline-end: calc(0px - var(--king-addons-testimonial-carousel-rating-gap))
+}
+
+.king-addons-testimonial-carousel-rating-general .king-addons-testimonial-carousel-rating .king-addons-testimonial-carousel-icon {
+    position: relative;
+    margin-block-end: var(--king-addons-testimonial-carousel-rating-gap);
+    margin-inline-end: var(--king-addons-testimonial-carousel-rating-gap)
+}
+
+.king-addons-testimonial-carousel-rating-general .king-addons-testimonial-carousel-rating .king-addons-testimonial-carousel-icon-wrapper.king-addons-testimonial-carousel-icon-marked {
+    --king-addons-testimonial-carousel-rating-icon-color: var(--king-addons-testimonial-carousel-rating-icon-marked-color);
+    width: var(--king-addons-testimonial-carousel-rating-icon-marked-width);
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden
+}
+
+.king-addons-testimonial-carousel-rating-general .king-addons-testimonial-carousel-rating .king-addons-testimonial-carousel-icon-wrapper :is(i,svg) {
+    display: flex;
+    flex-shrink: 0
+}
+
+.king-addons-testimonial-carousel-rating-general .king-addons-testimonial-carousel-rating .king-addons-testimonial-carousel-icon-wrapper i {
+    font-size: var(--king-addons-testimonial-carousel-rating-icon-font-size);
+    color: var(--king-addons-testimonial-carousel-rating-icon-color)
+}
+
+.king-addons-testimonial-carousel-rating-general .king-addons-testimonial-carousel-rating .king-addons-testimonial-carousel-icon-wrapper svg {
+    width: auto;
+    height: var(--king-addons-testimonial-carousel-rating-icon-font-size);
+    fill: var(--king-addons-testimonial-carousel-rating-icon-color)
+}
+
+/* Carousel */
+.king-addons-testimonial-carousel-sw-items {
+    position: relative;
+    overflow: hidden;
+}
+
+.king-addons-testimonial-carousel-sw-items-wrap {
+    position: relative;
+}
+
+/* !important is necessary */
+.king-addons-testimonial-carousel-sw-autoplay-like-ticker,
+.king-addons-testimonial-carousel-sw-autoplay-like-ticker-pag.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    transition-timing-function: linear !important;
+}
+
+.king-addons-testimonial-carousel-sw-cursor-pointer {
+    cursor: pointer;
+}
+
+/*noinspection DuplicatedCode*/
+.king-addons-testimonial-carousel-sw-nav {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+}
+
+.king-addons-testimonial-carousel-sw-nav-inner {
+    display: flex;
+}
+
+.king-addons-testimonial-carousel-sw-nav.swiper-button-disabled .king-addons-testimonial-carousel-sw-nav-inner {
+    opacity: 0.4;
+}
+
+.swiper-container:not(.swiper-container-initialized) > .swiper-wrapper,
+.swiper:not(.swiper-initialized) > .swiper-wrapper {
+    overflow: visible !important;
+}
