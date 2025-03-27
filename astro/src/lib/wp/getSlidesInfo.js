@@ -3,17 +3,14 @@ import { getImageInfo } from "./getImageInfo.js";
 
 export const getSlidesInfo = async (lang) => {
   try {
-    const response = await fetch(`${apiURL}/slides`);
+    const response = await fetch(`${apiURL}/slides?order=asc&_fields=acf, slug`);
     if (!response.ok) {
       throw new Error("Error al obtener los slides");
     }
-
     const data = await response.json();
-
     
     // Filtrar los slides según el idioma (usando el slug)
     const slidesFiltrados = data.filter(slide => slide.slug.includes(`-${lang}`));
-
     
     // Obtener las imágenes de cada slide en paralelo
     const slidesConImagenes = await Promise.all(
