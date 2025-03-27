@@ -1,0 +1,164 @@
+.postbox {
+    border-radius: 5px;
+    border: 1px solid #f1f1f4;
+    box-shadow: none;
+}
+
+#wpbody-content .fs-notice.fs-has-title {
+    margin-top: 15px;
+}
+
+#poststuff {
+    margin-top: -15px;
+}
+
+#fs_promo_tab {
+    display: none !important;
+}
+
+#fs_account .postbox,
+#fs_account .widefat {
+    border-color: #f1f1f4;
+}
+
+.widefat thead td,
+.widefat thead th {
+    border-bottom: 1px solid #f1f1f4;
+}
+
+div.updated {
+    border: 1px solid #f1f1f4;
+    box-shadow: none;
+}
+
+.fs-notice.updated.success.fs-has-title.fs-slug-king-addons.fs-type-plugin {
+    border-left-width: 4px;
+}
+
+.nav-tab-active {
+    border: none;
+    display: inline-flex;
+    line-height: 1;
+    padding: 15px 25px;
+    border-radius: 12px;
+    margin-right: 10px;
+    background: #1a1b1b;
+    flex-flow: row;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 10px;
+}
+
+h2.nav-tab-wrapper {
+    padding: 25px 15px 15px 30px;
+    background: #1a1b1b;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.nav-tab-active:hover {
+    border-bottom: none;
+    background: #1a1b1b;
+    color: white;
+}
+
+.wp-core-ui .button, .wp-core-ui .button-secondary {
+    color: #191919;
+    border-color: #191919;
+    background: white;
+    border-radius: 5px !important;
+}
+
+.alternate, .striped > tbody > :nth-child(odd), ul.striped > :nth-child(odd) {
+    background-color: #f2f4f5;
+}
+
+html, #wpcontent {
+    background: #f8f8f8;
+}
+
+#wpcontent {
+    min-height: 100vh;
+}
+
+a {
+    color: #6957F0;
+}
+
+a:hover {
+    color: #191919;
+}
+
+.fs-key-value-table code,
+.fs-key-value-table input[type=text],
+.fs-key-value-table var {
+    color: #191919;
+    font-size: 15px;
+}
+
+#wpfooter {
+    display: none;
+}
+
+#wpbody-content {
+    padding-bottom: 0;
+}
+
+code {
+    font-family: inherit;
+}
+
+.fs-key-value-table td, .fs-key-value-table th {
+    padding: 8px;
+}
+
+.fs-notice[data-id=license_not_whitelabeled].success,
+.fs-notice[data-id=license_whitelabeled].success {
+    border-left-color: #6957F0;
+    color: inherit;
+}
+
+#fs_account h3 .dashicons {
+    font-size: 1.2em;
+    height: 24px;
+    width: 24px;
+}
+
+.fs-modal .fs-modal-header h4 {
+    color: #191919 !important;
+}
+
+.fs-modal .fs-modal-header {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.fs-modal .fs-modal-footer {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+#fs_account .fs-header-actions li {
+    float: left;
+    font-weight: 400;
+    margin: 0 2px;
+}
+
+.updated a {
+    text-decoration: none;
+    padding-bottom: 0 !important;
+}
+
+#fs_account h3 {
+    border-bottom: 1px solid #f1f1f4;
+    font-size: 1.2em;
+    line-height: 1.4;
+    margin: 0 0 12px;
+    padding: 12px 15px;
+}
+
+.button.fs-change-plan.button-upgrade {
+    margin-left: 5px;
+}

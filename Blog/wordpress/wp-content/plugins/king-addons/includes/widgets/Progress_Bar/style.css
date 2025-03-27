@@ -1,0 +1,160 @@
+.king-addons-prbar-counter-value-suffix {
+    line-height: 1;
+}
+
+.king-addons-prbar-hr-line {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.king-addons-prbar-hr-line-inner {
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition-property: width;
+}
+
+.king-addons-prbar-hr-line .king-addons-prbar-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-prbar-hr-line .king-addons-prbar-title-wrap {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+}
+
+.king-addons-prbar-layout-hr-line .king-addons-prbar-subtitle {
+    text-align: left;
+}
+
+.king-addons-prbar-hr-line .king-addons-prbar-counter {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+}
+
+.king-addons-prbar-layout-hr-line .king-addons-prbar-title-wrap {
+    float: left;
+}
+
+.king-addons-prbar-layout-hr-line .king-addons-prbar-counter {
+    float: right;
+}
+
+.king-addons-prbar-vr-line {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.king-addons-prbar-vr-line-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition-property: height;
+}
+
+.king-addons-prbar-circle {
+    position: relative;
+    display: table;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.king-addons-prbar-circle-svg {
+    width: 100%;
+    height: auto;
+    transform: rotate(-90deg);
+    border-radius: 50%;
+}
+
+.king-addons-prbar-circle-prline {
+    transition-property: stroke-dasharray, stroke-dashoffset;
+    stroke-linecap: butt;
+}
+
+.king-addons-prbar-circle .king-addons-prbar-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.king-addons-prbar-content {
+    overflow: hidden;
+    text-align: center;
+}
+
+.king-addons-prbar-counter {
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.king-addons-prbar-title,
+.king-addons-prbar-subtitle {
+    font-size: 12px;
+    text-align: center;
+}
+
+.king-addons-prbar-stripe-yes .king-addons-prbar-hr-line-inner:after,
+.king-addons-prbar-stripe-yes .king-addons-prbar-vr-line-inner:after {
+    position: absolute;
+    top: 0;
+    left: -30px;
+    width: calc(100% + 60px);
+    height: 100%;
+    content: '';
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-size: 30px 30px;
+}
+
+.king-addons-prbar-stripe-yes.king-addons-prbar-stripe-animation-right .king-addons-prbar-hr-line-inner:after,
+.king-addons-prbar-stripe-yes.king-addons-prbar-stripe-animation-right .king-addons-prbar-vr-line-inner:after {
+    animation: king-addons-stripe-animation-right 2s linear infinite;
+}
+
+.king-addons-prbar-stripe-yes.king-addons-prbar-stripe-animation-left .king-addons-prbar-hr-line-inner:after,
+.king-addons-prbar-stripe-yes.king-addons-prbar-stripe-animation-left .king-addons-prbar-vr-line-inner:after {
+    animation: king-addons-stripe-animation-left 2s linear infinite;
+}
+
+@keyframes king-addons-stripe-animation-right {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(30px, 0);
+    }
+}
+
+@keyframes king-addons-stripe-animation-left {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-30px, 0);
+    }
+}
+
+.elementor-widget-king-addons-progress-bar .king-addons-prbar-hr-line-inner,
+.elementor-widget-king-addons-progress-bar .king-addons-prbar-vr-line-inner {
+    background-color: #5B03FF;
+}

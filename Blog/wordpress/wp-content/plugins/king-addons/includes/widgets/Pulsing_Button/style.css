@@ -1,0 +1,41 @@
+.king-addons-pulsing-button-button {
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    transition: all .3s;
+}
+
+.king-addons-pulsing-button-button-effect-ripple:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    bottom: -2px;
+    right: -2px;
+    border-radius: inherit;
+    border: 1px solid #000000;
+    animation: king-addons-pulsing-button-ripple 2s cubic-bezier(0.23, 1, 0.32, 1) both infinite;
+}
+
+@keyframes king-addons-pulsing-button-ripple {
+    0% {
+        border-width: 4px;
+        transform: scale(1);
+    }
+    80% {
+        border-width: 1px;
+        transform: scale(1.35);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.king-addons-pulsing-button-button-wrap {
+    display: inline-flex;
+}
+
+.king-addons-pulsing-button-icon-reverse {
+    flex-flow: row-reverse;
+}

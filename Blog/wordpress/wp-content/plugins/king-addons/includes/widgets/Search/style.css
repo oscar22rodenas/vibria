@@ -1,0 +1,496 @@
+.king-addons-search-admin-notice {
+    margin: 10px 0 0;
+    padding: 8px;
+    text-align: center;
+}
+
+.king-addons-ajax-search-pagination-center .king-addons-ajax-search-pagination {
+    text-align: center;
+}
+
+.king-addons-ajax-search-pagination-center .king-addons-ajax-search-pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.king-addons-ajax-search-pagination-left .king-addons-ajax-search-pagination {
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.king-addons-ajax-search-pagination-right .king-addons-ajax-search-pagination {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.king-addons-data-fetch .king-addons-ajax-search-pagination {
+    text-align: center;
+
+}
+
+.king-addons-data-fetch ul::-webkit-scrollbar {
+    width: 4px;
+    background-color: transparent;
+}
+
+.king-addons-data-fetch ul::-webkit-scrollbar-thumb {
+    border-left: 3px solid blue;
+}
+
+.king-addons-no-results {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.king-addons-load-more-results {
+    display: none;
+    width: 100%;
+}
+
+.king-addons-no-more-results {
+    display: none;
+    margin: 0;
+    text-align: center;
+}
+
+.king-addons-ajax-search-content {
+    text-align: left;
+}
+
+.king-addons-ajax-search-content a {
+    display: inline-block;
+}
+
+.king-addons-data-fetch {
+    position: absolute;
+    z-index: 9999;
+    top: 100%;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: auto;
+    border-style: solid;
+}
+
+.king-addons-data-fetch ul {
+    overflow: hidden;
+    overflow-y: auto;
+    max-height: 30vh;
+    padding: 0;
+    list-style-type: none;
+    opacity: 0;
+}
+
+.king-addons-data-fetch ul li {
+    display: flex;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.king-addons-ajax-desc {
+    margin: 0;
+}
+
+a.king-addons-ajax-img-wrap {
+    min-width: 100px !important;
+    min-height: 100px !important
+}
+
+.king-addons-data-fetch img {
+    width: 100% !important;
+    height: auto;
+}
+
+.king-addons-close-search {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.king-addons-close-search::before {
+    font-family: "Font Awesome 5 Free", serif;
+    font-weight: 600;
+    content: '\f00d';
+    cursor: pointer;
+}
+
+.king-addons-search-form-input-wrap {
+    overflow: hidden;
+    width: 100%;
+}
+
+.king-addons-search-form .king-addons-search-form-input {
+    font-size: 14px;
+    width: 100%;
+    border-style: solid;
+    background-color: transparent;
+}
+
+.king-addons-search-form-style-inner .king-addons-search-form .king-addons-search-form-input {
+    height: auto;
+    min-height: 100%;
+}
+
+.king-addons-search-form-style-outer .king-addons-search-form .king-addons-search-form-input {
+    height: 100%;
+}
+
+.king-addons-search-form-style-inner .king-addons-search-form-input-wrap,
+.king-addons-search-form-style-outer .king-addons-search-form {
+    display: flex;
+}
+
+.king-addons-search-form-style-inner.king-addons-search-form-position-left .king-addons-search-form-input-wrap,
+.king-addons-search-form-style-outer.king-addons-search-form-position-left .king-addons-search-form {
+    flex-direction: row-reverse;
+}
+
+.king-addons-search-form-submit {
+    padding: 0 !important;
+    cursor: pointer;
+    transition: all 200ms;
+    border-style: solid;
+}
+
+.king-addons-search-input-hidden {
+    width: 0;
+    opacity: 0;
+}
+
+.king-addons-search-form-disable-submit-btn-yes .king-addons-search-form-submit {
+    cursor: default;
+    pointer-events: none;
+}
+
+.king-addons-category-select-wrap {
+    position: relative;
+}
+
+select.king-addons-category-select {
+    line-height: 1 !important;
+    width: 100%;
+    height: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.king-addons-category-select-wrap::before {
+    font-family: "Font Awesome 5 Free", serif !important;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    content: "\f107";
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* ANIMATIONS */
+
+.king-addons-double-bounce {
+    position: relative;
+    width: 23px;
+    height: 23px;
+}
+
+.king-addons-double-bounce .king-addons-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: king-addons-doubleBounce 2s infinite ease-in-out;
+    opacity: 0.6;
+    border-radius: 50%;
+}
+
+.king-addons-double-bounce .king-addons-double-bounce2 {
+    animation-delay: -1.0s;
+}
+
+@keyframes king-addons-doubleBounce {
+    0%,
+    100% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
+.king-addons-wave {
+    width: 50px;
+    height: 25px;
+    text-align: center;
+}
+
+.king-addons-wave .king-addons-rect {
+    display: inline-block;
+    width: 4px;
+    height: 100%;
+    margin-right: 2px;
+    animation: king-addons-waveStretchDelay 1.2s infinite ease-in-out;
+}
+
+.king-addons-wave .king-addons-rect1 {
+    animation-delay: -1.2s;
+}
+
+.king-addons-wave .king-addons-rect2 {
+    animation-delay: -1.1s;
+}
+
+.king-addons-wave .king-addons-rect3 {
+    animation-delay: -1s;
+}
+
+.king-addons-wave .king-addons-rect4 {
+    animation-delay: -0.9s;
+}
+
+.king-addons-wave .king-addons-rect5 {
+    animation-delay: -0.8s;
+}
+
+@keyframes king-addons-waveStretchDelay {
+    0%,
+    40%,
+    100% {
+        transform: scaleY(0.4);
+    }
+    20% {
+        transform: scaleY(1);
+    }
+}
+
+.king-addons-spinner-pulse {
+    width: 23px;
+    height: 23px;
+    animation: king-addons-pulseScaleOut 1s infinite ease-in-out;
+    border-radius: 100%;
+}
+
+@keyframes king-addons-pulseScaleOut {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.king-addons-chasing-dots {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    animation: king-addons-chasingDotsRotate 2s infinite linear;
+    text-align: center;
+}
+
+.king-addons-chasing-dots .king-addons-child {
+    position: absolute;
+    top: 0;
+    display: inline-block;
+    width: 60%;
+    height: 60%;
+    animation: king-addons-chasingDotsBounce 2s infinite ease-in-out;
+    border-radius: 100%;
+}
+
+.king-addons-chasing-dots .king-addons-dot2 {
+    top: auto;
+    bottom: 0;
+    animation-delay: -1s;
+}
+
+@keyframes king-addons-chasingDotsRotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes king-addons-chasingDotsBounce {
+    0%,
+    100% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
+.king-addons-three-bounce {
+    width: 80px;
+    text-align: center;
+}
+
+.king-addons-three-bounce .king-addons-child {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 1px;
+    animation: king-addons-three-bounce 1.4s ease-in-out 0s infinite both;
+    border-radius: 100%;
+}
+
+.king-addons-three-bounce .king-addons-bounce1 {
+    animation-delay: -0.32s;
+}
+
+.king-addons-three-bounce .king-addons-bounce2 {
+    animation-delay: -0.16s;
+}
+
+@keyframes king-addons-three-bounce {
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
+
+.king-addons-fading-circle {
+    position: relative;
+    width: 25px;
+    height: 25px;
+}
+
+.king-addons-fading-circle .king-addons-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-fading-circle .king-addons-circle:before {
+    display: block;
+    width: 15%;
+    height: 15%;
+    margin: 0 auto;
+    content: '';
+    animation: king-addons-circleFadeDelay 1.2s infinite ease-in-out both;
+    border-radius: 100%;
+}
+
+.king-addons-fading-circle .king-addons-circle2 {
+    transform: rotate(30deg);
+}
+
+.king-addons-fading-circle .king-addons-circle3 {
+    transform: rotate(60deg);
+}
+
+.king-addons-fading-circle .king-addons-circle4 {
+    transform: rotate(90deg);
+}
+
+.king-addons-fading-circle .king-addons-circle5 {
+    transform: rotate(120deg);
+}
+
+.king-addons-fading-circle .king-addons-circle6 {
+    transform: rotate(150deg);
+}
+
+.king-addons-fading-circle .king-addons-circle7 {
+    transform: rotate(180deg);
+}
+
+.king-addons-fading-circle .king-addons-circle8 {
+    transform: rotate(210deg);
+}
+
+.king-addons-fading-circle .king-addons-circle9 {
+    transform: rotate(240deg);
+}
+
+.king-addons-fading-circle .king-addons-circle10 {
+    transform: rotate(270deg);
+}
+
+.king-addons-fading-circle .king-addons-circle11 {
+    transform: rotate(300deg);
+}
+
+.king-addons-fading-circle .king-addons-circle12 {
+    transform: rotate(330deg);
+}
+
+.king-addons-fading-circle .king-addons-circle2:before {
+    animation-delay: -1.1s;
+}
+
+.king-addons-fading-circle .king-addons-circle3:before {
+    animation-delay: -1s;
+}
+
+.king-addons-fading-circle .king-addons-circle4:before {
+    animation-delay: -0.9s;
+}
+
+.king-addons-fading-circle .king-addons-circle5:before {
+    animation-delay: -0.8s;
+}
+
+.king-addons-fading-circle .king-addons-circle6:before {
+    animation-delay: -0.7s;
+}
+
+.king-addons-fading-circle .king-addons-circle7:before {
+    animation-delay: -0.6s;
+}
+
+.king-addons-fading-circle .king-addons-circle8:before {
+    animation-delay: -0.5s;
+}
+
+.king-addons-fading-circle .king-addons-circle9:before {
+    animation-delay: -0.4s;
+}
+
+.king-addons-fading-circle .king-addons-circle10:before {
+    animation-delay: -0.3s;
+}
+
+.king-addons-fading-circle .king-addons-circle11:before {
+    animation-delay: -0.2s;
+}
+
+.king-addons-fading-circle .king-addons-circle12:before {
+    animation-delay: -0.1s;
+}
+
+@keyframes king-addons-circleFadeDelay {
+    0%,
+    39%,
+    100% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+}
+
+.king-addons-search-admin-notice {
+    font-weight: 600;
+    margin: 10px 0 0;
+    padding: 8px;
+    text-align: center;
+}
+
+/* !important is necessary here */
+.king-addons-search-admin-notice a {
+    text-decoration: underline;
+    color: #5b03ff !important;
+}

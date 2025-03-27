@@ -1,0 +1,162 @@
+.king-addons-ring {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+.king-addons-ring div {
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    width: 23px;
+    height: 23px;
+    margin: 4px;
+    animation: king-addons-king-addons-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border: 3px solid;
+    border-color: #222020 transparent transparent transparent;
+    border-radius: 50%;
+}
+
+.king-addons-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.king-addons-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.king-addons-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes king-addons-king-addons-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.lg-outer {
+    z-index: 999999 !important;
+    direction: ltr;
+}
+
+button.lg-icon {
+    font-family: lg, serif;
+}
+
+.king-addons-body-overflow-hidden {
+    overflow: hidden;
+}
+
+.king-addons-flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.king-addons-z-index {
+    z-index: 9999 !important;
+}
+
+.king-addons-inline-flex-center {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.king-addons-hidden-img {
+    display: none !important;
+}
+
+.king-addons-zero-opacity {
+    opacity: 0 !important;
+}
+
+.king-addons-section-z-index {
+    z-index: 999 !important;
+}
+
+.king-addons-hidden-element {
+    display: none !important;
+}
+
+.king-addons-visibility-hidden {
+    visibility: hidden !important;
+}
+
+.king-addons-visibility-hidden * {
+    display: none !important;
+}
+
+.king-addons-marquee-hidden {
+    visibility: hidden !important;
+}
+
+.king-addons-marquee-hidden * {
+    visibility: hidden !important;
+    height: 0 !important;
+}
+
+.king-addons-cv-container {
+    position: absolute;
+    z-index: 90;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-cv-outer {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.king-addons-cv-inner {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.king-addons-no-transition-delay {
+    transition-delay: 0s !important;
+}
+
+/*noinspection SpellCheckingInspection*/
+.king-addons-enable-dropcap p:first-child:first-letter {
+    font-size: 50px;
+    line-height: 1;
+    float: left;
+    padding-right: 10px;
+}
+
+.king-addons-tooltip {
+    font-size: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    padding: 6px 10px;
+    transition: all 230ms ease-in-out 0s;
+    transform: translateY(-100%);
+    opacity: 0;
+    border-radius: 4px;
+}
+
+/*noinspection DuplicatedCode*/
+.king-addons-tooltip:before {
+    position: absolute;
+    bottom: -5px;
+    left: 10px;
+    width: 0;
+    height: 0;
+    content: "";
+    border-top-width: 6px;
+    border-top-style: solid;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+}

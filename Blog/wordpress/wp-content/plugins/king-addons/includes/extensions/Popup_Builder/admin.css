@@ -1,0 +1,468 @@
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('../../admin/fonts/Inter.woff2') format('woff2');
+}
+
+#wpbody * {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+#wpbody .dashicons,
+#wpbody .dashicons-before:before {
+    font-family: dashicons, serif;
+}
+
+.king-addons-pb-user-template {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 50px;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 200px;
+    height: 50px;
+    padding: 0 20px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #5B03FF, #9B62FF);
+    /* background: linear-gradient(45deg, #E1CBFF, #9B62FF 50%, #5B03FF); */
+}
+
+/*noinspection CssNonIntegerLengthInPixels*/
+.king-addons-pb-my-templates-list .king-addons-pb-action-buttons > * {
+    font-size: 13px;
+    display: inline-block;
+    margin-right: 10px;
+    padding: 6px 25px;
+    letter-spacing: 0.5px;
+    border: 0;
+    border-radius: 8px;
+}
+
+.king-addons-pb-my-templates-list .king-addons-pb-edit-template {
+    transition: all 100ms linear;
+    background: #595959;
+}
+
+.king-addons-pb-my-templates-list .king-addons-pb-template-conditions {
+    transition: all 100ms linear;
+    color: black;
+    background: #dfdee2;
+}
+
+.king-addons-pb-my-templates-list .king-addons-pb-delete-template {
+    transition: all 100ms linear;
+    background: #FF4040;
+}
+
+.king-addons-pb-my-templates-list .king-addons-pb-action-buttons > *:last-child {
+    margin-right: 0;
+}
+
+.king-addons-pb-my-templates-list .king-addons-pb-action-buttons {
+    float: right;
+}
+
+.king-addons-pb-my-templates-list li h3 {
+    font-size: 16px;
+    line-height: 34px;
+    float: left;
+    margin: 0;
+    text-transform: capitalize;
+    color: #1d1d1f;
+}
+
+.king-addons-pb-my-templates-list li {
+    overflow: hidden;
+    margin-bottom: 15px;
+    padding: 20px 20px 20px 35px;
+    border-radius: 5px;
+    background: #f5f5f7;
+}
+
+.king-addons-pb-my-templates-list {
+    width: 65%;
+}
+
+.king-addons-pb-nav-tab-wrapper {
+    padding-top: 0;
+    transform: translateY(-100%);
+    border-bottom: 0;
+}
+
+.king-addons-pb-nav-tab-wrapper a {
+    font-size: 16px;
+    margin-right: 15px;
+    margin-left: 0;
+    padding: 13px 35px;
+    color: #333;
+    border: 0 !important;
+    border-radius: 3px 4px 0 0;
+    background-color: transparent;
+}
+
+.king-addons-pb-nav-tab-wrapper .nav-tab-active {
+    color: #6A4BFF;
+    background: #ffffff;
+    box-shadow: 3px -2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.king-addons-pb-admin-popup-wrap {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(20px);
+}
+
+.king-addons-pb-admin-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    overflow-y: auto;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 80%;
+    max-width: 850px;
+    max-height: 710px;
+    padding: 70px 30px 30px 30px;
+    transform: translate(-50%, -50%);
+    border-radius: 24px;
+    background: white;
+    box-shadow: 0 11px 34px 0 rgb(0 0 0 / 5%);
+}
+
+.king-addons-pb-user-template-popup {
+    padding-top: 40px;
+}
+
+.king-addons-pb-admin-popup header {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.king-addons-pb-user-template-popup header {
+    margin-bottom: 27px;
+}
+
+.king-addons-pb-admin-popup header h2 {
+    font-size: 26px;
+    font-weight: 600;
+    margin: 25px auto;
+    color: #1d1d1f;
+}
+
+.king-addons-pb-user-template-popup p {
+    max-width: 70%;
+    margin: auto;
+}
+
+.king-addons-pb-admin-popup header p {
+    font-size: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #6e6e73;
+}
+
+input.king-addons-pb-user-template-title {
+    font-size: 16px;
+    font-weight: 400;
+    width: 350px;
+    padding: 10px 20px;
+    border: 1px solid #86868b;
+    border-radius: 12px;
+}
+
+.king-addons-pb-user-template-popup .king-addons-pb-create-template {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 2;
+    display: inline-block;
+    margin-top: 60px;
+    margin-left: auto;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: all 100ms linear;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #5B03FF, #9B62FF);
+    background: #772fff;
+}
+
+.king-addons-pb-admin-popup .close-popup {
+    font-size: 26px;
+    line-height: 36px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    color: white;
+    border-radius: 100%;
+    background: rgb(29, 29, 31);
+}
+
+.king-addons-pb-user-template .plus-icon {
+    font-size: 18px;
+    line-height: 28px;
+    display: block;
+    float: right;
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    text-align: center;
+    color: #333;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+/*noinspection CssNonIntegerLengthInPixels*/
+.king-addons-pb-settings-page-header p {
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    letter-spacing: normal;
+    color: rgb(255 255 255 / 70%);
+}
+
+.king-addons-pb-settings-page-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0;
+    color: white;
+}
+
+.king-addons-pb-settings-page-header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    padding: 30px 30px;
+    background: #1a1b1b;
+}
+
+.king-addons-pb-settings-page-wrap {
+    margin: 0;
+}
+
+.king-addons-pb-add-conditions {
+    font-size: 13px;
+    font-weight: 600;
+    position: relative;
+    margin-top: 30px;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: all 100ms linear;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff;
+    border-radius: 5px;
+    background: #595959;
+}
+
+.king-addons-pb-add-conditions:hover {
+    background: #6d6d6d;
+}
+
+.king-addons-pb-conditions-sample {
+    display: none !important;
+}
+
+.king-addons-pb-admin-popup header {
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.king-addons-pb-conditions {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 760px;
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    background: #f5f5f7;
+}
+
+.king-addons-pb-condition-popup select {
+    text-transform: capitalize;
+}
+
+.king-addons-pb-conditions select {
+    flex-grow: 1;
+    height: 100%;
+    margin-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid #86868b;
+    border-radius: 7px;
+    background-size: 14px 14px;
+}
+
+input.king-addons-pb-condition-input-ids, .king-addons-pb-conditions select {
+    font-size: 15px;
+    font-weight: 600;
+    flex-grow: 1;
+    flex-shrink: 0;
+    max-width: none;
+    text-indent: 5px;
+    color: #1d1d1f;
+    outline: none;
+    box-shadow: none !important;
+}
+
+input.king-addons-pb-condition-input-ids {
+    font-weight: 400;
+    display: none;
+    height: 42px;
+    color: #888888;
+}
+
+.king-addons-pb-delete-template-conditions {
+    font-size: 22px;
+    position: absolute;
+    right: -30px;
+    margin-left: auto;
+    cursor: pointer;
+    color: #C2CBD2;
+}
+
+.king-addons-pb-save-conditions {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 2;
+    display: inline-block;
+    margin-top: 80px;
+    margin-left: auto;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: all 100ms linear;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff;
+    border-radius: 12px;
+    background: #772fff;
+}
+
+.king-addons-pb-save-conditions:hover {
+    background: #8a4fff;
+}
+
+#wpcontent {
+    padding: 0;
+}
+
+.king-addons-pb-settings-page {
+    padding: 0 30px;
+}
+
+#wpwrap {
+    background: #ffffff;
+}
+
+.king-addons-pb-my-templates-list .king-addons-pb-action-buttons .dashicons {
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.king-addons-pb-my-templates-list .king-addons-pb-template-conditions:hover,
+.king-addons-pb-active-conditions-template .king-addons-pb-template-conditions:hover {
+    color: black;
+    background: #6A4BFF;
+    background: linear-gradient(45deg, #9B62FF, #5B03FF);
+    background: #e5e5e9;
+}
+
+.king-addons-pb-my-templates-list .king-addons-pb-edit-template:hover {
+    background: #6d6d6d;
+}
+
+.king-addons-pb-my-templates-list .king-addons-pb-delete-template:hover {
+    background: #ff6a6a;
+}
+
+.king-addons-pb-active-conditions-template {
+    border-left: 5px solid #6133FF;
+    background: #f2effa !important;
+}
+
+.king-addons-pb-active-conditions-template .king-addons-pb-template-conditions {
+    transition: all 100ms linear;
+    color: white;
+    background: #772fff;
+}
+
+.king-addons-pb-active-conditions-template .king-addons-pb-template-conditions:hover {
+    color: white;
+    background: #8a4fff;
+}
+
+.king-addons-pb-preview-buttons {
+    display: flex;
+}
+
+.kng-promo-btn-wrap a {
+    will-change: transform;
+    display: inline-flex;
+    justify-content: center;
+    margin-left: 30px;
+    padding: 15px 20px;
+    transition: all 300ms ease;
+    text-align: center;
+    text-decoration: underline;
+    border: 2px solid #ff4e5069;
+    border-radius: 5px;
+    background: linear-gradient(132.2deg, #F9D423 7.64%, #FF4E50 97.11%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.kng-promo-btn-wrap a:hover {
+    transform: scale(1.05);
+}
+
+.kng-promo-btn-wrap a:focus {
+    box-shadow: unset;
+    outline: unset;
+}
+
+.kng-promo-btn-wrap img {
+    margin-left: 8px;
+    width: 16px;
+    height: 16px;
+}
+
+/*noinspection CssNonIntegerLengthInPixels*/
+.kng-promo-btn-txt {
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+    line-height: 1;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
