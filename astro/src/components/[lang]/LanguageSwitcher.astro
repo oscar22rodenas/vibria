@@ -1,0 +1,52 @@
+---
+const currentLang = Astro.props.currentLang || 'ca'; // Idioma por defecto
+
+const languages = {
+  ca: { label: "CAT", flag: "/flags/catalana.png" },
+  es: { label: "ESP", flag: "/flags/espana.png" },
+  en: { label: "ENG", flag: "/flags/inglesa.png" },
+};
+---
+
+<div class="relative inline-block">
+  <!-- Botón para abrir el menú -->
+  <button id="toggle-lang" class="flex flex-col items-center gap-1 bg-transparent text-white px-2 py-1">
+    <img src={languages[currentLang].flag} alt={languages[currentLang].label} class="w-8 h-6" />
+    <div class="flex flex-row items-center gap-1">
+        <span class="text-xs">{languages[currentLang].label}</span>
+        <span class="text-xs">▼</span>
+    </div>
+  </button>
+
+  <!-- Menú desplegable -->
+  <div id="lang-menu" class="absolute z-20 right-0 mt-2 bg-white border rounded-lg shadow-lg hidden w-32">
+    <a href="/ca" class={`block px-4 py-2 hover:bg-gray-200 ${currentLang === 'ca' ? 'font-bold text-blue-600' : ''}`}>
+      <img src="/flags/catalana.png" alt="CAT" class="inline w-4 h-3 mr-2" /> Català
+    </a>
+    <a href="/es" class={`block px-4 py-2 hover:bg-gray-200 ${currentLang === 'es' ? 'font-bold text-blue-600' : ''}`}>
+      <img src="/flags/espana.png" alt="ES" class="inline w-4 h-3 mr-2" /> Español
+    </a>
+    <a href="/en" class={`block px-4 py-2 hover:bg-gray-200 ${currentLang === 'en' ? 'font-bold text-blue-600' : ''}`}>
+      <img src="/flags/inglesa.png" alt="EN" class="inline w-4 h-3 mr-2" /> English
+    </a>
+  </div>
+</div>
+
+<!-- Script para abrir/cerrar el menú -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("toggle-lang");
+    const menu = document.getElementById("lang-menu");
+
+    toggleButton.addEventListener("click", function (event) {
+      event.stopPropagation(); 
+      menu.classList.toggle("hidden");
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!toggleButton.contains(event.target) && !menu.contains(event.target)) {
+        menu.classList.add("hidden");
+      }
+    });
+  });
+</script>
