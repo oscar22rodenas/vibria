@@ -6,7 +6,11 @@ import Header from "../../components/Header.astro";
 import Slide from "../../components/Slide.astro";
 import RRSS from "../../components/RRSS.astro";
 import Footer from "../../components/Footer.astro";
+import { getStaticPaths } from "../../lib/wp/getStaticPaths.js";
 
+export { getStaticPaths };
+
+export const prerender = true;
 
 // Obtén el parámetro 'lang' de la URL
 const { lang } = Astro.params;
@@ -33,7 +37,6 @@ const imageData = acf.difusion_imagen
 const imageUrl = imageData?.source_url || "";
 const imageAlt = imageData?.alt_text || "Imagen de canal de difusión";
 
-export const prerender = false;
 ---
 
 <Layout>
