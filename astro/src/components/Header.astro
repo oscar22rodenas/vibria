@@ -1,0 +1,32 @@
+---
+// components/Header.astro
+import { Picture } from "astro:assets";
+import Menu from "./Menu.astro";
+import { getPageInfo, getImageInfo } from "../lib/wp/index.js";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+
+const { lang } = Astro.params;
+
+const acf = await getPageInfo("header");
+const imageData = acf.header_imagen ? await getImageInfo(acf.header_imagen) : null;
+const imageUrl = imageData?.source_url || "";
+const imageAlt = imageData?.alt_text || "Logo Vibria";
+
+---
+
+
+  <header class="flex items-center justify-between bg-primary px-4 py-2 z-10">
+    <button id="menu-toggle" class="z-10">
+      <Picture formats={['webp', 'avif', 'jpeg']} id="menu-icon" src="/menu.png" alt="Menu" width="30" height="30" />
+      <span id="close-icon" class="hidden justify-center text-4xl text-sky-50">×</span>
+    </button>
+
+    <a href={`/${lang}`} class="z-10">
+      <Picture formats={['webp', 'avif', 'jpeg']} src={imageUrl} alt={imageAlt} width="60" height="60" />
+    </a>
+
+    <LanguageSwitcher currentLang={lang} class="z-20" />
+  </header>
+
+    <Menu />
+  
