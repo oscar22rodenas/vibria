@@ -1,6 +1,7 @@
 import { apiURL } from "./config.js";
 
 export const getCategoriesInfo = async (lang) => {
+  
   const response = await fetch(`${apiURL}/menu?page=1&per_page=20&orderby=date&order=asc&_fields=title,acf,slug,id`);
   const menus = await response.json();
 
@@ -14,7 +15,7 @@ export const getCategoriesInfo = async (lang) => {
   for (const menu of filteredMenus) {
     const categoryTitle = menu.acf?.categoria_titulo;
     const subcategoryIds = menu.acf?.subcategorias || [];
-
+    
     categoriesMap.parent.push({
       id: menu.id,
       title: categoryTitle,
