@@ -3,5 +3,8 @@ import { getImageInfo } from "./getImageInfo.js";
 import { getSlidesInfo } from "./getSlidesInfo.js";
 import { getRRSSInfo } from "./getRRSSInfo.js";
 
-export { getPageInfo, getImageInfo, getSlidesInfo, getRRSSInfo };
+import { getCategoriesInfo } from "./getCategoriesInfo.js";
+
+
+export { getPageInfo, getImageInfo, getSlidesInfo, getRRSSInfo, getCategoriesInfo  };
 
