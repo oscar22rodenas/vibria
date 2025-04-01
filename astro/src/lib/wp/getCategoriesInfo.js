@@ -4,9 +4,9 @@ export const getCategoriesInfo = async (lang) => {
   
   const response = await fetch(`${apiURL}/menu?page=1&per_page=20&orderby=date&order=asc&_fields=title,acf,slug,id`);
   const menus = await response.json();
-  
+
   const filteredMenus = menus.filter(menu => menu.slug.includes(`-${lang}`));
-  
+
   const categoriesMap = {
     parent: [],
     children: {}
@@ -22,10 +22,8 @@ export const getCategoriesInfo = async (lang) => {
       slug: menu.slug
     });
 
-    console.log(categoriesMap.parent);
-
-    // Realizar todas las solicitudes de subcategorías en paralelo
-    const subcategories = await Promise.allSettled(
+    // Realizar todas las solicitudes de subcategorías en paralelo usando Promise.allSettled
+    const subcategoriesResults = await Promise.allSettled(
       subcategoryIds.map(async (subId) => {
         try {
           const subResponse = await fetch(`${apiURL}/subcategorias_menu/${subId}?_fields=acf,slug`);
@@ -45,9 +43,10 @@ export const getCategoriesInfo = async (lang) => {
       })
     );
 
-    // Filtrar subcategorías válidas y agregarlas al mapa
-    categoriesMap.children[menu.id] = subcategories.filter(subcategory => subcategory !== null);
-    console.log(categoriesMap.children[menu.id]);
+    // Filtrar subcategorías válidas (que no sean null y que hayan sido resueltas correctamente)
+    categoriesMap.children[menu.id] = subcategoriesResults
+      .filter(result => result.status === "fulfilled" && result.value !== null)
+      .map(result => result.value);
   }
 
   return categoriesMap;

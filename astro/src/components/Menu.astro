@@ -1,0 +1,104 @@
+---
+import { getCategoriesInfo } from "../lib/wp/index.js";
+
+const { lang } = Astro.params;
+
+const menuData = await getCategoriesInfo(lang);
+
+const sectionsToRender =
+  menuData.parent?.length > 0
+    ? menuData.parent.map((parent) => ({
+        title: parent.title,
+        items: menuData.children[parent.id]?.map((child) => child.title) || [],
+        links:
+          menuData.children[parent.id]?.map(
+            (child) => `/${lang}/${child.slug}`
+          ) || [],
+      }))
+    : [];
+---
+
+<div class="relative">
+  <div
+    id="menu"
+    class="fixed inset-0 mt-[4.5rem] bg-white p-5 z-10 shadow-lg overflow-y-auto transition-all duration-300 -translate-y-5 opacity-0 invisible"
+  >
+    <div class="max-w-2xl mx-auto">
+      {
+        sectionsToRender.map((section, index) => (
+          <div class="border-b border-gray-200">
+            <div
+              class="flex items-center py-4 cursor-pointer accordion-header"
+              data-index={index}
+            >
+              <span class="w-full text-center text-lg font-bold text-[#058279]">
+                {section.title}
+              </span>
+              {section.items.length > 0 && (
+                <img
+                  class="w-5 h-5 transition-transform duration-300 accordion-icon"
+                  src="/images/flecha-abajo.png"
+                  alt="Flecha"
+                  data-open="false"
+                />
+              )}
+            </div>
+            {section.items.length > 0 && (
+              <div class="max-h-0 overflow-hidden transition-[max-height] duration-300 -mx-5">
+                {section.items.map((item, itemIndex) => (
+                  <a
+                    href={section.links[itemIndex]}
+                    class="border-b border-white block py-2 text-white text-center bg-[#5DC695]"
+                  >
+                    {item}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<script>
+  // Funcion para mostrar/ocultar el menu de navegacion
+  function toggleMenu() {
+    const menu = document.querySelector("#menu");
+    const menuIcon = document.querySelector("#menu-icon");
+    const closeIcon = document.querySelector("#close-icon");
+
+    menu?.classList.toggle("translate-y-0");
+    menu?.classList.toggle("opacity-100");
+    menu?.classList.toggle("visible");
+    menu?.classList.toggle("-translate-y-5");
+    menu?.classList.toggle("opacity-0");
+    menu?.classList.toggle("invisible");
+    menuIcon?.classList.toggle("hidden");
+    closeIcon?.classList.toggle("hidden");
+    document.body.classList.toggle("overflow-hidden");
+  }
+
+  // Funcion para mostrar/ocultar el contenido del acordeón al hacer clic en el encabezado
+  function toggleAccordion(header) {
+    const content = header.nextElementSibling;
+    const icon = header.querySelector(".accordion-icon");
+
+    content?.classList.toggle("max-h-[500px]");
+    content?.classList.toggle("py-2");
+
+    const isOpen = icon?.getAttribute("data-open") === "true";
+    if (icon) {
+      icon.src = isOpen
+        ? "/images/flecha-abajo.png"
+        : "/images/flecha-arriba.png";
+      icon.setAttribute("data-open", isOpen ? "false" : "true");
+    }
+  }
+
+  document.querySelector("#menu-toggle")?.addEventListener("click", toggleMenu);
+  document.querySelectorAll(".accordion-header").forEach((header) => {
+    header.addEventListener("click", () => toggleAccordion(header));
+  });
+</script>
