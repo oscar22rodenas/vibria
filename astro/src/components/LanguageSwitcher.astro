@@ -1,10 +1,15 @@
 ---
+const { slug } = Astro.params;
 const currentLang = Astro.props.currentLang || 'ca'; // Idioma por defecto
 
 const languages = {
   ca: { label: "CAT", flag: "/flags/catalana.png" },
   es: { label: "ESP", flag: "/flags/espana.png" },
   en: { label: "ENG", flag: "/flags/inglesa.png" },
+};
+
+const getLangUrl = (newLang) => {
+  return `/${newLang}/${slug}`; // Si no hay slug, redirige a una página por defecto
 };
 ---
 
@@ -20,13 +25,13 @@ const languages = {
 
   <!-- Menú desplegable -->
   <div id="lang-menu" class="absolute z-20 right-0 mt-2 bg-white border rounded-lg shadow-lg hidden w-32">
-    <a href="/ca" class={`block px-4 py-2 hover:bg-gray-200 ${currentLang === 'ca' ? 'font-bold text-blue-600' : ''}`}>
+    <a href={getLangUrl("ca")} class={`block px-4 py-2 hover:bg-gray-200 ${currentLang === 'ca' ? 'font-bold text-blue-600' : ''}`}>
       <img src="/flags/catalana.png" alt="CAT" class="inline w-4 h-3 mr-2" /> Català
     </a>
-    <a href="/es" class={`block px-4 py-2 hover:bg-gray-200 ${currentLang === 'es' ? 'font-bold text-blue-600' : ''}`}>
+    <a href={getLangUrl("es")} class={`block px-4 py-2 hover:bg-gray-200 ${currentLang === 'es' ? 'font-bold text-blue-600' : ''}`}>
       <img src="/flags/espana.png" alt="ES" class="inline w-4 h-3 mr-2" /> Español
     </a>
-    <a href="/en" class={`block px-4 py-2 hover:bg-gray-200 ${currentLang === 'en' ? 'font-bold text-blue-600' : ''}`}>
+    <a href={getLangUrl("en")} class={`block px-4 py-2 hover:bg-gray-200 ${currentLang === 'en' ? 'font-bold text-blue-600' : ''}`}>
       <img src="/flags/inglesa.png" alt="EN" class="inline w-4 h-3 mr-2" /> English
     </a>
   </div>
