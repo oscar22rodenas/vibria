@@ -1,7 +1,7 @@
 export async function getStaticPaths() {
     const languages = ["ca", "es", "en"]; // Idiomas soportados
 
-    const pagesRes = await fetch("http://localhost:8000/wp-json/wp/v2/pages?_fields=acf,slug,id&per_page=100");
+    const pagesRes = await fetch("http://localhost:8000/wp-json/wp/v2/pages?_fields=acf,slug&per_page=100");
     const pages = await pagesRes.json();
     
     let paths = [];
@@ -22,14 +22,10 @@ export async function getStaticPaths() {
         if (extracted && languages.includes(extracted.lang)) {
             paths.push({
                 params: { lang: extracted.lang, slug: extracted.baseSlug },
-                props: { id: page.id, acf: page.acf, slug: page.slug },
+                props: { acf: page.acf },
             });
-            console.log(`Path added: ${extracted.lang}/${extracted.baseSlug}`);
-            console.log(page.id, page.acf, page.slug);
-            
         }
     });
-    console.log(paths);
     
     return paths;
 
