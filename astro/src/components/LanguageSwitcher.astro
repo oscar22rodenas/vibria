@@ -20,26 +20,41 @@ const languages = {
 
   <!-- Menú desplegable -->
   <div id="lang-menu" class="absolute z-20 right-0 mt-2 bg-white border rounded-lg shadow-lg hidden w-32">
-    <a href="/ca" class={`block px-4 py-2 hover:bg-gray-200 ${currentLang === 'ca' ? 'font-bold text-blue-600' : ''}`}>
+    <a id="lang-ca" class={`block px-4 py-2 hover:bg-gray-200 ${currentLang === 'ca' ? 'font-bold text-blue-600' : ''}`}>
       <img src="/flags/catalana.png" alt="CAT" class="inline w-4 h-3 mr-2" /> Català
     </a>
-    <a href="/es" class={`block px-4 py-2 hover:bg-gray-200 ${currentLang === 'es' ? 'font-bold text-blue-600' : ''}`}>
+    <a id="lang-es" class={`block px-4 py-2 hover:bg-gray-200 ${currentLang === 'es' ? 'font-bold text-blue-600' : ''}`}>
       <img src="/flags/espana.png" alt="ES" class="inline w-4 h-3 mr-2" /> Español
     </a>
-    <a href="/en" class={`block px-4 py-2 hover:bg-gray-200 ${currentLang === 'en' ? 'font-bold text-blue-600' : ''}`}>
+    <a id="lang-en" class={`block px-4 py-2 hover:bg-gray-200 ${currentLang === 'en' ? 'font-bold text-blue-600' : ''}`}>
       <img src="/flags/inglesa.png" alt="EN" class="inline w-4 h-3 mr-2" /> English
     </a>
   </div>
 </div>
 
-<!-- Script para abrir/cerrar el menú -->
+<!-- Script para manejar el cambio de idioma sin perder la página actual -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.getElementById("toggle-lang");
     const menu = document.getElementById("lang-menu");
+    const currentUrl = window.location.pathname;
+    
+    function getNewUrl(newLang) {
+      const parts = currentUrl.split("/").filter(Boolean);
+      if (["ca", "es", "en"].includes(parts[0])) {
+        parts[0] = newLang;
+      } else {
+        parts.unshift(newLang);
+      }
+      return "/" + parts.join("/");
+    }
+
+    (document.getElementById("lang-ca") as HTMLAnchorElement).href = getNewUrl("ca");
+    (document.getElementById("lang-es") as HTMLAnchorElement).href = getNewUrl("es");
+    (document.getElementById("lang-en") as HTMLAnchorElement).href = getNewUrl("en");
 
     toggleButton.addEventListener("click", function (event) {
-      event.stopPropagation(); 
+      event.stopPropagation();
       menu.classList.toggle("hidden");
     });
 
