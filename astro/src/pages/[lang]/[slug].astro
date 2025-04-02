@@ -14,6 +14,7 @@ import experienciesPi from "../../components/pages/experiencies-pi.astro";
 import experiencies from "../../components/pages/experiencies.astro";
 import formacions from "../../components/pages/formacions.astro";
 import greenfluencers from "../../components/pages/greenfluencers.astro";
+import home from "../../components/pages/home.astro";
 import intercanvisJuvenil from "../../components/pages/intercanvis-juvenil.astro";
 import mentorVoluntaries from "../../components/pages/mentor-voluntaries.astro";
 import ocellFoc from "../../components/pages/ocell-foc.astro";
@@ -28,13 +29,12 @@ import refore from "../../components/pages/refore.astro";
 import sending from "../../components/pages/sending.astro";
 import volunteer from "../../components/pages/volunteer.astro";
 
+
 export { getStaticPaths };
 
 export const prerender = true;
 
-const { lang, slug } = Astro.params;
-console.log(lang, slug);
-
+const { acf }   = Astro.props;
 
 let PageComponent;
 
@@ -65,6 +65,9 @@ switch (Astro.params.slug) {
         break;
     case "greenfluencers":
         PageComponent = greenfluencers;
+        break;
+    case "home":
+        PageComponent = home;
         break;
     case "intercanvis-juvenil":
         PageComponent = intercanvisJuvenil;
@@ -105,14 +108,12 @@ switch (Astro.params.slug) {
     case "volunteer":
         PageComponent = volunteer;
         break;
-    
-
     default :
         break;
 }
 ---
 <Layout>
     <Header />
-    <PageComponent data={{ lang, slug }} />
+    <PageComponent data={{ acf }} />
     <Footer />
 </Layout>
