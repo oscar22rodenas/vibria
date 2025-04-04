@@ -5,29 +5,29 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { getStaticPaths } from "../../lib/wp/getStaticPaths.js";
 
-import acollida from "../../components/pages/acollida.astro";
-import baumann from "../../components/pages/baumann.astro";
-import diarisVoluntaries from "../../components/pages/diaris-voluntaries.astro";
-import enviament from "../../components/pages/enviament.astro";
-import erasmusExperiencies from "../../components/pages/erasmus-experiencies.astro";
-import experienciesPi from "../../components/pages/experiencies-pi.astro";
-import experiencies from "../../components/pages/experiencies.astro";
-import formacions from "../../components/pages/formacions.astro";
-import greenfluencers from "../../components/pages/greenfluencers.astro";
-import home from "../../components/pages/home.astro";
-import intercanvisJuvenil from "../../components/pages/intercanvis-juvenil.astro";
-import mentorVoluntaries from "../../components/pages/mentor-voluntaries.astro";
-import ocellFoc from "../../components/pages/ocell-foc.astro";
-import ofertes from "../../components/pages/ofertes.astro";
-import playground from "../../components/pages/playground.astro";
-import projectesPassats from "../../components/pages/projectes-passats.astro";
-import queEs from "../../components/pages/que-es.astro";
-import queFem from "../../components/pages/que-fem.astro";
-import quiSom from "../../components/pages/qui-som.astro";
-import radioVibria from "../../components/pages/radio-vibria.astro";
-import refore from "../../components/pages/refore.astro";
-import sending from "../../components/pages/sending.astro";
-import volunteer from "../../components/pages/volunteer.astro";
+import Acollida from "../../components/pages/Acollida.astro";
+import Baumann from "../../components/pages/Baumann.astro";
+import DiarisVoluntaries from "../../components/pages/DiarisVoluntaries.astro";
+import Enviament from "../../components/pages/Enviament.astro";
+import ErasmusExperiencies from "../../components/pages/ErasmusExperiencies.astro";
+import ExperienciesPi from "../../components/pages/ExperienciesPi.astro";
+import Experiencies from "../../components/pages/Experiencies.astro";
+import Formacions from "../../components/pages/Formacions.astro";
+import Greenfluencers from "../../components/pages/Greenfluencers.astro";
+import Home from "../../components/pages/Home.astro";
+import IntercanvisJuvenil from "../../components/pages/IntercanvisJuvenil.astro";
+import MentorVoluntaries from "../../components/pages/MentorVoluntaries.astro";
+import OcellFoc from "../../components/pages/OcellFoc.astro";
+import Ofertes from "../../components/pages/Ofertes.astro";
+import Playground from "../../components/pages/Playground.astro";
+import ProjectesPassats from "../../components/pages/ProjectesPassats.astro";
+import QueEs from "../../components/pages/QueEs.astro";
+import QueFem from "../../components/pages/QueFem.astro";
+import QuiSom from "../../components/pages/QuiSom.astro";
+import RadioVibria from "../../components/pages/RadioVibria.astro";
+import Refore from "../../components/pages/Refore.astro";
+import Sending from "../../components/pages/Sending.astro";
+import Volunteer from "../../components/pages/Volunteer.astro";
 
 
 export { getStaticPaths };
@@ -40,73 +40,73 @@ let PageComponent;
 
 switch (Astro.params.slug) {
     case "acollida":
-        PageComponent = acollida;
+        PageComponent = Acollida;
         break;
     case "baumann":
-        PageComponent = baumann;
+        PageComponent = Baumann;
         break;
     case "diaris-voluntaries":
-        PageComponent = diarisVoluntaries;
+        PageComponent = DiarisVoluntaries;
         break;
     case "enviament":
-        PageComponent = enviament;
+        PageComponent = Enviament;
         break;
     case "erasmus-experiencies":
-        PageComponent = erasmusExperiencies;
+        PageComponent = ErasmusExperiencies;
         break;
     case "experiencies-pi":
-        PageComponent = experienciesPi;
+        PageComponent = ExperienciesPi;
         break;
     case "experiencies":
-        PageComponent = experiencies;
+        PageComponent = Experiencies;
         break;
     case "formacions":
-        PageComponent = formacions;
+        PageComponent = Formacions;
         break;
     case "greenfluencers":
-        PageComponent = greenfluencers;
+        PageComponent = Greenfluencers;
         break;
     case "home":
-        PageComponent = home;
+        PageComponent = Home;
         break;
     case "intercanvis-juvenil":
-        PageComponent = intercanvisJuvenil;
+        PageComponent = IntercanvisJuvenil;
         break;
     case "mentor-voluntaries":
-        PageComponent = mentorVoluntaries;
+        PageComponent = MentorVoluntaries;
         break;
     case "ocell-foc":
-        PageComponent = ocellFoc;
+        PageComponent = OcellFoc;
         break;
     case "ofertes":
-        PageComponent = ofertes;
+        PageComponent = Ofertes;
         break;
     case "playground":
-        PageComponent = playground;
+        PageComponent = Playground;
         break;
     case "projectes-passats":
-        PageComponent = projectesPassats;
+        PageComponent = ProjectesPassats;
         break;
     case "que-es":
-        PageComponent = queEs;
+        PageComponent = QueEs;
         break;
     case "que-fem":
-        PageComponent = queFem;
+        PageComponent = QueFem;
         break;
     case "qui-som":
-        PageComponent = quiSom;
+        PageComponent = QuiSom;
         break;
     case "radio-vibria":
-        PageComponent = radioVibria;
+        PageComponent = RadioVibria;
         break;
     case "refore":
-        PageComponent = refore;
+        PageComponent = Refore;
         break;
     case "sending":
-        PageComponent = sending;
+        PageComponent = Sending;
         break;
     case "volunteer":
-        PageComponent = volunteer;
+        PageComponent = Volunteer;
         break;
     default :
         break;

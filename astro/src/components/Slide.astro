@@ -1,15 +1,28 @@
 ---
-import { getSlidesInfo } from "../lib/wp/index.js";
-
+import { getSlidesInfo, getPageById} from "../lib/wp/index.js";
 const { lang } = Astro.params;
 
 const slides = await getSlidesInfo(lang);
+
+const slidesWithLinks = await Promise.all(
+  slides.map(async (slide) => {
+    const pageData = await getPageById(slide.buttonLink);
+    
+    return {
+      ...slide,
+      buttonUrl: `/${pageData.lang}/${pageData.baseSlug}`,
+    };
+  })
+);
+console.log(slidesWithLinks);
+
+
 ---
 
 <div id="slide-container" class="w-full min-h-[700px] overflow-hidden">
   <div id="slides" class="w-full h-full">
     {
-      slides.map((slide, index) => (
+      slidesWithLinks.map((slide, index) => (
         <div
           class={`slide absolute top-76 left-0 w-full min-h-[700px] flex flex-col gap-3 items-start justify-center px-4 transition-opacity duration-700 ${index === 0 ? "opacity-100" : "opacity-0"}`}
           data-index={index}
@@ -20,7 +33,7 @@ const slides = await getSlidesInfo(lang);
           </h1>
           <h3 class="h3 font-800">{slide.subtitle}</h3>
           <p class="p">{slide.text}</p>
-          <a href={slide.buttonLink} class="btn">
+          <a href={slide.buttonUrl} class="btn">
             {slide.buttonText}
           </a>
         </div>
@@ -55,6 +68,8 @@ const slides = await getSlidesInfo(lang);
     function showSlide(index) {
       slides.forEach((slide, i) => {
         slide.style.opacity = i === index ? "1" : "0";
+        slide.style.zIndex = i === index ? "1" : "0";
+        slide.style.pointerEvents = i === index ? "auto" : "none";
       });
 
       buttons.forEach((button, i) => {
