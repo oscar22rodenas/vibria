@@ -9,10 +9,10 @@ module.exports = {
           yellow: "#FFC721",
           orange: "#F57E26",
           blue: "#81AEF6",
-          red: "#FC8975",
-          purple: "#9747FF",
+          pink: "#FC8975",
           white: "#FFFFFF",
           black: "#000000",
+          red: "#D3133A"
         },
         fontFamily: {
           poppins: ["Poppins", "sans-serif"],

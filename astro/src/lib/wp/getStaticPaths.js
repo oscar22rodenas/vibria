@@ -1,7 +1,7 @@
 import { extractLang } from "./extractLang";
 
 export async function getStaticPaths() {
-    const languages = ["ca", "es", "en"]; // Idiomas soportados
+  const languages = ["ca", "es", "en"]; // Idiomas soportados
 
     const pagesRes = await fetch("http://localhost:8000/wp-json/wp/v2/pages?_fields=acf,slug&per_page=100");
     const pages = await pagesRes.json();
