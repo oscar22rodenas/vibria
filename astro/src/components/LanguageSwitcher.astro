@@ -1,20 +1,18 @@
+
 ---
 
 const { slug } = Astro.params;
 
 const currentLang = Astro.props.currentLang || 'ca'; // Idioma por defecto
-
 const languages = {
   ca: { label: "CAT", flag: "/flags/catalana.png" },
   es: { label: "ESP", flag: "/flags/espana.png" },
   en: { label: "ENG", flag: "/flags/inglesa.png" },
 };
-
 const getLangUrl = (newLang) => {
   return `/${newLang}/${slug}`;
 };
 ---
-
 <div class="relative inline-block">
   <!-- Botón para abrir el menú -->
   <button id="toggle-lang" class="flex flex-col items-center gap-1 bg-transparent text-white px-2 py-1">
@@ -24,7 +22,6 @@ const getLangUrl = (newLang) => {
         <span class="text-xs">▼</span>
     </div>
   </button>
-
   <!-- Menú desplegable -->
   <div id="lang-menu" class="absolute z-20 right-0 mt-2 bg-white border rounded-lg shadow-lg hidden w-32">
     <a href={getLangUrl("ca")} class={`block px-4 py-2 hover:bg-gray-200 ${currentLang === 'ca' ? 'font-bold text-blue-600' : ''}`}>
@@ -38,18 +35,15 @@ const getLangUrl = (newLang) => {
     </a>
   </div>
 </div>
-
 <!-- Script para abrir/cerrar el menú -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.getElementById("toggle-lang");
     const menu = document.getElementById("lang-menu");
-
     toggleButton.addEventListener("click", function (event) {
       event.stopPropagation(); 
       menu.classList.toggle("hidden");
     });
-
     document.addEventListener("click", function (event) {
       if (!toggleButton.contains(event.target) && !menu.contains(event.target)) {
         menu.classList.add("hidden");

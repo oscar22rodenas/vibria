@@ -33,7 +33,7 @@ for (const parent of categoriesMap.parent) {
 {currentCategory && (
   <>
     <!-- Banner de categoría -->
-    <div class="bg-orange text-white px-4 py-2 font-bold text-lg w-full text-center">
+    <div class="bg-red text-white px-4 py-2 font-bold text-lg w-full text-center">
       {currentCategory}
     </div>
 
@@ -47,8 +47,8 @@ for (const parent of categoriesMap.parent) {
               href={`/${lang}/${sub.slug}`}
               class={`text-sm relative pb-1 ${
                 isActive
-                ? "font-bold text-black after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[4px] after:w-full after:bg-orange"
-                : "text-gray-500 hover:text-gray-800"
+                  ? "font-bold text-black after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[4px] after:w-full after:bg-red"
+                  : "text-gray-500 hover:text-gray-800"
               }`}
             >
               {sub.title}
