@@ -10,11 +10,10 @@ const slidesWithLinks = await Promise.all(
     
     return {
       ...slide,
-      buttonUrl: `/${pageData.lang}/${pageData.baseSlug}`,
+      buttonUrl: `/${pageData?.lang}/${pageData?.baseSlug}`,
     };
   })
 );
-console.log(slidesWithLinks);
 
 
 ---
@@ -62,10 +61,10 @@ console.log(slidesWithLinks);
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     let currentSlide = 0;
-    const slides = document.querySelectorAll(".slide");
-    const buttons = document.querySelectorAll(".slide-button");
+    const slides = document.querySelectorAll(".slide") as NodeListOf<HTMLElement>;
+    const buttons = document.querySelectorAll(".slide-button") as NodeListOf<HTMLElement>;
 
-    function showSlide(index) {
+    function showSlide(index: any) {
       slides.forEach((slide, i) => {
         slide.style.opacity = i === index ? "1" : "0";
         slide.style.zIndex = i === index ? "1" : "0";
@@ -98,7 +97,7 @@ console.log(slidesWithLinks);
     // Agregar eventos a los botones
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
-        const index = parseInt(button.dataset.index);
+        const index = parseInt(button.dataset.index || "0");
         showSlide(index);
       });
     });
