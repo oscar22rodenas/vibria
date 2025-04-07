@@ -1,0 +1,26 @@
+---
+export async function getStaticPaths() {
+    const languages = ["ca", "es", "en"];
+
+    return languages.map((lang) => {
+        return {
+            params: { lang },
+        }
+    });
+}
+
+const { lang } = Astro.params;
+//Redirect no funciona ya que no puedo poner el {lang} en la url
+---
+<html>
+  <head>
+    <script>
+      window.location.href = "/{{lang}}/home";
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=/{{lang}}/home" />
+    </noscript>
+  </body>
+</html>

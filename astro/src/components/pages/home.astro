@@ -3,6 +3,7 @@ import { getImageInfo } from "../../lib/wp/index.js";
 import Slide from "../../components/Slide.astro";
 import RRSS from "../../components/RRSS.astro";
 
+//TODO: Eliminar llamada a getStaticPaths pk no és necessaria
 import { getStaticPaths } from "../../lib/wp/getStaticPaths.js";
 
 export { getStaticPaths };
@@ -82,3 +83,4 @@ const imageAlt = imageData?.alt_text || "Imagen de canal de difusión";
   </div>
 
   <RRSS />
+  

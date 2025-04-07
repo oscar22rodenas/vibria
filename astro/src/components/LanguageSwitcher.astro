@@ -1,6 +1,8 @@
 
 ---
+
 const { slug } = Astro.params;
+
 const currentLang = Astro.props.currentLang || 'ca'; // Idioma por defecto
 const languages = {
   ca: { label: "CAT", flag: "/flags/catalana.png" },
@@ -8,7 +10,7 @@ const languages = {
   en: { label: "ENG", flag: "/flags/inglesa.png" },
 };
 const getLangUrl = (newLang) => {
-  return `/${newLang}/${slug}`; // Si no hay slug, redirige a una página por defecto
+  return `/${newLang}/${slug}`;
 };
 ---
 <div class="relative inline-block">
