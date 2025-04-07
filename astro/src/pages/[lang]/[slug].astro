@@ -1,10 +1,6 @@
 ---
 // src/pages/[lang]/[slug].astro
 import Layout from "../../layouts/Layout.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
-import { getStaticPaths } from "../../lib/wp/getStaticPaths.js";
-
 import Acollida from "../../components/pages/Acollida.astro";
 import Baumann from "../../components/pages/Baumann.astro";
 import DiarisVoluntaries from "../../components/pages/DiarisVoluntaries.astro";
@@ -30,9 +26,29 @@ import Sending from "../../components/pages/Sending.astro";
 import Volunteer from "../../components/pages/Volunteer.astro";
 
 
-export { getStaticPaths };
+import { extractLang } from "../../lib/wp/extractLang.js";
+import { apiURL } from "../../lib/wp/config.js";
 
-export const prerender = true;
+export async function getStaticPaths() {
+    const languages = ["ca", "es", "en"]; // Idiomas soportados
+
+    const pagesRes = await fetch(`${apiURL}/pages?_fields=acf,slug&per_page=100`);
+    const pages = await pagesRes.json();
+    
+    let paths = [];
+
+    pages.forEach(page => {
+        const extracted = extractLang(page.slug);
+        if (extracted && languages.includes(extracted.lang)) {
+            paths.push({
+                params: { lang: extracted.lang, slug: extracted.baseSlug },
+                props: { acf: page.acf },
+            });
+        }
+    });
+    
+    return paths;
+}
 
 const { acf }   = Astro.props;
 
@@ -113,7 +129,5 @@ switch (Astro.params.slug) {
 }
 ---
 <Layout>
-    <Header />
     <PageComponent data={{ acf }} />
-    <Footer />
 </Layout>
