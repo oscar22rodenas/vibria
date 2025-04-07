@@ -35,9 +35,9 @@ export async function getStaticPaths() {
     const pagesRes = await fetch(`${apiURL}/pages?_fields=acf,slug&per_page=100`);
     const pages = await pagesRes.json();
     
-    let paths = [];
+    let paths: { params: { lang: string; slug: string }; props: { acf: any } }[] = [];
 
-    pages.forEach(page => {
+    pages.forEach((page: { slug: string; acf: any }) => {
         const extracted = extractLang(page.slug);
         if (extracted && languages.includes(extracted.lang)) {
             paths.push({
@@ -129,5 +129,5 @@ switch (Astro.params.slug) {
 }
 ---
 <Layout>
-    <PageComponent data={{ acf }} />
+    {PageComponent ? <PageComponent data={{ acf }} /> : <div>Page not found</div>}
 </Layout>
