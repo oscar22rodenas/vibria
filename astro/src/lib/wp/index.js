@@ -3,7 +3,7 @@ import { getSlidesInfo } from "./getSlidesInfo.js";
 import { getRRSSInfo } from "./getRRSSInfo.js";
 import { getCategoriesInfo } from "./getCategoriesInfo.js";
 import { getPostsInfo } from "./getPostsInfo.js";
-import { getPageById } from "./getPagebyId.js";
+import { getPageById } from "./getPageById.js";
 
 export { getImageInfo, getSlidesInfo, getRRSSInfo, getCategoriesInfo, getPostsInfo, getPageById };
 
