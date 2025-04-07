@@ -1,6 +1,42 @@
 ---
-//TODO: llamar a la api para obtener todas las ofertas
+import { Picture } from "astro:assets";
+import { getOfertesInfo} from "../../lib/wp/index.js";
+const { lang } = Astro.params;
 
-//TODO: 
+const ofertes = await getOfertesInfo(lang);
+
 ---
-<p>Ofertes</p>
+
+<div class="bg-white rounded-lg shadow-md overflow-hidden max-w-md mx-auto">
+  {
+    ofertes.map((oferta) => (
+    <Picture formats={['webp', 'avif', 'jpeg']} src={oferta.imageUrl} alt={oferta.imageAlt} width="320" height="126"/>
+
+    <div class="p-4 flex flex-col gap-2">
+
+    <h2 class="bg-red text-white font-bold text-sm px-3 py-1 inline-block rounded-md -mt-10 ml-4 shadow-md">
+      {oferta.title}
+    </h2>
+
+    <p class="text-sm text-gray-700">{oferta.text}</p>
+
+    <div class="flex items-center justify-start gap-4 text-xs mt-2">
+      <div class="flex items-center gap-1">
+        <span>📍</span>
+        <span>{oferta.ubicacion}</span>
+      </div>
+      <div class="flex items-center gap-1">
+        <span>⏳</span>
+        <span>{oferta.fechas}</span>
+      </div>
+    </div>
+
+    <!-- Fecha límite -->
+    <p class="text-xs text-center text-red-500 font-semibold mt-2">
+      data límit d'inscripció: {oferta.dataLimite}
+    </p>
+  </div>
+  ))}
+  
+</div>
+
