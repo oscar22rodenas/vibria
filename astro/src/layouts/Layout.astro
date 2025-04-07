@@ -1,6 +1,8 @@
 ---
 // src/layouts/Layout.astro
 import "../styles/global.css"; // Asegúrate de que el CSS global esté importado
+import Header from "../components/Header.astro"; // Asegúrate de que la ruta sea correcta
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -13,7 +15,9 @@ import "../styles/global.css"; // Asegúrate de que el CSS global esté importad
     <title>{Astro.title}</title>
   </head>
   <body class="prose">
+    <Header />
     <slot />
+    <Footer />
   </body>
 </html>
 
