@@ -1,3 +1,4 @@
 data/db_data/
 data/wp_data/
 !data/backup.sql
+vendor/
