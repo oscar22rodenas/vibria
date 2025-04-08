@@ -39,7 +39,7 @@ export async function getStaticPaths() {
 
     pages.forEach((page: { slug: string; acf: any }) => {
         const extracted = extractLang(page.slug);
-        if (extracted && languages.includes(extracted.lang)) {
+        if (extracted && languages.includes(extracted.lang) && !page.acf.detall_del_padre) {
             paths.push({
                 params: { lang: extracted.lang, slug: extracted.baseSlug },
                 props: { acf: page.acf },

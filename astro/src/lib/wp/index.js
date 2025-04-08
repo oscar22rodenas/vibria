@@ -4,6 +4,7 @@ import { getRRSSInfo } from "./getRRSSInfo.js";
 import { getCategoriesInfo } from "./getCategoriesInfo.js";
 import { getPostsInfo } from "./getPostsInfo.js";
 import { getPageById } from "./getPageById.js";
+import { getOfertesInfo } from "./getOfertesInfo.js";
 
-export { getImageInfo, getSlidesInfo, getRRSSInfo, getCategoriesInfo, getPostsInfo, getPageById };
+export { getImageInfo, getSlidesInfo, getRRSSInfo, getCategoriesInfo, getPostsInfo, getPageById, getOfertesInfo };
 
