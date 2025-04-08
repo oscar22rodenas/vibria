@@ -1,0 +1,97 @@
+---
+import { getCategoriesInfo } from "../lib/wp/getCategoriesInfo.js";
+
+const { lang, slug } = Astro.params;
+const categoriesMap = await getCategoriesInfo(lang);
+
+const lastSegment = slug.toLowerCase();
+
+let currentCategory = null;
+let currentCategoryId = null;
+let currentCategorySlug = null;
+
+for (const parent of categoriesMap.parent) {
+  const baseSlug = parent.slug.toLowerCase();
+
+  if (lastSegment === baseSlug) {
+    currentCategory = parent.title;
+    currentCategoryId = parent.id;
+    currentCategorySlug = baseSlug;
+    break;
+  }
+
+  const subcategories = categoriesMap.children[parent.id] || [];
+  for (const sub of subcategories) {
+    const subBaseSlug = sub.slug.toLowerCase();
+    if (lastSegment === subBaseSlug) {
+      currentCategory = parent.title;
+      currentCategoryId = parent.id;
+      currentCategorySlug = baseSlug;
+      break;
+    }
+  }
+
+  if (currentCategory) break;
+}
+
+const categoryColors = {
+  "La Víbria": { bg: "bg-secondary", border: "border-secondary" },
+  "The Vibria": { bg: "bg-secondary", border: "border-secondary" },
+
+  "Voluntariado Europeo": { bg: "bg-red", border: "border-red" },
+  "Voluntariat Europeu": { bg: "bg-red", border: "border-red" },
+  "European volunteering": { bg: "bg-red", border: "border-red" },
+
+  "Erasmus+": { bg: "bg-blue", border: "border-blue" },
+
+  "Prácticas Internacionales": { bg: "bg-yellow", border: "border-yellow" },
+  "Pràctiques Internacionals": { bg: "bg-yellow", border: "border-yellow" },
+  "International practices": { bg: "bg-yellow", border: "border-yellow" },
+
+  "Proyectos Internacionales": { bg: "bg-orange", border: "border-orange" },
+  "Projectes Internacionals": { bg: "bg-orange", border: "border-orange" },
+  "International Projects": { bg: "bg-orange", border: "border-orange" },
+
+  "Proyectos Locales": { bg: "bg-pink", border: "border-pink" },
+  "Projectes Locals": { bg: "bg-pink", border: "border-pink" },
+  "Local Projects": { bg: "bg-pink", border: "border-pink" },
+};
+
+const currentCategoryColors = categoryColors[currentCategory] ?? {
+  bg: "",
+  border: "",
+};
+---
+
+{
+  currentCategory && (
+    <>
+      <div
+        class={`${currentCategoryColors.bg} text-white px-4 py-2 font-bold text-lg w-full text-center`}
+      >
+        {currentCategory}
+      </div>
+
+      {currentCategoryId &&
+        categoriesMap.children[currentCategoryId]?.length > 0 && (
+          <nav class="flex gap-6 px-4 py-3 bg-gray-50 border-b border-gray-200 overflow-x-auto whitespace-nowrap">
+            {categoriesMap.children[currentCategoryId].map((sub) => {
+              const isActive = sub.slug.toLowerCase() === lastSegment;
+              return (
+                <a
+                  href={`/${lang}/${sub.slug}`}
+                  class={`text-sm relative pb-1 ${
+                    isActive
+                      ? `font-bold text-black border-b-4 ${currentCategoryColors.border}`
+                      : "text-gray-500 hover:text-gray-800"
+                  }`}
+                >
+                  {sub.title}
+                </a>
+              );
+            })}
+          </nav>
+        )}
+    </>
+  )
+}
