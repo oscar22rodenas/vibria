@@ -2,11 +2,9 @@
 import { getCategoriesInfo } from "../../lib/wp/getCategoriesInfo.js";
 import { Picture } from "astro:assets";
 import { getOfertesInfo} from "../../lib/wp/index.js";
+import CategoryNav from "../../components/CategoryNav.astro";
 
-
-
-
-const { lang } = Astro.params;
+const { lang, slug } = Astro.params;
 
 const ofertes = await getOfertesInfo(lang);
 const categoriesMap = await getCategoriesInfo(lang);
@@ -36,36 +34,7 @@ for (const parent of categoriesMap.parent) {
   if (currentCategory) break;
 }
 ---
-
-{currentCategory && (
-  <>
-    <!-- Banner de categoría -->
-    <div class="bg-red text-white px-4 py-2 font-bold text-lg w-full text-center">
-      {currentCategory}
-    </div>
-
-    <!-- Subcategorías en scroll horizontal -->
-    {currentCategoryId && categoriesMap.children[currentCategoryId]?.length > 0 && (
-      <nav class="flex gap-6 px-4 py-3 bg-gray-50 border-b border-gray-200 overflow-x-auto whitespace-nowrap">
-        {categoriesMap.children[currentCategoryId].map((sub) => {
-          const isActive = sub.slug.toLowerCase() === lastSegment;
-          return (
-            <a
-              href={`/${lang}/${sub.slug}`}
-              class={`text-sm relative pb-1 ${
-                isActive
-                  ? "font-bold text-black after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[4px] after:w-full after:bg-red"
-                  : "text-gray-500 hover:text-gray-800"
-              }`}
-            >
-              {sub.title}
-            </a>
-          );
-        })}
-      </nav>
-    )}
-  </>
-)}
+<CategoryNav lang={lang} slug={slug} />
 
 <div class="bg-gray-100 p-6">
   {
@@ -98,3 +67,5 @@ for (const parent of categoriesMap.parent) {
     </a>
   ))} 
 </div>
+
+
