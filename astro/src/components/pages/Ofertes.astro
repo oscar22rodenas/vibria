@@ -1,5 +1,4 @@
 ---
-import { getCategoriesInfo } from "../../lib/wp/getCategoriesInfo.js";
 import { Picture } from "astro:assets";
 import { getOfertesInfo} from "../../lib/wp/index.js";
 import CategoryNav from "../../components/CategoryNav.astro";
@@ -7,32 +6,8 @@ import CategoryNav from "../../components/CategoryNav.astro";
 const { lang, slug } = Astro.params;
 
 const ofertes = await getOfertesInfo(lang);
-const categoriesMap = await getCategoriesInfo(lang);
 
-const path = Astro.url.pathname.replace(/^\/|\/$/g, "");
-const lastSegment = path.split("/").pop().toLowerCase();
 
-let currentCategory = null;
-let currentCategoryId = null;
-
-for (const parent of categoriesMap.parent) {
-  if (lastSegment === parent.slug.toLowerCase()) {
-    currentCategory = parent.title;
-    currentCategoryId = parent.id;
-    break;
-  }
-
-  const subcategories = categoriesMap.children[parent.id] || [];
-  for (const sub of subcategories) {
-    if (lastSegment === sub.slug.toLowerCase()) {
-      currentCategory = parent.title;
-      currentCategoryId = parent.id;
-      break;
-    }
-  }
-
-  if (currentCategory) break;
-}
 ---
 <CategoryNav lang={lang} slug={slug} />
 
@@ -67,5 +42,3 @@ for (const parent of categoriesMap.parent) {
     </a>
   ))} 
 </div>
-
-

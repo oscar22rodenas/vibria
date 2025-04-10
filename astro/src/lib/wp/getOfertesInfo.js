@@ -4,7 +4,7 @@ import { getPageById } from "./getPageById.js";
 
 export const getOfertesInfo = async (lang) => {
   try {
-    const response = await fetch(`${apiURL}/ofertes?order=asc&_fields=acf, slug`);
+    const response = await fetch(`${apiURL}/ofertes?order=asc&_fields=acf,slug`);
     if (!response.ok) {
       throw new Error("Error al obtener los ofertes");
     }
@@ -34,7 +34,7 @@ export const getOfertesInfo = async (lang) => {
           ubicacion: acf.oferta_ubicacion,
           fechas: acf.oferta_fechas,
           dataLimit: acf.oferta_data_limit,
-          link: pageData ? `/${pageData.lang}/${pageData.baseSlug}` : "#",
+          link: pageData ? `/${pageData.lang}${pageData.categoriaSlug}/${pageData.baseSlug}` : "#",
           imageUrl: imageData?.source_url || "",
           imageAlt: imageData?.alt_text || "oferta image"
         };
