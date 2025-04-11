@@ -2,7 +2,7 @@
 // components/Header.astro
 import { Picture } from "astro:assets";
 import Menu from "./Menu.astro";
-import { getPostsInfo, getImageInfo } from "../lib/wp/index.js";
+import { getPostsInfo, getImageInfo } from "@wp/index.js";
 import LanguageSwitcher from "./LanguageSwitcher.astro";
 
 const { lang } = Astro.params;
@@ -17,7 +17,7 @@ const imageAlt = imageData?.alt_text || "Logo Vibria";
 
   <header class="flex items-center justify-between bg-primary px-4 py-2 z-10">
     <button id="menu-toggle" class="z-10">
-      <Picture formats={['webp', 'avif', 'jpeg']} id="menu-icon" src="/menu.png" alt="Menu" width="30" height="30" />
+      <Picture formats={['webp', 'avif', 'jpeg']} id="menu-icon" src="/icons/menu.png" alt="Menu" width="30" height="30" />
       <span id="close-icon" class="hidden justify-center text-4xl text-sky-50">×</span>
     </button>
 

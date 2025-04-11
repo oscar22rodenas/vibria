@@ -8,7 +8,8 @@ export const getPageById = async (id) => {
       throw new Error("Failed to fetch page info");
     }
     const data = await response.json();
-    const extracted = extractLang(data.slug); 
+
+    const extracted = extractLang(data.slug, data.acf.categoria); 
     
     return extracted;
 

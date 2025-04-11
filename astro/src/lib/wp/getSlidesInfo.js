@@ -36,7 +36,6 @@ export const getSlidesInfo = async (lang) => {
           subtitle: acf.slide_subtitulo || "",
           text: acf.slide_texto || "",
           buttonText: acf.slide_boton_texto || "Más información",
-          buttonLink: acf.slide_boton_link || "#",
           buttonUrl: pageData ? `/${pageData.lang}/${pageData.baseSlug}` : "#",
           imageUrl: imageData?.source_url || "",
           imageAlt: imageData?.alt_text || "Slide image",

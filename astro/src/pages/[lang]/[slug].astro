@@ -1,33 +1,33 @@
 ---
 // src/pages/[lang]/[slug].astro
-import Layout from "../../layouts/Layout.astro";
-import Acollida from "../../components/pages/Acollida.astro";
-import Baumann from "../../components/pages/Baumann.astro";
-import DiarisVoluntaries from "../../components/pages/DiarisVoluntaries.astro";
-import Enviament from "../../components/pages/Enviament.astro";
-import ErasmusExperiencies from "../../components/pages/ErasmusExperiencies.astro";
-import ExperienciesPi from "../../components/pages/ExperienciesPi.astro";
-import Experiencies from "../../components/pages/Experiencies.astro";
-import Formacions from "../../components/pages/Formacions.astro";
-import Greenfluencers from "../../components/pages/Greenfluencers.astro";
-import Home from "../../components/pages/Home.astro";
-import IntercanvisJuvenil from "../../components/pages/IntercanvisJuvenil.astro";
-import MentorVoluntaries from "../../components/pages/MentorVoluntaries.astro";
-import OcellFoc from "../../components/pages/OcellFoc.astro";
-import Ofertes from "../../components/pages/Ofertes.astro";
-import Playground from "../../components/pages/Playground.astro";
-import ProjectesPassats from "../../components/pages/ProjectesPassats.astro";
-import QueEs from "../../components/pages/QueEs.astro";
-import QueFem from "../../components/pages/QueFem.astro";
-import QuiSom from "../../components/pages/QuiSom.astro";
-import RadioVibria from "../../components/pages/RadioVibria.astro";
-import Refore from "../../components/pages/Refore.astro";
-import Sending from "../../components/pages/Sending.astro";
-import Volunteer from "../../components/pages/Volunteer.astro";
+import Layout from "@layouts/Layout.astro";
+import Acollida from "@components/pages/Acollida.astro";
+import Baumann from "@components/pages/Baumann.astro";
+import DiarisVoluntaries from "@components/pages/DiarisVoluntaries.astro";
+import Enviament from "@components/pages/Enviament.astro";
+import ErasmusExperiencies from "@components/pages/ErasmusExperiencies.astro";
+import ExperienciesPi from "@components/pages/ExperienciesPi.astro";
+import Experiencies from "@components/pages/Experiencies.astro";
+import Formacions from "@components/pages/Formacions.astro";
+import Greenfluencers from "@components/pages/Greenfluencers.astro";
+import Home from "@components/pages/Home.astro";
+import IntercanvisJuvenil from "@components/pages/IntercanvisJuvenil.astro";
+import MentorVoluntaries from "@components/pages/MentorVoluntaries.astro";
+import OcellFoc from "@components/pages/OcellFoc.astro";
+import Ofertes from "@components/pages/Ofertes.astro";
+import Playground from "@components/pages/Playground.astro";
+import ProjectesPassats from "@components/pages/ProjectesPassats.astro";
+import QueEs from "@components/pages/QueEs.astro";
+import QueFem from "@components/pages/QueFem.astro";
+import QuiSom from "@components/pages/QuiSom.astro";
+import RadioVibria from "@components/pages/RadioVibria.astro";
+import Refore from "@components/pages/Refore.astro";
+import Sending from "@components/pages/Sending.astro";
+import Volunteer from "@components/pages/Volunteer.astro";
 
 
-import { extractLang } from "../../lib/wp/extractLang.js";
-import { apiURL } from "../../lib/wp/config.js";
+import { extractLang } from "@wp/extractLang.js";
+import { apiURL } from "@wp/config.js";
 
 export async function getStaticPaths() {
     const languages = ["ca", "es", "en"]; // Idiomas soportados
