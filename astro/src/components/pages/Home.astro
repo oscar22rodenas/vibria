@@ -1,7 +1,7 @@
 ---
-import { getImageInfo } from "../../lib/wp/index.js";
-import Slide from "../../components/Slide.astro";
-import RRSS from "../../components/RRSS.astro";
+import { getImageInfo } from "@wp/index.js";
+import Slide from "@components/Slide.astro";
+import RRSS from "@components/RRSS.astro";
 
 const { acf } = Astro.props.data;
 
@@ -11,7 +11,7 @@ const imageData = acf.difusion_imagen
   : null;
 const imageUrl = typeof imageData === "object" && imageData?.source_url ? imageData.source_url : "";
 const imageAlt = typeof imageData === "object" && imageData?.alt_text ? imageData.alt_text : "Imagen de canal de difusión";
-import CategoryNav from "../../components/CategoryNav.astro";
+import CategoryNav from "@components/CategoryNav.astro";
 
 const { lang, slug } = Astro.params;
 ---

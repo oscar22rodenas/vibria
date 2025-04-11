@@ -1,38 +1,13 @@
 ---
-import { getCategoriesInfo } from "../../lib/wp/getCategoriesInfo.js";
 import { Picture } from "astro:assets";
-import { getOfertesInfo} from "../../lib/wp/index.js";
-import CategoryNav from "../../components/CategoryNav.astro";
+import { getOfertesInfo} from "@wp/index.js";
+import CategoryNav from "@components/CategoryNav.astro";
 
 const { lang, slug } = Astro.params;
 
 const ofertes = await getOfertesInfo(lang);
-const categoriesMap = await getCategoriesInfo(lang);
 
-const path = Astro.url.pathname.replace(/^\/|\/$/g, "");
-const lastSegment = path.split("/").pop().toLowerCase();
 
-let currentCategory = null;
-let currentCategoryId = null;
-
-for (const parent of categoriesMap.parent) {
-  if (lastSegment === parent.slug.toLowerCase()) {
-    currentCategory = parent.title;
-    currentCategoryId = parent.id;
-    break;
-  }
-
-  const subcategories = categoriesMap.children[parent.id] || [];
-  for (const sub of subcategories) {
-    if (lastSegment === sub.slug.toLowerCase()) {
-      currentCategory = parent.title;
-      currentCategoryId = parent.id;
-      break;
-    }
-  }
-
-  if (currentCategory) break;
-}
 ---
 <CategoryNav lang={lang} slug={slug} />
 
@@ -52,11 +27,11 @@ for (const parent of categoriesMap.parent) {
 
       <div class="flex flex-row items-center justify-between w-full">
         <div class="flex flex-row items-center gap-1">
-          <span>📍</span>
+          <Picture formats={['webp', 'avif', 'jpeg']} src="/icons/Ubicacion_Negro.png" alt="Ubicacion Icon" width="24" height="24"/>
           <span class="text-sm text-black font-700">{oferta.ubicacion}</span>
         </div>
         <div class="flex flex-row items-center gap-1">
-          <span>⏳</span>
+          <Picture formats={['webp', 'avif', 'jpeg']} src="/icons/Reloj_Arena_Negro.png" alt="Tiempo Icon" width="24" height="24"/>
           <span class="text-sm text-black font-700">{oferta.fechas}</span>
         </div>
       </div>
@@ -67,5 +42,3 @@ for (const parent of categoriesMap.parent) {
     </a>
   ))} 
 </div>
-
-
