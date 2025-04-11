@@ -1,5 +1,5 @@
 ---
-import { getCategoriesInfo } from "../lib/wp/getCategoriesInfo.js";
+import { getCategoriesInfo } from "@wp/getCategoriesInfo.js";
 
 const { lang, slug } = Astro.params;
 const categoriesMap = await getCategoriesInfo(lang);
