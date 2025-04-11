@@ -1,10 +1,10 @@
-import { getPageInfo } from "./getPageInfo.js";
 import { getImageInfo } from "./getImageInfo.js";
 import { getSlidesInfo } from "./getSlidesInfo.js";
 import { getRRSSInfo } from "./getRRSSInfo.js";
-
 import { getCategoriesInfo } from "./getCategoriesInfo.js";
+import { getPostsInfo } from "./getPostsInfo.js";
+import { getPageById } from "./getPageById.js";
+import { getOfertesInfo } from "./getOfertesInfo.js";
 
-
-export { getPageInfo, getImageInfo, getSlidesInfo, getRRSSInfo, getCategoriesInfo  };
+export { getImageInfo, getSlidesInfo, getRRSSInfo, getCategoriesInfo, getPostsInfo, getPageById, getOfertesInfo };
 
