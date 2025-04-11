@@ -1,6 +1,7 @@
 import { apiURL } from "./config.js";
 
 export const getCategoriesInfo = async (lang) => {
+  
   const response = await fetch(`${apiURL}/menu?page=1&per_page=20&orderby=date&order=asc&_fields=title,acf,slug,id`);
   const menus = await response.json();
 
@@ -14,11 +15,12 @@ export const getCategoriesInfo = async (lang) => {
   for (const menu of filteredMenus) {
     const categoryTitle = menu.acf?.categoria_titulo;
     const subcategoryIds = menu.acf?.subcategorias || [];
-
+    
     categoriesMap.parent.push({
       id: menu.id,
       title: categoryTitle,
-      slug: menu.slug
+      slug: menu.slug.replace(/-(ca|es|en)$/, "")
+
     });
 
     // Realizar todas las solicitudes de subcategorías en paralelo usando Promise.allSettled
@@ -33,7 +35,7 @@ export const getCategoriesInfo = async (lang) => {
           const subcategory = await subResponse.json();
           return {
             title: subcategory.acf?.subcategoria_titol || "Sin título",
-            slug: subcategory.slug
+            slug: subcategory.slug.replace(/-(ca|es|en)$/, "")
           };
         } catch (error) {
           console.error(`Error al obtener la subcategoría con ID ${subId}:`, error);

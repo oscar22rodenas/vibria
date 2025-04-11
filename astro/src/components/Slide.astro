@@ -1,6 +1,5 @@
 ---
 import { getSlidesInfo } from "../lib/wp/index.js";
-
 const { lang } = Astro.params;
 
 const slides = await getSlidesInfo(lang);
@@ -20,7 +19,7 @@ const slides = await getSlidesInfo(lang);
           </h1>
           <h3 class="h3 font-800">{slide.subtitle}</h3>
           <p class="p">{slide.text}</p>
-          <a href={slide.buttonLink} class="btn">
+          <a href={slide.buttonUrl} class="btn">
             {slide.buttonText}
           </a>
         </div>
@@ -37,7 +36,9 @@ const slides = await getSlidesInfo(lang);
       slides.map((_, index) => (
         <button
           class={`slide-button rounded-full transition-all ${
-            index === 0 ? "bg-yellow outline outline-2 outline-offset-3 outline-secondary  w-2 h-2"  : "bg-white w-3 h-3"
+            index === 0
+              ? "bg-yellow outline outline-2 outline-offset-3 outline-secondary  w-2 h-2"
+              : "bg-white w-3 h-3"
           }`}
           data-index={index}
         />
@@ -49,12 +50,18 @@ const slides = await getSlidesInfo(lang);
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     let currentSlide = 0;
-    const slides = document.querySelectorAll(".slide");
-    const buttons = document.querySelectorAll(".slide-button");
+    const slides = document.querySelectorAll(
+      ".slide"
+    ) as NodeListOf<HTMLElement>;
+    const buttons = document.querySelectorAll(
+      ".slide-button"
+    ) as NodeListOf<HTMLElement>;
 
-    function showSlide(index) {
+    function showSlide(index: any) {
       slides.forEach((slide, i) => {
         slide.style.opacity = i === index ? "1" : "0";
+        slide.style.zIndex = i === index ? "1" : "0";
+        slide.style.pointerEvents = i === index ? "auto" : "none";
       });
 
       buttons.forEach((button, i) => {
@@ -79,11 +86,10 @@ const slides = await getSlidesInfo(lang);
       showSlide(nextSlide);
     }, 5000);
 
-
     // Agregar eventos a los botones
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
-        const index = parseInt(button.dataset.index);
+        const index = parseInt(button.dataset.index || "0");
         showSlide(index);
       });
     });
