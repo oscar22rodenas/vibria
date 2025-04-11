@@ -1,9 +1,9 @@
 ---
 import { Picture } from 'astro:assets';
-import { getPageInfo, getImageInfo } from '../lib/wp/index.js';
+import { getPostsInfo, getImageInfo } from '../lib/wp/index.js';
 
 
-const acf = await getPageInfo("footer");
+const acf = await getPostsInfo("footer");
 
 const imageIds = [
   acf.ubicacion_imagen,

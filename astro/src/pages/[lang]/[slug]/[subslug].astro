@@ -1,0 +1,30 @@
+---
+import { extractLang } from "../../../lib/wp/extractLang.js";
+import { apiURL } from "../../../lib/wp/config.js";
+
+
+export async function getStaticPaths() {
+    const languages = ["ca", "es", "en"]; // Idiomas soportados
+
+    const pagesRes = await fetch(`${apiURL}/pages?slug=home-ca&_fields=acf,slug,content.rendered&per_page=100`);
+    const pages = await pagesRes.json();
+    
+    let paths: { params: { lang: string; slug: string; subslug: string}; props: { acf: any, content: string } }[] = [];
+
+    pages.forEach((page: { slug: string; acf: any }) => {
+        const extracted = extractLang(page.slug);
+        
+        if (extracted && languages.includes(extracted.lang) && page.acf.detall_del_padre) {
+            paths.push({
+                params: { lang: extracted.lang, slug: page.acf.detall_del_padre, subslug: extracted.baseSlug },
+                props: { acf: page.acf, content: page.content.rendered },
+            });
+        }
+    });
+    
+    return paths;
+}
+
+//TODO: switch  detall_del_padre
+// SI OFERTA <DetalleOferta acf content
+---

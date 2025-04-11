@@ -1,0 +1,133 @@
+---
+// src/pages/[lang]/[slug].astro
+import Layout from "../../layouts/Layout.astro";
+import Acollida from "../../components/pages/Acollida.astro";
+import Baumann from "../../components/pages/Baumann.astro";
+import DiarisVoluntaries from "../../components/pages/DiarisVoluntaries.astro";
+import Enviament from "../../components/pages/Enviament.astro";
+import ErasmusExperiencies from "../../components/pages/ErasmusExperiencies.astro";
+import ExperienciesPi from "../../components/pages/ExperienciesPi.astro";
+import Experiencies from "../../components/pages/Experiencies.astro";
+import Formacions from "../../components/pages/Formacions.astro";
+import Greenfluencers from "../../components/pages/Greenfluencers.astro";
+import Home from "../../components/pages/Home.astro";
+import IntercanvisJuvenil from "../../components/pages/IntercanvisJuvenil.astro";
+import MentorVoluntaries from "../../components/pages/MentorVoluntaries.astro";
+import OcellFoc from "../../components/pages/OcellFoc.astro";
+import Ofertes from "../../components/pages/Ofertes.astro";
+import Playground from "../../components/pages/Playground.astro";
+import ProjectesPassats from "../../components/pages/ProjectesPassats.astro";
+import QueEs from "../../components/pages/QueEs.astro";
+import QueFem from "../../components/pages/QueFem.astro";
+import QuiSom from "../../components/pages/QuiSom.astro";
+import RadioVibria from "../../components/pages/RadioVibria.astro";
+import Refore from "../../components/pages/Refore.astro";
+import Sending from "../../components/pages/Sending.astro";
+import Volunteer from "../../components/pages/Volunteer.astro";
+
+
+import { extractLang } from "../../lib/wp/extractLang.js";
+import { apiURL } from "../../lib/wp/config.js";
+
+export async function getStaticPaths() {
+    const languages = ["ca", "es", "en"]; // Idiomas soportados
+
+    const pagesRes = await fetch(`${apiURL}/pages?slug=home-ca&_fields=acf,slug&per_page=100`);
+    const pages = await pagesRes.json();
+    
+    let paths: { params: { lang: string; slug: string }; props: { acf: any } }[] = [];
+
+    pages.forEach((page: { slug: string; acf: any }) => {
+        const extracted = extractLang(page.slug);
+        if (extracted && languages.includes(extracted.lang) && !page.acf.detall_del_padre) {
+            paths.push({
+                params: { lang: extracted.lang, slug: extracted.baseSlug },
+                props: { acf: page.acf },
+            });
+        }
+    });
+    
+    return paths;
+}
+
+const { acf }   = Astro.props;
+
+let PageComponent;
+
+switch (Astro.params.slug) {
+    case "acollida":
+        PageComponent = Acollida;
+        break;
+    case "baumann":
+        PageComponent = Baumann;
+        break;
+    case "diaris-voluntaries":
+        PageComponent = DiarisVoluntaries;
+        break;
+    case "enviament":
+        PageComponent = Enviament;
+        break;
+    case "erasmus-experiencies":
+        PageComponent = ErasmusExperiencies;
+        break;
+    case "experiencies-pi":
+        PageComponent = ExperienciesPi;
+        break;
+    case "experiencies":
+        PageComponent = Experiencies;
+        break;
+    case "formacions":
+        PageComponent = Formacions;
+        break;
+    case "greenfluencers":
+        PageComponent = Greenfluencers;
+        break;
+    case "home":
+        PageComponent = Home;
+        break;
+    case "intercanvis-juvenil":
+        PageComponent = IntercanvisJuvenil;
+        break;
+    case "mentor-voluntaries":
+        PageComponent = MentorVoluntaries;
+        break;
+    case "ocell-foc":
+        PageComponent = OcellFoc;
+        break;
+    case "ofertes":
+        PageComponent = Ofertes;
+        break;
+    case "playground":
+        PageComponent = Playground;
+        break;
+    case "projectes-passats":
+        PageComponent = ProjectesPassats;
+        break;
+    case "que-es":
+        PageComponent = QueEs;
+        break;
+    case "que-fem":
+        PageComponent = QueFem;
+        break;
+    case "qui-som":
+        PageComponent = QuiSom;
+        break;
+    case "radio-vibria":
+        PageComponent = RadioVibria;
+        break;
+    case "refore":
+        PageComponent = Refore;
+        break;
+    case "sending":
+        PageComponent = Sending;
+        break;
+    case "volunteer":
+        PageComponent = Volunteer;
+        break;
+    default :
+        break;
+}
+---
+<Layout>
+    {PageComponent ? <PageComponent data={{ acf }} /> : <div>Page not found</div>}
+</Layout>

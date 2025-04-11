@@ -1,0 +1,71 @@
+---
+import { getCategoriesInfo } from "../../lib/wp/getCategoriesInfo.js";
+import { Picture } from "astro:assets";
+import { getOfertesInfo} from "../../lib/wp/index.js";
+import CategoryNav from "../../components/CategoryNav.astro";
+
+const { lang, slug } = Astro.params;
+
+const ofertes = await getOfertesInfo(lang);
+const categoriesMap = await getCategoriesInfo(lang);
+
+const path = Astro.url.pathname.replace(/^\/|\/$/g, "");
+const lastSegment = path.split("/").pop().toLowerCase();
+
+let currentCategory = null;
+let currentCategoryId = null;
+
+for (const parent of categoriesMap.parent) {
+  if (lastSegment === parent.slug.toLowerCase()) {
+    currentCategory = parent.title;
+    currentCategoryId = parent.id;
+    break;
+  }
+
+  const subcategories = categoriesMap.children[parent.id] || [];
+  for (const sub of subcategories) {
+    if (lastSegment === sub.slug.toLowerCase()) {
+      currentCategory = parent.title;
+      currentCategoryId = parent.id;
+      break;
+    }
+  }
+
+  if (currentCategory) break;
+}
+---
+<CategoryNav lang={lang} slug={slug} />
+
+<div class="bg-gray-100 p-6">
+  {
+    ofertes.map((oferta) => (
+
+    <a href={oferta.link} class="flex flex-col justify-center items-center gap-2  bg-gray-100 shadow-[0_4px_4px_rgba(0,0,0,0.25)] pt-4 pb-1 px-4">
+      <div class="relative">
+        <Picture formats={['webp', 'avif', 'jpeg']} src={oferta.imageUrl} alt={oferta.imageAlt} width="320" height="126"/>
+
+        <h4 class="absolute bottom-0 inset-x-16 text-h4 font-700 bg-red text-center text-white px-2">
+          {oferta.title}
+        </h4>
+      </div>
+      <p class="text-sm text-black font-400 text-center">{oferta.text}</p>
+
+      <div class="flex flex-row items-center justify-between w-full">
+        <div class="flex flex-row items-center gap-1">
+          <span>📍</span>
+          <span class="text-sm text-black font-700">{oferta.ubicacion}</span>
+        </div>
+        <div class="flex flex-row items-center gap-1">
+          <span>⏳</span>
+          <span class="text-sm text-black font-700">{oferta.fechas}</span>
+        </div>
+      </div>
+
+      <p class="border-t border-black pt-1 text-sm text-red font-400">
+        {oferta.dataLimit}
+      </p>
+    </a>
+  ))} 
+</div>
+
+

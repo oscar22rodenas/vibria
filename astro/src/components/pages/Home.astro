@@ -1,44 +1,22 @@
 ---
-// src/pages/[lang]/index.astro
-import Layout from "../../layouts/Layout.astro";
-import { getPageInfo, getImageInfo } from "../../lib/wp/index.js";
-import Header from "../../components/Header.astro";
+import { getImageInfo } from "../../lib/wp/index.js";
 import Slide from "../../components/Slide.astro";
 import RRSS from "../../components/RRSS.astro";
-import Footer from "../../components/Footer.astro";
 
-
-// Obtén el parámetro 'lang' de la URL
-const { lang } = Astro.params;
-
-// Mapeo de slugs a los idiomas disponibles
-const slugMap = {
-  es: "home-es",
-  ca: "home-ca",
-  en: "home-en",
-};
-
-// Verifica si el idioma es válido
-if (!slugMap[lang]) {
-  throw new Error(`Idioma ${lang} no soportado`);
-}
-
-// Realiza la solicitud a la API de WordPress usando el slug correspondiente
-const acf = await getPageInfo(slugMap[lang]);
+const { acf } = Astro.props.data;
 
 // Obtiene la imagen de difusión y su URL
 const imageData = acf.difusion_imagen
   ? await getImageInfo(acf.difusion_imagen)
   : null;
-const imageUrl = imageData?.source_url || "";
-const imageAlt = imageData?.alt_text || "Imagen de canal de difusión";
+const imageUrl = typeof imageData === "object" && imageData?.source_url ? imageData.source_url : "";
+const imageAlt = typeof imageData === "object" && imageData?.alt_text ? imageData.alt_text : "Imagen de canal de difusión";
+import CategoryNav from "../../components/CategoryNav.astro";
 
-export const prerender = false;
+const { lang, slug } = Astro.params;
 ---
 
-<Layout>
-  <Header />
-  <Slide />
+<Slide />
   <div
     class="flex flex-col items-center justify-center bg-secondary px-20 py-8 text-center gap-4"
   >
@@ -100,5 +78,3 @@ export const prerender = false;
   </div>
 
   <RRSS />
-  <Footer />
-</Layout>
