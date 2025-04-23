@@ -44,7 +44,7 @@ const { lang, slug } = Astro.params;
       {acf.contacto_titulo}
     </h3>
 
-    <form action={ acf.contacto_boton_link } class="flex flex-col items-start gap-3">
+    <form id="form-contacto" class="flex flex-col items-start gap-3">
       <input
         type="text"
         id="nom"
@@ -78,3 +78,36 @@ const { lang, slug } = Astro.params;
   </div>
 
   <RRSS />
+
+
+  <script type="module">
+    const form = document.querySelector('#form-contacto');
+  
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault(); // Evita que recargue la página
+  
+      const nombre = form.nom.value;
+      const correo = form.correu.value;
+      const mensaje = form.missatge.value;
+  
+      try {
+        const res = await fetch('http://localhost:8000/wp-json/wp/v2/enviar-correo', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nombre, correo, mensaje }),
+        });
+  
+        const data = await res.json();
+  
+        if (res.ok && data.success) {
+          alert('¡Mensaje enviado correctamente!');
+          form.reset();
+        } else {
+          alert('Ocurrió un error al enviar el mensaje. Intenta de nuevo.');
+        }
+      } catch (err) {
+        console.error(err);
+        alert('Error al conectar con el servidor.');
+      }
+    });
+  </script>
