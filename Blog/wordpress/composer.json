@@ -12,7 +12,7 @@
       "wpackagist-plugin/custom-post-order-category": "*",
       "wpackagist-plugin/custom-post-type-ui": "*",
       "wpackagist-plugin/code-snippets": "*",
-      "wpackagist-plugin/wp-mail-smtp-by-wpforms": "*"
+      "wpackagist-plugin/wp-mail-smtp": "*"
     },
     "repositories": [
       {
