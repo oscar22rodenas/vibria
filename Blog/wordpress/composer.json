@@ -11,7 +11,8 @@
       "wpackagist-plugin/advanced-custom-fields": "*",
       "wpackagist-plugin/custom-post-order-category": "*",
       "wpackagist-plugin/custom-post-type-ui": "*",
-      "wpackagist-plugin/wp-mail-smtp": "*"
+      "wpackagist-plugin/code-snippets": "*",
+      "wpackagist-plugin/wp-mail-smtp-by-wpforms": "*"
     },
     "repositories": [
       {
