@@ -2,6 +2,7 @@
 import { getImageInfo } from "@wp/index.js";
 import Slide from "@components/Slide.astro";
 import RRSS from "@components/RRSS.astro";
+import { Picture } from "astro:assets";
 
 const { acf } = Astro.props.data;
 
@@ -9,11 +10,14 @@ const { acf } = Astro.props.data;
 const imageData = acf.difusion_imagen
   ? await getImageInfo(acf.difusion_imagen)
   : null;
-const imageUrl = typeof imageData === "object" && imageData?.source_url ? imageData.source_url : "";
-const imageAlt = typeof imageData === "object" && imageData?.alt_text ? imageData.alt_text : "Imagen de canal de difusión";
-import CategoryNav from "@components/CategoryNav.astro";
-
-const { lang, slug } = Astro.params;
+const imageUrl =
+  typeof imageData === "object" && imageData?.source_url
+    ? imageData.source_url
+    : "";
+const imageAlt =
+  typeof imageData === "object" && imageData?.alt_text
+    ? imageData.alt_text
+    : "Imagen de canal de difusión";
 ---
 
 <Slide />
@@ -27,12 +31,7 @@ const { lang, slug } = Astro.params;
   {
     imageUrl && (
       <a href={acf.difusion_link}>
-        <img
-          src={imageUrl}
-          alt={imageAlt}
-          width="60"
-          height="60"
-          class="rounded-lg transition-transform transform hover:scale-105"
+        <Picture formats={["webp", "avif", "jpeg"]} src={imageUrl} alt={imageAlt} width="60" height="60" class="rounded-lg transition-transform transform hover:scale-105"
         />
       </a>
     )
@@ -76,6 +75,15 @@ const { lang, slug } = Astro.params;
     </button>
 
     <p id="form-message" class="text-sm mt-2 hidden"></p>
+
+    <dialog id="loading-indicator" class=" text-primary">
+      <Picture formats={["webp", "avif", "jpeg", "svg", "gif"]}
+        src="/images/loading.svg"
+        alt="Loading"
+        width="64"
+        height="64"
+      />
+    </dialog>
   </form>
 </div>
 
@@ -84,6 +92,7 @@ const { lang, slug } = Astro.params;
 <script type="module">
   const form = document.querySelector("#form-contacto");
   const messageElement = document.querySelector("#form-message");
+  const loadingIndicator = document.querySelector("#loading-indicator");
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault(); // Evita que recargue la página
@@ -91,6 +100,9 @@ const { lang, slug } = Astro.params;
     const nombre = form.nom.value;
     const correo = form.correu.value;
     const mensaje = form.missatge.value;
+
+    // Mostrar el indicador de carga
+    loadingIndicator.showModal();
 
     try {
       const res = await fetch(
@@ -123,6 +135,14 @@ const { lang, slug } = Astro.params;
       messageElement.textContent = "Error al conectar con el servidor.";
       messageElement.className = "text-red-600 mt-2";
       messageElement.classList.remove("hidden");
+    } finally {
+      // Ocultar el indicador de carga
+      loadingIndicator.close();
+
+      // Ocultar el mensaje después de 3 segundos
+      setTimeout(() => {
+        messageElement.classList.add("hidden");
+      }, 5000);
     }
   });
 </script>
