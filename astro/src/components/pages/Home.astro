@@ -17,97 +17,112 @@ const { lang, slug } = Astro.params;
 ---
 
 <Slide />
-  <div
-    class="flex flex-col items-center justify-center bg-secondary px-20 py-8 text-center gap-4"
-  >
-    <div class="border border-white p-1">
-      <p class="font-700 p">{acf.difusion_descripcion}</p>
-    </div>
-
-    {
-      imageUrl && (
-        <a href={acf.difusion_link}>
-          <img
-            src={imageUrl}
-            alt={imageAlt}
-            width="60"
-            height="60"
-            class="rounded-lg transition-transform transform hover:scale-105"
-          />
-        </a>
-      )
-    }
+<div
+  class="flex flex-col items-center justify-center bg-secondary px-20 py-8 text-center gap-4"
+>
+  <div class="border border-white p-1">
+    <p class="font-700 p">{acf.difusion_descripcion}</p>
   </div>
 
-  <div class="flex flex-col items-center gap-4 py-4 bg-gray-100">
-    <h3 class="text-h3 text-700 text-primary text-center font-700">
-      {acf.contacto_titulo}
-    </h3>
+  {
+    imageUrl && (
+      <a href={acf.difusion_link}>
+        <img
+          src={imageUrl}
+          alt={imageAlt}
+          width="60"
+          height="60"
+          class="rounded-lg transition-transform transform hover:scale-105"
+        />
+      </a>
+    )
+  }
+</div>
 
-    <form id="form-contacto" class="flex flex-col items-start gap-3">
-      <input
-        type="text"
-        id="nom"
-        name="nom"
-        placeholder={acf.contacto_campo_nombre}
-        required
-        class="rounded-[20px] border border-secondary pl-2 pr-8 py-1 bg-white focus:outline-none focus:ring-1 focus:ring-secondary placeholder-secondary"
-      />
+<div class="flex flex-col items-center gap-4 py-4 bg-gray-100">
+  <h3 class="text-h3 text-700 text-primary text-center font-700">
+    {acf.contacto_titulo}
+  </h3>
 
-      <input
-        type="email"
-        id="correu"
-        name="correu"
-        placeholder={acf.contacto_campo_correo}
-        required
-        class="rounded-[20px] border border-secondary pl-2 pr-8 py-1 bg-white focus:outline-none focus:ring-1 focus:ring-secondary placeholder-secondary"
-      />
+  <form id="form-contacto" class="flex flex-col items-start gap-3">
+    <input
+      type="text"
+      id="nom"
+      name="nom"
+      placeholder={acf.contacto_campo_nombre}
+      required
+      class="rounded-[20px] border border-secondary pl-2 pr-8 py-1 bg-white focus:outline-none focus:ring-1 focus:ring-secondary placeholder-secondary"
+    />
 
-      <textarea
-        id="missatge"
-        name="missatge"
-        placeholder={acf.contacto_campo_mensaje}
-        required
-        class="rounded-[10px] border border-secondary pl-2 pr-16 pt-1 pb-12 bg-white focus:outline-none focus:ring-1 focus:ring-secondary resize-none placeholder-secondary"
-      ></textarea>
+    <input
+      type="email"
+      id="correu"
+      name="correu"
+      placeholder={acf.contacto_campo_correo}
+      required
+      class="rounded-[20px] border border-secondary pl-2 pr-8 py-1 bg-white focus:outline-none focus:ring-1 focus:ring-secondary placeholder-secondary"
+    />
 
-      <button type="submit" class="btn">
-        {acf.contacto_boton_texto}
-      </button>
-    </form>
-  </div>
+    <textarea
+      id="missatge"
+      name="missatge"
+      placeholder={acf.contacto_campo_mensaje}
+      required
+      class="rounded-[10px] border border-secondary pl-2 pr-16 pt-1 pb-12 bg-white focus:outline-none focus:ring-1 focus:ring-secondary resize-none placeholder-secondary"
+    ></textarea>
 
-  <RRSS />
+    <button type="submit" class="btn">
+      {acf.contacto_boton_texto}
+    </button>
 
+    <p id="form-message" class="text-sm mt-2 hidden"></p>
+  </form>
+</div>
 
-  <script type="module">
-    const form = document.querySelector('#form-contacto');
-  
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault(); // Evita que recargue la página
-  
-      const nombre = form.nom.value;
-      const correo = form.correu.value;
-      const mensaje = form.missatge.value;
-  
-      try {
-        const res = await fetch('http://localhost:8000/wp-json/wp/v2/enviar-correo', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+<RRSS />
+
+<script type="module">
+  const form = document.querySelector("#form-contacto");
+  const messageElement = document.querySelector("#form-message");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // Evita que recargue la página
+
+    const nombre = form.nom.value;
+    const correo = form.correu.value;
+    const mensaje = form.missatge.value;
+
+    try {
+      const res = await fetch(
+        "http://localhost:8000/wp-json/wp/v2/enviar-correo",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ nombre, correo, mensaje }),
-        });
-  
-        const data = await res.json();
-  
-        if (res.ok && data.success) {
-          alert('¡Mensaje enviado correctamente!');
-          form.reset();
-        } else {
-          alert('Ocurrió un error al enviar el mensaje. Intenta de nuevo.');
         }
-      } catch (err) {
-        console.error(err);
-        alert('Error al conectar con el servidor.');
+      );
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        // Mostrar mensaje de éxito
+        messageElement.textContent = "¡Mensaje enviado correctamente!";
+        messageElement.className = "text-green-600 mt-2";
+        messageElement.classList.remove("hidden");
+        form.reset();
+      } else {
+        // Mostrar mensaje de error
+        messageElement.textContent =
+          "Ocurrió un error al enviar el mensaje. Intenta de nuevo.";
+        messageElement.className = "text-red-600 mt-2";
+        messageElement.classList.remove("hidden");
       }
-    });
-  </script>
+    } catch (err) {
+      console.error(err);
+      // Mostrar mensaje de error de conexión
+      messageElement.textContent = "Error al conectar con el servidor.";
+      messageElement.className = "text-red-600 mt-2";
+      messageElement.classList.remove("hidden");
+    }
+  });
+</script>
