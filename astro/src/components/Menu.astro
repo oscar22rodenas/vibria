@@ -74,42 +74,38 @@ const sectionsToRender =
 </div>
 
 <script>
-  // Función para mostrar/ocultar el menú de navegación
-  function toggleMenu() {
+  function initMenu() {
+    const toggleBtn = document.querySelector("#menu-toggle");
     const menu = document.querySelector("#menu");
     const menuIcon = document.querySelector("#menu-icon");
     const closeIcon = document.querySelector("#close-icon");
+    toggleBtn?.addEventListener("click", () => {
+      menu?.classList.toggle("translate-y-0");
+      menu?.classList.toggle("opacity-100");
+      menu?.classList.toggle("visible");
+      menu?.classList.toggle("-translate-y-5");
+      menu?.classList.toggle("opacity-0");
+      menu?.classList.toggle("invisible");
+      menuIcon?.classList.toggle("hidden");
+      closeIcon?.classList.toggle("hidden");
+      document.body.classList.toggle("overflow-hidden");
+    });
 
-    menu?.classList.toggle("translate-y-0");
-    menu?.classList.toggle("opacity-100");
-    menu?.classList.toggle("visible");
-    menu?.classList.toggle("-translate-y-5");
-    menu?.classList.toggle("opacity-0");
-    menu?.classList.toggle("invisible");
-    menuIcon?.classList.toggle("hidden");
-    closeIcon?.classList.toggle("hidden");
-    document.body.classList.toggle("overflow-hidden");
+    document.querySelectorAll(".accordion-header").forEach((header) => {
+      header.addEventListener("click", () => {
+        const content = header.nextElementSibling;
+        const icon = header.querySelector(".accordion-icon");
+        content?.classList.toggle("max-h-[500px]");
+        content?.classList.toggle("py-2");
+        const isOpen = icon?.getAttribute("data-open") === "true";
+        if (icon) {
+          icon.src = isOpen ? "/images/flecha-abajo.png" : "/images/flecha-arriba.png";
+          icon.setAttribute("data-open", isOpen ? "false" : "true");
+        }
+      });
+    });
   }
 
-  // Función para mostrar/ocultar el contenido del acordeón al hacer clic en el encabezado
-  function toggleAccordion(header) {
-    const content = header.nextElementSibling;
-    const icon = header.querySelector(".accordion-icon");
-
-    content?.classList.toggle("max-h-[500px]");
-    content?.classList.toggle("py-2");
-
-    const isOpen = icon?.getAttribute("data-open") === "true";
-    if (icon) {
-      icon.src = isOpen
-        ? "/images/flecha-abajo.png"
-        : "/images/flecha-arriba.png";
-      icon.setAttribute("data-open", isOpen ? "false" : "true");
-    }
-  }
-
-  document.querySelector("#menu-toggle")?.addEventListener("click", toggleMenu);
-  document.querySelectorAll(".accordion-header").forEach((header) => {
-    header.addEventListener("click", () => toggleAccordion(header));
-  });
+  window.addEventListener("DOMContentLoaded", initMenu);
+  document.addEventListener("astro:page-load", initMenu);
 </script>

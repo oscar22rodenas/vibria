@@ -35,17 +35,22 @@ const getLangUrl = (newLang) => {
 </div>
 <!-- Script para abrir/cerrar el menú -->
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const toggleButton = document.getElementById("toggle-lang");
-    const menu = document.getElementById("lang-menu");
-    toggleButton.addEventListener("click", function (event) {
-      event.stopPropagation(); 
-      menu.classList.toggle("hidden");
+  function initLangSwitcher() {
+    const toggleButton = document.querySelector("#toggle-lang");
+    const menu = document.querySelector("#lang-menu");
+
+    toggleButton?.addEventListener("click", function (event) {
+      event.stopPropagation();
+      menu?.classList.toggle("hidden");
     });
+
     document.addEventListener("click", function (event) {
       if (!toggleButton.contains(event.target) && !menu.contains(event.target)) {
-        menu.classList.add("hidden");
+        menu?.classList.add("hidden");
       }
     });
-  });
+  }
+
+  window.addEventListener("DOMContentLoaded", initLangSwitcher);
+  document.addEventListener("astro:page-load", initLangSwitcher);
 </script>
