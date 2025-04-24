@@ -102,10 +102,9 @@ const sectionsToRender =
           icon.src = isOpen ? "/images/flecha-abajo.png" : "/images/flecha-arriba.png";
           icon.setAttribute("data-open", isOpen ? "false" : "true");
         }
-      });
+      }); 
     });
   }
 
   window.addEventListener("DOMContentLoaded", initMenu);
-  document.addEventListener("astro:page-load", initMenu);
 </script>
