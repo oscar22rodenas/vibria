@@ -6,6 +6,7 @@ import { getPostsInfo } from "./getPostsInfo.js";
 import { getPageById } from "./getPageById.js";
 import { getOfertesInfo } from "./getOfertesInfo.js";
 import { getOfertaDetalladaInfo } from "./getOfertaDetalladaInfo.js";
+import { getExperienciesInfo } from "./getExperienciesInfo.js";
 
-export { getImageInfo, getSlidesInfo, getRRSSInfo, getCategoriesInfo, getPostsInfo, getPageById, getOfertesInfo, getOfertaDetalladaInfo };
+export { getImageInfo, getSlidesInfo, getRRSSInfo, getCategoriesInfo, getPostsInfo, getPageById, getOfertesInfo, getOfertaDetalladaInfo, getExperienciesInfo };
 
