@@ -1,0 +1,16 @@
+---
+import { Picture } from 'astro:assets';
+import { getRRSSInfo } from "@wp/index.js";
+
+const redes_sociales = await getRRSSInfo();
+---
+
+<div class="flex flex-row justify-evenly items-center bg-primary p-2" >
+    {
+    redes_sociales.map((red_social) => (
+        <a href={red_social.link}>
+            <Picture formats={['webp', 'avif', 'jpeg']} src={red_social.imageUrl} alt={red_social.imageAlt} width="30" height="30" />
+        </a>
+    ))
+    }
+</div>

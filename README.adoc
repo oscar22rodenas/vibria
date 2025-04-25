@@ -3,12 +3,8 @@ En aquest projecte es farà una pàgina web per l'empresa de la Víbria.
 ==== Membres del grup
 El nostre grup està compost per: Adrian Bernabeu, Brian Tobias Arrua, Oscar Rodenas.
 
-// === IPs SERVERS AWS
-// Màquina Producció: Brian Tobias Arrua Dominguez IP elastica en producciò 67.202.46.67.
-
-// Màquina Develop: Carlo Torres Roca.
-
-// Màquines de Proves: Manuel Ordoñez Gomez i Adrián Bernabeu 
+=== IPS SERVERS AWS
+Màquina Producció: Brian Tobias Arrua Dominguez IP elastica en producciò 18.211.164.146.
 
 // === DNS del domini
 

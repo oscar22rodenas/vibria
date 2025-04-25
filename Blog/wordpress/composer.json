@@ -10,7 +10,9 @@
       "wpackagist-plugin/polylang": "*",
       "wpackagist-plugin/advanced-custom-fields": "*",
       "wpackagist-plugin/custom-post-order-category": "*",
-      "wpackagist-plugin/custom-post-type-ui": "*"
+      "wpackagist-plugin/custom-post-type-ui": "*",
+      "wpackagist-plugin/code-snippets": "*",
+      "wpackagist-plugin/wp-mail-smtp": "*"
     },
     "repositories": [
       {

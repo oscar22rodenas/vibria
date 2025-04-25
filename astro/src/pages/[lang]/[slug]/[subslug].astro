@@ -1,0 +1,47 @@
+---
+import { extractLang } from "@wp/extractLang.js";
+import { apiURL } from "@wp/config.js";
+
+
+import Layout from "@layouts/Layout.astro";
+import OfertaDetallada from "@components/pages/OfertaDetallada.astro";
+
+
+
+export async function getStaticPaths() {
+    const languages = ["ca", "es", "en"]; // Idiomas soportados
+
+    const pagesRes = await fetch(`${apiURL}/pages?_fields=acf,slug,content.rendered&per_page=100`);
+    const pages = await pagesRes.json();
+    
+    let paths: { params: { lang: string; slug: string; subslug: string}; props: { acf: any, content: string } }[] = [];
+
+    pages.forEach((page: { slug: string; acf: any }) => {
+        const extracted = extractLang(page.slug);
+        
+        if (extracted && languages.includes(extracted.lang) && page.acf.categoria) {
+            paths.push({
+                params: { lang: extracted.lang, slug: page.acf.categoria, subslug: extracted.baseSlug },
+                props: { acf: page.acf, content: page.content.rendered },
+            });
+        }
+    });
+    
+    return paths;
+}
+
+const { acf, content }   = Astro.props;
+
+let PageComponent;
+
+switch (Astro.params.subslug) {
+    case "oferta-italia":
+        PageComponent = OfertaDetallada;
+        break;
+    default :
+        break;
+}
+---
+<Layout>
+    {PageComponent ? <PageComponent data={{ acf, content }} /> : <div>Page not found</div>}
+</Layout>
