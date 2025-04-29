@@ -4,7 +4,7 @@ import { getPageById } from "./getPageById.js";
 
 export const getExperienciesInfo = async (lang) => {
   try {
-    const response = await fetch(`${apiURL}/experiencies?order=asc&_fields=acf,slug`);
+    const response = await fetch(`${apiURL}/experiencies-ve?order=asc&_fields=acf,slug`);
     if (!response.ok) {
       throw new Error("Error al obtener los experiencies");
     }
