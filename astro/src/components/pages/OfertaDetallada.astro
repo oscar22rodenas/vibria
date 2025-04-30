@@ -27,7 +27,7 @@ const oferta = await getOfertaDetalladaInfo(lang, slugCompleto);
         <span class="text-black font-600">{oferta.fechas}</span>
     </div>
 
-    <div class="content" set:html={oferta.content}></div>
+    <div class="oferta-content" set:html={oferta.content}></div>
 
     <div class="flex items-center justify-center mt-4">
         <a href={oferta.buttonUrl} class="bg-red text-white font-700 py-1 px-2 before:text-center rounded-3xl shadow-[0_2px_4px_0_px_rgba(0,0,0,0.25)]">
