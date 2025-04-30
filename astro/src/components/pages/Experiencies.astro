@@ -1,7 +1,77 @@
 ---
+import { Picture } from "astro:assets";
+import { getExperienciesInfo } from "@wp/index.js";
 import CategoryNav from "@components/CategoryNav.astro";
 
 const { lang, slug } = Astro.params;
+
+const experiencies = await getExperienciesInfo(lang);
+
+const pin = Astro.url.searchParams.get("pin");
+
+// Filtrar las experiencias según el pin (si existe)
+const filteredExperiencies = pin
+  ? experiencies.filter((e) =>
+      e.pinVoluntariat === pin || e.pinPais === pin
+    )
+  : experiencies;
 ---
 
 <CategoryNav lang={lang} slug={slug} />
+
+<div class="bg-gray-100 p-6">
+  {
+    filteredExperiencies.map((experiencia) => (
+      <div id="card" class="flex flex-col justify-center items-center gap-2 pb-2 mb-5 bg-gray-100 shadow-[0_4px_4px_rgba(0,0,0,0.25)]" data-voluntariat={experiencia.pinVoluntariat} data-pais={experiencia.pinPais}>
+        <a href={experiencia.link} class="pt-1  px-4">
+          <h4 class="text-h4 font-700 text-red text-center px-2">
+            {experiencia.title}
+          </h4>
+          <Picture
+            formats={["webp", "avif", "jpeg"]}
+            src={experiencia.imageUrl}
+            alt={experiencia.imageAlt}
+            width="320"
+            height="126"
+          />
+
+          <p class="text-sm text-black font-400 text-center">
+            {experiencia.text}
+          </p>
+        </a>
+        <div class="flex flex-row items-center justify-center gap-2 w-full">
+          <a
+            href={`/${lang}/${slug}?pin=${experiencia.pinVoluntariat}`}
+            class="bg-red text-xs text-white font-700 py-0.5 px-2 rounded-3xl"
+          >
+            {experiencia.pinVoluntariat}
+          </a>
+          <a
+            href={`/${lang}/${slug}?pin=${experiencia.pinPais}`}
+            class="bg-red text-xs text-white font-700 py-0.5 px-2 rounded-3xl"
+          >
+            {experiencia.pinPais}
+          </a>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<script is:inline>
+  const params = new URLSearchParams(window.location.search);
+  const pin = params.get("pin")?.toLowerCase();
+
+  if (pin) {
+    const cards = document.querySelectorAll("#card");
+
+    cards.forEach(card => {
+      const voluntariat = card.dataset.voluntariat?.toLowerCase();
+      const pais = card.dataset.pais?.toLowerCase();
+      const match = voluntariat === pin || pais === pin;
+
+      card.style.display = match ? "block" : "none";
+    });
+  }
+</script>
+

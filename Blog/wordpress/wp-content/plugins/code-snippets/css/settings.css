@@ -1,0 +1,230 @@
+@import '~codemirror-colorpicker/dist/codemirror-colorpicker.css';
+.CodeMirror {
+  border: 1px solid #dfdfdf;
+  border-radius: 3px;
+  height: auto !important;
+  background-color: #fff;
+}
+
+.CodeMirror-code {
+  outline: none;
+}
+
+.CodeMirror-focused .cm-matchhighlight {
+  color: white !important;
+  outline: 1px solid green;
+}
+
+/* Add a bit of extra space above the editor */
+.CodeMirror-sizer::before, .CodeMirror-sizer::after {
+  display: block;
+  color: #bbb;
+}
+.CodeMirror-sizer::before {
+  content: "";
+  padding-bottom: 5px;
+}
+
+/* Fix cursor color with rubyblue theme (see https://goo.gl/3HDgRm */
+.cm-s-rubyblue .CodeMirror-cursor {
+  border-left: 1px solid white !important;
+}
+
+[class*=CodeMirror-lint-marker], [class*=CodeMirror-lint-message], .CodeMirror-lint-marker-multiple {
+  background-image: none;
+}
+
+.CodeMirror-lint-marker-error, .CodeMirror-lint-marker-warning {
+  cursor: help;
+}
+
+.CodeMirror-lint-marker-multiple {
+  position: absolute;
+  top: 0;
+}
+
+[class*=CodeMirror-lint-marker]:before {
+  font: normal 18px/1 dashicons;
+  position: relative;
+  top: -2px;
+}
+
+[class*=CodeMirror-lint-message]:before {
+  font: normal 16px/1 dashicons;
+  left: 16px;
+  position: absolute;
+}
+
+.CodeMirror-lint-message-error,
+.CodeMirror-lint-message-warning {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  margin: 5px 0 2px;
+  padding: 3px 12px 3px 28px;
+}
+
+.CodeMirror-lint-message-warning {
+  background-color: #fff8e5;
+  border-left: 4px solid #ffb900;
+}
+
+.CodeMirror-lint-marker-warning::before, .CodeMirror-lint-message-warning::before {
+  content: "\f534";
+  color: #f6a306;
+}
+
+.CodeMirror-lint-message-error {
+  background-color: #fbeaea;
+  border-left: 4px solid #dc3232;
+}
+
+.CodeMirror-lint-marker-error::before, .CodeMirror-lint-message-error::before {
+  content: "\f153";
+  color: #dc3232;
+}
+
+.CodeMirror-lint-tooltip {
+  background: none;
+  border: none;
+  border-radius: 0;
+  direction: ltr;
+}
+
+.CodeMirror .CodeMirror-matchingbracket {
+  background: rgba(255, 150, 0, 0.3);
+  color: inherit;
+}
+
+.CodeMirror .CodeMirror-linenumber {
+  color: #666;
+}
+
+.CodeMirror-foldmarker {
+  color: inherit;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  font-weight: bold;
+}
+
+p.submit {
+  display: flex;
+  justify-content: space-between;
+}
+
+.settings-section,
+p.submit {
+  max-width: 1020px;
+}
+
+.nav-tab-wrapper {
+  margin-bottom: 1em;
+}
+
+input[type=number] {
+  width: 4em;
+}
+
+.CodeMirror {
+  max-width: 800px;
+  width: 100%;
+  padding-right: 1em;
+}
+
+.CodeMirror-sizer::before {
+  content: "<?php";
+}
+
+body.no-js .nav-tab-wrapper {
+  display: none;
+}
+body.no-js .settings-section {
+  display: block !important;
+}
+
+body.js .settings-section-title {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+body.js .nav-tab:not(.nav-tab-active) {
+  cursor: pointer;
+}
+body.js .settings-section {
+  display: none;
+}
+body.js .wrap[data-active-tab=general] .general-settings {
+  display: block;
+}
+body.js .wrap[data-active-tab=editor] .editor-settings {
+  display: block;
+}
+body.js .wrap[data-active-tab=debug] .debug-settings {
+  display: block;
+}
+
+.license-status {
+  display: inline-block;
+  padding-right: 2em;
+  line-height: 2;
+  color: #aaa;
+}
+
+.license-status-valid {
+  color: #2ecc40;
+}
+
+.license-status-expired {
+  color: #dc3232;
+}
+
+.wrap[data-active-tab=license] .submit {
+  display: none;
+}
+
+#code_snippets_remove_license {
+  color: #b32d2e;
+  border-color: #b32d2e;
+}
+
+#code_snippets_license_key {
+  font-family: Consolas, Monaco, monospace;
+}
+
+#cloud_token {
+  max-width: 450px;
+  width: 90vw;
+}
+
+.cloud-message {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.cloud-error {
+  background: #e53935;
+  color: #ffebee;
+}
+
+.cloud-success {
+  background: #43a047;
+  color: #e8f5e9;
+}
+
+.refresh-success {
+  background: #2271b1;
+  color: #ffeb3b;
+}
+
+.cloud-settings tbody tr:nth-child(n+5) {
+  display: none;
+}/*# sourceMappingURL=settings.css.map */
