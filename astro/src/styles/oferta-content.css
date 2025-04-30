@@ -1,58 +1,58 @@
-.content {
-    font-size: 0.875rem;
-    line-height: 1.5;
-  }
-  
-  .content h2 {
-    color: #D3133A;
-    font-weight: 600;
-    font-size: 1rem;
-    margin-top: 0.5rem;
-  }
-  .content p {
-    margin-bottom: 0.5rem;
-    font-weight: 400;
-  }
+.oferta-content {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
 
-  .content hr {
-    border: 0.5px solid #00000040
-  }
-  
-  .content ul {
-    list-style: disc;
-    padding-left: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .content li {
-    margin-bottom: 0.25rem;
-  }
-  
-  .content strong {
-    font-weight: 700;
-  }
+.oferta-content h2 {
+  color: #D3133A;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
 
-  .content div{
-    background-color: #EAEAEA;
-    padding: 10px;
-    border: 0.5px solid #D3133A;
-    border-radius: 5px;
-    margin-top: 30px;
-  }
+.oferta-content p {
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
 
-  .content div h2 {
-    text-align: center;
-    margin-top: 0;
-    font-weight: 600;
-  }
+.oferta-content hr {
+  border: 0.5px solid #00000040
+}
 
-  .content div ol {
-    list-style: decimal;
-    margin: 0 20px;
-  }
+.oferta-content ul {
+  list-style: disc;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+}
 
-  .content div ol li {
-    line-height: normal;
-    font-weight: 400;
-  }
-  
+.oferta-content li {
+  margin-bottom: 0.25rem;
+}
+
+.oferta-content strong {
+  font-weight: 700;
+}
+
+.oferta-content div {
+  background-color: #EAEAEA;
+  padding: 10px;
+  border: 0.5px solid #D3133A;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+.oferta-content div h2 {
+  text-align: center;
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.oferta-content div ol {
+  list-style: decimal;
+  margin: 0 20px;
+}
+
+.oferta-content div ol li {
+  line-height: normal;
+  font-weight: 400;
+}
