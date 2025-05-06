@@ -23,7 +23,7 @@ module.exports = {
           h3: ["20px", { lineHeight: "18px" }], // Cambia a 24px si ocupa dos líneas
           h4: ["17px", { lineHeight: "30px" }], // Algunos tienen 18px
           p: ["15px", { lineHeight: "18px" }],
-          copyright: ["8px", { lineHeight: "18px" }],
+          copyright: ["8px", { lineHeight: "10px" }],
           button: ["20px", { lineHeight: "30px", textTransform: "uppercase" }],
         },
         fontWeight: {
