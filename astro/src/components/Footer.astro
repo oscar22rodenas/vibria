@@ -1,18 +1,13 @@
 ---
-import { Picture } from 'astro:assets';
-import { getPostsInfo, getImageInfo } from '@wp/index.js';
-
+import { Picture } from "astro:assets";
+import { getPostsInfo, getImageInfo } from "@wp/index.js";
 
 const acf = await getPostsInfo("footer");
 
-const imageIds = [
-  acf.ubicacion_imagen,
-  acf.telefono_imagen,
-  acf.correo_imagen
-];
+const imageIds = [acf.ubicacion_imagen, acf.telefono_imagen, acf.correo_imagen];
 
 // Hacer todas las llamadas de imágenes en paralelo
-const imagesData = await Promise.all(imageIds.map(id => getImageInfo(id)));
+const imagesData = await Promise.all(imageIds.map((id) => getImageInfo(id)));
 
 // Asignar los datos obtenidos
 const [imageDataUbi, imageDataTel, imageDataMail] = imagesData;
@@ -28,24 +23,45 @@ const imageAltMail = imageDataMail?.alt_text || "Logo Vibria";
 ---
 
 <footer class="flex flex-col bg-primary px-12 pt-2 pb-1 gap-2">
-    <div class="flex flex-col items-start justify-between text-center gap-2">
-        <div class="flex flex-row items-center gap-4">
-            <Picture formats={['webp', 'avif', 'jpeg']} src={imageUrlUbi} alt={imageAltUbi} width="20" height="20" />
-            <ul class="list-none text-left">
-                <li class="p">{acf.ubicacion_texto}</li>
-                <li class="p">{acf.ubicacion_lugar_texto}</li>
-                <li class="p">{acf.ubicacion_horario_texto}</li>
-            </ul>
-        </div>
-
-        <div class="flex flex-row items-center gap-4">
-            <Picture formats={['webp', 'avif', 'jpeg']} src={imageUrlTel} alt={imageAltTel} width="20" height="20" />
-            <p class="p">{acf.telefono_texto}</p>
-        </div>
-        <div class="flex flex-row items-center gap-4">
-            <Picture formats={['webp', 'avif', 'jpeg']} src={imageUrlMail} alt={imageAltMail} width="20" height="20" />
-            <p class="p">{acf.correo_texto}</p>
-        </div>
+  <div
+    class="flex flex-col items-start justify-center text-center gap-2 pb-4 md:flex-row-reverse md:gap-32"
+  >
+    <div class="flex flex-row items-center gap-4">
+      <Picture
+        formats={["webp", "avif", "jpeg"]}
+        src={imageUrlUbi}
+        alt={imageAltUbi}
+        width="20"
+        height="20"
+      />
+      <ul class="list-none text-left">
+        <li class="p">{acf.ubicacion_texto}</li>
+        <li class="p">{acf.ubicacion_lugar_texto}</li>
+        <li class="p">{acf.ubicacion_horario_texto}</li>
+      </ul>
     </div>
-    <p class="copyright text-center">{acf.derechos_vibria_texto}</p>
+    <div class="flex flex-col items-start justify-center text-center gap-2 md:flex-col-reverse md:gap-4">
+      <div class="flex flex-row items-center gap-4">
+        <Picture
+          formats={["webp", "avif", "jpeg"]}
+          src={imageUrlTel}
+          alt={imageAltTel}
+          width="20"
+          height="20"
+        />
+        <p class="p">{acf.telefono_texto}</p>
+      </div>
+      <div class="flex flex-row items-center gap-4">
+        <Picture
+          formats={["webp", "avif", "jpeg"]}
+          src={imageUrlMail}
+          alt={imageAltMail}
+          width="20"
+          height="20"
+        />
+        <p class="p">{acf.correo_texto}</p>
+      </div>
+    </div>
+  </div>
+  <p class="copyright text- text-center t">{acf.derechos_vibria_texto}</p>
 </footer>
