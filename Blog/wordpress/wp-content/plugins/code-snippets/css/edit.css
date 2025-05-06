@@ -1,0 +1,674 @@
+@charset "UTF-8";
+@import '~codemirror-colorpicker/dist/codemirror-colorpicker.css';
+.CodeMirror {
+  border: 1px solid #dfdfdf;
+  border-radius: 3px;
+  height: auto !important;
+  background-color: #fff;
+}
+
+.CodeMirror-code {
+  outline: none;
+}
+
+.CodeMirror-focused .cm-matchhighlight {
+  color: white !important;
+  outline: 1px solid green;
+}
+
+/* Add a bit of extra space above the editor */
+.CodeMirror-sizer::before, .CodeMirror-sizer::after {
+  display: block;
+  color: #bbb;
+}
+.CodeMirror-sizer::before {
+  content: "";
+  padding-bottom: 5px;
+}
+
+/* Fix cursor color with rubyblue theme (see https://goo.gl/3HDgRm */
+.cm-s-rubyblue .CodeMirror-cursor {
+  border-left: 1px solid white !important;
+}
+
+[class*=CodeMirror-lint-marker], [class*=CodeMirror-lint-message], .CodeMirror-lint-marker-multiple {
+  background-image: none;
+}
+
+.CodeMirror-lint-marker-error, .CodeMirror-lint-marker-warning {
+  cursor: help;
+}
+
+.CodeMirror-lint-marker-multiple {
+  position: absolute;
+  top: 0;
+}
+
+[class*=CodeMirror-lint-marker]:before {
+  font: normal 18px/1 dashicons;
+  position: relative;
+  top: -2px;
+}
+
+[class*=CodeMirror-lint-message]:before {
+  font: normal 16px/1 dashicons;
+  left: 16px;
+  position: absolute;
+}
+
+.CodeMirror-lint-message-error,
+.CodeMirror-lint-message-warning {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  margin: 5px 0 2px;
+  padding: 3px 12px 3px 28px;
+}
+
+.CodeMirror-lint-message-warning {
+  background-color: #fff8e5;
+  border-left: 4px solid #ffb900;
+}
+
+.CodeMirror-lint-marker-warning::before, .CodeMirror-lint-message-warning::before {
+  content: "\f534";
+  color: #f6a306;
+}
+
+.CodeMirror-lint-message-error {
+  background-color: #fbeaea;
+  border-left: 4px solid #dc3232;
+}
+
+.CodeMirror-lint-marker-error::before, .CodeMirror-lint-message-error::before {
+  content: "\f153";
+  color: #dc3232;
+}
+
+.CodeMirror-lint-tooltip {
+  background: none;
+  border: none;
+  border-radius: 0;
+  direction: ltr;
+}
+
+.CodeMirror .CodeMirror-matchingbracket {
+  background: rgba(255, 150, 0, 0.3);
+  color: inherit;
+}
+
+.CodeMirror .CodeMirror-linenumber {
+  color: #666;
+}
+
+.CodeMirror-foldmarker {
+  color: inherit;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  font-weight: bold;
+}
+
+.nav-tab .badge, .snippet-type-badge, .go-pro-button .badge, .button .badge {
+  font-size: 10px;
+  text-transform: uppercase;
+  border: 1px solid;
+  padding: 1px 2px;
+  border-radius: 5px;
+}
+
+.nav-tab .badge, .button .snippet-type-badge, .go-pro-button .badge,
+h1 .snippet-type-badge, h2 .snippet-type-badge, h3 .snippet-type-badge {
+  /* rtl:ignore */
+  margin-left: 3px;
+}
+
+.button .badge {
+  font-size: 8px;
+  text-transform: lowercase;
+}
+
+.nav-tab span,
+.nav-tab .badge {
+  vertical-align: middle;
+}
+
+.nav-tab[data-snippet-type=php] .badge, .snippet-type-badge[data-snippet-type=php] {
+  color: #0073aa;
+  border-color: currentColor;
+}
+
+.nav-tab-inactive[data-snippet-type=php]:hover .badge {
+  color: #0073aa;
+}
+
+.nav-tab[data-snippet-type=css] .badge, .snippet-type-badge[data-snippet-type=css] {
+  color: #8000ff;
+  border-color: currentColor;
+}
+
+.nav-tab-inactive[data-snippet-type=css]:hover .badge {
+  color: #8000ff;
+}
+
+.nav-tab[data-snippet-type=js] .badge, .snippet-type-badge[data-snippet-type=js] {
+  color: #cd6600;
+  border-color: currentColor;
+}
+
+.nav-tab-inactive[data-snippet-type=js]:hover .badge {
+  color: #cd6600;
+}
+
+.nav-tab[data-snippet-type=html] .badge, .snippet-type-badge[data-snippet-type=html] {
+  color: #548b54;
+  border-color: currentColor;
+}
+
+.nav-tab-inactive[data-snippet-type=html]:hover .badge {
+  color: #548b54;
+}
+
+.nav-tab-button .dashicons-external {
+  font-size: 15px;
+  color: #666;
+  vertical-align: middle;
+}
+
+.nav-tab.nav-tab-inactive {
+  background: transparent;
+  text-shadow: 0 1px 0 #fff;
+}
+.nav-tab.nav-tab-inactive, .nav-tab.nav-tab-inactive .badge {
+  color: #a7aaad;
+}
+.nav-tab.nav-tab-inactive:hover {
+  color: #50575e;
+}
+
+.go-pro-badge, .pro-badge, .core-badge {
+  margin-left: 3px;
+  border: 1px solid currentColor;
+  border-radius: 5px;
+  font-size: 10px;
+  padding: 1px 2px;
+  text-transform: uppercase;
+}
+
+.go-pro-badge, .pro-badge {
+  color: #ce0000;
+}
+
+.core-badge {
+  color: #0073aa;
+}
+
+.go-pro-button .badge, .go-pro-badge {
+  color: #ce0000;
+  border-color: #ce0000;
+  margin-left: 1px;
+}
+
+.wp-core-ui .button.nav-tab-button {
+  margin-left: 0.5em;
+  float: right;
+  color: #a7aaad;
+  background: #f6f7f7;
+  border-color: #f6f7f7;
+}
+.wp-core-ui .button.nav-tab-button:hover {
+  background-color: #fff;
+  color: #3c434a;
+}
+
+.editor-help-tooltip {
+  cursor: help;
+  padding: 0.3em 0.3em 0;
+  display: inline-block;
+  font-size: 10px;
+  background: transparent !important;
+}
+
+.snippet-editor-help {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+.snippet-editor-help:hover .editor-help-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.editor-help-text {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  padding: 5px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 99;
+  top: 125%;
+  right: 0;
+  margin-right: -10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+  font-size: small;
+}
+.editor-help-text::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-right: 10px;
+  border: 5px solid transparent;
+  border-bottom-color: #555;
+}
+.editor-help-text td:first-child {
+  padding-right: 0.5em;
+}
+.editor-help-text .mac-key {
+  display: none;
+}
+.editor-help-text.platform-mac .mac-key {
+  display: inline;
+}
+.editor-help-text.platform-mac .pc-key {
+  display: none;
+}
+
+.CodeMirror-sizer {
+  min-height: 300px !important;
+  box-sizing: border-box;
+  padding-bottom: 1.5em !important;
+}
+.CodeMirror-sizer::after {
+  position: absolute;
+  bottom: 0;
+}
+
+.snippet-scope {
+  display: none;
+}
+.snippet-scope .description {
+  display: block;
+}
+
+.snippet-form.php-snippet .php-scopes-list {
+  display: block;
+}
+.snippet-form.php-snippet .CodeMirror-sizer {
+  padding-bottom: 0 !important;
+}
+.snippet-form.php-snippet .CodeMirror-sizer::before {
+  content: "<?php";
+}
+
+.snippet-form.css-snippet .css-scopes-list {
+  display: block;
+}
+.snippet-form.css-snippet .CodeMirror-sizer::before {
+  content: "<style>";
+}
+.snippet-form.css-snippet .CodeMirror-sizer::after {
+  content: "</style>";
+}
+
+.snippet-form.js-snippet .js-scopes-list {
+  display: block;
+}
+.snippet-form.js-snippet .CodeMirror-sizer::before {
+  content: "<script>";
+}
+.snippet-form.js-snippet .CodeMirror-sizer::after {
+  content: "</script>";
+}
+
+.snippet-form.html-snippet .html-scopes-list {
+  display: block;
+}
+.snippet-form.html-snippet .CodeMirror-sizer::before {
+  content: "<!-- begin content -->";
+}
+.snippet-form.html-snippet .CodeMirror-sizer::after {
+  content: "<!-- end content -->";
+}
+
+/**
+ * Code based on Tagger, copyright (c) 2018-2022 Jakub T. Jankiewicz <https://jcubic.pl/me>.
+ * Released under the MIT license.
+ */
+.tagger {
+  border: 0;
+}
+
+.tagger > ul {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 4px 5px 0;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: auto;
+  flex: 0 0 auto;
+  overflow-y: auto;
+  margin: 0;
+  list-style: none;
+  border: 1px solid #dfdfdf;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.tagger > ul > li {
+  padding-bottom: 0.4rem;
+  margin: 0.4rem 5px 4px;
+}
+.tagger > ul > li:not(.tagger-new) a, .tagger > ul > li:not(.tagger-new) a:visited {
+  text-decoration: none;
+  color: black;
+}
+.tagger > ul > li:not(.tagger-new) > :first-child {
+  padding: 4px 4px 4px 8px;
+  background: #B1C3D7;
+  border: 1px solid #4181ed;
+  border-radius: 3px;
+}
+.tagger > ul > li:not(.tagger-new) > span,
+.tagger > ul > li:not(.tagger-new) > a > span {
+  white-space: nowrap;
+}
+
+.tagger li a.close {
+  padding: 4px;
+  margin-left: 4px;
+}
+.tagger li a.close:hover {
+  color: white;
+}
+
+.tagger .tagger-new {
+  flex-grow: 1;
+  position: relative;
+  min-width: 40px;
+}
+.tagger .tagger-new input {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  width: 100%;
+  padding-left: 0;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.tagger.wrap > ul {
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.tagger-new ul,
+.tagger > ul > li:not(.tagger-new) > a,
+.tagger li:not(.tagger-new) > span {
+  border-radius: 6px;
+  border: 1px solid #cad8f3;
+  background-color: #dee7f8;
+}
+.tagger-new ul:hover,
+.tagger > ul > li:not(.tagger-new) > a:hover,
+.tagger li:not(.tagger-new) > span:hover {
+  background-color: #bbcef1;
+  border-color: #6d95e0;
+}
+
+.tagger-new ul a, .tagger-new ul a:visited,
+.tagger > ul > li:not(.tagger-new) a,
+.tagger > ul > li:not(.tagger-new) a:visited {
+  color: #555;
+  font-size: 1.1em;
+}
+
+.code-snippets-upgrade-dialog .logo {
+  font-size: 25px;
+  display: grid;
+  gap: 0.2em;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+  color: #3f444b;
+}
+.code-snippets-upgrade-dialog .logo img {
+  height: 50px;
+}
+.code-snippets-upgrade-dialog p {
+  text-align: left;
+}
+.code-snippets-upgrade-dialog ul {
+  list-style: none;
+}
+.code-snippets-upgrade-dialog ul li:before {
+  content: "✓ ";
+  margin-left: 1em;
+  color: #2ecc40;
+}
+.code-snippets-upgrade-dialog .components-modal__content {
+  margin-top: 0;
+  padding: 32px;
+}
+.code-snippets-upgrade-dialog .upgrade-plans {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 2em 0;
+}
+.code-snippets-upgrade-dialog .action-buttons {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 0;
+}
+.code-snippets-upgrade-dialog .current-plan-cost {
+  font-size: 1rem;
+}
+.code-snippets-upgrade-dialog .button .dashicons,
+.code-snippets-upgrade-dialog .button svg {
+  vertical-align: middle;
+  margin-left: 1ch;
+}
+.code-snippets-upgrade-dialog .components-external-link.button {
+  text-decoration: none;
+}
+
+.cloud-create-modal .components-modal__content {
+  min-width: 550px;
+}
+.cloud-create-modal .action-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+.cloud-create-modal .components-button.is-secondary {
+  box-shadow: none;
+}
+.cloud-create-modal .notice {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.generate-button {
+  float: right;
+  display: flex;
+  align-items: center;
+}
+.generate-button .dashicons-warning {
+  color: #b32d2e;
+  margin-right: 11px;
+}
+
+.code-line-explanation {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  margin: 0;
+  padding: 0 8px;
+  background-color: #fff;
+  border: 1px solid #bbb;
+  border-left: 0;
+  border-right: 0;
+  color: #666;
+  font-style: italic;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+}
+.code-line-explanation img {
+  height: 1rem;
+  padding-right: 5px;
+}
+
+.cloud-connect-modal .icons-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cloud-connect-modal .icons-group .dashicons {
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+}
+.cloud-connect-modal .action-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/**
+ * Custom styling for the single snippet admin page
+ */
+.form-table th {
+  width: auto;
+}
+
+.notice.error blockquote {
+  margin-bottom: 0;
+}
+
+h2 {
+  /* Provide some decent space between the fields and titles. */
+  margin: 25px 0 15px;
+}
+h2 label {
+  cursor: auto;
+}
+
+h2:first-of-type, .submit-inline {
+  margin: 20px 0 10px;
+}
+
+.saved-snippet.inactive-snippet #title, .saved-snippet.active-snippet #title {
+  border-left-width: 4px;
+}
+.saved-snippet.active-snippet #title {
+  border-left-color: #46b450;
+}
+.saved-snippet.inactive-snippet #title {
+  border-left-color: #bbb;
+}
+.saved-snippet.erroneous-snippet #title {
+  border-left-color: #dc3232;
+}
+
+#snippet-form {
+  margin-top: 10px;
+}
+#snippet-form #snippet-tags, #snippet-form textarea {
+  width: 100%;
+  font-family: monospace;
+}
+
+/* Position the description heading on the same level as the editor buttons */
+label[for=snippet_description] h3 div {
+  position: absolute;
+}
+
+/* Add spacing in between the action buttons */
+.button + .button,
+.generate-button + .button {
+  margin-left: 0.5em;
+}
+
+h2 .button {
+  font-weight: normal;
+}
+
+.button svg {
+  height: 1rem;
+  vertical-align: middle;
+  line-height: 1;
+  margin: -2px 3px 0 0;
+}
+
+.submit, .submit-inline {
+  display: flex;
+}
+
+.submit-inline {
+  float: right;
+  margin-bottom: 0;
+}
+
+p.snippet-scope, .snippet-scope p {
+  margin-top: 15px;
+}
+
+.snippet-description-container {
+  margin-top: 25px;
+}
+.snippet-description-container .wp-editor-tools {
+  padding-top: 5px;
+}
+.snippet-description-container .wp-editor-tabs {
+  float: left;
+}
+
+.snippet-scope label,
+.html-shortcode-options strong {
+  display: inline-block;
+  margin-right: 1.5em;
+}
+
+.below-snippet-editor {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-top: 1px;
+}
+
+.snippet-priority label {
+  font-weight: bold;
+  cursor: help;
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+.snippet-priority input {
+  width: 4em;
+}
+
+.snippet-editor {
+  position: relative;
+}
+
+.CodeMirror {
+  width: 100%;
+}
+
+.wrap h2.nav-tab-wrapper {
+  border-bottom: none;
+}
+
+.code-snippets-copy-text {
+  color: inherit;
+}
+
+.wrap .notice {
+  scroll-margin: 0.75em;
+}
+
+#edit-snippet-form-container .cs-sticky-notice {
+  position: sticky;
+  top: 40px;
+  z-index: 100;
+}/*# sourceMappingURL=edit.css.map */
