@@ -4,34 +4,57 @@ import { getOfertaDetalladaInfo } from "@wp/index.js";
 import CategoryNav from "@components/CategoryNav.astro";
 import "@styles/oferta-content.css";
 
-
 const { lang, slug, subslug } = Astro.params;
 const slugCompleto = `${subslug}-${lang}`;
 
 const oferta = await getOfertaDetalladaInfo(slugCompleto);
-
 ---
+
 <CategoryNav lang={lang} slug={slug} />
 
-<article class="max-w-lg mx-auto bg-white p-4 space-y-4">
-    <h1 class="text-2xl font-700 text-center">{oferta.title}</h1>
-    <Picture formats={['webp', 'avif', 'jpeg']} src={oferta.imageUrl} alt={oferta.imageAlt} width="300" height="118" class="mx-auto"/>
+<article class="mx-auto bg-white p-4 space-y-4 md:px-12 lg:px-16 xl:px-20">
+  <h1 class="text-2xl font-700 text-center md:text-3xl">{oferta.title}</h1>
+
+  <div class="md:columns-2 md:gap-8">
+    <Picture
+      formats={["webp", "avif", "jpeg"]}
+      src={oferta.imageUrl}
+      alt={oferta.imageAlt}
+      width="300"
+      height="118"
+      class="mx-auto"
+    />
 
     <div class="flex items-center gap-2 text-sm mt-2">
-        <Picture formats={['webp', 'avif', 'jpeg']} src="/icons/Ubicacion_Rojo.png" alt="Ubicacion Icon" width="24" height="24"/>
-        <span class="text-black font-600">{oferta.ubicacion}</span>
+      <Picture
+        formats={["webp", "avif", "jpeg"]}
+        src="/icons/Ubicacion_Rojo.png"
+        alt="Ubicacion Icon"
+        width="24"
+        height="24"
+      />
+      <span class="text-black font-600">{oferta.ubicacion}</span>
     </div>
 
     <div class="flex items-center gap-2 text-sm">
-        <Picture formats={['webp', 'avif', 'jpeg']} src="/icons/Reloj_Arena_Rojo.png" alt="Tiempo Icon" width="24" height="24"/>
-        <span class="text-black font-600">{oferta.fechas}</span>
+      <Picture
+        formats={["webp", "avif", "jpeg"]}
+        src="/icons/Reloj_Arena_Rojo.png"
+        alt="Tiempo Icon"
+        width="24"
+        height="24"
+      />
+      <span class="text-black font-600">{oferta.fechas}</span>
     </div>
 
-    <div class="oferta-content" set:html={oferta.content}></div>
-
-    <div class="flex items-center justify-center mt-4">
-        <a href={oferta.buttonUrl} class="bg-red text-white font-700 py-1 px-2 before:text-center rounded-3xl shadow-[0_2px_4px_0_px_rgba(0,0,0,0.25)]">
-           {oferta.buttonText}
-        </a>
-    </div>
+    <div class="oferta-content" set:html={oferta.content} />
+  </div>
+  <div class="flex items-center justify-center mt-4">
+    <a
+      href={oferta.buttonUrl}
+      class="bg-red text-white font-700 py-1 px-2 before:text-center rounded-3xl shadow-[0_2px_4px_0_px_rgba(0,0,0,0.25)]"
+    >
+      {oferta.buttonText}
+    </a>
+  </div>
 </article>

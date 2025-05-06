@@ -5,13 +5,14 @@ import { apiURL } from "@wp/config.js";
 
 import Layout from "@layouts/Layout.astro";
 import OfertaDetallada from "@components/pages/OfertaDetallada.astro";
+import ExperienciaDetallada from "@components/pages/ExperienciaDetallada.astro";
 
 
 
 export async function getStaticPaths() {
     const languages = ["ca", "es", "en"]; // Idiomas soportados
 
-    const pagesRes = await fetch(`${apiURL}/pages?slug=oferta-italia-ca&_fields=acf,slug,content.rendered&per_page=100`);
+    const pagesRes = await fetch(`${apiURL}/pages?slug=oferta-italia-ca, voluntariat-claudia-bulgaria-ca&_fields=acf,slug,content.rendered&per_page=100`);
     const pages = await pagesRes.json();
     
     let paths: { params: { lang: string; slug: string; subslug: string}; props: { acf: any, content: string } }[] = [];
@@ -30,13 +31,16 @@ export async function getStaticPaths() {
     return paths;
 }
 
-const { acf, content }   = Astro.props;
+const { acf, content } = Astro.props;
 
 let PageComponent;
 
-switch (Astro.params.subslug) {
-    case "oferta-italia":
+switch (Astro.params.slug) {
+    case "ofertes":
         PageComponent = OfertaDetallada;
+        break;
+    case "experiencies":
+        PageComponent = ExperienciaDetallada;
         break;
     default :
         break;
