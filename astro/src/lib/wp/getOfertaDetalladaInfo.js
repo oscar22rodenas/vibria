@@ -2,7 +2,7 @@ import { apiURL } from "./config.js";
 import { getImageInfo } from "./getImageInfo.js";
 import { getPageById } from "./getPageById.js";
 
-export const getOfertaDetalladaInfo = async (lang, slug) => {
+export const getOfertaDetalladaInfo = async (slug) => {
   try {
     const responseOferta = await fetch(`${apiURL}/ofertes?slug=${slug}&_fields=acf`);
     if (!responseOferta.ok) {
