@@ -6,18 +6,18 @@ import "@styles/experiencia-content.css";
 const { lang, slug, subslug } = Astro.params;
 const slugCompleto = `${subslug}-${lang}`;
 
-const oferta = await getExperienciaDetalladaInfo(lang, slugCompleto);
+const experiencia = await getExperienciaDetalladaInfo(slugCompleto);
 
 ---
 <CategoryNav lang={lang} slug={slug} />
 
 <article class="max-w-lg mx-auto bg-white p-4 space-y-4">
     
-    <div class="experiencia-content" set:html={oferta.content}></div>
+    <div class="experiencia-content" set:html={experiencia.content}></div>
 
     <div class="flex items-center justify-center mt-4">
-        <a href={oferta.buttonUrl} class="bg-red text-white font-700 pb-1 px-2 before:text-center rounded-3xl shadow-[0_2px_4px_0_px_rgba(0,0,0,0.25)]">
-           {oferta.buttonText}
+        <a href={experiencia.buttonUrl} class="bg-red text-white font-700 pb-1 px-2 before:text-center rounded-3xl shadow-[0_2px_4px_0_px_rgba(0,0,0,0.25)]">
+           {experiencia.buttonText}
         </a>
     </div>
 </article>

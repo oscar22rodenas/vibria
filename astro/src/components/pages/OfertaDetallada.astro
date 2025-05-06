@@ -8,7 +8,7 @@ import "@styles/oferta-content.css";
 const { lang, slug, subslug } = Astro.params;
 const slugCompleto = `${subslug}-${lang}`;
 
-const oferta = await getOfertaDetalladaInfo(lang, slugCompleto);
+const oferta = await getOfertaDetalladaInfo(slugCompleto);
 
 ---
 <CategoryNav lang={lang} slug={slug} />

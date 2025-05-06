@@ -1,7 +1,7 @@
 import { apiURL } from "./config.js";
 import { getPageById } from "./getPageById.js";
 
-export const getExperienciaDetalladaInfo = async (lang, slug) => {
+export const getExperienciaDetalladaInfo = async (slug) => {
   try {    
     const responsePage = await fetch(`${apiURL}/pages?slug=${slug}&_fields=acf,content`);
     if (!responsePage.ok) {
