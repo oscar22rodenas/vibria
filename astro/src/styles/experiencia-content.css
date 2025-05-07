@@ -9,11 +9,21 @@
     margin: 0.5rem 0;
     color: black;
     text-align: center;
+
+    @media (min-width: 768px) {
+        font-weight: 800;
+        font-size: 30px;
+        
+    }
 }
 
 .experiencia-content p {
     margin-bottom: 0.75rem;
     font-weight: 400;
+
+    @media (min-width: 768px) {
+        font-size: 1rem;
+    }
 }
 
 .experiencia-content hr {
