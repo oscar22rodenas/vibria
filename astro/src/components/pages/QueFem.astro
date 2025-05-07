@@ -1,7 +1,20 @@
 ---
 import CategoryNav from "@components/CategoryNav.astro";
+import { getQueFemInfo } from "@wp/getQueFemInfo";
 
 const { lang, slug } = Astro.params;
+
+const slugCompleto = `${slug}-${lang}`;
+
+const queFem = await getQueFemInfo(lang, slugCompleto);
+
 ---
 
+
 <CategoryNav lang={lang} slug={slug} />
+
+<article class="max-w-lg mx-auto bg-white p-4 space-y-4">
+    
+  <div class="que-fem-content" set:html={queFem.content}></div>
+
+</article>
