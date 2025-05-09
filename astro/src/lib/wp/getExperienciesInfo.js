@@ -2,13 +2,20 @@ import { apiURL } from "./config.js";
 import { getImageInfo } from "./getImageInfo.js";
 import { getPageById } from "./getPageById.js";
 
-export const getExperienciesInfo = async (lang) => {
+export const getExperienciesInfo = async (lang, slug) => {
   try {
     const response = await fetch(`${apiURL}/experiencies-ve?order=asc&_fields=acf,slug`);
     if (!response.ok) {
       throw new Error("Error al obtener los experiencies");
     }
     const data = await response.json();
+
+    const responsePage = await fetch(`${apiURL}/pages?slug=${slug}&_fields=content`);
+    if (!responsePage.ok) {
+      throw new Error("Error al obtener la página");
+    }
+    const [pageDataInfo] = await responsePage.json();
+
     
     // Filtrar los experiencies según el idioma (usando el slug)
     const experienciesFiltrados = data.filter(experiencia => experiencia.slug.includes(`-${lang}`));
@@ -35,7 +42,8 @@ export const getExperienciesInfo = async (lang) => {
           imageUrl: imageData?.source_url || "",
           imageAlt: imageData?.alt_text || "experiencia image",
           pinVoluntariat: acf.experiencia_pin_voluntariat,
-          pinPais: acf.experiencia_pin_pais
+          pinPais: acf.experiencia_pin_pais,
+          content: pageDataInfo.content.rendered || "",
         };
       })
     );    
