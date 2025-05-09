@@ -1,7 +1,35 @@
 ---
 import CategoryNav from "@components/CategoryNav.astro";
+import { getQuiSomInfo } from "@wp/getQuiSomInfo";
 
 const { lang, slug } = Astro.params;
+
+const slugCompleto = `${slug}-${lang}`;
+
+const data = await getQuiSomInfo(lang, slugCompleto);
+
+const pageContent = data[0]?.pageContent || '';
+
+// Extraemos los elementos del equipo (todos los elementos)
+const teamMembers = data.map(item => item.content).filter(Boolean);
 ---
 
 <CategoryNav lang={lang} slug={slug} />
+
+<article class="max-w-4xl mx-auto bg-white p-4 space-y-8">
+  <!-- Contenido principal de la página -->
+  {pageContent && 
+    <div class="page-content prose max-w-none" set:html={pageContent}></div>
+  }
+
+  <!-- Grid de miembros del equipo -->
+  {teamMembers.length > 0 && (
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      {teamMembers.map((member, index) => (
+        <div key={index} class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <div class="content-item" set:html={member}></div>
+        </div>
+      ))}
+    </div>
+  )}
+</article>

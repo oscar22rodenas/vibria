@@ -5,7 +5,10 @@ import CategoryNav from "@components/CategoryNav.astro";
 
 const { lang, slug } = Astro.params;
 
-const experiencies = await getExperienciesInfo(lang);
+const slugCompleto = `${slug}-${lang}`;
+
+
+const experiencies = await getExperienciesInfo(lang, slugCompleto);
 
 const pin = Astro.url.searchParams.get("pin");
 
@@ -15,10 +18,15 @@ const filteredExperiencies = pin
       e.pinVoluntariat === pin || e.pinPais === pin
     )
   : experiencies;
+
 ---
 
 <CategoryNav lang={lang} slug={slug} />
+<article class="max-w-lg mx-auto bg-white p-4 space-y-4">
+    
+  <div class="experiencies-content" set:html={filteredExperiencies[0]?.content}></div>
 
+</article>
 <div class="bg-gray-100 p-6 grid grid-cols-1 gap-5 md:grid-cols-2 md:px-12 lg:px-16 xl:px-20">
   {
     filteredExperiencies.map((experiencia) => (
