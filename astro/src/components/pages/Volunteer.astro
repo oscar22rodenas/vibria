@@ -1,7 +1,21 @@
 ---
 import CategoryNav from "@components/CategoryNav.astro";
+import { getVolunteerInfo } from "@wp/getVolunteerInfo";
+import "@styles/volunteer-content.css";
+
+
 
 const { lang, slug } = Astro.params;
+
+const slugCompleto = `${slug}-${lang}`;
+
+const volunteer = await getVolunteerInfo(lang, slugCompleto);
 ---
 
 <CategoryNav lang={lang} slug={slug} />
+
+<article class="max-w-4xl mx-auto bg-white p-4 space-y-4">
+    
+  <div class="volunteer-content" set:html={volunteer.content}></div>
+
+</article>

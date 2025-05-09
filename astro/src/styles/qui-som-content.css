@@ -1,0 +1,30 @@
+
+.qui-som-content h2 {
+  font-weight: 700;
+  font-size: 25px;
+  color: rgb(66, 115, 142);
+  margin-bottom: 10px;
+
+  @media (min-width: 768px) {
+      font-weight: 800;
+      font-size: 30px;
+      
+  }
+}
+.qui-som-content h3{
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.qui-som-content strong {
+  font-weight: 700;
+}
+
+.qui-som-content p {
+  margin-bottom: 0.75rem;
+  font-weight: 400;
+
+  @media (min-width: 768px) {
+      font-size: 1rem;
+  }
+}
