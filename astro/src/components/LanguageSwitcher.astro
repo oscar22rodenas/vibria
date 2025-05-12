@@ -46,7 +46,6 @@ const getLangUrl = (newLang : string) => {
       event.stopPropagation();
       menu?.classList.toggle("hidden");
     });
-
     document.addEventListener("click", function (event) {
       if (!toggleButton.contains(event.target) && !menu.contains(event.target)) {
         menu?.classList.add("hidden");

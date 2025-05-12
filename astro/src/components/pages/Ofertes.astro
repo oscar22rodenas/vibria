@@ -10,7 +10,7 @@ const ofertes = await getOfertesInfo(lang);
 ---
 <CategoryNav lang={lang} slug={slug} />
 
-<div class="bg-gray-100 p-6 grid grid-cols-1 gap-5 md:grid-cols-2 md:px-12 lg:px-16 xl:px-20">
+<div class="bg-gray-100 p-6 grid grid-cols-1 gap-5 md:grid-cols-2 md:px-12 lg:ml-[180px] xl:px-20">
   {
     ofertes.map((oferta) => (
 
@@ -26,11 +26,11 @@ const ofertes = await getOfertesInfo(lang);
 
       <div class="flex flex-row items-center justify-between w-full">
         <div class="flex flex-row items-center gap-1">
-          <Picture formats={['webp', 'avif', 'jpeg']} src="/icons/Ubicacion_Negro.png" alt="Ubicacion Icon" width="24" height="24"/>
+          <Picture formats={['webp', 'avif', 'jpeg']} src="/iconos/Ubicacion_Negro.png" alt="Ubicacion Icon" width="24" height="24"/>
           <span class="text-sm text-black font-700">{oferta.ubicacion}</span>
         </div>
         <div class="flex flex-row items-center gap-1">
-          <Picture formats={['webp', 'avif', 'jpeg']} src="/icons/Reloj_Arena_Negro.png" alt="Tiempo Icon" width="24" height="24"/>
+          <Picture formats={['webp', 'avif', 'jpeg']} src="/iconos/Reloj_Arena_Negro.png" alt="Tiempo Icon" width="24" height="24"/>
           <span class="text-sm text-black font-700">{oferta.fechas}</span>
         </div>
       </div>
