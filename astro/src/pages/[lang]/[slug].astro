@@ -32,14 +32,14 @@ import { apiURL } from "@wp/config.js";
 export async function getStaticPaths() {
     const languages = ["ca", "es", "en"]; // Idiomas soportados
 
-    const pagesRes = await fetch(`${apiURL}/pages?slug=experiencies-ca, ofertes-ca, home-ca&_fields=acf,slug&per_page=100`);
+    const pagesRes = await fetch(`${apiURL}/pages?slug=home-ca&_fields=acf,slug&per_page=100`);
     const pages = await pagesRes.json();
     
     let paths: { params: { lang: string; slug: string }; props: { acf: any } }[] = [];
 
     pages.forEach((page: { slug: string; acf: any }) => {
         const extracted = extractLang(page.slug);
-        if (extracted && languages.includes(extracted.lang) && !page.acf.detall_del_padre) {
+        if (extracted && languages.includes(extracted.lang) && !page.acf.categoria) {
             paths.push({
                 params: { lang: extracted.lang, slug: extracted.baseSlug },
                 props: { acf: page.acf },
