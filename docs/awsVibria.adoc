@@ -47,243 +47,367 @@ Ens movem a la carpeta on tenim el fitxer .PEM, i només hem de canviar el nom d
 
 === Instal·lació del web server a AWS EC2
 * 1. Actualitzem el sistema amb la comanda:
+[source, bash]
 ----
-# sudo apt update -y
+sudo apt update -y
 ----
 
+[source, bash]
 ----
-# sudo apt upgrade -y
+sudo apt upgrade -y
 ----
 
 * 2. Instal·lem el servidor web Apache amb la comanda:
+
+[source, bash]
 ----
-# sudo apt install apache2 -y
+sudo apt install apache2 -y
 ----
 
 * 3. Per tal de que el servei apache pugui permetre reescriure les URL, cal activar el mòdul de reescriptura amb la comanda:
+[source, bash]
 ----
-# sudo a2enmod rewrite
+sudo a2enmod rewrite
 ----
 
 * 4. Per tal de que el servei apache s'habiliti automàticament en iniciar el sistema, cal activar el servei amb la comanda:
+
+[source, bash]
 ----
-# sudo systemctl restart apache2
+sudo systemctl restart apache2
 ----
 
-* 5. Creem l'arxiu de configuració de torrenova:
+* 5. Creem l'arxiu de configuració de vibria:
+
+[source, bash]
 ----
-# cd /etc/apache2/sites-available/
-# sudo nano vibria.conf
+cd /etc/apache2/sites-available/
+sudo nano vibria.conf
 ----
 
 * 6. Afegim el següent contingut a l'arxiu de configuració amb el seu directori arrel i els certificats d'SSL:
-
+[source, apache]
 ----
-<VirtualHost *:443>
-    ServerAdmin admin@example.com
-    ServerName astro.example.com
-    DocumentRoot /var/www/html/vibria-brian-oscar-adrian/astro/dist
+<VirtualHost *:80>
+    ServerName wordpress.vibriaoba.store
+    ServerAdmin webmaster@vibriaoba.store
+    DocumentRoot /var/www/html
 
-    SSLEngine on
-    SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
-    SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+    ErrorLog ${APACHE_LOG_DIR}/wordpress_error.log
+    CustomLog ${APACHE_LOG_DIR}/wordpress_access.log combined
 
-    <Directory "/var/www/html/vibria-brian-oscar-adrian/astro/dist">
-        AllowOverride All
-        Require all granted
-        Options Indexes FollowSymLinks MultiViews
-    </Directory>
+    #RewriteEngine On
+    #RewriteCond %{HTTPS} off
+    #RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-    ErrorLog ${APACHE_LOG_DIR}/astro_error.log
-    CustomLog ${APACHE_LOG_DIR}/astro_access.log combined
+   ProxyPreserveHost On
+   ProxyPass / http://localhost:8000/
+   ProxyPassReverse / http://localhost:8000/
+
+
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName vibria.vibriaoba.store
+    DocumentRoot /var/www/html/vibria-brian-oscar-adrian/astro/dist/client/
+    ErrorLog ${APACHE_LOG_DIR}/vibria_error.log
+    CustomLog ${APACHE_LOG_DIR}/vibria_access.log combined
+
+    # Redirige todo a HTTPS
+   # RewriteEngine On
+   # RewriteCond %{HTTPS} off
+   # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </VirtualHost>
 ----
 
+[TIP]
+====
+
+Si voleu podreu separar la part de la víbria (astro) en un servidor i el WordPress a altre servidor només hauríeu de canviar el .env i el Cloudflare para que apunti a la nova IP.
+
+[source, ini]
+----
+WP_DOMAIN="https://El_TEU_DNS"
+----
+
+====
+
+
 * 7. Desabilitem l'arxiu de configuració de 000-default.conf amb la comanda:
+[source, sh]
 ----
-# sudo a2dissite 000-default.conf
-----
-
-* 8. Habilitem l'arxiu de configuració de torrenova.conf amb la comanda:
-----
-# sudo a2ensite vibria.conf
+sudo a2dissite 000-default.conf
 ----
 
-* 9. Activem el mòdul de SSL amb la comanda:
+* 8. Habilitem l'arxiu de configuració de vibria.conf amb la comanda:
+[source, sh]
 ----
-# sudo a2enmod ssl
+sudo a2ensite vibria.conf
+----
+
+* 9. Habilitem el mòdul proxy i proxy_http d’Apache.
+[source, sh]
+----
+sudo a2enmod proxy proxy_http
 ----
 
 * 10. Reiniciem el servei apache amb la comanda:
+[source, sh]
 ----
-# sudo systemctl restart apache2
+sudo systemctl restart apache2
 ----
+
+* 11. Donem els permisos al Directori on posarem el nostre projecte
+[source, sh]
+----
+sudo chown -R www-data:www-data /var/www/html
+sudo chmod -R 755 /var/www/html
+----
+
 
 === Instal·lació de Git a AWS EC2
 * 1. Instal·lem Git amb la comanda:
+[source, sh]
 ----
-# sudo apt install git -y
+sudo apt install git -y
 ----
 
 
 * 2. Clonem el repositori del nostre projecte amb les següents comandes:
-
+[source, sh]
 ----
-# cd /var/www/html/
-# sudo git clone https://gitlab.com/abernabeu1/vibria-brian-oscar-adrian.git
+cd /var/www/html/
+
+sudo git clone https://gitlab.com/abernabeu1/vibria-brian-oscar-adrian.git
 ----
 
 * 3. Un cop hem creat el nostre projecte, canviem l'arxiu .env.example a .env per així configurar l'entorn d'aplicació:
+[source, sh]
 ----
-# cd /var/www/html/vibria-brian-oscar-adrian/astro
-# sudo cp .env.example .env
+cd /var/www/html/vibria-brian-oscar-adrian/astro
+sudo cp .env.example .env
+----
+
+* 4. Ara revisarem el .env i si no té aquesta línia d'aquesta forma ho canviem.
+[source, sh]
+----
+sudo nano .env
+----
+
+[source, ini]
+----
+WP_DOMAIN="https://wordpress.vibriaoba.store"
 ----
 
 === Instal·lació del Docker AWS EC2
 * 1. Primer, amb la següent comanda desinstalem totes les versions antigues de Docker:
+[source, sh]
 ----
-# for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
 ----
 
 Ara si, instal·lem docker
 
 * 2. Actualitzem el sistema amb la comanda:
+[source, sh]
 ----
-# sudo apt update -y
+sudo apt update -y
 ----
 
 * 3. Afegim la clau GPG oficial de Docker:
+[source, sh]
 ----
-# sudo apt install -y ca-certificates curl
-# sudo install -m 0755 -d /etc/apt/keyrings
-# sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-# sudo chmod a+r /etc/apt/keyrings/docker.asc
+sudo apt install -y ca-certificates curl
+
+sudo install -m 0755 -d /etc/apt/keyrings
+
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+
+sudo chmod a+r /etc/apt/keyrings/docker.asc
 ----
 
 * 4. Afegim el repositori a les fonts d'APT:
+[source, sh]
 ----
-# echo \
+echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ----
 
 * 5. Actualitzem el la clau i el repositori
+[source, sh]
 ----
-# sudo apt update
+sudo apt update
 ----
 
 * 6. Instalem el docker
+[source, sh]
 ----
-# sudo apt install -y docker-ce docker-ce-cli containerd.io \
+sudo apt install -y docker-ce docker-ce-cli containerd.io \
 docker-buildx-plugin docker-compose-plugin
 ----
 
-* 7. Puguem el docker amb la BBDD amb la comanda:
+* 7. Creem el grup docker
+[source, sh]
 ----
-# cd /var/www/html/vibria-brian-oscar-adrian/server
-# sudo docker compose up -d
+sudo groupadd docker
 ----
 
-* 8. Creem les dades de la BBDD amb la comanda:
+* 8. Afegim el teu usuari al grup Docker
+[source, sh]
 ----
-sd
+sudo usermod -aG docker $USER
+----
+
+* 9. Apliquem els canvis amb aquesta comanda
+[source, sh]
+----
+newgrp docker
+----
+* 10. Puguem el docker amb la BBDD amb la comanda:
+[source, sh]
+----
+cd /var/www/html/vibria-brian-oscar-adrian/server
+docker compose up -d
 ----
 
 === Afegir la bd al docker
-* 1. Convertir l’arxiu de base de dades a UTF-8
 
-----
-sudo iconv -f UTF-16 -t UTF-8 ../data/backup.sql -o ../data/backup_utf8.sql
-----
-* 2. Copiar l’arxiu de la còpia de seguretat dins del contenidor Docker
-
-----
-sudo docker cp ../data/backup_utf8.sql server-db-1:/backup_utf8.sql
-----
-* 3. Obrir una terminal dins del contenidor de la base de dades
-
-----
-sudo docker exec -it server-db-1 bash
-----
-* 4. Restaurar la base de dades des del backup
-[source, bash]
-----
-mysql --binary-mode=1 -u wordpress -pwordpress wordpress < /backup_utf8.sql
-----
-* 5. Comprovar que la base de dades s'ha importat correctament
-
-----
-sudo docker exec -it server-db-1 mysql -u wordpress -pwordpress -e "SHOW TABLES;" wordpress
-----
-
-* 6. Accedim a la base de dades del wordpress amb la contrassenya "wordpress"
+* 1. Verifiquem la codificació de l'arxiu SQL
 [source, sh]
 ----
-sudo docker exec -it server-db-1 mysql -u wordpress -p
+docker exec -i server-db-1 mysql -u wordpress -pwordpress wordpress < ../data/backup.sql
 ----
 
-* 7. Restaurar la base de dades des del backup
-[source, mysql]
-----
-USE wordpress;
-UPDATE wp_options SET option_value = 'http://TU_IP:8000' WHERE option_name IN ('siteurl', 'home');
-EXIT;
-----
-* 8. Reiniciem
+
+* 2. Actualitzem els URL crítics
 [source, sh]
 ----
-sudo docker restart server-wordpress-1
+docker exec -i server-db-1 mysql -u root -ppassword wordpress <<'EOF'
+SET FOREIGN_KEY_CHECKS=0;
+
+UPDATE wp_options SET 
+  option_value = 'https://wordpress.vibriaoba.store' 
+WHERE option_name IN ('siteurl', 'home');
+
+UPDATE wp_posts SET 
+  guid = REPLACE(guid, 'http://localhost:8000', 'https://wordpress.vibriaoba.store'),
+  post_content = REPLACE(post_content, 'http://localhost:8000', 'https://wordpress.vibriaoba.store');
+
+UPDATE wp_postmeta SET 
+  meta_value = REPLACE(meta_value, 'http://localhost:8000', 'https://wordpress.vibriaoba.store');
+
+SET FOREIGN_KEY_CHECKS=1;
+EOF
 ----
+
+* 3. Verifiquem les taules importades
+[source, sh]
+----
+docker exec -it server-db-1 mysql -u root -ppassword -e "SHOW TABLES;" wordpress
+----
+
+* 4. Verifiquem els URL actualitzats
+[source, sh]
+----
+docker exec -it server-db-1 mysql -u root -ppassword -e "
+  SELECT option_name, option_value 
+  FROM wp_options 
+  WHERE option_name IN ('siteurl', 'home');
+" wordpress
+----
+
+=== 3.6 Instal·lació del Composer a AWS EC2
+* 1. Instal·lació i actualització del composer i les dependències pertinents amb les següents comandes:
+[source, sh]
+----
+sudo apt install composer -y
+----
+
+* 2. Borrem el vendor y el arxiu composer.lock
+[source, sh]
+----
+cd /var/www/html/vibria-brian-oscar-adrian/Blog/wordpress/
+sudo rm -rf composer.lock vendor/ 
+----
+
+* 3. Tornem a instal·lar tot amb les seves dependencies i optimizem am els autoloadin de les clases.
+[source, sh]
+----
+sudo composer install --optimize-autoloader 
+----
+
+
 === Instal·lació de l'npm a AWS EC2
 * 1. Instal·lem NPM amb la comanda:
+[source, sh]
 ----
-# sudo apt install npm -y
-----
-
-* 2. Entrem en el astro.config.mjs:
-----
-# sudo nano /var/www/html/vibria-brian-oscar-adrian/astro
-----
-
-* 3. Pusem aixo en el astro.config.mjs
-----
-sudo docker exec -it server-db-1 mysql -u wordpress -p
-USE wordpress;
-SELECT option_name, option_value FROM wp_options WHERE option_name IN ('siteurl', 'home');
-
-UPDATE wp_options SET option_value = 'http://75.101.169.192:8000' WHERE option_name IN ('siteurl', 'home');
-EXIT;
-docker restart server-wordpress-1
-----
-
-* 4. Executem la següent comanda per tal d'instal·lar les dependències del nostre projecte:
-----
-# sudo npm install
-----
-
-=== Configuració de l'aplicació AWS EC2
-* 1. Compilem les dades de Vite a la aplicació amb la comanda:
-----
-# sudo npm run build
+sudo apt install npm -y
 ----
 
 [TIP]
-==== Manual a seguir després de cada git pull:
 ====
+Si teniu el servidor a AWS, teniu poca RAM i es bloqueja sovint, feu això per afegir swap:
+
+[source, bash]
+----
+sudo fallocate -l 2G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+----
+
+====
+
+* 2. Executem la següent comanda per tal d'instal·lar les dependències del nostre projecte:
+[source, sh]
+----
+cd /var/www/html/vibria-brian-oscar-adrian/astro/
+sudo npm install
+----
+
+* 3. Compilem les dades de Vite a la aplicació amb la comanda:
+[source, sh]
+----
+sudo npm run build
+----
+
+== Manual a seguir després de cada git pull
+
+[TIP]
+==== 
+
+* Part del WordPress
+[source, sh]
 ----
 cd /var/www/html/vibria-brian-oscar-adrian/server
+sudo docker compose down -v
 sudo docker compose up -d
 
-sudo iconv -f UTF-16 -t UTF-8 ../data/backup.sql -o ../data/backup_utf8.sql
+docker exec -i server-db-1 mysql -u wordpress -pwordpress wordpress < ../data/backup.sql
 
-sudo docker cp ../data/backup_utf8.sql server-db-1:/backup_utf8.sql
+docker exec -i server-db-1 mysql -u root -ppassword wordpress <<'EOF'
+SET FOREIGN_KEY_CHECKS=0;
 
-sudo docker exec -it server-db-1 bash
+UPDATE wp_options SET 
+  option_value = 'https://wordpress.vibriaoba.store' 
+WHERE option_name IN ('siteurl', 'home');
 
-mysql --binary-mode=1 -u wordpress -pwordpress wordpress < /backup_utf8.sql
+UPDATE wp_posts SET 
+  guid = REPLACE(guid, 'http://localhost:8000', 'https://wordpress.vibriaoba.store'),
+  post_content = REPLACE(post_content, 'http://localhost:8000', 'https://wordpress.vibriaoba.store');
 
+UPDATE wp_postmeta SET 
+  meta_value = REPLACE(meta_value, 'http://localhost:8000', 'https://wordpress.vibriaoba.store');
 
+SET FOREIGN_KEY_CHECKS=1;
+EOF
+----
+
+* Part del Astro
+[source, sh]
+----
 cd /var/www/html/vibria-brian-oscar-adrian/astro
 sudo run build
 ----

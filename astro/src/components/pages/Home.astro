@@ -1,7 +1,6 @@
 ---
 import { getImageInfo } from "@wp/index.js";
 import Slide from "@components/Slide.astro";
-import RRSS from "@components/RRSS.astro";
 import { Picture } from "astro:assets";
 
 const { acf } = Astro.props.data;
@@ -21,77 +20,80 @@ const imageAlt =
 ---
 
 <Slide />
-<div
-  class="flex flex-col items-center justify-center bg-secondary px-20 py-8 text-center gap-4 md:flex-row-reverse md:gap-12"
->
-  <div class="border border-white p-1">
-    <p class="font-700 p">{acf.difusion_descripcion}</p>
+<div class="flex flex-col md:flex-row">
+  <div
+    class="flex flex-col items-center justify-center bg-secondary px-20 py-8 text-center gap-4"
+  >
+    <div class="border border-white p-1">
+      <p class="font-700 p">{acf.difusion_descripcion}</p>
+    </div>
+
+    {
+      imageUrl && (
+        <a href={acf.difusion_link}>
+          <Picture
+            formats={["webp", "avif", "jpeg"]}
+            src={imageUrl}
+            alt={imageAlt}
+            width="60"
+            height="60"
+            class="rounded-lg transition-transform transform hover:scale-105"
+          />
+        </a>
+      )
+    }
   </div>
 
-  {
-    imageUrl && (
-      <a href={acf.difusion_link}>
-        <Picture formats={["webp", "avif", "jpeg"]} src={imageUrl} alt={imageAlt} width="60" height="60" class="rounded-lg transition-transform transform hover:scale-105"
-        />
-      </a>
-    )
-  }
-</div>
+  <div class="flex flex-col items-center gap-4 py-4 bg-gray-100 w-full">
+    <h3 class="text-h3 text-700 text-primary text-center font-700">
+      {acf.contacto_titulo}
+    </h3>
 
-<div class="flex flex-col items-center gap-4 py-4 bg-gray-100">
-  <h3 class="text-h3 text-700 text-primary text-center font-700">
-    {acf.contacto_titulo}
-  </h3>
+    <form id="form-contacto" class="flex flex-col items-start gap-3 md:w-4/5 md:items-center">
+      <input
+        type="text"
+        id="nom"
+        name="nom"
+        placeholder={acf.contacto_campo_nombre}
+        required
+        class="rounded-[20px] border border-secondary pl-2 pr-8 py-1 bg-white focus:outline-none focus:ring-1 focus:ring-secondary placeholder-secondary w-full"
+      />
 
-  <form id="form-contacto" class="flex flex-col items-start gap-3 md:w-4/5">
-    <div class="flex flex-col items-start gap-3  md:flex-row w-full">
-      <div class="flex flex-col items-center gap-3 w-full">
-        <input
-          type="text"
-          id="nom"
-          name="nom"
-          placeholder={acf.contacto_campo_nombre}
-          required
-          class="rounded-[20px] border border-secondary pl-2 pr-8 py-1 bg-white focus:outline-none focus:ring-1 focus:ring-secondary placeholder-secondary w-full"
-        />
-
-        <input
-          type="email"
-          id="correu"
-          name="correu"
-          placeholder={acf.contacto_campo_correo}
-          required
-          class="rounded-[20px] border border-secondary pl-2 pr-8 py-1 bg-white focus:outline-none focus:ring-1 focus:ring-secondary placeholder-secondary w-full"
-        />
-      </div>
+      <input
+        type="email"
+        id="correu"
+        name="correu"
+        placeholder={acf.contacto_campo_correo}
+        required
+        class="rounded-[20px] border border-secondary pl-2 pr-8 py-1 bg-white focus:outline-none focus:ring-1 focus:ring-secondary placeholder-secondary w-full"
+      />
 
       <textarea
         id="missatge"
         name="missatge"
         placeholder={acf.contacto_campo_mensaje}
         required
-        class="rounded-[10px] border border-secondary pl-2 pr-16 pt-1 pb-12 bg-white focus:outline-none focus:ring-1 focus:ring-secondary resize-none placeholder-secondary w-full md:pb-20 "
+        class="rounded-[10px] border border-secondary pl-2 pr-16 pt-1 pb-12 bg-white focus:outline-none focus:ring-1 focus:ring-secondary resize-none placeholder-secondary w-full md:pb-20"
       ></textarea>
-    </div>
 
-    <button type="submit" class="btn">
-      {acf.contacto_boton_texto}
-    </button>
+      <button type="submit" class="btn">
+        {acf.contacto_boton_texto}
+      </button>
 
-    <p id="form-message" class="text-sm mt-2 hidden"></p>
+      <p id="form-message" class="text-sm mt-2 hidden"></p>
 
-    <dialog id="loading-indicator" class=" text-primary">
-      <Picture formats={["webp", "avif", "jpeg", "svg", "gif"]}
-        src="/images/loading.svg"
-        alt="Loading"
-        width="64"
-        height="64"
-      />
-    </dialog>
-  </form>
+      <dialog id="loading-indicator" class="text-primary">
+        <Picture
+          formats={["webp", "avif", "jpeg", "svg", "gif"]}
+          src="/images/loading.svg"
+          alt="Loading"
+          width="64"
+          height="64"
+        />
+      </dialog>
+    </form>
+  </div>
 </div>
-
-<RRSS />
 
 <script type="module">
   const form = document.querySelector("#form-contacto");
