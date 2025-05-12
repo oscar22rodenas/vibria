@@ -1,9 +1,9 @@
-.experiencia-content {
+.ofertes-content {
     font-size: 0.875rem;
     line-height: 1.5;
 }
 
-.experiencia-content h2 {
+.ofertes-content h2 {
     font-weight: 700;
     font-size: 25px;
     margin: 0.5rem 0;
@@ -17,7 +17,7 @@
     }
 }
 
-.experiencia-content p {
+.ofertes-content p {
     margin-bottom: 0.75rem;
     font-weight: 400;
 
@@ -26,15 +26,15 @@
     }
 }
 
-.experiencia-content hr {
+.ofertes-content hr {
     border: 0.5px solid #00000040
 }
 
-.experiencia-content strong {
+.ofertes-content strong {
     font-weight: 700;
 }
 
-.experiencia-content figure {
+.ofertes-content figure {
     display: flex;
     justify-content: center;
     align-items: center;
