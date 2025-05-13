@@ -5,7 +5,7 @@ import { getPostsInfo, getImageInfo, getCategoriesInfo } from "@wp/index.js";
 import LanguageSwitcher from "./LanguageSwitcher.astro";
 import RRSS from "@components/RRSS.astro";
 
-const { lang } = Astro.params;
+const { lang, slug } = Astro.params;
 
 const acf = await getPostsInfo("header");
 const imageData = acf.header_imagen
@@ -15,6 +15,63 @@ const imageUrl = imageData?.source_url || "";
 const imageAlt = imageData?.alt_text || "Logo Vibria";
 
 const menuData = await getCategoriesInfo(lang);
+
+const lastSegment = slug?.toLowerCase() ?? "";
+
+let currentCategory = null;
+let currentCategoryId = null;
+let currentCategorySlug = null;
+
+for (const parent of menuData.parent) {
+  const baseSlug = parent.slug.toLowerCase();
+
+  if (lastSegment === baseSlug) {
+    currentCategory = parent.title;
+    currentCategoryId = parent.id;
+    currentCategorySlug = baseSlug;
+    break;
+  }
+
+  const subcategories = menuData.children[parent.id] || [];
+  for (const sub of subcategories) {
+    const subBaseSlug = sub.slug.toLowerCase();
+    if (lastSegment === subBaseSlug) {
+      currentCategory = parent.title;
+      currentCategoryId = parent.id;
+      currentCategorySlug = baseSlug;
+      break;
+    }
+  }
+
+  if (currentCategory) break;
+}
+
+const categoryColors = {
+  "La Víbria": { text: "text-secondary" },
+  "The Vibria": { text: "text-secondary" },
+
+  "Voluntariado Europeo": { text: "text-red" },
+  "Voluntariat Europeu": { text: "text-red" },
+  "European volunteering": { text: "text-red" },
+
+  "Erasmus+": { text: "text-blue" },
+
+  "Prácticas Internacionales": { text: "text-yellow" },
+  "Pràctiques Internacionals": { text: "text-yellow" },
+  "International practices": { text: "text-yellow" },
+
+  "Proyectos Internacionales": { text: "text-orange" },
+  "Projectes Internacionals": { text: "text-orange" },
+  "International Projects": { text: "text-orange" },
+
+  "Proyectos Locales": { text: "text-pink" },
+  "Projectes Locals": { text: "text-pink" },
+  "Local Projects": { text: "text-pink" },
+};
+
+const currentCategoryColors = categoryColors[currentCategory] ?? {
+  text: "",
+};
 
 const sectionsToRender =
   menuData.parent?.length > 0
@@ -29,12 +86,21 @@ const sectionsToRender =
     : [];
 ---
 
-<!-- 🌐 MOBILE VERSION -->
+<!-- MOBILE VERSION -->
 <div class="md:hidden">
   <header class="flex items-center justify-between bg-primary px-4 py-2 z-10">
     <a id="menu-toggle" class="z-10 cursor-pointer">
-      <Picture formats={['webp', 'avif', 'jpeg']} id="menu-icon" src="/iconos/menu.png" alt="Menu" width="30" height="30" />
-      <span id="close-icon" class="hidden justify-center text-4xl text-white">×</span>
+      <Picture
+        formats={["webp", "avif", "jpeg"]}
+        id="menu-icon"
+        src="/iconos/menu.png"
+        alt="Menu"
+        width="30"
+        height="30"
+      />
+      <span id="close-icon" class="hidden justify-center text-4xl text-white"
+        >×</span
+      >
     </a>
 
     <a href={`/${lang}/home`} class="z-10">
@@ -101,7 +167,7 @@ const sectionsToRender =
   </div>
 </div>
 
-<!-- 🖥 DESKTOP VERSION -->
+<!-- DESKTOP VERSION -->
 <div class="hidden md:block">
   <div class="bg-[#058279] flex justify-between items-center px-6 py-4">
     <!-- Logo -->
@@ -140,12 +206,18 @@ const sectionsToRender =
             class="flex items-center gap-1 cursor-pointer text-xs font-500 lg:text-lg lg:font-700 dropdown-toggle"
             data-index={idx}
           >
-            <span>{section.title}</span>
+            <span
+              class={`${section.title === currentCategory ? currentCategoryColors.text : "text-[#058279]"}`}
+            >
+              {section.title}
+            </span>
             {section.items.length > 0 && (
               <img
                 src="/images/flecha-abajo.png"
                 alt="Flecha"
-                class="w-4 h-4 transform transition-transform duration-200"
+                class={`w-4 h-4 transform transition-transform duration-200 ${
+                  section.title === currentCategory ? "rotate-180" : ""
+                }`}
                 data-open="false"
               />
             )}
@@ -199,7 +271,9 @@ const sectionsToRender =
           content?.classList.toggle("py-2");
           const isOpen = icon?.getAttribute("data-open") === "true";
           if (icon) {
-            icon.src = isOpen ? "/images/flecha-abajo.png" : "/images/flecha-arriba.png";
+            icon.src = isOpen
+              ? "/images/flecha-abajo.png"
+              : "/images/flecha-arriba.png";
             icon.setAttribute("data-open", isOpen ? "false" : "true");
           }
         });
@@ -212,7 +286,9 @@ const sectionsToRender =
         toggle.addEventListener("click", (e) => {
           e.stopPropagation(); // Evita que se cierre justo al hacer clic
           const index = toggle.dataset.index;
-          const menu = document.querySelector(`.dropdown-menu[data-index="${index}"]`);
+          const menu = document.querySelector(
+            `.dropdown-menu[data-index="${index}"]`
+          );
           const icon = toggle.querySelector("img");
 
           // Cierra otros
