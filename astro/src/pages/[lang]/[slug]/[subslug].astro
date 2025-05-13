@@ -5,6 +5,7 @@ import { apiURL } from "@wp/config.js";
 
 import Layout from "@layouts/Layout.astro";
 import OfertaDetallada from "@components/pages/OfertaDetallada.astro";
+import ExperienciaDetallada from "@components/pages/ExperienciaDetallada.astro";
 
 
 
@@ -30,13 +31,16 @@ export async function getStaticPaths() {
     return paths;
 }
 
-const { acf, content }   = Astro.props;
+const { acf, content } = Astro.props;
 
 let PageComponent;
 
-switch (Astro.params.subslug) {
-    case "oferta-italia":
+switch (Astro.params.slug) {
+    case "ofertes":
         PageComponent = OfertaDetallada;
+        break;
+    case "experiencies":
+        PageComponent = ExperienciaDetallada;
         break;
     default :
         break;
