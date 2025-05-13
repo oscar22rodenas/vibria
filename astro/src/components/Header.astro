@@ -1,32 +1,340 @@
 ---
-// components/Header.astro
+// Imports y datos como los tienes
 import { Picture } from "astro:assets";
-import Menu from "./Menu.astro";
-import { getPostsInfo, getImageInfo } from "@wp/index.js";
+import { getPostsInfo, getImageInfo, getCategoriesInfo } from "@wp/index.js";
 import LanguageSwitcher from "./LanguageSwitcher.astro";
+import RRSS from "@components/RRSS.astro";
 
-const { lang } = Astro.params;
+const { lang, slug } = Astro.params;
 
 const acf = await getPostsInfo("header");
-const imageData = acf.header_imagen ? await getImageInfo(acf.header_imagen) : null;
+const imageData = acf.header_imagen
+  ? await getImageInfo(acf.header_imagen)
+  : null;
 const imageUrl = imageData?.source_url || "";
 const imageAlt = imageData?.alt_text || "Logo Vibria";
 
+const menuData = await getCategoriesInfo(lang);
+
+const lastSegment = slug?.toLowerCase() ?? "";
+
+let currentCategory = null;
+let currentCategoryId = null;
+let currentCategorySlug = null;
+
+for (const parent of menuData.parent) {
+  const baseSlug = parent.slug.toLowerCase();
+
+  if (lastSegment === baseSlug) {
+    currentCategory = parent.title;
+    currentCategoryId = parent.id;
+    currentCategorySlug = baseSlug;
+    break;
+  }
+
+  const subcategories = menuData.children[parent.id] || [];
+  for (const sub of subcategories) {
+    const subBaseSlug = sub.slug.toLowerCase();
+    if (lastSegment === subBaseSlug) {
+      currentCategory = parent.title;
+      currentCategoryId = parent.id;
+      currentCategorySlug = baseSlug;
+      break;
+    }
+  }
+
+  if (currentCategory) break;
+}
+
+const categoryColors = {
+  "La Víbria": { text: "text-secondary" },
+  "The Vibria": { text: "text-secondary" },
+
+  "Voluntariado Europeo": { text: "text-red" },
+  "Voluntariat Europeu": { text: "text-red" },
+  "European volunteering": { text: "text-red" },
+
+  "Erasmus+": { text: "text-blue" },
+
+  "Prácticas Internacionales": { text: "text-yellow" },
+  "Pràctiques Internacionals": { text: "text-yellow" },
+  "International practices": { text: "text-yellow" },
+
+  "Proyectos Internacionales": { text: "text-orange" },
+  "Projectes Internacionals": { text: "text-orange" },
+  "International Projects": { text: "text-orange" },
+
+  "Proyectos Locales": { text: "text-pink" },
+  "Projectes Locals": { text: "text-pink" },
+  "Local Projects": { text: "text-pink" },
+};
+
+const currentCategoryColors = categoryColors[currentCategory] ?? {
+  text: "",
+};
+
+const sectionsToRender =
+  menuData.parent?.length > 0
+    ? menuData.parent.map((parent) => ({
+        title: parent.title,
+        items: menuData.children[parent.id]?.map((child) => child.title) || [],
+        links:
+          menuData.children[parent.id]?.map(
+            (child) => `/${lang}/${child.slug}`
+          ) || [],
+      }))
+    : [];
 ---
 
-
+<!-- MOBILE VERSION -->
+<div class="md:hidden">
   <header class="flex items-center justify-between bg-primary px-4 py-2 z-10">
     <a id="menu-toggle" class="z-10 cursor-pointer">
-      <Picture formats={['webp', 'avif', 'jpeg']} id="menu-icon" src="/iconos/menu.png" alt="Menu" width="30" height="30" />
-      <span id="close-icon" class="hidden justify-center text-4xl text-sky-50">×</span>
+      <Picture
+        formats={["webp", "avif", "jpeg"]}
+        id="menu-icon"
+        src="/iconos/menu.png"
+        alt="Menu"
+        width="30"
+        height="30"
+      />
+      <span id="close-icon" class="hidden justify-center text-4xl text-white"
+        >×</span
+      >
     </a>
 
     <a href={`/${lang}/home`} class="z-10">
-      <Picture formats={['webp', 'avif', 'jpeg']} src={imageUrl} alt={imageAlt} width="60" height="60" />
+      <Picture src={imageUrl} alt={imageAlt} width="60" height="60" />
     </a>
 
     <LanguageSwitcher currentLang={lang} class="z-10" />
   </header>
 
-    <Menu />
-  
+  <div
+    id="menu"
+    class="fixed inset-0 mt-[4.5rem] bg-white pt-0 z-10 shadow-lg overflow-y-auto transition-all duration-300 -translate-y-5 opacity-0 invisible"
+  >
+    <div class="bg-yellow text-white text-center font-medium py-2">
+      <div class="flex justify-evenly items-center">
+        <span class="text-lg">Contacte</span>
+        <span
+          class="px-4 py-1 border-2 border-white rounded-full font-bold tracking-wide"
+          >ASSESSORIES</span
+        >
+        <span class="text-lg">Tienda</span>
+      </div>
+    </div>
+    <div class="max-w-2xl mx-auto p-5">
+      {
+        sectionsToRender.map((section, index) => (
+          <div class="border-b border-gray-200">
+            <div
+              class="flex items-center py-4 cursor-pointer accordion-header"
+              data-index={index}
+            >
+              <span class="w-full text-center text-lg font-bold text-[#058279]">
+                {section.title}
+              </span>
+              {section.items.length > 0 && (
+                <img
+                  class="w-5 h-5 transition-transform duration-300 accordion-icon"
+                  src="/images/flecha-abajo.png"
+                  alt="Flecha"
+                  data-open="false"
+                />
+              )}
+            </div>
+            {section.items.length > 0 && (
+              <div class="max-h-0 overflow-hidden transition-[max-height] duration-300 -mx-5">
+                {section.items.map((item, itemIndex) => (
+                  <a
+                    href={section.links[itemIndex]}
+                    class="border-b border-white block py-2 text-white text-center bg-[#5DC695]"
+                  >
+                    {item}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </div>
+    <div class="bg-yellow text-white text-center font-bold text-lg py-2">
+      Sigues voluntari/a local
+    </div>
+    <RRSS />
+  </div>
+</div>
+
+<!-- DESKTOP VERSION -->
+<div class="hidden md:block">
+  <div class="bg-[#058279] flex justify-between items-center px-6 py-4">
+    <!-- Logo -->
+    <a
+      class="flex flex-row items-center justify-center gap-4"
+      href={`/${lang}/home`}
+    >
+      <Picture src={imageUrl} alt={imageAlt} width="80" height="80" />
+      <p class="h3 font-800">La Víbria Intercultural</p>
+    </a>
+
+    <!-- Botones a la derecha -->
+    <div class="flex items-center gap-2 lg:gap-4">
+      <a
+        class="text-white text-base font-700 px-2 py-0.5 border border-white rounded-full"
+        href="#"
+      >
+        Assessories
+      </a>
+      <a class="text-white text-base font-400 px-2 py-0.5" href="#">
+        Contacte
+      </a>
+      <a class="text-white text-base font-400 px-2 py-0.5" href="#"> Tienda </a>
+      <LanguageSwitcher currentLang={lang} />
+    </div>
+  </div>
+
+  <!-- Navegación principal -->
+  <nav
+    class="flex flex-row justify-evenly gap-2 bg-white text-primary text-sm font-semibold px-6 py-4"
+  >
+    {
+      sectionsToRender.map((section, idx) => (
+        <div class="relative">
+          <div
+            class="flex items-center gap-1 cursor-pointer text-xs font-500 lg:text-lg lg:font-700 dropdown-toggle"
+            data-index={idx}
+          >
+            <span
+              class={`${section.title === currentCategory ? currentCategoryColors.text : "text-[#058279]"}`}
+            >
+              {section.title}
+            </span>
+            {section.items.length > 0 && (
+              <img
+                src="/images/flecha-abajo.png"
+                alt="Flecha"
+                class={`w-4 h-4 transform transition-transform duration-200 ${
+                  section.title === currentCategory ? "rotate-180" : ""
+                }`}
+                data-open="false"
+              />
+            )}
+          </div>
+          {section.items.length > 0 && (
+            <div
+              class="absolute top-8 left-0 bg-secondary text-white text-center min-w-[150px] py-2 opacity-0 invisible transition-all duration-200 z-20 lg:top-10 lg:min-w-[200px] lg:py-4 dropdown-menu"
+              data-index={idx}
+            >
+              {section.items.map((item, idx2) => (
+                <a
+                  href={section.links[idx2]}
+                  class="block px-4 py-2 hover:underline"
+                >
+                  {item}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+      ))
+    }
+  </nav>
+</div>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    // --- MOBILE MENU ---
+    function initMenu() {
+      const toggleBtn = document.querySelector("#menu-toggle");
+      const menu = document.querySelector("#menu");
+      const closeIcon = document.querySelector("#close-icon");
+
+      toggleBtn?.addEventListener("click", () => {
+        menu?.classList.toggle("translate-y-0");
+        menu?.classList.toggle("opacity-100");
+        menu?.classList.toggle("visible");
+        menu?.classList.toggle("-translate-y-5");
+        menu?.classList.toggle("opacity-0");
+        menu?.classList.toggle("invisible");
+        toggleBtn.querySelector("img")?.classList.toggle("hidden");
+        closeIcon?.classList.toggle("hidden");
+        document.body.classList.toggle("overflow-hidden");
+      });
+
+      document.querySelectorAll(".accordion-header").forEach((header) => {
+        header.addEventListener("click", () => {
+          const content = header.nextElementSibling;
+          const icon = header.querySelector(".accordion-icon");
+          content?.classList.toggle("max-h-[500px]");
+          content?.classList.toggle("py-2");
+          const isOpen = icon?.getAttribute("data-open") === "true";
+          if (icon) {
+            icon.src = isOpen
+              ? "/images/flecha-abajo.png"
+              : "/images/flecha-arriba.png";
+            icon.setAttribute("data-open", isOpen ? "false" : "true");
+          }
+        });
+      });
+    }
+
+    // --- DESKTOP DROPDOWN ---
+    function initDesktopDropdowns() {
+      document.querySelectorAll(".dropdown-toggle").forEach((toggle) => {
+        toggle.addEventListener("click", (e) => {
+          e.stopPropagation(); // Evita que se cierre justo al hacer clic
+          const index = toggle.dataset.index;
+          const menu = document.querySelector(
+            `.dropdown-menu[data-index="${index}"]`
+          );
+          const icon = toggle.querySelector("img");
+
+          // Cierra otros
+          document.querySelectorAll(".dropdown-menu").forEach((m) => {
+            if (m !== menu) {
+              m.classList.add("opacity-0", "invisible");
+              m.classList.remove("opacity-100", "visible");
+            }
+          });
+
+          document.querySelectorAll(".dropdown-toggle img").forEach((i) => {
+            if (i !== icon) i.classList.remove("rotate-180");
+          });
+
+          // Alterna el menú actual
+          const isOpen = menu?.classList.contains("opacity-100");
+          if (menu) {
+            menu.classList.toggle("opacity-100", !isOpen);
+            menu.classList.toggle("visible", !isOpen);
+            menu.classList.toggle("opacity-0", isOpen);
+            menu.classList.toggle("invisible", isOpen);
+          }
+
+          if (icon) icon.classList.toggle("rotate-180", !isOpen);
+        });
+      });
+
+      // Cierra el dropdown si se hace clic fuera
+      document.addEventListener("click", (e) => {
+        const isClickInside =
+          e.target.closest(".dropdown-toggle") ||
+          e.target.closest(".dropdown-menu");
+        if (!isClickInside) {
+          document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+            menu.classList.add("opacity-0", "invisible");
+            menu.classList.remove("opacity-100", "visible");
+          });
+          document.querySelectorAll(".dropdown-toggle img").forEach((icon) => {
+            icon.classList.remove("rotate-180");
+          });
+        }
+      });
+    }
+
+    // Inicializar ambas funciones
+    initMenu();
+    initDesktopDropdowns();
+  });
+</script>
