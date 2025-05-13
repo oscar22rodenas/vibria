@@ -9,7 +9,12 @@ export const getOfertesInfo = async (lang) => {
       throw new Error("Error al obtener los ofertes");
     }
     const data = await response.json();
-    
+    const responsePage = await fetch(`${apiURL}/pages?slug=ofertes-${lang}&_fields=content`);
+    if (!responsePage.ok) {
+      throw new Error("Error al obtener la página");
+    }
+    const [pageDataInfo] = await responsePage.json();
+
     // Filtrar los ofertes según el idioma (usando el slug)
     const ofertesFiltrados = data.filter(oferta => oferta.slug.includes(`-${lang}`));
     
@@ -36,7 +41,8 @@ export const getOfertesInfo = async (lang) => {
           dataLimit: acf.oferta_data_limit,
           link: pageData ? `/${pageData.lang}${pageData.categoriaSlug}/${pageData.baseSlug}` : "#",
           imageUrl: imageData?.source_url || "",
-          imageAlt: imageData?.alt_text || "oferta image"
+          imageAlt: imageData?.alt_text || "oferta image",
+          content: pageDataInfo.content.rendered || "",
         };
       })
     );    
