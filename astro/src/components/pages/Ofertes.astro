@@ -2,19 +2,16 @@
 import { Picture } from "astro:assets";
 import { getOfertesInfo} from "@wp/index.js";
 import CategoryNav from "@components/CategoryNav.astro";
-import "@styles/ofertes-content.css";
 const { lang, slug } = Astro.params;
 
 const ofertes = await getOfertesInfo(lang);
 
 ---
 <CategoryNav lang={lang} slug={slug} />
-{
-    ofertes.map((oferta) => (
-<div class="ofertes-content" set:html={oferta.content}></div>
-))}
 
-<div class="bg-gray-100 p-6 grid grid-cols-1 gap-5 md:grid-cols-2 md:px-12 lg:ml-[180px] xl:px-20">
+<div class="md:text-red md:text-center md:text-h2 md:font-700 md:py-8" set:html={ofertes[0].content}></div>
+
+<div class="p-6 grid grid-cols-1 gap-5 md:grid-cols-2 md:px-12 lg:px-16 xl:px-20">
   {
     ofertes.map((oferta) => (
       
