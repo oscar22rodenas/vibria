@@ -8,6 +8,7 @@ import { getOfertesInfo } from "./getOfertesInfo.js";
 import { getOfertaDetalladaInfo } from "./getOfertaDetalladaInfo.js";
 import { getExperienciesInfo } from "./getExperienciesInfo.js";
 import { getExperienciaDetalladaInfo } from "./getExperienciaDetalladaInfo.js";
+import { getExperienciesErasmusInfo } from "./getExperienciesErasmusInfo.js";
 
-export { getImageInfo, getSlidesInfo, getRRSSInfo, getCategoriesInfo, getPostsInfo, getPageById, getOfertesInfo, getOfertaDetalladaInfo, getExperienciesInfo, getExperienciaDetalladaInfo };
+export { getImageInfo, getSlidesInfo, getRRSSInfo, getCategoriesInfo, getPostsInfo, getPageById, getOfertesInfo, getOfertaDetalladaInfo, getExperienciesInfo, getExperienciaDetalladaInfo, getExperienciesErasmusInfo };
 
