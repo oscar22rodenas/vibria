@@ -9,7 +9,7 @@ const ofertes = await getOfertesInfo(lang);
 ---
 <CategoryNav lang={lang} slug={slug} />
 
-<div class="md:text-red md:text-center md:text-h2 md:font-700 md:py-8" set:html={ofertes[0].content}></div>
+<div class="text-red text-center text-h2 font-700 py-8" set:html={ofertes[0].content}></div>
 
 <div class="p-6 grid grid-cols-1 gap-5 md:grid-cols-2 md:px-12 lg:px-16 xl:px-20">
   {
@@ -36,7 +36,7 @@ const ofertes = await getOfertesInfo(lang);
         </div>
       </div>
 
-      <p class="border-t border-black pt-1 text-sm text-red font-400">
+      <p class="border-t border-black text-center w-full pt-1 text-sm text-red font-400">
         {oferta.dataLimit}
       </p>
     </a>
