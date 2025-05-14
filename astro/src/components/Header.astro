@@ -169,7 +169,7 @@ const sectionsToRender =
 
 <!-- DESKTOP VERSION -->
 <div class="hidden md:block">
-  <div class="bg-[#058279] flex justify-between items-center px-6 py-4">
+  <header class="bg-[#058279] flex justify-between items-center px-6 py-4">
     <!-- Logo -->
     <a
       class="flex flex-row items-center justify-center gap-4"
@@ -191,9 +191,9 @@ const sectionsToRender =
         Contacte
       </a>
       <a class="text-white text-base font-400 px-2 py-0.5" href="#"> Tienda </a>
-      <LanguageSwitcher currentLang={lang} />
+      <LanguageSwitcher currentLang={lang} class="z-10" />
     </div>
-  </div>
+  </header>
 
   <!-- Navegación principal -->
   <nav
@@ -203,7 +203,7 @@ const sectionsToRender =
       sectionsToRender.map((section, idx) => (
         <div class="relative">
           <div
-            class="flex items-center gap-1 cursor-pointer text-xs font-500 lg:text-lg lg:font-700 dropdown-toggle"
+            class="flex items-center gap-1 cursor-pointer text-xs font-500 lg:text-base lg:font-700 dropdown-toggle"
             data-index={idx}
           >
             <span
@@ -215,7 +215,7 @@ const sectionsToRender =
               <img
                 src="/images/flecha-abajo.png"
                 alt="Flecha"
-                class={`w-4 h-4 transform transition-transform duration-200 ${
+                class={`w-3.5 h-3.5 lg:w-4 lg:h-4 transform transition-transform duration-200 ${
                   section.title === currentCategory ? "rotate-180" : ""
                 }`}
                 data-open="false"
@@ -224,13 +224,13 @@ const sectionsToRender =
           </div>
           {section.items.length > 0 && (
             <div
-              class="absolute top-8 left-0 bg-secondary text-white text-center min-w-[150px] py-2 opacity-0 invisible transition-all duration-200 z-20 lg:top-10 lg:min-w-[200px] lg:py-4 dropdown-menu"
+              class="absolute top-8 left-0 bg-secondary text-white text-center min-w-[150px] opacity-0 invisible transition-all duration-200 z-20 lg:top-10 lg:min-w-[200px] dropdown-menu"
               data-index={idx}
             >
               {section.items.map((item, idx2) => (
                 <a
                   href={section.links[idx2]}
-                  class="block px-4 py-2 hover:underline"
+                  class="block px-4 py-2 border-t border-t-white hover:underline"
                 >
                   {item}
                 </a>
@@ -284,7 +284,7 @@ const sectionsToRender =
     function initDesktopDropdowns() {
       document.querySelectorAll(".dropdown-toggle").forEach((toggle) => {
         toggle.addEventListener("click", (e) => {
-          e.stopPropagation(); // Evita que se cierre justo al hacer clic
+          e.stopPropagation();
           const index = toggle.dataset.index;
           const menu = document.querySelector(
             `.dropdown-menu[data-index="${index}"]`
