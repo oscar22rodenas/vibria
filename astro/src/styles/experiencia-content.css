@@ -1,6 +1,8 @@
 .experiencia-content {
     font-size: 0.875rem;
     line-height: 1.5;
+    display: flex;
+    flex-direction: column;
 }
 
 .experiencia-content h2 {
