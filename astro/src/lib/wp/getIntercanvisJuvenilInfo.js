@@ -2,7 +2,7 @@ import { apiURL } from "./config.js";
 import { getImageInfo } from "./getImageInfo.js";
 import { getPageById } from "./getPageById.js";
 
-export const getExperienciesErasmusInfo = async (lang) => {
+export const getIntercanvisJuvenilInfo = async (lang) => {
   try {
     const response = await fetch(`${apiURL}/experiencies_erasmus?order=asc&_fields=acf,slug`);
     if (!response.ok) {
@@ -16,7 +16,7 @@ export const getExperienciesErasmusInfo = async (lang) => {
     const [pageDataInfo] = await responsePage.json();
 
     // Filtrar los ofertes según el idioma (usando el slug)
-    const experienciaFiltrados = data.filter(experiencia => experiencia.slug.includes(`-${lang}`));
+    const experienciaFiltrados = data.filter(experiencia => experiencia.slug.includes(`-${lang}`)).slice(-2);
 
     // Obtener las imágenes de cada oferta en paralelo
     const experienciaConDatos = await Promise.all(

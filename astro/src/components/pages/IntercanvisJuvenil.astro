@@ -1,12 +1,12 @@
 ---
 import { Picture } from "astro:assets";
 import CategoryNav from "@components/CategoryNav.astro";
-import { getExperienciesErasmusInfo } from "@wp/index.js";
+import { getIntercanvisJuvenilInfo } from "@wp/index.js";
 
 
 const { lang, slug } = Astro.params;
 
-const experiencies = await getExperienciesErasmusInfo(lang);
+const experiencies = await getIntercanvisJuvenilInfo(lang);
 
 ---
 
@@ -41,5 +41,5 @@ const experiencies = await getExperienciesErasmusInfo(lang);
         {experiencia.dataLimit}
       </p>
     </a>
-  ))} 
+  ))}
 </div>
