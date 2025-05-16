@@ -1,6 +1,9 @@
 .oferta-content {
   font-size: 0.875rem;
   line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .oferta-content h2 {

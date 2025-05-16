@@ -30,3 +30,8 @@
       font-size: 1rem;
   }
 }
+@media (min-width: 767px) {
+  .que-fem-content {
+    width: 50%;
+  }
+}

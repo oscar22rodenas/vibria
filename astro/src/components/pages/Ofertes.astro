@@ -2,7 +2,6 @@
 import { Picture } from "astro:assets";
 import { getOfertesInfo} from "@wp/index.js";
 import CategoryNav from "@components/CategoryNav.astro";
-
 const { lang, slug } = Astro.params;
 
 const ofertes = await getOfertesInfo(lang);
@@ -10,13 +9,15 @@ const ofertes = await getOfertesInfo(lang);
 ---
 <CategoryNav lang={lang} slug={slug} />
 
-<div class="bg-gray-100 p-6 grid grid-cols-1 gap-5 md:grid-cols-2 md:px-12 lg:px-16 xl:px-20">
+<div class="text-red text-center text-h2 font-700 py-8 md:font-800 md:text-3xl" set:html={ofertes[0].content}></div>
+
+<div class="p-6 grid grid-cols-1 gap-5 md:grid-cols-2 md:px-12 lg:px-16 xl:px-20">
   {
     ofertes.map((oferta) => (
-
+      
     <a href={oferta.link} class="flex flex-col justify-center items-center gap-2 mb-5 bg-gray-100 shadow-[0_4px_4px_rgba(0,0,0,0.25)] pt-4 pb-1 px-4">
       <div class="relative">
-        <Picture formats={['webp', 'avif', 'jpeg']} src={oferta.imageUrl} alt={oferta.imageAlt} width="320" height="126"/>
+        <Picture formats={['webp', 'avif', 'jpeg']} src={oferta.imageUrl} alt={oferta.imageAlt} width="300" height="126" style="md:width 390px"/>
 
         <h4 class="absolute bottom-0 inset-x-16 text-h4 font-700 bg-red text-center text-white px-2">
           {oferta.title}
@@ -35,7 +36,7 @@ const ofertes = await getOfertesInfo(lang);
         </div>
       </div>
 
-      <p class="border-t border-black pt-1 text-sm text-red font-400">
+      <p class="border-t border-black text-center w-full pt-1 text-sm text-red font-400">
         {oferta.dataLimit}
       </p>
     </a>
