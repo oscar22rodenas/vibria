@@ -1,6 +1,5 @@
 .experiencia-content {
     font-size: 0.875rem;
-    line-height: 1.5;
     display: flex;
     flex-direction: column;
 }
@@ -19,11 +18,51 @@
     }
 }
 
+.experiencia-content .wp-block-group {
+    @media screen and (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+  }
+
+.experiencia-content .wp-block-group figure,
+.experiencia-content .wp-block-group p {
+  @media screen and (min-width: 768px) {
+    grid-row: 1;
+  }
+}
+  
+  .experiencia-content .wp-block-group:nth-of-type(2n+1) p {
+    @media screen and (min-width: 768px) {
+      grid-column: 1 / 2;
+    }
+  }
+  .experiencia-content .wp-block-group:nth-of-type(2n+1) figure {
+    @media screen and (min-width: 768px) {
+      grid-column: 2 / 3;
+    }
+  }
+  .experiencia-content .wp-block-group:nth-of-type(2n) figure {
+    @media screen and (min-width: 768px) {
+      grid-column: 1 / 2;
+    }
+  }
+  .experiencia-content .wp-block-group:nth-of-type(2n) p {
+    @media screen and (min-width: 768px) {
+      grid-column: 2 / 3;
+    }
+  }
+  
+
 .experiencia-content p {
     margin-bottom: 0.75rem;
     font-weight: 400;
 
     @media (min-width: 768px) {
+        text-align: justify;
         font-size: 1rem;
     }
 }
