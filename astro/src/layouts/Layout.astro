@@ -24,7 +24,10 @@ const { lang } = Astro.params;
       name="keywords"
       content="voluntariat, europeu, joves, mobilitat internacional, ESC, solidaritat, viatges, interculturalitat"
     />
-    <meta name="author" content="La Víbria Intercultural | Óscar Ródenas, Adrian Bernabeu, Brian Arrua" />
+    <meta
+      name="author"
+      content="La Víbria Intercultural | Óscar Ródenas, Adrian Bernabeu, Brian Arrua"
+    />
     <meta name="robots" content="index, follow" />
 
     <meta property="og:type" content="website" />
@@ -60,12 +63,12 @@ const { lang } = Astro.params;
   </head>
   <body class="prose">
     <div class="layout-container">
-    <Header />
-    <main>
-    <slot />
-    </main>
-    <Footer />
-        </div>
+      <Header />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>
 
@@ -77,13 +80,13 @@ const { lang } = Astro.params;
     height: 100%;
     display: flex;
     flex-direction: column;
-     }
-     .layout-container {
-     display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-     }
-     main{
-      flex-grow: 1;
-     }
+  }
+  .layout-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  main {
+    flex-grow: 1;
+  }
 </style>
