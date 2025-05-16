@@ -2,6 +2,8 @@
 import { Picture } from "astro:assets";
 import CategoryNav from "@components/CategoryNav.astro";
 import { getIntercanvisJuvenilInfo } from "@wp/index.js";
+import "@styles/intercanvis-juvenil-content.css";
+
 
 
 const { lang, slug } = Astro.params;
@@ -12,7 +14,11 @@ const experiencies = await getIntercanvisJuvenilInfo(lang);
 
 <CategoryNav lang={lang} slug={slug} />
 
-<div class="bg-gray-100 p-6 grid grid-cols-1 gap-5 md:grid-cols-2 md:px-12 lg:ml-[180px] xl:px-20">
+<div class="intercanvis-juvenil-contenidor">
+
+  <h2>Ultimes Ofertas</h2>
+
+<div class="p-6 grid grid-cols-1 gap-5 md:grid-cols-2 md:px-12 xl:px-20">
   {
     experiencies.map((experiencia) => (
       
@@ -42,4 +48,7 @@ const experiencies = await getIntercanvisJuvenilInfo(lang);
       </p>
     </a>
   ))}
+</div>
+
+     <div class="intercanvis-juvenil-content py-8" set:html={experiencies[0].content}></div>
 </div>

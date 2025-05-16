@@ -9,7 +9,7 @@ export const getExperienciesErasmusInfo = async (lang) => {
       throw new Error("Error al obtener las experiencies");
     }
     const data = await response.json();
-    const responsePage = await fetch(`${apiURL}/pages?slug=intercanvis-juvenil-${lang}&_fields=content`);
+    const responsePage = await fetch(`${apiURL}/pages?slug=erasmus-experiencies-${lang}&_fields=content`);
     if (!responsePage.ok) {
       throw new Error("Error al obtener la página");
     }
