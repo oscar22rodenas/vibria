@@ -7,16 +7,17 @@ const languages = {
   es: { label: "ESP", flag: "/flags/espana.png" },
   en: { label: "ENG", flag: "/flags/inglesa.png" },
 };
-const getLangUrl = (newLang : string) => {
+const getLangUrl = (newLang) => {
   if (subslug) {
     return `/${newLang}/${slug}/${subslug}`;
   }
   return `/${newLang}/${slug}`;
 };
 ---
-<div class="relative inline-block">
+
+<div class="relative inline-block language-switcher">
   <!-- Botón para abrir el menú -->
-  <a id="toggle-lang" class="flex flex-col items-center gap-1 bg-transparent text-white px-2 py-1 cursor-pointer">
+  <a class="toggle-lang flex flex-col items-center gap-1 bg-transparent text-white px-2 py-1 cursor-pointer">
     <img src={languages[currentLang].flag} alt={languages[currentLang].label} class="w-8 h-6" />
     <div class="flex flex-row items-center gap-1">
         <span class="text-xs">{languages[currentLang].label}</span>
@@ -24,7 +25,7 @@ const getLangUrl = (newLang : string) => {
     </div>
   </a>
   <!-- Menú desplegable -->
-  <div id="lang-menu" class="absolute z-20 right-0 mt-2 bg-white border rounded-lg shadow-lg hidden w-32">
+  <div class="lang-menu absolute z-20 right-0 mt-2 bg-white border rounded-lg shadow-lg hidden w-32">
     <a href={getLangUrl("ca")} class={`block px-4 py-2 hover:bg-gray-200 ${currentLang === 'ca' ? 'font-bold text-blue-600' : ''}`}>
       <img src="/flags/catalana.png" alt="CAT" class="inline w-4 h-3 mr-2" /> Català
     </a>
@@ -36,20 +37,25 @@ const getLangUrl = (newLang : string) => {
     </a>
   </div>
 </div>
-<!-- Script para abrir/cerrar el menú -->
+
 <script>
   function initLangSwitcher() {
-    const toggleButton = document.querySelector("#toggle-lang");
-    const menu = document.querySelector("#lang-menu");
+    const switchers = document.querySelectorAll(".language-switcher");
 
-    toggleButton?.addEventListener("click", function (event) {
-      event.stopPropagation();
-      menu?.classList.toggle("hidden");
-    });
-    document.addEventListener("click", function (event) {
-      if (!toggleButton.contains(event.target) && !menu.contains(event.target)) {
-        menu?.classList.add("hidden");
-      }
+    switchers.forEach((switcher) => {
+      const toggleButton = switcher.querySelector(".toggle-lang");
+      const menu = switcher.querySelector(".lang-menu");
+
+      toggleButton?.addEventListener("click", function (event) {
+        event.stopPropagation();
+        menu?.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!switcher.contains(event.target)) {
+          menu?.classList.add("hidden");
+        }
+      });
     });
   }
 
