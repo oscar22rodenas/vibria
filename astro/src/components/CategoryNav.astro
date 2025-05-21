@@ -79,6 +79,7 @@ const currentCategoryColors = categoryColors[currentCategory] ?? {
               return (
                 <a
                   href={`/${lang}/${sub.slug}`}
+                  id={isActive ? "active-subcategory" : undefined}
                   class={`text-sm relative pb-1${
                     isActive
                       ? `font-bold text-black border-b-4 ${currentCategoryColors.border}`
@@ -95,3 +96,9 @@ const currentCategoryColors = categoryColors[currentCategory] ?? {
     </>
   )
 }
+ <script>
+    const activeSub = document.querySelector("#active-subcategory");
+    if (activeSub) {
+      activeSub.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+</script>
