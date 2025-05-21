@@ -1,12 +1,10 @@
-= ABP Projecte M12 Vibria
+= ABP Projecte M12 - La Vibria
 
 == Introducció
 
-*Nom*
+*Nom del projecte*: La Vibria
 
-Vibria
-
-*Membres*  
+*Membres de l'equip*  
 
 - Adrian Bernabeu Malia
 
@@ -14,50 +12,36 @@ Vibria
 
 - Óscar Ródenas Luján
 
-=== Objectius de l'aplicació
+== Objectius de l'aplicació
 
-=== Base de dades
+L’objectiu principal de l’aplicació és desenvolupar un lloc web per a l’empresa La Víbria, complint amb els requisits estètics i funcionals que ens han proporcionat. Per aconseguir-ho, s’ha utilitzat WordPress com a sistema de gestió de continguts (back-end), aprofitant la seva facilitat d’ús i familiaritat per part del client. Paral·lelament, s’ha implementat Astro per al desenvolupament del front-end, cosa que permet una presentació visual moderna, optimitzada i adaptada a les necessitats de disseny donats per ells.
 
-==== Diagrama Relacional
-
-==== Diagrama de Classes
-
-=== Figma
-link:https://www.figma.com/design/TFTZ9wGmUbQwclwz17KroX/Torrenova---Grup1?node-id=0-1&node-type=canvas&t=bV4tXxCOiN7z8fDb-0[R01: guia d'estils i mockups a Figma]
-
-=== Manual instalació server AWS
+Aquest enfocament híbrid proporciona al client una interfície atractiva i ràpida (gràcies a Astro), mantenint alhora la possibilitat de gestionar el contingut de forma autònoma mitjançant WordPress, una eina que ja coneixen i dominen.
 
 
-==== Linies futures
+== Base de dades
 
 
-==== Requisits no funcionals: T06. Eines per millorar la qualitat del projecte.
-== Webgrafia
+== Figma
+link:https://www.figma.com/design/xcbDKD8c4Kc3IrBi37fRuX/Pagina-web-Vibria.org?node-id=0-1&t=z4X0vpXvdcZVZ8r7-1[Guia d'estils de la pàgina web]
 
-=== Disseny
-
-=== AWS
+== Manual D'administracio 
 include::manualAdmin.adoc[]
-==== Docker a AWS
 
-===== IP elàstica
+== Linies futures
+Una de les funcionalitats que no hem implementat en el projecte és el gest de deslizar (swipe) al menú. Actualment, es pot navegar entre pàgines fent clic als enllaços del menú, però no és possible canviar de pàgina simplement lliscant la pantalla.
 
-===== Altres eines (IA)
+== Requisits no funcionals
 
-- **ChatGPT**
-   https://chatgpt.com/
+== Conclusions
+Considerem que la part més complexa del projecte va ser l’inici. Ens va costar trobar una solució que fos fàcil de gestionar tant per al client com per a nosaltres. Després d’analitzar diferents opcions, vam decidir utilitzar WordPress com a gestor de continguts i Astro per al desenvolupament del front-end.
 
-- **DeepSeek**
-   https://chat.deepseek.com/
+Un cop escollides les tecnologies, encara ens faltava saber com integrar-les. Després de fer diverses recerques, vam descobrir dos plugins molt útils: Advanced Custom Fields (ACF) i Custom Post Type UI (CPT). Aquests ens van permetre estructurar el contingut de WordPress de manera personalitzada i extreure la informació mitjançant l’API REST per mostrar-la amb Astro.
 
-- **GitHub Copilot**
-   https://github.com/features/copilot
+Ens preocupava que el projecte resultés massa complex per al client, així que vam elaborar un manual d’usuari per facilitar-ne la gestió i l’ús.
 
-
-
-=== Conclusions
-
-==== Conclusió individual
+A nivell personal, creiem que aquest projecte ens ha ajudat molt a millorar la comunicació amb el client i a aprofundir en el coneixement de WordPress i Astro, dues eines que fins ara no havíem utilitzat d’aquesta manera.
+=== Conclusió individual
 
 Brian Tobias:
 
@@ -65,5 +49,5 @@ Adrian Bernabeu:
 
 Óscar Ródenas:
 
-==== Conclusió grupal
+=== Conclusió grupal
 

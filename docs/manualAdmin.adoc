@@ -25,7 +25,12 @@
 * *Astro* consumeix contingut de *WordPress* mitjançant la seva REST API.
 * El contingut es mostra en el frontend renderitzat de manera estàtica.
 
+Exemple d'us:
+
+image::images/exempleUs.png[]
+
 === Estructura del Frontend (Astro)
+image::images/estructura.png[]
 
 ==== Comportament de les Rutes
 
