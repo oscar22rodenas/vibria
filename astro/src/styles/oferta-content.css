@@ -10,12 +10,13 @@
   color: #D3133A;
   font-weight: 600;
   font-size: 1rem;
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
 }
 
 .oferta-content p {
-  margin-bottom: 0.5rem;
   font-weight: 400;
+  font-size: 15px;
+  margin-bottom: 0.75rem;
 }
 
 .oferta-content hr {
@@ -26,6 +27,7 @@
   list-style: disc;
   padding-left: 1rem;
   margin-bottom: 0.5rem;
+  font-size: 15px;
 }
 
 .oferta-content li {

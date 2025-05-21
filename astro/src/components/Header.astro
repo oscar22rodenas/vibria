@@ -98,7 +98,7 @@ const sectionsToRender =
         width="30"
         height="30"
       />
-      <span id="close-icon" class="hidden justify-center text-4xl text-white"
+      <span id="close-icon" class="hidden justify-center text-[2.75rem] text-white"
         >×</span
       >
     </a>
@@ -116,12 +116,12 @@ const sectionsToRender =
   >
     <div class="bg-yellow text-white text-center font-medium py-2">
       <div class="flex justify-evenly items-center">
-        <span class="text-lg">Contacte</span>
+        <span class="text-lg min-w-[70px] gap-1">Contacte</span>
         <span
           class="px-4 py-1 border-2 border-white rounded-full font-bold tracking-wide"
           >ASSESSORIES</span
         >
-        <span class="text-lg">Tienda</span>
+        <span class="text-lg min-w-[70px] gap-1">Tienda</span>
       </div>
     </div>
     <div class="max-w-2xl mx-auto p-5">
@@ -129,7 +129,7 @@ const sectionsToRender =
         sectionsToRender.map((section, index) => (
           <div class="border-b border-gray-200">
             <div
-              class="flex items-center py-4 cursor-pointer accordion-header"
+              class="flex items-center p-4 cursor-pointer accordion-header"
               data-index={index}
             >
               <span class="w-full text-center text-lg font-bold text-[#058279]">
@@ -145,11 +145,11 @@ const sectionsToRender =
               )}
             </div>
             {section.items.length > 0 && (
-              <div class="max-h-0 overflow-hidden transition-[max-height] duration-300 -mx-5">
+              <div class="max-h-0 p-0 overflow-hidden transition-[max-height] duration-300 -mx-5">
                 {section.items.map((item, itemIndex) => (
                   <a
                     href={section.links[itemIndex]}
-                    class="border-b border-white block py-2 text-white text-center bg-[#5DC695]"
+                    class="border-b border-white block py-2 text-white text-center bg-[#5DC695] font-bold"
                   >
                     {item}
                   </a>
@@ -268,7 +268,6 @@ const sectionsToRender =
           const content = header.nextElementSibling;
           const icon = header.querySelector(".accordion-icon");
           content?.classList.toggle("max-h-[500px]");
-          content?.classList.toggle("py-2");
           const isOpen = icon?.getAttribute("data-open") === "true";
           if (icon) {
             icon.src = isOpen
