@@ -17,6 +17,8 @@ const imageAlt =
   typeof imageData === "object" && imageData?.alt_text
     ? imageData.alt_text
     : "Imagen de canal de difusión";
+
+const wpDomain = import.meta.env.WP_DOMAIN;
 ---
 
 <Slide />
@@ -96,6 +98,9 @@ const imageAlt =
 </div>
 
 <script type="module">
+
+const wpDomain = "{wpDomain}";
+
   const form = document.querySelector("#form-contacto");
   const messageElement = document.querySelector("#form-message");
   const loadingIndicator = document.querySelector("#loading-indicator");
@@ -112,7 +117,7 @@ const imageAlt =
 
     try {
       const res = await fetch(
-        "http://localhost:8000/wp-json/wp/v2/enviar-correo",
+        `${wpDomain}/wp-json/wp/v2/enviar-correo`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
