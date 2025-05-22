@@ -15,7 +15,7 @@ const ofertes = await getOfertesInfo(lang);
   {
     ofertes.map((oferta) => (
       
-    <a href={oferta.link} class="flex flex-col justify-center items-center gap-2 mb-5 bg-gray-100 shadow-[0_4px_4px_rgba(0,0,0,0.25)] pt-4 pb-1 px-4">
+    <a href={oferta.link} class="flex flex-col justify-center items-center gap-2 mb-5 bg-gray-100 bg-[#EAEAEA] shadow-[0_4px_4px_rgba(0,0,0,0.25)] pt-4 pb-1">
       <div class="relative">
         <Picture formats={['webp', 'avif', 'jpeg']} src={oferta.imageUrl} alt={oferta.imageAlt} width="300" height="126" style="md:width 390px"/>
 
@@ -23,9 +23,9 @@ const ofertes = await getOfertesInfo(lang);
           {oferta.title}
         </h4>
       </div>
-      <p class="text-sm text-black font-400 text-center">{oferta.text}</p>
+      <p class="text-sm px-4 text-black font-400 text-center">{oferta.text}</p>
 
-      <div class="flex flex-row items-center justify-between w-full">
+      <div class="flex flex-row items-center justify-evenly gap-8 w-full">
         <div class="flex flex-row items-center gap-1">
           <Picture formats={['webp', 'avif', 'jpeg']} src="/iconos/Ubicacion_Negro.png" alt="Ubicacion Icon" width="24" height="24"/>
           <span class="text-sm text-black font-700">{oferta.ubicacion}</span>

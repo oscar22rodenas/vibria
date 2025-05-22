@@ -66,20 +66,21 @@ const currentCategoryColors = categoryColors[currentCategory] ?? {
 {
   currentCategory && (
     <>
-      <div class={`${currentCategoryColors.bg} text-white px-4 py-2 font-bold text-lg w-full text-center md:hidden`}>
+      <div class={`${currentCategoryColors.bg} text-white px-4 py-2 font-bold text-lg w-full text-center sticky top-[76px] z-20 md:hidden`}>
         {currentCategory}
       </div>
 
       {currentCategoryId &&
         categoriesMap.children[currentCategoryId]?.length > 0 && (
-        <div class={`md:h-full md:w-[15%] md:relative  md:pt-[50px] md:float-left  md:mx-5`}>
+        <div class={`md:h-full md:w-[15%] md:pt-[50px] md:float-left sticky top-[120px] z-20 md:top-[160px] md:mx-5`}>
             <nav class={`flex gap-6 px-4 py-3 bg-gray-50 border-b border-gray-200 overflow-x-auto whitespace-nowrap md:flex-col md:bg-transparent md:border-b-transparent md:gap-2 md:border-l ${currentCategoryColors.border} md:overflow-x-hidden`}>
             {categoriesMap.children[currentCategoryId].map((sub) => {
               const isActive = sub.slug.toLowerCase() === lastSegment;
               return (
                 <a
                   href={`/${lang}/${sub.slug}`}
-                  class={`text-sm relative pb-1 ${
+                  id={isActive ? "active-subcategory" : undefined}
+                  class={`text-sm relative pb-1${
                     isActive
                       ? `font-bold text-black border-b-4 ${currentCategoryColors.border}`
                       : "text-gray-500 hover:text-gray-800"
@@ -95,3 +96,9 @@ const currentCategoryColors = categoryColors[currentCategory] ?? {
     </>
   )
 }
+ <script>
+    const activeSub = document.querySelector("#active-subcategory");
+    if (activeSub) {
+      activeSub.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+</script>
