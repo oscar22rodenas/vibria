@@ -1,0 +1,53 @@
+= ABP Projecte M12 - La Vibria
+
+== Introducció
+
+*Nom del projecte*: La Vibria
+
+*Membres de l'equip*  
+
+- Adrian Bernabeu Malia
+
+- Brian Tobias Arrua Dominguez
+
+- Óscar Ródenas Luján
+
+== Objectius de l'aplicació
+
+L’objectiu principal de l’aplicació és desenvolupar un lloc web per a l’empresa La Víbria, complint amb els requisits estètics i funcionals que ens han proporcionat. Per aconseguir-ho, s’ha utilitzat WordPress com a sistema de gestió de continguts (back-end), aprofitant la seva facilitat d’ús i familiaritat per part del client. Paral·lelament, s’ha implementat Astro per al desenvolupament del front-end, cosa que permet una presentació visual moderna, optimitzada i adaptada a les necessitats de disseny donats per ells.
+
+Aquest enfocament híbrid proporciona al client una interfície atractiva i ràpida (gràcies a Astro), mantenint alhora la possibilitat de gestionar el contingut de forma autònoma mitjançant WordPress, una eina que ja coneixen i dominen.
+
+
+== Base de dades
+
+
+== Figma
+link:https://www.figma.com/design/xcbDKD8c4Kc3IrBi37fRuX/Pagina-web-Vibria.org?node-id=0-1&t=z4X0vpXvdcZVZ8r7-1[Guia d'estils de la pàgina web]
+
+== Manual D'administracio 
+include::manualAdmin.adoc[]
+
+== Linies futures
+Una de les funcionalitats que no hem implementat en el projecte és el gest de deslizar (swipe) al menú. Actualment, es pot navegar entre pàgines fent clic als enllaços del menú, però no és possible canviar de pàgina simplement lliscant la pantalla.
+
+== Requisits no funcionals
+
+== Conclusions
+Considerem que la part més complexa del projecte va ser l’inici. Ens va costar trobar una solució que fos fàcil de gestionar tant per al client com per a nosaltres. Després d’analitzar diferents opcions, vam decidir utilitzar WordPress com a gestor de continguts i Astro per al desenvolupament del front-end.
+
+Un cop escollides les tecnologies, encara ens faltava saber com integrar-les. Després de fer diverses recerques, vam descobrir dos plugins molt útils: Advanced Custom Fields (ACF) i Custom Post Type UI (CPT). Aquests ens van permetre estructurar el contingut de WordPress de manera personalitzada i extreure la informació mitjançant l’API REST per mostrar-la amb Astro.
+
+Ens preocupava que el projecte resultés massa complex per al client, així que vam elaborar un manual d’usuari per facilitar-ne la gestió i l’ús.
+
+A nivell personal, creiem que aquest projecte ens ha ajudat molt a millorar la comunicació amb el client i a aprofundir en el coneixement de WordPress i Astro, dues eines que fins ara no havíem utilitzat d’aquesta manera.
+=== Conclusió individual
+
+Brian Tobias:
+
+Adrian Bernabeu:
+
+Óscar Ródenas:
+
+=== Conclusió grupal
+

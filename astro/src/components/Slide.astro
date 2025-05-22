@@ -5,7 +5,7 @@ const { lang } = Astro.params;
 const slides = await getSlidesInfo(lang);
 ---
 
-<div id="slide-container" class="w-full min-h-[700px] overflow-hidden">
+<div id="slide-container" class="relative w-full min-h-[700px] overflow-hidden touch-pan-x">
   <div id="slides" class="w-full h-full">
     {
       slides.map((slide, index) => (
@@ -14,13 +14,13 @@ const slides = await getSlidesInfo(lang);
           data-index={index}
           style={`background: linear-gradient(rgba(5, 130, 121, 0.6), rgba(5, 130, 121, 0.6)), url('${slide.imageUrl}') center/cover no-repeat;`}
         >
-          <div class=" flex flex-col gap-3 items-start justify-center px-4 md:w-3/5">
+          <div class=" flex flex-col gap-3 items-start justify-center px-4 md:w-2/5">
             
             <h1 class="h1" style="text-shadow: 1.2px 1.2px 0px #FFC721;">
               {slide.title}
             </h1>
-            <h3 class="h3 font-800">{slide.subtitle}</h3>
-            <p class="p">{slide.text}</p>
+            <h3 class="h3 font-800 md:text-[22px]">{slide.subtitle}</h3>
+            <p class="p md:text-[17px]">{slide.text}</p>
             <a href={slide.buttonUrl} class="btn">
               {slide.buttonText}
             </a>
@@ -54,14 +54,10 @@ const slides = await getSlidesInfo(lang);
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     let currentSlide = 0;
-    const slides = document.querySelectorAll(
-      ".slide"
-    ) as NodeListOf<HTMLElement>;
-    const buttons = document.querySelectorAll(
-      ".slide-button"
-    ) as NodeListOf<HTMLElement>;
+    const slides = document.querySelectorAll(".slide");
+    const buttons = document.querySelectorAll(".slide-button");
 
-    function showSlide(index: any) {
+    function showSlide(index) {
       slides.forEach((slide, i) => {
         slide.style.opacity = i === index ? "1" : "0";
         slide.style.zIndex = i === index ? "1" : "0";
@@ -84,20 +80,60 @@ const slides = await getSlidesInfo(lang);
       currentSlide = index;
     }
 
-    // Cambiar de slide automáticamente cada 5 segundos
-    setInterval(() => {
+    function goToNextSlide() {
       const nextSlide = (currentSlide + 1) % slides.length;
       showSlide(nextSlide);
-    }, 5000);
+    }
 
-    // Agregar eventos a los botones
+    function goToPrevSlide() {
+      const prevSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(prevSlide);
+    }
+
+    // Cambiar automáticamente cada 5 segundos
+    let autoSlideInterval = setInterval(goToNextSlide, 5000);
+
+    // Botones manuales
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
         const index = parseInt(button.dataset.index || "0");
         showSlide(index);
+        clearInterval(autoSlideInterval); // reiniciar si tocamos
+        autoSlideInterval = setInterval(goToNextSlide, 5000);
       });
     });
+
+    // SWIPE: Detectar arrastre horizontal
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    const slideContainer = document.getElementById("slide-container");
+
+    slideContainer.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    slideContainer.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipeGesture();
+    });
+
+    function handleSwipeGesture() {
+      const distance = touchEndX - touchStartX;
+      const threshold = 50; // mínimo para considerar swipe
+
+      if (Math.abs(distance) > threshold) {
+        if (distance < 0) {
+          goToNextSlide(); // swipe a la izquierda → siguiente
+        } else {
+          goToPrevSlide(); // swipe a la derecha → anterior
+        }
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(goToNextSlide, 5000);
+      }
+    }
 
     showSlide(0);
   });
 </script>
+
