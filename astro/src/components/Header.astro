@@ -89,7 +89,7 @@ const sectionsToRender =
 <!-- MOBILE VERSION -->
 <div class="sticky top-0 z-30 md:hidden">
   <header class="flex items-center justify-between bg-primary px-4 py-2 z-10">
-    <a id="menu-toggle" class="z-10 cursor-pointer">
+    <a id="menu-toggle" class="flex justify-start min-w-[90px] z-10 cursor-pointer">
       <Picture
         formats={["webp", "avif", "jpeg"]}
         id="menu-icon"
@@ -98,7 +98,7 @@ const sectionsToRender =
         width="30"
         height="30"
       />
-      <span id="close-icon" class="hidden justify-center text-[2.75rem] text-white"
+      <span id="close-icon" class="hidden justify-center text-[2.5rem] text-white"
         >×</span
       >
     </a>
@@ -112,19 +112,19 @@ const sectionsToRender =
 
   <div
     id="menu"
-    class="fixed inset-0 mt-[4.5rem] bg-white pt-0 z-10 shadow-lg overflow-y-auto transition-all duration-300 -translate-y-5 opacity-0 invisible"
+    class="grid grid-rows-[auto_1fr_auto_auto] fixed inset-0 mt-[4.5rem] bg-white pt-0 z-10 shadow-lg overflow-y-auto transition-all duration-300 -translate-y-5 opacity-0 invisible"
   >
-    <div class="bg-yellow text-white text-center font-medium py-2">
+    <div class="bg-yellow text-white text-center font-medium px-4 py-2">
       <div class="flex justify-evenly items-center">
-        <span class="text-lg min-w-[70px] gap-1">Contacte</span>
+        <span class="text-lg text-start min-w-[90px] gap-1">Contacte</span>
         <span
           class="px-4 py-1 border-2 border-white rounded-full font-bold tracking-wide"
           >ASSESSORIES</span
         >
-        <span class="text-lg min-w-[70px] gap-1">Tienda</span>
+        <span class="text-lg text-end min-w-[90px] gap-1">Tienda</span>
       </div>
     </div>
-    <div class="max-w-2xl mx-auto p-5">
+    <div class="flex flex-col justify-between w-full max-w-2xl mx-auto">
       {
         sectionsToRender.map((section, index) => (
           <div class="border-b border-gray-200">
@@ -197,13 +197,13 @@ const sectionsToRender =
 
   <!-- Navegación principal -->
   <nav
-    class="flex flex-row justify-evenly gap-2 bg-white text-primary text-sm font-semibold px-6 py-4"
+    class="flex flex-row justify-between gap-2 bg-white text-primary text-sm font-semibold items-center p-4"
   >
     {
       sectionsToRender.map((section, idx) => (
         <div class="relative">
           <div
-            class="flex items-center gap-1 cursor-pointer text-xs font-500 lg:text-base lg:font-700 dropdown-toggle"
+            class="flex items-center gap-1 cursor-pointer text-[11px] font-500 lg:text-[15px] lg:font-700 dropdown-toggle"
             data-index={idx}
           >
             <span
@@ -224,7 +224,7 @@ const sectionsToRender =
           </div>
           {section.items.length > 0 && (
             <div
-              class="absolute top-8 -left-6 bg-secondary text-white text-center min-w-[150px] opacity-0 invisible transition-all duration-200 z-20 lg:top-10 lg:min-w-[200px] dropdown-menu"
+              class="absolute top-8 -left-6 bg-secondary text-white text-center min-w-[150px] opacity-0 invisible transition-all duration-200 z-40 lg:top-10 lg:min-w-[200px] dropdown-menu"
               data-index={idx}
             >
               {section.items.map((item, idx2) => (
