@@ -5,7 +5,7 @@ const { lang } = Astro.params;
 const slides = await getSlidesInfo(lang);
 ---
 
-<div id="slide-container" class="relative w-full min-h-[700px] overflow-hidden touch-pan-x">
+<div id="slide-container" class="relative w-full min-h-[700px] overflow-hidden">
   <div id="slides" class="w-full h-full">
     {
       slides.map((slide, index) => (
@@ -107,7 +107,7 @@ const slides = await getSlidesInfo(lang);
     let touchStartX = 0;
     let touchEndX = 0;
 
-    const slideContainer = document.getElementById("slide-container");
+    const slideContainer = document.querySelector("#slide-container");
 
     slideContainer.addEventListener("touchstart", (e) => {
       touchStartX = e.changedTouches[0].screenX;
