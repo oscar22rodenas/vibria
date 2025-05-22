@@ -115,7 +115,7 @@ const sectionsToRender =
     class="grid grid-rows-[auto_1fr_auto_auto] fixed inset-0 mt-[4.5rem] bg-white pt-0 z-10 shadow-lg overflow-y-auto transition-all duration-300 -translate-y-5 opacity-0 invisible"
   >
     <div class="bg-yellow text-white text-center font-medium px-4 py-2">
-      <div class="flex justify-evenly items-center">
+      <div class="flex justify-between items-center">
         <span class="text-lg text-start min-w-[90px] gap-1">Contacte</span>
         <span
           class="px-4 py-1 border-2 border-white rounded-full font-bold tracking-wide"
@@ -129,7 +129,7 @@ const sectionsToRender =
         sectionsToRender.map((section, index) => (
           <div class="border-b border-gray-200">
             <div
-              class="flex h-full items-center p-4 cursor-pointer accordion-header"
+              class="flex items-center p-5 cursor-pointer accordion-header"
               data-index={index}
             >
               <span class="w-full text-center text-lg font-bold text-[#058279]">
