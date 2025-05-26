@@ -195,7 +195,7 @@ sudo nano .env
 
 [source, ini]
 ----
-WP_DOMAIN="https://wordpress.vibriaoba.store"
+PUBLIC_WP_DOMAIN="https://wordpress.vibriaoba.store"
 ----
 
 === Instal·lació del Docker AWS EC2
