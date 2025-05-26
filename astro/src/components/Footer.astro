@@ -3,7 +3,10 @@ import { Picture } from "astro:assets";
 import RRSS from "@components/RRSS.astro";
 import { getPostsInfo, getImageInfo } from "@wp/index.js";
 
-const acf = await getPostsInfo("footer");
+const { lang, slug } = Astro.params;
+
+
+const acf = await getPostsInfo(`footer-${lang}`);
 
 const imageIds = [acf.ubicacion_imagen, acf.telefono_imagen, acf.correo_imagen];
 
