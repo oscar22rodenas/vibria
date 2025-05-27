@@ -12,7 +12,11 @@ import ExperienciaDetallada from "@components/pages/ExperienciaDetallada.astro";
 export async function getStaticPaths() {
     const languages = ["ca", "es", "en"]; // Idiomas soportados
 
+<<<<<<< HEAD
     const pagesRes = await fetch(`${apiURL}/pages?slug=oferta-italia-ca&_fields=acf,slug,content.rendered&per_page=100`);
+=======
+    const pagesRes = await fetch(`${apiURL}/pages?slug=&_fields=acf,slug,content.rendered&per_page=500`);
+>>>>>>> 5354a7eabf0cd49c8ad87293b6cad2f81e7a5601
     const pages = await pagesRes.json();
     
     let paths: { params: { lang: string; slug: string; subslug: string}; props: { acf: any, content: string } }[] = [];
