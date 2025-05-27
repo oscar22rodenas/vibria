@@ -8,6 +8,7 @@ import RRSS from "@components/RRSS.astro";
 const { lang, slug } = Astro.params;
 
 const acf = await getPostsInfo("header", lang);
+
 const imageData = acf.header_imagen
   ? await getImageInfo(acf.header_imagen)
   : null;
