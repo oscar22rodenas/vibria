@@ -7,7 +7,7 @@ import RRSS from "@components/RRSS.astro";
 
 const { lang, slug } = Astro.params;
 
-const acf = await getPostsInfo("header");
+const acf = await getPostsInfo("header", lang);
 const imageData = acf.header_imagen
   ? await getImageInfo(acf.header_imagen)
   : null;
@@ -197,7 +197,7 @@ const sectionsToRender =
 
   <!-- Navegación principal -->
   <nav
-    class="flex flex-row justify-between gap-2 bg-white text-primary text-sm font-semibold items-center p-4"
+    class="flex flex-row justify-between gap-2 bg-white text-primary text-sm font-semibold items-center p-4 lg:px-6"
   >
     {
       sectionsToRender.map((section, idx) => (
