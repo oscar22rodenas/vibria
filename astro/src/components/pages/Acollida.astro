@@ -1,7 +1,18 @@
 ---
 import CategoryNav from "@components/CategoryNav.astro";
+// import "@styles/acollida-content.css";
+import { getAcollidaInfo } from "@wp/getAcollidaInfo";
+
 
 const { lang, slug } = Astro.params;
+const slugCompleto = `${slug}-${lang}`;
+const acollida = await getAcollidaInfo(lang, slugCompleto);
 ---
 
 <CategoryNav lang={lang} slug={slug} />
+
+<article class="max-w-lg mx-auto bg-white p-4 space-y-4 flex">
+    
+  <div class="acollida-content" set:html={acollida.content}></div>
+
+</article>
