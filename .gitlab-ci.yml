@@ -13,5 +13,4 @@ create-pages:
     - cd astro
     - npm install
   script:
-    - cd astro
     - npm run build
