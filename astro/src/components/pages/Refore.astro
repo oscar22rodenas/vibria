@@ -1,7 +1,16 @@
 ---
 import CategoryNav from "@components/CategoryNav.astro";
+// import "@styles/refore-content.css";
+import { getReforeInfo } from "@wp/getReforeInfo";
 
 const { lang, slug } = Astro.params;
+const slugCompleto = `${slug}-${lang}`;
+const refore = await getReforeInfo(lang, slugCompleto);
 ---
 
 <CategoryNav lang={lang} slug={slug} />
+<article class="max-w-lg mx-auto bg-white p-4 space-y-4 flex">
+    
+  <div class="refore-content" set:html={refore.content}></div>
+
+</article>
