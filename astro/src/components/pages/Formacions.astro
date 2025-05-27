@@ -1,7 +1,18 @@
 ---
 import CategoryNav from "@components/CategoryNav.astro";
+// import "@styles/formacions-content.css";
+import { getFormacionsInfo } from "@wp/getFormacionsInfo";
+
 
 const { lang, slug } = Astro.params;
+const slugCompleto = `${slug}-${lang}`;
+const formacions = await getFormacionsInfo(lang, slugCompleto);
 ---
 
 <CategoryNav lang={lang} slug={slug} />
+
+<article class="max-w-lg mx-auto bg-white p-4 space-y-4 flex">
+    
+  <div class="formacions-content" set:html={formacions.content}></div>
+
+</article>
