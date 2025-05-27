@@ -1,7 +1,16 @@
 ---
 import CategoryNav from "@components/CategoryNav.astro";
+// import "@styles/radio-vibria-content.css";
+import { getRadioVibriaInfo } from "@wp/getRadioVibriaInfo";
 
 const { lang, slug } = Astro.params;
+const slugCompleto = `${slug}-${lang}`;
+const radioVibria = await getRadioVibriaInfo(lang, slugCompleto);
 ---
 
 <CategoryNav lang={lang} slug={slug} />
+<article class="max-w-lg mx-auto bg-white p-4 space-y-4 flex">
+    
+  <div class="radio-vibria-content" set:html={radioVibria.content}></div>
+
+</article>

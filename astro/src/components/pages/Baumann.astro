@@ -1,7 +1,17 @@
 ---
 import CategoryNav from "@components/CategoryNav.astro";
+// import "@styles/baumann-content.css";
+import { getBaumannInfo } from "@wp/getBaumannInfo";
 
 const { lang, slug } = Astro.params;
+const slugCompleto = `${slug}-${lang}`;
+const baumann = await getBaumannInfo(lang, slugCompleto);
 ---
 
 <CategoryNav lang={lang} slug={slug} />
+<article class="max-w-lg mx-auto bg-white p-4 space-y-4 flex">
+    
+  <div class="baumann-content" set:html={baumann.content}></div>
+
+</article>
+

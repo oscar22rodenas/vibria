@@ -1,7 +1,16 @@
 ---
 import CategoryNav from "@components/CategoryNav.astro";
+// import "@styles/playground-content.css";
+import { getGreenfluencersInfo } from "@wp/getGreenfluencersInfo";
 
 const { lang, slug } = Astro.params;
+const slugCompleto = `${slug}-${lang}`;
+const greenfluencers = await getGreenfluencersInfo(lang, slugCompleto);
 ---
 
 <CategoryNav lang={lang} slug={slug} />
+<article class="max-w-lg mx-auto bg-white p-4 space-y-4 flex">
+    
+  <div class="greenfluencers-content" set:html={greenfluencers.content}></div>
+
+</article>
