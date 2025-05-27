@@ -1,8 +1,8 @@
 import { apiURL } from "./config.js";
 
-export const getPostsInfo = async (slug) => {
+export const getPostsInfo = async (slug, lang) => {
   try {
-    const response = await fetch(`${apiURL}/posts?slug=${slug}&_fields=acf`);
+    const response = await fetch(`${apiURL}/posts?slug=${slug}-${lang}&_fields=acf`);
     if (!response.ok) {
       throw new Error("Failed to fetch page info");
     }
