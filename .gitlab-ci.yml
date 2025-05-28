@@ -9,7 +9,9 @@ pages:
     - npm install
   script:
     - npm run build
-    - mv dist ../public  # Mueve los archivos generados a la raíz del proyecto
+    # Configuración específica para Astro
+    - echo 'base: "/vibria-brian-oscar-adrian/"' >> astro.config.mjs
+    - mv dist ../public
   artifacts:
     paths:
       - public
