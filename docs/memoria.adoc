@@ -34,6 +34,8 @@ Una de les funcionalitats que no hem implementat en el projecte és el gest de d
 == Requisits no funcionals
 
 == Conclusions
+
+=== Conclusió grupal
 Considerem que la part més complexa del projecte va ser l’inici. Ens va costar trobar una solució que fos fàcil de gestionar tant per al client com per a nosaltres. Després d’analitzar diferents opcions, vam decidir utilitzar WordPress com a gestor de continguts i Astro per al desenvolupament del front-end.
 
 Un cop escollides les tecnologies, encara ens faltava saber com integrar-les. Després de fer diverses recerques, vam descobrir dos plugins molt útils: Advanced Custom Fields (ACF) i Custom Post Type UI (CPT). Aquests ens van permetre estructurar el contingut de WordPress de manera personalitzada i extreure la informació mitjançant l’API REST per mostrar-la amb Astro.
@@ -41,13 +43,13 @@ Un cop escollides les tecnologies, encara ens faltava saber com integrar-les. De
 Ens preocupava que el projecte resultés massa complex per al client, així que vam elaborar un manual d’usuari per facilitar-ne la gestió i l’ús.
 
 A nivell personal, creiem que aquest projecte ens ha ajudat molt a millorar la comunicació amb el client i a aprofundir en el coneixement de WordPress i Astro, dues eines que fins ara no havíem utilitzat d’aquesta manera.
+
 === Conclusió individual
 
 Brian Tobias:
 
 Adrian Bernabeu:
 
-Óscar Ródenas:
 
-=== Conclusió grupal
-
+Óscar Ródenas: 
+Considero que aquest projecte ha sigut una bona oportunitat per treballar amb un client real i entendre varies dinàmiques que es donen en el món laboral. A l'hora de començar el projecte va ser un repte molt gran ja que no sabiem ni per on començar estavem molt perduts, però a mesura que vam anar avançant vam anar trobant solucions i vam aprendre a utilitzar les eines que ens van ser necessàries. Quan vam tenir les soluciones a má vam poder començar a treballar i a fer el projecte, i crec que el resultat final ha sigut molt bo. Hem pogut complir amb els requisits del client i hem après molt en el procés. La part més complicada ha sigut la integració de WordPress amb Astro, però gràcies als plugins ACF i CPT hem pogut estructurar el contingut de manera eficient i tenir que buscar tot i aprendre mentres ho treballavem. Estic molt content amb el resultat final i crec que hem fet un bon treball com a equip.
