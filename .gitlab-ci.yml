@@ -10,7 +10,6 @@ pages:
   script:
     - npm run build
     # Configuración específica para Astro
-    - echo 'base: "/vibria-brian-oscar-adrian/"' >> astro.config.mjs
     - mv dist ../public
   artifacts:
     paths:
