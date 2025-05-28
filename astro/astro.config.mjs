@@ -4,6 +4,7 @@ import tailwind from '@astrojs/tailwind'; // Importa el plugin correcto
 import node from '@astrojs/node';
 
 export default defineConfig({
+  base: '/vibria-brian-oscar-adrian/',
   adapter: node({mode: 'standalone'}),
   integrations: [tailwind()],
   image: {
