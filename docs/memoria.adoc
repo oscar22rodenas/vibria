@@ -47,7 +47,7 @@ A nivell personal, creiem que aquest projecte ens ha ajudat molt a millorar la c
 === Conclusió individual
 
 Brian Tobias:
-
+Crec que el projecte ha anat bé, tot i que l’inici va ser complicat per culpa dels plugins i perquè no sabíem ben bé com enfocar-lo. Un cop vam arribar a una conclusió clara, tot va ser més fàcil, ja que ens ajudàvem entre nosaltres i cadascú tenia una tasca assignada. Això va fer que el treball fos més àgil i organitzat.
 Adrian Bernabeu:
 Penso que ha estat bastant be aquest projecte, també ha sigut un repte, ja que no teniem experiència amb WordPress i ens ha costat una mica integrar-ho amb Astro. Hem après a utilitzar ACF i CPT per estructurar el contingut de WordPress i extreure'l mitjançant l'API REST. També hem millorat la nostra capacitat de treball en equip i la comunicació amb el client, ja que hem hagut de coordinar-nos per complir els requisits del projecte. En general, crec que hem fet un bon treball.
 
