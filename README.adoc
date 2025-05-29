@@ -4,13 +4,17 @@ En aquest projecte es farà una pàgina web per l'empresa de la Víbria.
 El nostre grup està compost per: Adrian Bernabeu, Brian Tobias Arrua, Oscar Rodenas.
 
 === IPS SERVERS AWS
-Màquina Producció: Brian Tobias Arrua Dominguez IP elastica en producciò 18.211.164.146.
+Màquina Producció: Brian Tobias Arrua Dominguez IP elastica en producciò:
 
-// === DNS del domini
+Vibria: https://13.219.51.66
 
-// Web: https://web.torrenovahotels.store/
+Wordpress: https://18.211.164.146
 
-// Aplicació: https://bko.torrenovahotels.store/
+=== DNS del domini
+
+Vibria: https://vibria.vibriaoba.store/
+
+Wordpress: https://wordpress.vibriaoba.store/
 
 
 === Portfolis
