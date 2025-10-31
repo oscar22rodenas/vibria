@@ -34,14 +34,7 @@
       {
         imageUrl && (
           <a href={acf.difusion_link}>
-            <Picture
-              formats={["webp", "avif", "jpeg"]}
-              src={imageUrl}
-              alt={imageAlt}
-              width="60"
-              height="60"
-              class="rounded-lg transition-transform transform hover:scale-105"
-            />
+            <img src={imageUrl} alt={imageAlt} class="w-[60px] h-[60px] rounded-lg transition-transform transform hover:scale-105" />
           </a>
         )
       }
