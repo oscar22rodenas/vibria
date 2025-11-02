@@ -48,26 +48,26 @@ for (const parent of menuData.parent) {
 }
 
 const categoryColors = {
-  "La Víbria": { text: "text-secondary" },
-  "The Vibria": { text: "text-secondary" },
+  "La Víbria": { text: "text-secondary", border: "border-secondary" },
+  "The Vibria": { text: "text-secondary", border: "border-secondary" },
 
-  "Voluntariado Europeo": { text: "text-red" },
-  "Voluntariat Europeu": { text: "text-red" },
-  "European volunteering": { text: "text-red" },
+  "Voluntariado Europeo": { text: "text-red", border: "border-red" },
+  "Voluntariat Europeu": { text: "text-red", border: "border-red" },
+  "European volunteering": { text: "text-red", border: "border-red" },
 
-  "Erasmus+": { text: "text-blue" },
+  "Erasmus+": { text: "text-blue", border: "border-blue" },
 
-  "Prácticas Internacionales": { text: "text-yellow" },
-  "Pràctiques Internacionals": { text: "text-yellow" },
-  "International practices": { text: "text-yellow" },
+  "Prácticas Internacionales": { text: "text-yellow", border: "border-yellow" },
+  "Pràctiques Internacionals": { text: "text-yellow", border: "border-yellow" },
+  "International practices": { text: "text-yellow", border: "border-yellow" },
 
-  "Proyectos Internacionales": { text: "text-orange" },
-  "Projectes Internacionals": { text: "text-orange" },
-  "International Projects": { text: "text-orange" },
+  "Proyectos Internacionales": { text: "text-orange", border: "border-orange" },
+  "Projectes Internacionals": { text: "text-orange", border: "border-orange" },
+  "International Projects": { text: "text-orange", border: "border-orange" },
 
-  "Proyectos Locales": { text: "text-pink" },
-  "Projectes Locals": { text: "text-pink" },
-  "Local Projects": { text: "text-pink" },
+  "Proyectos Locales": { text: "text-pink", border: "border-pink" },
+  "Projectes Locals": { text: "text-pink", border: "border-pink" },
+  "Local Projects": { text: "text-pink", border: "border-pink" },
 };
 
 const currentCategoryColors = categoryColors[currentCategory] ?? {
@@ -196,8 +196,8 @@ const sectionsToRender =
 
   <!-- Navegación principal -->
   <nav
-    class="flex flex-row justify-between gap-2 bg-white text-primary text-sm font-semibold items-center p-4 "
-  >
+  class={`flex flex-row justify-between gap-2 bg-white text-primary text-sm font-semibold items-center p-4 border-b-[1px] ${currentCategoryColors.border || 'border-transparent'}`}
+>
     {
       sectionsToRender.map((section, idx) => (
         <div class="relative">
