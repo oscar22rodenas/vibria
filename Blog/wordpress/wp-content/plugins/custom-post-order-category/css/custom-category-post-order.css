@@ -1,0 +1,45 @@
+	.update-nag { display: none; }
+	#sortablewrapper {
+		width: 99%;
+		padding-top: 20px;
+		border-radius: 5px;
+	}
+	.sortableul {
+		width: 100% !important;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	.ar_link {
+		float: right;
+		width: 50px;
+		color: #a94442;
+	}
+	.ar_link a {
+		text-decoration: none;
+		color: #a94442;
+		font-size: 12px;
+	}
+	.drag_post {
+		border: 1px dashed #245269;
+		background: #F1F1F1;
+		padding: 5px 15px 5px 5px;
+		width: 100%;
+		font-size: 14px;
+	}
+	.drag_post:hover { cursor: crosshair; }
+	#sortable li {
+		margin: 0 3px 3px 3px;
+		padding: 0.4em 1em;
+		font-size: 1.4em;
+		font-weight: bold;
+		height: auto;
+	}
+
+	select#post_type option[disabled] {
+		color: #999;
+		background-image: url('path-to-your-plugin/images/pro-badge.png'); /* optional badge image */
+		background-repeat: no-repeat;
+		background-position: right center;
+		padding-right: 25px;
+	}

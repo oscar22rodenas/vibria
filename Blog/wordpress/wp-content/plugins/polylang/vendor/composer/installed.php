@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'wpsyntex/polylang',
-        'pretty_version' => '3.7.x-dev',
-        'version' => '3.7.9999999.9999999-dev',
-        'reference' => 'c9cc69a8d359f38742a26cd353428f7d9d4f3d92',
+        'pretty_version' => 'dev-3.7.s',
+        'version' => 'dev-3.7.s',
+        'reference' => 'deb1e31748b064058a2cfc06ad082cd1e43e21e0',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'wpsyntex/polylang' => array(
-            'pretty_version' => '3.7.x-dev',
-            'version' => '3.7.9999999.9999999-dev',
-            'reference' => 'c9cc69a8d359f38742a26cd353428f7d9d4f3d92',
+            'pretty_version' => 'dev-3.7.s',
+            'version' => 'dev-3.7.s',
+            'reference' => 'deb1e31748b064058a2cfc06ad082cd1e43e21e0',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
