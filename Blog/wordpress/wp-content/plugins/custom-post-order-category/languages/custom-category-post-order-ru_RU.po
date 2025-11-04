@@ -1,0 +1,153 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: custom category post order\n"
+"POT-Creation-Date: 2025-06-15 16:21+0530\n"
+"PO-Revision-Date: 2025-06-15 16:45+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__;esc_attr__;_x;_n\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin-post-order-page.php:17
+msgid "Post order by category or taxonomy"
+msgstr "Порядок записей по категории или таксономии"
+
+#: admin-post-order-page.php:20
+msgid "⭐ Help us promote this plugin!"
+msgstr "⭐ Помогите нам продвинуть этот плагин!"
+
+#: admin-post-order-page.php:21
+msgid "If you like \"Custom Category Post Order\", please consider giving us a 5-star rating."
+msgstr "Если вам нравится «Custom Category Post Order», пожалуйста, поставьте нам 5 звезд."
+
+#: admin-post-order-page.php:23
+msgid "Rate Plugin"
+msgstr "Оценить плагин"
+
+#: admin-post-order-page.php:28
+msgid "🚀 Unlock Pro Features"
+msgstr "🚀 Разблокировать функции Pro"
+
+#: admin-post-order-page.php:29
+msgid "Enable homepage sorting and advanced sort options with the Pro version."
+msgstr "Включите сортировку главной страницы и расширенные параметры сортировки в Pro-версии."
+
+#: admin-post-order-page.php:31
+msgid "Download Pro"
+msgstr "Скачать Pro"
+
+#: admin-post-order-page.php:43 wp-customcategorypostorder.php:1181
+msgid "Select Post Type"
+msgstr "Выберите тип записи"
+
+#: admin-post-order-page.php:48
+msgid "Select category/taxonomy"
+msgstr "Выберите категорию/таксономию"
+
+#: admin-post-order-page.php:53
+msgid "Select term:"
+msgstr "Выберите термин:"
+
+#: admin-post-order-page.php:57
+msgid "Enable ordering:"
+msgstr "Включить сортировку:"
+
+#: admin-post-order-page.php:60
+msgid "Enable"
+msgstr "Включить"
+
+#: admin-post-order-page.php:99
+msgid "Remove"
+msgstr "Удалить"
+
+#: admin-post-order-page.php:100
+msgid "Add"
+msgstr "Добавить"
+
+#: option-popup.php:10
+msgid "Title A–Z"
+msgstr "Заголовок A–Я"
+
+#: option-popup.php:11
+msgid "Title Z–A"
+msgstr "Заголовок Я–A"
+
+#: option-popup.php:12
+msgid "Newest First"
+msgstr "Сначала новые"
+
+#: option-popup.php:13
+msgid "Oldest First"
+msgstr "Сначала старые"
+
+#: option-popup.php:15
+msgid "Meta Field"
+msgstr "Мета поле"
+
+#: option-popup.php:17
+msgid "Meta field"
+msgstr "Мета поле"
+
+#: option-popup.php:19
+msgid "Loading…"
+msgstr "Загрузка…"
+
+#: option-popup.php:23
+msgid "Sort on Meta Field"
+msgstr "Сортировать по мета полю"
+
+#: wp-customcategorypostorder.php:62 wp-customcategorypostorder.php:159
+#: wp-customcategorypostorder.php:433 wp-customcategorypostorder.php:476
+#: wp-customcategorypostorder.php:596 wp-customcategorypostorder.php:708
+#: wp-customcategorypostorder.php:819 wp-customcategorypostorder.php:902
+#: wp-customcategorypostorder.php:980 wp-customcategorypostorder.php:1004
+#: wp-customcategorypostorder.php:1103 wp-customcategorypostorder.php:1321
+msgid "You do not have sufficient permissions to access this page."
+msgstr "У вас недостаточно прав для доступа к этой странице."
+
+#: wp-customcategorypostorder.php:683
+msgid "Post Orders"
+msgstr "Порядки записей"
+
+#: wp-customcategorypostorder.php:684
+msgid "Post Order"
+msgstr "Порядок записей"
+
+#: wp-customcategorypostorder.php:693
+msgid "Order Permission"
+msgstr "Разрешение на сортировку"
+
+#: wp-customcategorypostorder.php:694
+msgid "Permission"
+msgstr "Разрешение"
+
+#: wp-customcategorypostorder.php:744
+msgid "Roles updated successfully."
+msgstr "Роли успешно обновлены."
+
+#: wp-customcategorypostorder.php:759
+msgid "Who can arrange the post"
+msgstr "Кто может упорядочивать записи"
+
+#: wp-customcategorypostorder.php:770
+msgid "Select Roles:"
+msgstr "Выберите роли:"
+
+#: wp-customcategorypostorder.php:775
+msgid "Submit"
+msgstr "Отправить"
+
+#: wp-customcategorypostorder.php:1146
+msgid "Select Category / Post Type"
+msgstr "Выберите категорию / тип записи"
+
+#: wp-customcategorypostorder.php:1187
+msgid "Home Page"
+msgstr "Главная страница"

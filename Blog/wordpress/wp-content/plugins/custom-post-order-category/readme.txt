@@ -1,8 +1,8 @@
-=== Custom Category/Post Type Post order ===
+=== Custom Category Post Order ===
 Contributors: faaiq
-Tags: Custom Post Order by Category,Custom Post Order by Custom post type, Drag & Drop Interface of ordering posts by Category or post type,Post Order, Custom Post Order.
+Tags: custom post order, drag and drop post order, reorder posts, post sorting, custom post type order, category post order, soft delete posts, alphabetical post order, reverse post order, WordPress post management, custom post sorting, reorder posts plugin, sort posts by category, sort custom post types, post order plugin, WordPress content control, advanced post ordering, intuitive post reordering, toggle post sorting.
 Requires at least: 3.3
-Tested up to: 6.5.2
+Tested up to: 6.8.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -13,12 +13,19 @@ Order your post by category or custom post type by drag & drop interface.
 
 [youtube https://www.youtube.com/watch?v=_UEMSqJvkRM]
 
-Custom Post Order Plugin is used to arrange posts in any custom order by drag & drop interface. It works with a selected category and custom post type both, each category or post type can have different order of same post. It also provide delete button to remove post from display but it does not delete it from wp_posts table.
+Custom Post Order is a powerful WordPress plugin that lets you reorder posts using a simple drag-and-drop interface. Organize content based on custom post types or specific categories, allowing each category or post type to have its own unique post order. Ideal for bloggers, content managers, and website owners who want full control over post display order without altering database content.
 
-1. Arrage Post in Alphabetical order or Reverse order in just one click (This is premium Feature).
-2. Order post by selected category
-3. Order post by selected post type.
-4. Enable/Disable feature of ordering.
+Key Features:
+
+1. Custom post order for Home page (pro)
+2. Drag & Drop Post Reordering – Quickly rearrange posts by hand with an intuitive interface.
+3. Category-Specific Post Order – Sort and manage posts independently within each selected category.
+4. Custom Post Type Sorting – Organize any custom post type with flexible ordering options.
+5. Soft Delete Option – Hide posts from display without deleting them from the WordPress database.
+6. One-Click Alphabetical or Reverse Sorting (Premium Feature) – Automatically arrange posts A–Z or Z–A.
+7. Enable or Disable Sorting Functionality – Easily toggle ordering for specific post types or categories.
+8. Multilingual support added — translations now available for French, German, Italian, Russian, and Polish. Additional languages can be added upon request.
+Optimize your content structure, improve user experience, and take full control of how posts are displayed with the Custom Post Order Plugin for WordPress.
 
 
 == Installation ==
@@ -31,10 +38,17 @@ Custom Post Order Plugin is used to arrange posts in any custom order by drag & 
 
 
 == Screenshots ==
-
-
+1. Drag and drop interface for reordering posts.
+2. Permission who can set custom order.
 
 == Changelog ==
+= 2.1 =
+Added translations for French, German, Italian, Russian, and Polish languages.
+
+= 2.0 =
+Ability to customize the order of posts displayed on the Home Page.
+
+Support for reordering posts within any taxonomy (categories, tags, or custom taxonomies) for any post type.
 
 = 1.5.9 =
 Fix jquery ordering issue
