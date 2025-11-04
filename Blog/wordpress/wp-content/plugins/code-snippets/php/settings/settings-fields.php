@@ -37,6 +37,7 @@ function get_default_settings(): array {
 			'indent_with_tabs'            => true,
 			'tab_size'                    => 4,
 			'indent_unit'                 => 4,
+			'font_size'                   => 14,
 			'wrap_lines'                  => true,
 			'code_folding'                => true,
 			'line_numbers'                => true,
@@ -45,6 +46,12 @@ function get_default_settings(): array {
 			'highlight_active_line'       => true,
 			'keymap'                      => 'default',
 			'theme'                       => 'default',
+		],
+		'version-switch' => [
+			'selected_version'  => '',
+		],
+		'debug' => [
+			'enable_version_change' => false,
 		],
 	];
 
@@ -78,6 +85,29 @@ function get_settings_fields(): array {
 			'name' => __( 'Reset Caches', 'code-snippets' ),
 			'type' => 'action',
 			'desc' => __( 'Use this button to manually clear snippets caches.', 'code-snippets' ),
+		],
+    'enable_version_change' => [
+			'name'  => __( 'Version Change', 'code-snippets' ),
+			'type'  => 'checkbox',
+			'label' => __( 'Enable the ability to switch or rollback versions of the Code Snippets core plugin.', 'code-snippets' ),
+		],
+	];
+
+	$fields['version-switch'] = [
+		'version_switcher'  => [
+			'name' => __( 'Switch Version', 'code-snippets' ),
+			'type' => 'callback',
+			'render_callback' => [ '\\Code_Snippets\\Settings\\Version_Switch', 'render_version_switch_field' ],
+		],
+		'refresh_versions'  => [
+			'name' => __( 'Refresh Versions', 'code-snippets' ),
+			'type' => 'callback',
+			'render_callback' => [ '\\Code_Snippets\\Settings\\Version_Switch', 'render_refresh_versions_field' ],
+		],
+		'version_warning'   => [
+			'name' => '',
+			'type' => 'callback',
+			'render_callback' => [ '\\Code_Snippets\\Settings\\Version_Switch', 'render_version_switch_warning' ],
 		],
 	];
 
@@ -124,9 +154,9 @@ function get_settings_fields(): array {
 
 	if ( ! code_snippets()->licensing->is_licensed() ) {
 		$fields['general']['hide_upgrade_menu'] = [
-			'name'  => __( 'Hide Upgrade Menu', 'code-snippets' ),
+			'name'  => __( 'Hide Upgrade Notices', 'code-snippets' ),
 			'type'  => 'checkbox',
-			'label' => __( 'Hide the Upgrade button from the admin menu.', 'code-snippets' ),
+			'label' => __( 'Hide notices inviting you to upgrade to Code Snippets Pro.', 'code-snippets' ),
 		];
 	}
 
@@ -161,12 +191,21 @@ function get_settings_fields(): array {
 			'codemirror' => 'indentUnit',
 			'min'        => 0,
 		],
+		'font_size'                   => [
+			'name'       => __( 'Font Size', 'code-snippets' ),
+			'type'       => 'number',
+			'label'      => _x( 'px', 'unit', 'code-snippets' ),
+			'codemirror' => 'fontSize',
+			'min'        => 8,
+			'max'        => 28,
+		],
 		'wrap_lines'                  => [
 			'name'       => __( 'Wrap Lines', 'code-snippets' ),
 			'type'       => 'checkbox',
 			'label'      => __( 'Soft-wrap long lines of code instead of horizontally scrolling.', 'code-snippets' ),
 			'codemirror' => 'lineWrapping',
 		],
+
 		'code_folding'                => [
 			'name'       => __( 'Code Folding', 'code-snippets' ),
 			'type'       => 'checkbox',

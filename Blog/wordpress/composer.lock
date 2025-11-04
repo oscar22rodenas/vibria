@@ -154,15 +154,15 @@
         },
         {
             "name": "wpackagist-plugin/advanced-custom-fields",
-            "version": "6.4.1",
+            "version": "6.6.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/advanced-custom-fields/",
-                "reference": "tags/6.4.1"
+                "reference": "tags/6.6.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.6.4.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.6.6.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -172,15 +172,15 @@
         },
         {
             "name": "wpackagist-plugin/code-snippets",
-            "version": "3.6.8",
+            "version": "3.8.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/code-snippets/",
-                "reference": "tags/3.6.8"
+                "reference": "tags/3.8.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/code-snippets.3.6.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/code-snippets.3.8.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -190,7 +190,7 @@
         },
         {
             "name": "wpackagist-plugin/custom-post-order-category",
-            "version": "1.5.9",
+            "version": "2.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/custom-post-order-category/",
@@ -198,7 +198,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-post-order-category.zip?timestamp=1715417934"
+                "url": "https://downloads.wordpress.org/plugin/custom-post-order-category.zip?timestamp=1750255753"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -208,15 +208,15 @@
         },
         {
             "name": "wpackagist-plugin/custom-post-type-ui",
-            "version": "1.17.3",
+            "version": "1.18.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/custom-post-type-ui/",
-                "reference": "tags/1.17.3"
+                "reference": "tags/1.18.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.17.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.18.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -226,15 +226,15 @@
         },
         {
             "name": "wpackagist-plugin/polylang",
-            "version": "3.7.1",
+            "version": "3.7.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/polylang/",
-                "reference": "tags/3.7.1"
+                "reference": "tags/3.7.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/polylang.3.7.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/polylang.3.7.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -244,15 +244,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
-            "version": "4.4.0",
+            "version": "4.6.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-mail-smtp/",
-                "reference": "tags/4.4.0"
+                "reference": "tags/4.6.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.4.4.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.4.6.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"

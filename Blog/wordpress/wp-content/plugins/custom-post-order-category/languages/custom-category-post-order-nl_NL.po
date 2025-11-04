@@ -1,0 +1,154 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: custom category post order\n"
+"POT-Creation-Date: 2025-06-15 16:21+0530\n"
+"PO-Revision-Date: 2025-06-15 16:46+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__;esc_attr__;_x;_n\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin-post-order-page.php:17
+msgid "Post order by category or taxonomy"
+msgstr "Berichtvolgorde op categorie of taxonomie"
+
+#: admin-post-order-page.php:20
+msgid "⭐ Help us promote this plugin!"
+msgstr "⭐ Help ons deze plugin te promoten!"
+
+#: admin-post-order-page.php:21
+msgid "If you like \"Custom Category Post Order\", please consider giving us a 5-star rating."
+msgstr ""
+"Als je \"Custom Category Post Order\" leuk vindt, geef ons dan een beoordeling van 5 sterren."
+
+#: admin-post-order-page.php:23
+msgid "Rate Plugin"
+msgstr "Beoordeel Plugin"
+
+#: admin-post-order-page.php:28
+msgid "🚀 Unlock Pro Features"
+msgstr "🚀 Ontgrendel Pro-functies"
+
+#: admin-post-order-page.php:29
+msgid "Enable homepage sorting and advanced sort options with the Pro version."
+msgstr "Activeer sorteren van de startpagina en geavanceerde sorteeropties met de Pro-versie."
+
+#: admin-post-order-page.php:31
+msgid "Download Pro"
+msgstr "Download Pro"
+
+#: admin-post-order-page.php:43 wp-customcategorypostorder.php:1181
+msgid "Select Post Type"
+msgstr "Selecteer berichttype"
+
+#: admin-post-order-page.php:48
+msgid "Select category/taxonomy"
+msgstr "Selecteer categorie/taxonomie"
+
+#: admin-post-order-page.php:53
+msgid "Select term:"
+msgstr "Selecteer term:"
+
+#: admin-post-order-page.php:57
+msgid "Enable ordering:"
+msgstr "Schakel sorteren in:"
+
+#: admin-post-order-page.php:60
+msgid "Enable"
+msgstr "Inschakelen"
+
+#: admin-post-order-page.php:99
+msgid "Remove"
+msgstr "Verwijderen"
+
+#: admin-post-order-page.php:100
+msgid "Add"
+msgstr "Toevoegen"
+
+#: option-popup.php:10
+msgid "Title A–Z"
+msgstr "Titel A–Z"
+
+#: option-popup.php:11
+msgid "Title Z–A"
+msgstr "Titel Z–A"
+
+#: option-popup.php:12
+msgid "Newest First"
+msgstr "Nieuwste eerst"
+
+#: option-popup.php:13
+msgid "Oldest First"
+msgstr "Oudste eerst"
+
+#: option-popup.php:15
+msgid "Meta Field"
+msgstr "Metaveld"
+
+#: option-popup.php:17
+msgid "Meta field"
+msgstr "Metaveld"
+
+#: option-popup.php:19
+msgid "Loading…"
+msgstr "Laden…"
+
+#: option-popup.php:23
+msgid "Sort on Meta Field"
+msgstr "Sorteren op metaveld"
+
+#: wp-customcategorypostorder.php:62 wp-customcategorypostorder.php:159
+#: wp-customcategorypostorder.php:433 wp-customcategorypostorder.php:476
+#: wp-customcategorypostorder.php:596 wp-customcategorypostorder.php:708
+#: wp-customcategorypostorder.php:819 wp-customcategorypostorder.php:902
+#: wp-customcategorypostorder.php:980 wp-customcategorypostorder.php:1004
+#: wp-customcategorypostorder.php:1103 wp-customcategorypostorder.php:1321
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Je hebt onvoldoende rechten om deze pagina te openen."
+
+#: wp-customcategorypostorder.php:683
+msgid "Post Orders"
+msgstr "Berichtvolgorde"
+
+#: wp-customcategorypostorder.php:684
+msgid "Post Order"
+msgstr "Berichtvolgorde"
+
+#: wp-customcategorypostorder.php:693
+msgid "Order Permission"
+msgstr "Sorteerrechten"
+
+#: wp-customcategorypostorder.php:694
+msgid "Permission"
+msgstr "Toestemming"
+
+#: wp-customcategorypostorder.php:744
+msgid "Roles updated successfully."
+msgstr "Rollen succesvol bijgewerkt."
+
+#: wp-customcategorypostorder.php:759
+msgid "Who can arrange the post"
+msgstr "Wie mag berichten sorteren"
+
+#: wp-customcategorypostorder.php:770
+msgid "Select Roles:"
+msgstr "Selecteer rollen:"
+
+#: wp-customcategorypostorder.php:775
+msgid "Submit"
+msgstr "Verzenden"
+
+#: wp-customcategorypostorder.php:1146
+msgid "Select Category / Post Type"
+msgstr "Selecteer categorie / berichttype"
+
+#: wp-customcategorypostorder.php:1187
+msgid "Home Page"
+msgstr "Startpagina"
