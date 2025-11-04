@@ -1,0 +1,159 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: custom category post order\n"
+"POT-Creation-Date: 2025-06-15 16:21+0530\n"
+"PO-Revision-Date: 2025-06-15 16:34+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__;esc_attr__;_x;_n\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin-post-order-page.php:17
+msgid "Post order by category or taxonomy"
+msgstr "Post-Reihenfolge nach Kategorie oder Taxonomie"
+
+#: admin-post-order-page.php:20
+msgid "⭐ Help us promote this plugin!"
+msgstr "⭐ Hilf uns, dieses Plugin bekannt zu machen!"
+
+#: admin-post-order-page.php:21
+msgid ""
+"If you like \"Custom Category Post Order\", please consider giving us a 5-star "
+"rating."
+msgstr ""
+"Wenn dir „Custom Category Post Order“ gefällt, freuen wir uns über eine "
+"5‑Sterne-Bewertung."
+
+#: admin-post-order-page.php:23
+msgid "Rate Plugin"
+msgstr "Plugin bewerten"
+
+#: admin-post-order-page.php:28
+msgid "🚀 Unlock Pro Features"
+msgstr "🚀 Pro-Funktionen freischalten"
+
+#: admin-post-order-page.php:29
+msgid "Enable homepage sorting and advanced sort options with the Pro version."
+msgstr ""
+"Mit der Pro-Version kannst du die Sortierung der Startseite und erweiterte "
+"Sortieroptionen aktivieren."
+
+#: admin-post-order-page.php:31
+msgid "Download Pro"
+msgstr "Pro herunterladen"
+
+#: admin-post-order-page.php:43 wp-customcategorypostorder.php:1181
+msgid "Select Post Type"
+msgstr "Post-Typ auswählen"
+
+#: admin-post-order-page.php:48
+msgid "Select category/taxonomy"
+msgstr "Kategorie Taxonomie auswählen"
+
+#: admin-post-order-page.php:53
+msgid "Select term:"
+msgstr "Begriff auswählen"
+
+#: admin-post-order-page.php:57
+msgid "Enable ordering:"
+msgstr "Reihenfolge aktivieren:"
+
+#: admin-post-order-page.php:60
+msgid "Enable"
+msgstr "Aktivieren"
+
+#: admin-post-order-page.php:99
+msgid "Remove"
+msgstr "Entfernen"
+
+#: admin-post-order-page.php:100
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: option-popup.php:10
+msgid "Title A–Z"
+msgstr "Titel A–Z"
+
+#: option-popup.php:11
+msgid "Title Z–A"
+msgstr "Titel Z–A"
+
+#: option-popup.php:12
+msgid "Newest First"
+msgstr "Neueste zuerst"
+
+#: option-popup.php:13
+msgid "Oldest First"
+msgstr "Älteste zuerst"
+
+#: option-popup.php:15
+msgid "Meta Field"
+msgstr "Meta-Feld"
+
+#: option-popup.php:17
+msgid "Meta field"
+msgstr "Meta-Feld"
+
+#: option-popup.php:19
+msgid "Loading…"
+msgstr "Wird geladen…"
+
+#: option-popup.php:23
+msgid "Sort on Meta Field"
+msgstr "Nach Meta-Feld sortieren"
+
+#: wp-customcategorypostorder.php:62 wp-customcategorypostorder.php:159
+#: wp-customcategorypostorder.php:433 wp-customcategorypostorder.php:476
+#: wp-customcategorypostorder.php:596 wp-customcategorypostorder.php:708
+#: wp-customcategorypostorder.php:819 wp-customcategorypostorder.php:902
+#: wp-customcategorypostorder.php:980 wp-customcategorypostorder.php:1004
+#: wp-customcategorypostorder.php:1103 wp-customcategorypostorder.php:1321
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Sie haben nicht genügend Berechtigungen, um auf diese Seite zuzugreifen."
+
+#: wp-customcategorypostorder.php:683
+msgid "Post Orders"
+msgstr "Beitragsreihenfolgen"
+
+#: wp-customcategorypostorder.php:684
+msgid "Post Order"
+msgstr "Beitragsreihenfolge"
+
+#: wp-customcategorypostorder.php:693
+msgid "Order Permission"
+msgstr "Sortier-Berechtigung"
+
+#: wp-customcategorypostorder.php:694
+msgid "Permission"
+msgstr "Berechtigung"
+
+#: wp-customcategorypostorder.php:744
+msgid "Roles updated successfully."
+msgstr "Rollen erfolgreich aktualisiert."
+
+#: wp-customcategorypostorder.php:759
+msgid "Who can arrange the post"
+msgstr "Wer kann Beiträge sortieren"
+
+#: wp-customcategorypostorder.php:770
+msgid "Select Roles:"
+msgstr "Rollen auswählen:"
+
+#: wp-customcategorypostorder.php:775
+msgid "Submit"
+msgstr "Absenden"
+
+#: wp-customcategorypostorder.php:1146
+msgid "Select Category / Post Type"
+msgstr "Kategorie/Post-Typ auswählen"
+
+#: wp-customcategorypostorder.php:1187
+msgid "Home Page"
+msgstr "Startseite"
