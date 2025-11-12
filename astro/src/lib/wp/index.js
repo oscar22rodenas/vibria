@@ -10,6 +10,7 @@ import { getExperienciesInfo } from "./getExperienciesInfo.js";
 import { getExperienciaDetalladaInfo } from "./getExperienciaDetalladaInfo.js";
 import { getIntercanvisJuvenilInfo} from "./getIntercanvisJuvenilInfo.js";
 import { getExperienciesErasmusInfo } from "./getExperienciesErasmusInfo.js";
+import { getCategoriesHeaderInfo } from "./getCategoriesHeaderInfo.js";
 
-export { getImageInfo, getSlidesInfo, getRRSSInfo, getCategoriesInfo, getPostsInfo, getPageById, getOfertesInfo, getOfertaDetalladaInfo, getExperienciesInfo, getExperienciaDetalladaInfo, getExperienciesErasmusInfo, getIntercanvisJuvenilInfo };
+export { getImageInfo, getSlidesInfo, getRRSSInfo, getCategoriesInfo, getPostsInfo, getPageById, getOfertesInfo, getOfertaDetalladaInfo, getExperienciesInfo, getExperienciaDetalladaInfo, getExperienciesErasmusInfo, getIntercanvisJuvenilInfo, getCategoriesHeaderInfo };
 
