@@ -9,7 +9,7 @@ const baumann = await getBaumannInfo(lang, slugCompleto);
 ---
 
 <CategoryNav lang={lang} slug={slug} />
-<article class="max-w-lg mx-auto bg-white p-4 space-y-4 flex">
+<article class="max-w-lg mx-auto bg-white p-4 space-y-4 flex md:mx-[15%]">
     
   <div class="baumann-content" set:html={baumann.content}></div>
 
