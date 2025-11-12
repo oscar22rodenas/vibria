@@ -15,7 +15,7 @@ const queFem = await getQueFemInfo(lang, slugCompleto);
 
 <CategoryNav lang={lang} slug={slug} />
 
-<article class="bg-white p-4 space-y-4 flex justify-center md:mt-[50px]">
+<article class="bg-white p-4 space-y-4 justify-center flex md:mt-[50px] md:mx-[15%]">
     
   <div class="que-fem-content" set:html={queFem.content}></div>
 
