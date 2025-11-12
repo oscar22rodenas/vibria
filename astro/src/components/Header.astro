@@ -1,7 +1,7 @@
 ---
 // Imports y datos como los tienes
 import { Picture } from "astro:assets";
-import { getPostsInfo, getImageInfo, getCategoriesInfo } from "@wp/index.js";
+import { getPostsInfo, getImageInfo, getCategoriesInfo, getCategoriesHeaderInfo } from "@wp/index.js";
 import LanguageSwitcher from "./LanguageSwitcher.astro";
 import RRSS from "@components/RRSS.astro";
 
@@ -16,6 +16,14 @@ const imageUrl = imageData?.source_url || "";
 const imageAlt = imageData?.alt_text || "Logo Vibria";
 
 const menuData = await getCategoriesInfo(lang);
+
+// Obtener los enlaces dinámicos del header
+const headerLinks = await getCategoriesHeaderInfo(lang);
+
+// Separar los enlaces por tipo para fácil acceso
+const contacteLink = headerLinks.find(link => link.slug.includes('contacte'));
+const assessoriesLink = headerLinks.find(link => link.slug.includes('assessories'));
+const tiendaLink = headerLinks.find(link => link.slug.includes('tienda'));
 
 const lastSegment = slug?.toLowerCase() ?? "";
 
@@ -72,6 +80,7 @@ const categoryColors = {
 
 const currentCategoryColors = categoryColors[currentCategory] ?? {
   text: "",
+  border: "",
 };
 
 const sectionsToRender =
@@ -113,14 +122,21 @@ const sectionsToRender =
     id="menu"
     class="grid grid-rows-[auto_1fr_auto_auto] fixed inset-0 mt-[4.5rem] bg-white pt-0 z-10 shadow-lg overflow-y-auto transition-all duration-300 -translate-y-5 opacity-0 invisible"
   >
+    <!-- Enlaces dinámicos en móvil: Contacte, Assessories, Tienda -->
     <div class="bg-yellow text-white text-center font-medium px-4 py-2">
       <div class="flex justify-between items-center">
-        <span class="text-lg text-start min-w-[90px] gap-1">Contacte</span>
-        <span
+        <a href={contacteLink?.slug || "#"} class="text-lg text-start min-w-[90px] gap-1">
+          {contacteLink?.title || "Contacte"}
+        </a>
+        <a
+          href={assessoriesLink?.slug || "#"}
           class="px-4 py-1 border-2 border-white rounded-full font-bold tracking-wide"
-          >ASSESSORIES</span
         >
-        <span class="text-lg text-end min-w-[90px] gap-1">Tienda</span>
+          {assessoriesLink?.title?.toUpperCase() || "ASSESSORIES"}
+        </a>
+        <a href={tiendaLink?.slug || "#"} class="text-lg text-end min-w-[90px] gap-1">
+          {tiendaLink?.title || "Tienda"}
+        </a>
       </div>
     </div>
     <div class="flex flex-col justify-center w-full max-w-2xl mx-auto">
@@ -178,26 +194,28 @@ const sectionsToRender =
       <p class="h3 font-800">La Víbria Intercultural</p>
     </a>
 
-    <!-- Botones a la derecha -->
+    <!-- Enlaces dinámicos en escritorio: Assessories, Contacte, Tienda -->
     <div class="flex items-center gap-2 lg:gap-4">
       <a
         class="text-white text-base font-700 px-2 py-0.5 border border-white rounded-full"
-        href="#"
+        href={assessoriesLink?.slug || "#"}
       >
-        Assessories
+        {assessoriesLink?.title || "Assessories"}
       </a>
-      <a class="text-white text-base font-400 px-2 py-0.5" href="#">
-        Contacte
+      <a class="text-white text-base font-400 px-2 py-0.5" href={contacteLink?.slug || "#"}>
+        {contacteLink?.title || "Contacte"}
       </a>
-      <a class="text-white text-base font-400 px-2 py-0.5" href="#"> Tienda </a>
+      <a class="text-white text-base font-400 px-2 py-0.5" href={tiendaLink?.slug || "#"}>
+        {tiendaLink?.title || "Tienda"}
+      </a>
       <LanguageSwitcher currentLang={lang} class="z-10" />
     </div>
   </header>
 
   <!-- Navegación principal -->
   <nav
-  class={`flex flex-row justify-between gap-2 bg-white text-primary text-sm font-semibold items-center p-4 border-b-[1px] ${currentCategoryColors.border || 'border-transparent'}`}
->
+    class={`flex flex-row justify-between gap-2 bg-white text-primary text-sm font-semibold items-center p-4 border-b-[1px] ${currentCategoryColors.border || 'border-transparent'}`}
+  >
     {
       sectionsToRender.map((section, idx) => (
         <div class="relative">
