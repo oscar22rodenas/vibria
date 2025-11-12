@@ -9,9 +9,9 @@ const ofertes = await getOfertesInfo(lang);
 ---
 <CategoryNav lang={lang} slug={slug} />
 
-<div class="text-red text-center text-h2 font-700 py-8 md:font-800 md:text-3xl" set:html={ofertes[0].content}></div>
+<div class="text-red text-center text-h2 font-700 py-8 md:font-800 md:text-3xl md:mx-[15%]" set:html={ofertes[0].content}></div>
 
-<div class="p-6 grid grid-cols-1 gap-5 md:grid-cols-2 md:px-12 lg:px-16 xl:px-20">
+<div class="p-6 grid grid-cols-1 gap-5 md:grid-cols-2 md:px-12 lg:px-16 xl:px-20 md:mx-[15%]">
   {
     ofertes.map((oferta) => (
       
