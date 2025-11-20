@@ -12,7 +12,7 @@ import ExperienciaDetallada from "@components/pages/ExperienciaDetallada.astro";
 export async function getStaticPaths() {
     const languages = ["ca", "es", "en"]; // Idiomas soportados
 
-    const pagesRes = await fetch(`${apiURL}/pages?slug=voluntariat-claudia-bulgaria-ca&_fields=acf,slug,content.rendered&per_page=100`);
+    const pagesRes = await fetch(`${apiURL}/pages?slug=&_fields=acf,slug,content.rendered&per_page=100`);
     const pages = await pagesRes.json();
     
     let paths: { params: { lang: string; slug: string; subslug: string}; props: { acf: any, content: string } }[] = [];
