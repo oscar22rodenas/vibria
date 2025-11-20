@@ -1,12 +1,11 @@
 ---
 import CategoryNav from "@components/CategoryNav.astro";
-// import "@styles/acollida-content.css";
 import { getAcollidaInfo } from "@wp/getAcollidaInfo";
 
 
 const { lang, slug } = Astro.params;
 const slugCompleto = `${slug}-${lang}`;
-const acollida = await getAcollidaInfo(lang, slugCompleto);
+const acollida = await getAcollidaInfo(slugCompleto);
 ---
 
 <CategoryNav lang={lang} slug={slug} />

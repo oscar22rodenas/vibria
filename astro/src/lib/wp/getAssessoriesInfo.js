@@ -1,6 +1,6 @@
 import { apiURL } from "./config.js";
 
-export const getBaumannInfo = async (slug) => {
+export const getAssessoriesInfo = async (slug) => {
   try {    
     const responsePage = await fetch(`${apiURL}/pages?slug=${slug}&_fields=content`);
     if (!responsePage.ok) {
@@ -11,7 +11,7 @@ export const getBaumannInfo = async (slug) => {
           content: pageData.content.rendered || "",
         };
   } catch (error) {
-    console.error("Error obteniendo baumann:", error);
+    console.error("Error obteniendo assessories:", error);
     return [];
   }
 };

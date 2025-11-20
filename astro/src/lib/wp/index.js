@@ -1,16 +1,17 @@
-import { getImageInfo } from "./getImageInfo.js";
-import { getSlidesInfo } from "./getSlidesInfo.js";
-import { getRRSSInfo } from "./getRRSSInfo.js";
-import { getCategoriesInfo } from "./getCategoriesInfo.js";
-import { getPostsInfo } from "./getPostsInfo.js";
-import { getPageById } from "./getPageById.js";
-import { getOfertesInfo } from "./getOfertesInfo.js";
-import { getOfertaDetalladaInfo } from "./getOfertaDetalladaInfo.js";
-import { getExperienciesInfo } from "./getExperienciesInfo.js";
-import { getExperienciaDetalladaInfo } from "./getExperienciaDetalladaInfo.js";
-import { getIntercanvisJuvenilInfo} from "./getIntercanvisJuvenilInfo.js";
-import { getExperienciesErasmusInfo } from "./getExperienciesErasmusInfo.js";
-import { getCategoriesHeaderInfo } from "./getCategoriesHeaderInfo.js";
-
-export { getImageInfo, getSlidesInfo, getRRSSInfo, getCategoriesInfo, getPostsInfo, getPageById, getOfertesInfo, getOfertaDetalladaInfo, getExperienciesInfo, getExperienciaDetalladaInfo, getExperienciesErasmusInfo, getIntercanvisJuvenilInfo, getCategoriesHeaderInfo };
-
+export { getImageInfo } from "./getImageInfo.js";
+export { getSlidesInfo } from "./getSlidesInfo.js";
+export { getRRSSInfo } from "./getRRSSInfo.js";
+export { getCategoriesInfo } from "./getCategoriesInfo.js";
+export { getPostsInfo } from "./getPostsInfo.js";
+export { getPageById } from "./getPageById.js";
+export { getOfertesInfo } from "./getOfertesInfo.js";
+export { getOfertaDetalladaInfo } from "./getOfertaDetalladaInfo.js";
+export { getExperienciesInfo } from "./getExperienciesInfo.js";
+export { getExperienciaDetalladaInfo } from "./getExperienciaDetalladaInfo.js";
+export { getIntercanvisJuvenilInfo} from "./getIntercanvisJuvenilInfo.js";
+export { getExperienciesErasmusInfo } from "./getExperienciesErasmusInfo.js";
+export { getCategoriesHeaderInfo } from "./getCategoriesHeaderInfo.js";
+export { getAssessoriesInfo } from "./getAssessoriesInfo.js";
+export { getAcollidaInfo } from "./getAcollidaInfo.js";
+export { getBaumannInfo } from "./getBaumannInfo.js";
+export { getDiarisVoluntariesInfo } from "./getDiarisVoluntariesInfo.js";

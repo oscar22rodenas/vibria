@@ -17,7 +17,7 @@ export async function getStaticPaths() {
     
     let paths: { params: { lang: string; slug: string; subslug: string}; props: { acf: any, content: string } }[] = [];
 
-    pages.forEach((page: { slug: string; acf: any }) => {
+    pages.forEach((page: { slug: string; acf: any, content: { rendered: string } }) => {
         const extracted = extractLang(page.slug);
         
         if (extracted && languages.includes(extracted.lang) && page.acf.categoria) {

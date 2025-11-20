@@ -2,7 +2,7 @@
 import { Picture } from "astro:assets";
 import CategoryNav from "@components/CategoryNav.astro";
 import { getExperienciesErasmusInfo } from "@wp/index.js";
-
+import "@styles/experiencies-erasmus-content.css";
 
 const { lang, slug } = Astro.params;
 
@@ -14,7 +14,7 @@ const experiencies = await getExperienciesErasmusInfo(lang);
 
 <div class="experiencies-content md:mx-[15%]" set:html={experiencies[0]?.content}></div>
 
-<div class="p-6 grid grid-cols-1 gap-5 md:grid-cols-2 md:px-12 lg:ml-[180px] xl:px-20 md:mx-[15%]">
+<div class="p-4 grid grid-cols-1 gap-5 md:grid-cols-2 md:mx-[15%]">
   {
     experiencies.map((experiencia) => (
       
@@ -22,7 +22,7 @@ const experiencies = await getExperienciesErasmusInfo(lang);
       <div class="relative">
         <Picture formats={['webp', 'avif', 'jpeg']} src={experiencia.imageUrl} alt={experiencia.imageAlt} width="320" height="126"/>
 
-        <h4 class="absolute bottom-0 inset-x-16 text-h4 font-700 bg-red text-center text-white px-2">
+        <h4 class="absolute bottom-0 inset-x-16 text-h4 font-700 bg-blue text-center text-white px-2">
           {experiencia.title}
         </h4>
       </div>
@@ -39,7 +39,7 @@ const experiencies = await getExperienciesErasmusInfo(lang);
         </div>
       </div>
 
-      <p class="border-t border-black pt-1 text-sm text-red font-400">
+      <p class="border-t border-black pt-1 text-sm text-blue font-400">
         {experiencia.dataLimit}
       </p>
     </a>
