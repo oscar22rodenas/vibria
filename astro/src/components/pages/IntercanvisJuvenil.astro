@@ -4,51 +4,77 @@ import CategoryNav from "@components/CategoryNav.astro";
 import { getIntercanvisJuvenilInfo } from "@wp/index.js";
 import "@styles/intercanvis-juvenil-content.css";
 
-
-
 const { lang, slug } = Astro.params;
 
 const experiencies = await getIntercanvisJuvenilInfo(lang);
-
 ---
 
 <CategoryNav lang={lang} slug={slug} />
 
-<div class="intercanvis-juvenil-contenidor">
-
+<article class="intercanvis-juvenil-contenidor md:mx-[15%]">
   <h2>Ultimes Ofertas</h2>
 
-<div class="p-6 grid grid-cols-1 gap-5 md:grid-cols-2 md:px-12 xl:px-20">
-  {
-    experiencies.map((experiencia) => (
-      
-    <a href={experiencia.link} class="flex flex-col justify-center items-center gap-2 mb-5 bg-gray-100 shadow-[0_4px_4px_rgba(0,0,0,0.25)] pt-4 pb-1 px-4">
-      <div class="relative">
-        <Picture formats={['webp', 'avif', 'jpeg']} src={experiencia.imageUrl} alt={experiencia.imageAlt} width="320" height="126"/>
+  <div class="p-4 grid grid-cols-1 gap-5 md:grid-cols-2">
+    {
+      experiencies.map((experiencia) => (
+        <a
+          href={experiencia.link}
+          class="flex flex-col justify-center items-center gap-2 mb-5 bg-gray-100 shadow-[0_4px_4px_rgba(0,0,0,0.25)] pt-4 pb-1 px-4"
+        >
+          <div class="relative">
+            <Picture
+              formats={["webp", "avif", "jpeg"]}
+              src={experiencia.imageUrl}
+              alt={experiencia.imageAlt}
+              width="320"
+              height="126"
+            />
 
-        <h4 class="absolute bottom-0 inset-x-16 text-h4 font-700 bg-red text-center text-white px-2">
-          {experiencia.title}
-        </h4>
-      </div>
-      <p class="text-sm text-black font-400 text-center">{experiencia.text}</p>
+            <h4 class="absolute bottom-0 inset-x-16 text-h4 font-700 bg-blue text-center text-white px-2">
+              {experiencia.title}
+            </h4>
+          </div>
+          <p class="text-sm text-black font-400 text-center">
+            {experiencia.text}
+          </p>
 
-      <div class="flex flex-row items-center justify-between w-full">
-        <div class="flex flex-row items-center gap-1">
-          <Picture formats={['webp', 'avif', 'jpeg']} src="/iconos/Ubicacion_Negro.png" alt="Ubicacion Icon" width="24" height="24"/>
-          <span class="text-sm text-black font-700">{experiencia.ubicacion}</span>
-        </div>
-        <div class="flex flex-row items-center gap-1">
-          <Picture formats={['webp', 'avif', 'jpeg']} src="/iconos/Reloj_Arena_Negro.png" alt="Tiempo Icon" width="24" height="24"/>
-          <span class="text-sm text-black font-700">{experiencia.fechas}</span>
-        </div>
-      </div>
+          <div class="flex flex-row items-center justify-between w-full">
+            <div class="flex flex-row items-center gap-1">
+              <Picture
+                formats={["webp", "avif", "jpeg"]}
+                src="/iconos/Ubicacion_Negro.png"
+                alt="Ubicacion Icon"
+                width="24"
+                height="24"
+              />
+              <span class="text-sm text-black font-700">
+                {experiencia.ubicacion}
+              </span>
+            </div>
+            <div class="flex flex-row items-center gap-1">
+              <Picture
+                formats={["webp", "avif", "jpeg"]}
+                src="/iconos/Reloj_Arena_Negro.png"
+                alt="Tiempo Icon"
+                width="24"
+                height="24"
+              />
+              <span class="text-sm text-black font-700">
+                {experiencia.fechas}
+              </span>
+            </div>
+          </div>
 
-      <p class="border-t border-black pt-1 text-sm text-red font-400">
-        {experiencia.dataLimit}
-      </p>
-    </a>
-  ))}
-</div>
+          <p class="border-t border-black pt-1 text-sm text-blue font-400">
+            {experiencia.dataLimit}
+          </p>
+        </a>
+      ))
+    }
+  </div>
 
-     <div class="intercanvis-juvenil-content py-8" set:html={experiencies[0].content}></div>
-</div>
+  <div
+    class="intercanvis-juvenil-content py-8"
+    set:html={experiencies[0].content}
+  />
+</article>

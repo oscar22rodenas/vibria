@@ -1,7 +1,6 @@
 ---
 // Imports y datos como los tienes
-import { Picture } from "astro:assets";
-import { getPostsInfo, getImageInfo, getCategoriesInfo } from "@wp/index.js";
+import { getPostsInfo, getImageInfo, getCategoriesInfo, getCategoriesHeaderInfo } from "@wp/index.js";
 import LanguageSwitcher from "./LanguageSwitcher.astro";
 import RRSS from "@components/RRSS.astro";
 
@@ -16,6 +15,17 @@ const imageUrl = imageData?.source_url || "";
 const imageAlt = imageData?.alt_text || "Logo Vibria";
 
 const menuData = await getCategoriesInfo(lang);
+
+// Obtener los enlaces dinámicos del header
+const headerLinks = await getCategoriesHeaderInfo(lang);
+
+// Separar los enlaces por tipo para fácil acceso
+const contacteLink = headerLinks.find(link => link.slug.includes('contacte'));
+const assessoriesLink = headerLinks.find(link => link.slug.includes('assessories'));
+const tiendaLink = headerLinks.find(link => link.slug.includes('tienda'));
+
+const currentPath = Astro.url.pathname;
+const isInAssessories = assessoriesLink && currentPath.includes(assessoriesLink.slug.replace(/^\//, ''));
 
 const lastSegment = slug?.toLowerCase() ?? "";
 
@@ -48,30 +58,31 @@ for (const parent of menuData.parent) {
 }
 
 const categoryColors = {
-  "La Víbria": { text: "text-secondary" },
-  "The Vibria": { text: "text-secondary" },
+  "La Víbria": { text: "text-secondary", border: "border-secondary" },
+  "The Vibria": { text: "text-secondary", border: "border-secondary" },
 
-  "Voluntariado Europeo": { text: "text-red" },
-  "Voluntariat Europeu": { text: "text-red" },
-  "European volunteering": { text: "text-red" },
+  "Voluntariado Europeo": { text: "text-red", border: "border-red" },
+  "Voluntariat Europeu": { text: "text-red", border: "border-red" },
+  "European volunteering": { text: "text-red", border: "border-red" },
 
-  "Erasmus+": { text: "text-blue" },
+  "Erasmus+": { text: "text-blue", border: "border-blue" },
 
-  "Prácticas Internacionales": { text: "text-yellow" },
-  "Pràctiques Internacionals": { text: "text-yellow" },
-  "International practices": { text: "text-yellow" },
+  "Prácticas Internacionales": { text: "text-yellow", border: "border-yellow" },
+  "Pràctiques Internacionals": { text: "text-yellow", border: "border-yellow" },
+  "International practices": { text: "text-yellow", border: "border-yellow" },
 
-  "Proyectos Internacionales": { text: "text-orange" },
-  "Projectes Internacionals": { text: "text-orange" },
-  "International Projects": { text: "text-orange" },
+  "Proyectos Internacionales": { text: "text-orange", border: "border-orange" },
+  "Projectes Internacionals": { text: "text-orange", border: "border-orange" },
+  "International Projects": { text: "text-orange", border: "border-orange" },
 
-  "Proyectos Locales": { text: "text-pink" },
-  "Projectes Locals": { text: "text-pink" },
-  "Local Projects": { text: "text-pink" },
+  "Proyectos Locales": { text: "text-pink", border: "border-pink" },
+  "Projectes Locals": { text: "text-pink", border: "border-pink" },
+  "Local Projects": { text: "text-pink", border: "border-pink" },
 };
 
 const currentCategoryColors = categoryColors[currentCategory] ?? {
   text: "",
+  border: "border-secondary",
 };
 
 const sectionsToRender =
@@ -91,13 +102,11 @@ const sectionsToRender =
 <div class="sticky top-0 z-30 md:hidden">
   <header class="flex items-center justify-between bg-primary px-4 py-2 z-10">
     <a id="menu-toggle" class="flex justify-start min-w-[90px] z-10 cursor-pointer">
-      <Picture
-        formats={["webp", "avif", "jpeg"]}
+      <img
         id="menu-icon"
-        src="/iconos/menu.png"
+        src="/iconos/menu.svg"
         alt="Menu"
-        width="30"
-        height="30"
+        class="w-8 h-8"
       />
       <span id="close-icon" class="hidden justify-center text-[2.5rem] text-white"
         >×</span
@@ -105,7 +114,7 @@ const sectionsToRender =
     </a>
 
     <a href={`/${lang}/home`} class="z-10">
-      <Picture src={imageUrl} alt={imageAlt} width="60" height="60" />
+      <img src={imageUrl} alt={imageAlt} class="w-[60px] h-[60px]" />
     </a>
 
     <LanguageSwitcher currentLang={lang} class="z-10" />
@@ -115,14 +124,21 @@ const sectionsToRender =
     id="menu"
     class="grid grid-rows-[auto_1fr_auto_auto] fixed inset-0 mt-[4.5rem] bg-white pt-0 z-10 shadow-lg overflow-y-auto transition-all duration-300 -translate-y-5 opacity-0 invisible"
   >
+    <!-- Enlaces dinámicos en móvil: Contacte, Assessories, Tienda -->
     <div class="bg-yellow text-white text-center font-medium px-4 py-2">
       <div class="flex justify-between items-center">
-        <span class="text-lg text-start min-w-[90px] gap-1">Contacte</span>
-        <span
+        <a href={contacteLink?.slug || "#"} class="text-lg text-start min-w-[90px] gap-1">
+          {contacteLink?.title || "Contacte"}
+        </a>
+        <a
+          href={assessoriesLink?.slug || "#"}
           class="px-4 py-1 border-2 border-white rounded-full font-bold tracking-wide"
-          >ASSESSORIES</span
         >
-        <span class="text-lg text-end min-w-[90px] gap-1">Tienda</span>
+          {assessoriesLink?.title?.toUpperCase() || "ASSESSORIES"}
+        </a>
+        <a href={tiendaLink?.slug || "#"} class="text-lg text-end min-w-[90px] gap-1">
+          {tiendaLink?.title || "Tienda"}
+        </a>
       </div>
     </div>
     <div class="flex flex-col justify-center w-full max-w-2xl mx-auto">
@@ -130,7 +146,7 @@ const sectionsToRender =
         sectionsToRender.map((section, index) => (
           <div class="border-b border-gray-200">
             <div
-              class="flex items-center py-6 px-4 cursor-pointer accordion-header"
+              class="flex items-center py-[45px] px-4 cursor-pointer accordion-header"
               data-index={index}
             >
               <span class="w-full text-center text-lg font-bold text-[#058279]">
@@ -176,29 +192,31 @@ const sectionsToRender =
       class="flex flex-row items-center justify-center gap-4"
       href={`/${lang}/home`}
     >
-      <Picture src={imageUrl} alt={imageAlt} width="80" height="80" />
+      <img src={imageUrl} alt={imageAlt} class="w-[60px] h-[60px]" />
       <p class="h3 font-800">La Víbria Intercultural</p>
     </a>
 
-    <!-- Botones a la derecha -->
+    <!-- Enlaces dinámicos en escritorio: Assessories, Contacte, Tienda -->
     <div class="flex items-center gap-2 lg:gap-4">
       <a
-        class="text-white text-base font-700 px-2 py-0.5 border border-white rounded-full"
-        href="#"
+        class={`text-base font-700 px-2 py-0.5 border border-white rounded-full ${isInAssessories ? 'bg-white text-primary' : 'text-white bg-transparent'}`}
+        href={assessoriesLink?.slug || "#"}
       >
-        Assessories
+        {assessoriesLink?.title || "Assessories"}
       </a>
-      <a class="text-white text-base font-400 px-2 py-0.5" href="#">
-        Contacte
+      <a class="text-white text-base font-400 px-2 py-0.5" href={contacteLink?.slug || "#"}>
+        {contacteLink?.title || "Contacte"}
       </a>
-      <a class="text-white text-base font-400 px-2 py-0.5" href="#"> Tienda </a>
+      <a class="text-white text-base font-400 px-2 py-0.5" href={tiendaLink?.slug || "#"}>
+        {tiendaLink?.title || "Tienda"}
+      </a>
       <LanguageSwitcher currentLang={lang} class="z-10" />
     </div>
   </header>
 
   <!-- Navegación principal -->
   <nav
-    class="flex flex-row justify-between gap-2 bg-white text-primary text-sm font-semibold items-center p-4 lg:px-6"
+    class={`flex flex-row justify-between gap-2 bg-white text-primary text-sm font-semibold items-center p-4 border-b-[1px] ${currentCategoryColors.border || 'border-transparent'}`}
   >
     {
       sectionsToRender.map((section, idx) => (
@@ -225,7 +243,7 @@ const sectionsToRender =
           </div>
           {section.items.length > 0 && (
             <div
-              class="absolute top-8 -left-6 bg-secondary text-white text-center min-w-[125px] opacity-0 invisible transition-all duration-200 z-40 lg:top-10 lg:min-w-[150px] dropdown-menu"
+              class="absolute top-[2.2rem] bg-secondary text-white text-center min-w-fit opacity-0 invisible transition-all duration-200 z-40 w-full dropdown-menu"
               data-index={idx}
             >
               {section.items.map((item, idx2) => (
@@ -338,3 +356,9 @@ const sectionsToRender =
     initDesktopDropdowns();
   });
 </script>
+
+<style>
+  nav > div:last-child > div:nth-child(2) {
+    right: 0px;
+  }
+</style>

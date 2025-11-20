@@ -1,6 +1,6 @@
 import { apiURL } from "./config.js";
 
-export const getAcollidaInfo = async (lang, slug) => {
+export const getAcollidaInfo = async (slug) => {
   try {    
     const responsePage = await fetch(`${apiURL}/pages?slug=${slug}&_fields=content`);
     if (!responsePage.ok) {
@@ -11,7 +11,7 @@ export const getAcollidaInfo = async (lang, slug) => {
           content: pageData.content.rendered || "",
         };
   } catch (error) {
-    console.error("Error obteniendo experiencies:", error);
+    console.error("Error obteniendo acollida:", error);
     return [];
   }
 };

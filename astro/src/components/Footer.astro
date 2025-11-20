@@ -32,13 +32,8 @@ const imageAltMail = imageDataMail?.alt_text || "Logo Vibria";
       class="flex flex-col items-start justify-center text-center gap-2 pb-4 md:flex-row-reverse md:items-center md:gap-8 lg:gap-12"
     >
       <div class="flex flex-row items-center gap-4">
-        <Picture
-          formats={["webp", "avif", "jpeg"]}
-          src={imageUrlUbi}
-          alt={imageAltUbi}
-          width="20"
-          height="20"
-        />
+        <img src={imageUrlUbi} alt={imageAltUbi} class="w-[20px] h-[20px]" />
+        
         <ul class="list-none text-left">
           <li class="p font-500">{acf.ubicacion_texto}</li>
           <li class="p">{acf.ubicacion_lugar_texto}</li>
@@ -49,25 +44,11 @@ const imageAltMail = imageDataMail?.alt_text || "Logo Vibria";
         class="flex flex-col items-start justify-center text-center gap-2 md:flex-col-reverse md:w-1/3 lg:w-1/4"
       >
         <div class="flex flex-row items-center gap-4">
-          <Picture
-            formats={["webp", "avif", "jpeg"]}
-            src={imageUrlTel}
-            alt={imageAltTel}
-            width="20"
-            height="20"
-            class="md:max-w-fit"
-          />
+          <img src={imageUrlTel} alt={imageAltTel} class="w-[20px] h-[20px]" />
           <p class="p md:text-left">{acf.telefono_texto}</p>
         </div>
         <div class="flex flex-row items-center gap-4">
-          <Picture
-            formats={["webp", "avif", "jpeg"]}
-            src={imageUrlMail}
-            alt={imageAltMail}
-            width="20"
-            height="20"
-            class="md:max-w-fit"
-          />
+          <img src={imageUrlMail} alt={imageAltMail} class="w-[20px] h-[20px]" />
           <p class="p">{acf.correo_texto}</p>
         </div>
       </div>

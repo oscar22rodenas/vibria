@@ -2,7 +2,7 @@ import { apiURL } from "./config.js";
 
 export const getCategoriesInfo = async (lang) => {
   
-  const response = await fetch(`${apiURL}/menu?page=1&per_page=20&orderby=date&order=asc&_fields=title,acf,slug,id&per_page=500`);
+  const response = await fetch(`${apiURL}/menu?page=1&orderby=date&order=asc&_fields=title,acf,slug,id&per_page=500`);
   const menus = await response.json();
 
   const filteredMenus = menus.filter(menu => menu.slug.includes(`-${lang}`));

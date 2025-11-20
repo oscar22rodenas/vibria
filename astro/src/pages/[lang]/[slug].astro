@@ -2,6 +2,7 @@
 // src/pages/[lang]/[slug].astro
 import Layout from "@layouts/Layout.astro";
 import Acollida from "@components/pages/Acollida.astro";
+import Assessories from "@components/pages/Assessories.astro";
 import Baumann from "@components/pages/Baumann.astro";
 import DiarisVoluntaries from "@components/pages/DiarisVoluntaries.astro";
 import Enviament from "@components/pages/Enviament.astro";
@@ -32,7 +33,7 @@ import { apiURL } from "@wp/config.js";
 export async function getStaticPaths() {
     const languages = ["ca", "es", "en"]; // Idiomas soportados
 
-    const pagesRes = await fetch(`${apiURL}/pages?slug=&_fields=acf,slug&per_page=100`);
+    const pagesRes = await fetch(`${apiURL}/pages?slug=erasmus-experiencies-ca,intercanvis-juvenil-ca&_fields=acf,slug&per_page=100`);
     const pages = await pagesRes.json();
     
     let paths: { params: { lang: string; slug: string }; props: { acf: any } }[] = [];
@@ -50,13 +51,16 @@ export async function getStaticPaths() {
     return paths;
 }
 
-const { acf }   = Astro.props;
+const { acf } = Astro.props;
 
 let PageComponent;
 
 switch (Astro.params.slug) {
     case "acollida":
         PageComponent = Acollida;
+        break;
+    case "assessories":
+        PageComponent = Assessories;
         break;
     case "baumann":
         PageComponent = Baumann;

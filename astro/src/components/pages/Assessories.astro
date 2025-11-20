@@ -1,0 +1,15 @@
+---
+import { getAssessoriesInfo } from "@wp/index.js";
+import "@styles/assessories-content.css";
+
+const { lang, slug} = Astro.params;
+const slugCompleto = `${slug}-${lang}`;
+
+const assessories = await getAssessoriesInfo(slugCompleto);
+
+---
+<article class="mx-auto bg-white md:px-12 lg:px-16 xl:px-20 md:mx-[15%]">
+    
+  <div class="assessoria-content" set:html={assessories.content}></div>
+
+</article>

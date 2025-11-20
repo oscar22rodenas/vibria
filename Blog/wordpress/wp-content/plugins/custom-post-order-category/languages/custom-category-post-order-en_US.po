@@ -1,0 +1,162 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: custom category post order\n"
+"POT-Creation-Date: 2025-06-15 16:21+0530\n"
+"PO-Revision-Date: 2025-06-15 16:25+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__;esc_attr__;_x;_n\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin-post-order-page.php:17
+msgid "Post order by category or taxonomy"
+msgstr "Post order by category or taxonomy"
+
+#: admin-post-order-page.php:20
+msgid "⭐ Help us promote this plugin!"
+msgstr "⭐ Help us promote this plugin!"
+
+#: admin-post-order-page.php:21
+msgid ""
+"If you like \"Custom Category Post Order\", please consider giving us a 5-"
+"star rating."
+msgstr ""
+"If you like \"Custom Category Post Order\", please consider giving us a 5-"
+"star rating."
+
+#: admin-post-order-page.php:23
+msgid "Rate Plugin"
+msgstr "Rate Plugin"
+
+#: admin-post-order-page.php:28
+msgid "🚀 Unlock Pro Features"
+msgstr "🚀 Unlock Pro Features"
+
+#: admin-post-order-page.php:29
+msgid "Enable homepage sorting and advanced sort options with the Pro version."
+msgstr ""
+"Enable homepage sorting and advanced sort options with the Pro version."
+
+#: admin-post-order-page.php:31
+msgid "Download Pro"
+msgstr "Download Pro"
+
+#: admin-post-order-page.php:43 wp-customcategorypostorder.php:1181
+msgid "Select Post Type"
+msgstr "Select Post Type"
+
+#: admin-post-order-page.php:48
+#, fuzzy
+#| msgid "Select Category / Post Type"
+msgid "Select category/taxonomy"
+msgstr "Select Category / Post Type"
+
+#: admin-post-order-page.php:53
+#, fuzzy
+#| msgid "Select Roles:"
+msgid "Select term:"
+msgstr "Select Roles:"
+
+#: admin-post-order-page.php:57
+msgid "Enable ordering:"
+msgstr "Enable ordering:"
+
+#: admin-post-order-page.php:60
+msgid "Enable"
+msgstr "Enable"
+
+#: admin-post-order-page.php:99
+msgid "Remove"
+msgstr "Remove"
+
+#: admin-post-order-page.php:100
+msgid "Add"
+msgstr "Add"
+
+#: option-popup.php:10
+msgid "Title A–Z"
+msgstr "Title A–Z"
+
+#: option-popup.php:11
+msgid "Title Z–A"
+msgstr "Title Z–A"
+
+#: option-popup.php:12
+msgid "Newest First"
+msgstr "Title Z–A"
+
+#: option-popup.php:13
+msgid "Oldest First"
+msgstr "Title Z–A"
+
+#: option-popup.php:15
+msgid "Meta Field"
+msgstr "Meta Field"
+
+#: option-popup.php:17
+msgid "Meta field"
+msgstr "Meta field"
+
+#: option-popup.php:19
+msgid "Loading…"
+msgstr "Loading…"
+
+#: option-popup.php:23
+msgid "Sort on Meta Field"
+msgstr "Sort on Meta Field"
+
+#: wp-customcategorypostorder.php:62 wp-customcategorypostorder.php:159
+#: wp-customcategorypostorder.php:433 wp-customcategorypostorder.php:476
+#: wp-customcategorypostorder.php:596 wp-customcategorypostorder.php:708
+#: wp-customcategorypostorder.php:819 wp-customcategorypostorder.php:902
+#: wp-customcategorypostorder.php:980 wp-customcategorypostorder.php:1004
+#: wp-customcategorypostorder.php:1103 wp-customcategorypostorder.php:1321
+msgid "You do not have sufficient permissions to access this page."
+msgstr "You do not have sufficient permissions to access this page."
+
+#: wp-customcategorypostorder.php:683
+msgid "Post Orders"
+msgstr "Post Orders"
+
+#: wp-customcategorypostorder.php:684
+msgid "Post Order"
+msgstr "Post Order"
+
+#: wp-customcategorypostorder.php:693
+msgid "Order Permission"
+msgstr "Order Permission"
+
+#: wp-customcategorypostorder.php:694
+msgid "Permission"
+msgstr "Permission"
+
+#: wp-customcategorypostorder.php:744
+msgid "Roles updated successfully."
+msgstr "Roles updated successfully."
+
+#: wp-customcategorypostorder.php:759
+msgid "Who can arrange the post"
+msgstr "Who can arrange the post"
+
+#: wp-customcategorypostorder.php:770
+msgid "Select Roles:"
+msgstr "Select Roles:"
+
+#: wp-customcategorypostorder.php:775
+msgid "Submit"
+msgstr "Submit"
+
+#: wp-customcategorypostorder.php:1146
+msgid "Select Category / Post Type"
+msgstr "Select Category / Post Type"
+
+#: wp-customcategorypostorder.php:1187
+msgid "Home Page"
+msgstr "Home Page"
